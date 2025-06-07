@@ -1,0 +1,287 @@
+2025-06-05 23:26:38 INFO  LogUtils:10 - Kiem tra dong popup
+2025-06-05 23:26:38 INFO  LogUtils:10 - Kiem tra Dang Nhap Thanh Cong
+2025-06-06 00:20:58 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 00:21:38 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 00:22:26 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 00:37:55 INFO  LogUtils:10 - Đăng nhập thành công _ Google
+2025-06-06 00:38:32 INFO  LogUtils:10 - Đăng nhập thành công _ Zalo
+2025-06-06 00:39:05 INFO  LogUtils:10 - LinkQuen mat khau
+2025-06-06 00:39:37 INFO  LogUtils:10 - Link Đăng ký
+2025-06-06 00:40:07 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 00:44:53 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:03:40 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:14:07 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:18:00 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:31:21 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-06 01:32:18 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:34:05 INFO  LogUtils:10 - Link Đăng ký
+2025-06-06 01:35:36 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:48:57 INFO  LogUtils:10 - Con mắt ẩn và hiện Mật khẩu
+2025-06-06 01:49:54 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:50:36 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 01:59:29 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 02:00:19 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 02:01:12 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 02:01:56 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 02:02:47 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-06 02:03:42 INFO  LogUtils:10 - Đăng nhập thành công _ Google
+2025-06-06 02:04:55 INFO  LogUtils:10 - Đăng nhập thành công _ Google
+2025-06-06 02:05:49 INFO  LogUtils:10 - Đăng nhập thành công _ Google
+2025-06-06 02:06:30 INFO  LogUtils:10 - Đăng nhập thành công _ Zalo
+2025-06-06 02:07:02 INFO  LogUtils:10 - LinkQuen mat khau
+2025-06-06 02:07:37 INFO  LogUtils:10 - Link Đăng ký
+2025-06-06 02:08:09 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 10:23:43 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 10:35:45 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 10:36:34 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-06 10:37:49 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 11:08:20 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 11:24:35 INFO  LogUtils:10 - Kiem tra dong popup
+2025-06-06 11:24:35 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-06 11:35:20 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 11:35:46 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 11:36:22 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 11:37:26 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 11:38:21 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 11:39:57 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 11:40:23 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 11:40:52 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 11:41:17 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 11:41:43 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 11:42:08 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 11:46:18 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-06 11:47:14 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 11:47:40 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-06 11:48:07 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 11:48:35 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 11:49:01 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 11:49:51 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 11:50:56 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 11:51:33 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 11:51:59 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-06 14:35:38 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 14:39:12 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 14:39:37 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 14:40:01 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 14:40:24 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 14:40:50 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 14:48:47 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 14:58:12 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 14:58:37 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 14:59:28 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 14:59:59 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 15:00:34 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 15:01:03 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 15:02:13 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 15:03:14 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 15:05:16 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 15:05:53 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 22:13:52 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 22:14:28 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 22:15:00 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 22:15:30 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 22:16:01 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 22:16:30 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 22:27:28 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 22:28:57 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 22:30:59 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 22:32:12 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 22:33:52 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 22:35:00 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-06 22:36:58 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-06 22:42:15 INFO  LogUtils:10 - Link CellphoneS
+2025-06-06 22:47:40 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-06 22:49:51 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-06 22:53:20 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 22:53:54 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 22:54:26 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 22:55:01 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 22:56:20 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 22:56:51 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 23:00:45 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 23:01:23 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 23:02:02 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 23:02:40 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 23:08:38 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 23:15:28 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 23:16:01 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 23:16:32 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 23:17:03 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 23:17:34 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 23:18:07 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 23:30:29 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 23:31:01 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 23:31:37 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 23:32:11 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 23:32:41 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 23:33:12 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 23:38:08 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-06 23:38:52 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-06 23:39:31 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-06 23:40:07 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-06 23:40:44 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-06 23:41:17 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-06 23:47:37 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-06 23:49:17 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-07 00:01:09 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate Mật khẩu
+2025-06-07 00:04:54 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-07 00:05:25 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 00:14:00 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 00:14:43 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-07 00:18:34 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-07 00:19:17 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-07 00:29:15 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-07 00:31:52 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-07 00:35:02 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 00:38:16 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 00:40:09 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 00:41:47 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 00:47:06 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 00:48:18 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 00:48:59 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-07 00:49:55 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-07 00:50:27 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-07 00:51:00 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-07 00:53:16 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-07 00:56:51 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-07 00:59:46 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate Mật khẩu
+2025-06-07 01:04:26 INFO  LogUtils:10 - Mã hoá mật khẩu
+2025-06-07 01:05:01 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-07 01:05:34 INFO  LogUtils:10 - Con mắt ẩn và hiện Mật khẩu
+2025-06-07 01:42:53 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:42:53 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 01:42:55 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 01:44:18 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:44:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 01:46:08 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:46:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 01:49:55 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:49:55 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 01:52:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:52:15 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 01:54:46 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:54:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 01:54:56 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 01:57:48 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 01:57:48 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:02:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:02:58 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:03:03 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:07:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:07:36 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 02:07:41 INFO  LogUtils:10 - Kiểm tra thông báo lỗi
+2025-06-07 02:07:42 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 02:08:35 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:08:35 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:08:43 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:14:13 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:14:13 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:14:18 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:15:47 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:15:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:15:53 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:19:27 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:19:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:19:33 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:20:38 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:20:38 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:20:43 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:22:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:22:02 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:22:07 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:28:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:28:02 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:28:15 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:31:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:31:28 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 02:31:33 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-07 02:31:33 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 02:32:31 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:32:31 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:32:33 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:32:33 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 02:33:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 02:33:54 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 02:33:59 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 02:33:59 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 20:19:09 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 20:19:09 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 20:19:13 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-07 20:19:13 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 20:19:26 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 20:19:26 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-07 20:19:59 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 20:19:59 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-07 20:20:08 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-06-07 23:02:25 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:02:26 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:02:27 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:02:27 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 23:05:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:05:40 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 23:05:44 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-07 23:05:44 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 23:10:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:10:15 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 23:10:20 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-07 23:10:20 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 23:11:14 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:11:14 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-07 23:28:33 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:32:56 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:32:56 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:32:58 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:41:38 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:41:38 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 23:41:43 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-07 23:41:43 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 23:42:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:42:01 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-07 23:43:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:43:58 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:44:00 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:45:03 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:45:03 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:45:06 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:51:39 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:51:39 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:51:40 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:53:33 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:53:33 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:53:37 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:53:37 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 23:54:52 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:54:52 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-07 23:54:56 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-07 23:54:56 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-07 23:55:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:55:43 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-07 23:55:47 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-07 23:55:47 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-07 23:55:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:55:58 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-07 23:56:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:56:15 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-07 23:56:21 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-06-07 23:57:10 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-07 23:57:10 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-08 00:07:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 00:07:20 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-08 00:07:21 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-08 00:07:21 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-08 00:08:06 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 00:08:06 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-08 00:08:09 INFO  LogUtils:10 - Kiểm tra thong bao lỗi
+2025-06-08 00:08:09 INFO  LogUtils:10 - Kiểm tra inline lỗi tại trường SĐT
+2025-06-08 00:08:17 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 00:08:17 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-08 00:08:31 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 00:08:31 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-08 00:08:35 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-06-08 00:09:07 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 00:09:07 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-08 00:28:00 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 00:28:00 INFO  LogUtils:10 - Đăng nhập với SĐT: 0332019523
