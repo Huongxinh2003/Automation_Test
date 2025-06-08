@@ -45,17 +45,17 @@ public class BaseSetup {
 
         ChromeOptions options = new ChromeOptions();
 
-        // ✅ Dành cho môi trường CI/CD không có giao diện
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
+        // ✅ Bắt buộc dùng headless trong CI/CD
+        if (System.getenv("CI") != null || System.getProperty("ci") != null) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            String uniqueUserDataDir = "/tmp/chrome-profile-" + System.currentTimeMillis();
+            options.addArguments("--user-data-dir=" + uniqueUserDataDir);
+        }
 
-        // ✅ Tránh lỗi "user-data-dir already in use"
-        String uniqueUserDataDir = "/tmp/chrome-profile-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + uniqueUserDataDir);
-
-        driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
