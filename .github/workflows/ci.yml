@@ -2,9 +2,9 @@ name: Java TestNG CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "Test_1" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "Test_1" ]
 
 jobs:
   test:

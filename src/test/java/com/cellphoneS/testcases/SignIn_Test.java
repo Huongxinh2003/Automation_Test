@@ -46,6 +46,7 @@ public class SignIn_Test extends BaseSetup {
         driver = setupDriver(Properties_File.getPropValue("browser"));
         signIn_page = new SignIn_Page(driver);
         validateUIHelper = new ValidateUIHelper(driver);
+        excelHelper = new ExcelUtils();
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
     }
@@ -81,7 +82,7 @@ public class SignIn_Test extends BaseSetup {
     public void setUpTest() throws Exception {
         driver.get("https://cellphones.com.vn/");
         RecordVideo.startRecord("RecordVideo_" + System.currentTimeMillis());
-//        validateUIHelper.waitForPageLoaded();
+        validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
         signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
@@ -128,7 +129,7 @@ public class SignIn_Test extends BaseSetup {
 
 
     @Test(dataProvider = "loginData", groups = "Function", priority = 1)
-    public void login_cellphoneS(String phoneNumber, String password) throws Exception {
+    public void login_cellphoneS_17(String phoneNumber, String password) throws Exception {
         LogUtils.info("Đăng nhập với SĐT: " + phoneNumber);
 
         signIn_page.InputSignIn(phoneNumber, password);
@@ -324,8 +325,11 @@ public class SignIn_Test extends BaseSetup {
         Thread.sleep(1000);
         SignIn_Page.ClickSignIn();
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("cellphones.com.vn"));
+
         String currentURL = driver.getCurrentUrl();
-        if (currentURL.contains("customer/account") || driver.getPageSource().contains("Đăng nhập thành công")) {
+        if (currentURL.contains("cellphones.com.vn") || driver.getPageSource().contains("Đăng nhập thành công")) {
             LogUtils.info("PASS: Đăng nhập thành công sau khi paste mật khẩu từ clipboard.");
         } else {
             LogUtils.info("FAIL: Đăng nhập thất bại sau khi paste mật khẩu.");
@@ -346,8 +350,11 @@ public class SignIn_Test extends BaseSetup {
         Thread.sleep(1000);
         SignIn_Page.ClickSignIn();
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("cellphones.com.vn"));
+
         String currentURL = driver.getCurrentUrl();
-        if (currentURL.contains("customer/account") || driver.getPageSource().contains("Đăng nhập thành công")) {
+        if (currentURL.contains("https://cellphones.com.vn/") || driver.getPageSource().contains("Đăng nhập thành công")) {
             LogUtils.info("PASS: Đăng nhập thành công sau khi paste Số điện thoại");
         } else {
             LogUtils.info("FAIL: Đăng nhập thất bại sau khi paste Số điện thoại");

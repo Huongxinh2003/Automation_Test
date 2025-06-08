@@ -285,3 +285,44 @@ Vui lòng nhập số điện thoại
 2025-06-08 00:09:07 INFO  LogUtils:10 - Bỏ trống Mật khẩu
 2025-06-08 00:28:00 INFO  LogUtils:10 - Bắt đầu test case
 2025-06-08 00:28:00 INFO  LogUtils:10 - Đăng nhập với SĐT: 0332019523
+2025-06-08 23:23:56 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 23:23:56 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-08 23:24:06 INFO  LogUtils:10 - FAIL: Đăng nhập thất bại sau khi paste Số điện thoại
+2025-06-08 23:40:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 23:40:40 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-08 23:43:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 23:43:01 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate Mật khẩu
+2025-06-08 23:47:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 23:47:44 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-08 23:47:47 INFO  LogUtils:10 - FAIL: Đăng nhập thất bại sau khi paste Số điện thoại
+2025-06-08 23:56:55 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 23:56:55 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate Mật khẩu
+2025-06-08 23:57:04 INFO  LogUtils:10 - PASS:        Huong2003        -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-08 23:57:06 INFO  LogUtils:10 - PASS: huong2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-08 23:57:08 INFO  LogUtils:10 - PASS: hương2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-08 23:57:30 ERROR LogUtils:14 - FAIL: Hương2003 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: No error message found
+2025-06-08 23:57:41 ERROR LogUtils:14 - FAIL: 12342003 | Expected: Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số | Got: No error message found
+2025-06-08 23:58:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-08 23:58:36 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-08 23:58:50 INFO  LogUtils:10 - FAIL: Đăng nhập thất bại sau khi paste Số điện thoại
+2025-06-09 00:03:39 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:03:39 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-09 00:03:45 INFO  LogUtils:10 - FAIL: Đăng nhập thất bại sau khi paste mật khẩu.
+2025-06-09 00:07:48 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:07:48 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-09 00:07:54 INFO  LogUtils:10 - FAIL: Đăng nhập thất bại sau khi paste mật khẩu.
+2025-06-09 00:15:04 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:15:04 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-09 00:16:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:16:43 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-09 00:17:56 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:17:56 INFO  LogUtils:10 - Đăng nhập thành công _ Paste SĐT
+2025-06-09 00:17:59 INFO  LogUtils:10 - PASS: Đăng nhập thành công sau khi paste mật khẩu từ clipboard.
+2025-06-09 00:19:08 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:19:08 INFO  LogUtils:10 - Đăng nhập với SĐT: 0332019523
+2025-06-09 00:20:05 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:20:05 INFO  LogUtils:10 - Đăng nhập với SĐT: 033201952
+2025-06-09 00:20:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:20:37 INFO  LogUtils:10 - Đăng nhập với SĐT: 0332019523
+2025-06-09 00:22:53 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 00:22:53 INFO  LogUtils:10 - Đăng nhập với SĐT: 0332019523
