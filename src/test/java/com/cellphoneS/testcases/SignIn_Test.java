@@ -81,7 +81,7 @@ public class SignIn_Test extends BaseSetup {
     @BeforeMethod(groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK", "Link"})
     public void setUpTest() throws Exception {
         driver.get("https://cellphones.com.vn/");
-        RecordVideo.startRecord("RecordVideo_" + System.currentTimeMillis());
+//        RecordVideo.startRecord("RecordVideo_" + System.currentTimeMillis());
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
         signIn_page.SignIn();
