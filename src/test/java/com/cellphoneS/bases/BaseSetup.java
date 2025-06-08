@@ -5,8 +5,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 
 import java.time.Duration;
@@ -43,17 +45,15 @@ public class BaseSetup {
 
         ChromeOptions options = new ChromeOptions();
 
-        // Tạo profile tạm thời để tránh lỗi trùng user data
-        String userDataDir = System.getProperty("java.io.tmpdir") + "/chrome-profile-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + userDataDir);
-
-        // Dành cho môi trường CI/CD hoặc Linux
+        // ✅ Dành cho môi trường CI/CD không có giao diện
+        options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
 
-        // Bật chế độ headless nếu cần
-        // options.addArguments("--headless=new");
+        // ✅ Tránh lỗi "user-data-dir already in use"
+        String uniqueUserDataDir = "/tmp/chrome-profile-" + System.currentTimeMillis();
+        options.addArguments("--user-data-dir=" + uniqueUserDataDir);
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -65,22 +65,43 @@ public class BaseSetup {
     private WebDriver initEdgeDriver() {
         System.out.println("Launching Edge browser...");
         WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
+
+        EdgeOptions options = new EdgeOptions();
+
+        // Áp dụng giống như Chrome (Edge dựa trên Chromium)
+        String userDataDir = System.getProperty("java.io.tmpdir") + "/edge-profile-" + System.currentTimeMillis();
+        options.addArguments("--user-data-dir=" + userDataDir);
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        // options.addArguments("--headless=new"); // Nếu bạn muốn Edge headless
+
+        WebDriver driver = new EdgeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         return driver;
     }
 
+
     private WebDriver initFirefoxDriver() {
         System.out.println("Launching Firefox browser...");
         WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+
+        FirefoxOptions options = new FirefoxOptions();
+
+        // Dành cho môi trường CI/CD
+        options.addArguments("--headless"); // Bắt buộc nếu không có GUI
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        WebDriver driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         return driver;
     }
+
 
     @AfterClass
     public void tearDown() throws Exception {
