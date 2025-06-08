@@ -146,6 +146,14 @@ public class ExcelUtils {
         }
         return data;
     }
+
+    public int getRowCount() {
+        return 0;
+    }
+
+    public int getColumnCount() {
+        return 0;
+    }
 }
 
 

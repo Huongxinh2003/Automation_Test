@@ -5,9 +5,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 
@@ -42,20 +42,17 @@ public class BaseSetup {
     private WebDriver initChromeDriver() throws Exception {
         System.out.println("Launching Chrome browser...");
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
 
-        // ✅ Bắt buộc dùng headless trong CI/CD
-        if (System.getenv("CI") != null || System.getProperty("ci") != null) {
+        if (isCI()) {
             options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
-            String uniqueUserDataDir = "/tmp/chrome-profile-" + System.currentTimeMillis();
-            options.addArguments("--user-data-dir=" + uniqueUserDataDir);
+            options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
         }
 
-        WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -65,43 +62,43 @@ public class BaseSetup {
     private WebDriver initEdgeDriver() {
         System.out.println("Launching Edge browser...");
         WebDriverManager.edgedriver().setup();
-
         EdgeOptions options = new EdgeOptions();
 
-        // Áp dụng giống như Chrome (Edge dựa trên Chromium)
-        String userDataDir = System.getProperty("java.io.tmpdir") + "/edge-profile-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + userDataDir);
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
-        // options.addArguments("--headless=new"); // Nếu bạn muốn Edge headless
+        if (isCI()) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+        }
 
-        WebDriver driver = new EdgeDriver(options);
+        driver = new EdgeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         return driver;
     }
-
 
     private WebDriver initFirefoxDriver() {
         System.out.println("Launching Firefox browser...");
         WebDriverManager.firefoxdriver().setup();
-
         FirefoxOptions options = new FirefoxOptions();
 
-        // Dành cho môi trường CI/CD
-        options.addArguments("--headless"); // Bắt buộc nếu không có GUI
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        if (isCI()) {
+            options.addArguments("-headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+        }
 
-        WebDriver driver = new FirefoxDriver(options);
+        driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         return driver;
     }
 
+    private boolean isCI() {
+        return System.getenv("CI") != null || System.getProperty("ci") != null;
+    }
 
     @AfterClass
     public void tearDown() throws Exception {
@@ -112,7 +109,7 @@ public class BaseSetup {
             try {
                 RecordVideo.stopRecord();
             } catch (Exception e) {
-                System.err.println("Lỗi khi dừng quay video: " + e.getMessage());
+                e.printStackTrace();
             }
         }
     }

@@ -88,6 +88,20 @@ public class SignIn_Test extends BaseSetup {
         LogUtils.info("Bắt đầu test case");
     }
 
+    public Object[][] getExcelData(String filePath, String sheetName) throws Exception {
+        excelHelper.setExcelFile(filePath, sheetName);
+        int rowCount = excelHelper.getRowCount();
+        int colCount = excelHelper.getColumnCount();
+        Object[][] data = new Object[rowCount - 1][colCount];
+
+        for (int i = 1; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
+                data[i - 1][j] = excelHelper.getCellData(j, i);
+            }
+        }
+        return data;
+    }
+
     @Test(groups = {"SignIn_Success"}, priority = 1)
     public void login_cellphoneS_Success() throws Exception {
         LogUtils.info("Đăng nhập thành công");

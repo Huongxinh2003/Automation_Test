@@ -3,13 +3,17 @@
     <parameter name="browserType" value="edge"/>
     <!-- Kiêm tra các chức năng -->
     <test name="Function">
-        <groups>
-            <run>
-                <include name="Function"/>
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Function"/>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
-            <class name="com.cellphoneS.testcases.SignIn_Test"/>
+            <class name="com.cellphoneS.testcases.SignIn_Test">
+                <methods>
+                    <include name="login_cellphoneS_Success"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
