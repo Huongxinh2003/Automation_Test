@@ -22,7 +22,7 @@ jobs:
         run: mvn clean install
 
       - name: 🧪 Run TestNG tests
-        run: mvn test
+        run: mvn test -DsuiteXmlFile=XML/RunSignIn/Function.xml
 
       - name: 📂 Check report directory
         run: ls -la target/surefire-reports/
