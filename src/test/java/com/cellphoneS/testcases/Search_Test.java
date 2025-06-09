@@ -11,10 +11,14 @@ import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.LogUtils;
 import com.ultilities.Properties_File;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -64,7 +68,7 @@ public class Search_Test extends BaseSetup {
             try {
                 CaptureHelpers.captureScreenshot(driver, result.getName());
             } catch (Exception e) {
-                System.out.println("Exception while taking screenshot " + e.getMessage());
+                LogUtils.info("Exception while taking screenshot " + e.getMessage());
             }
         }
     }
@@ -72,7 +76,40 @@ public class Search_Test extends BaseSetup {
     @Test
     public void Search_Success() {
         LogUtils.info("Tìm kiếm với Iphone");
-        search_page.inputSearch("Iphone");
+        search_page.inputSearch("iphone");
+
+        // Đợi trang chuyển hướng
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("/catalogsearch/result?q=iphone"));
+
+        // Kiểm tra URL đúng
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("/catalogsearch/result?q=iphone"), "URL sai: " + currentUrl);
+
+        // Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+        // Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+        WebElement resultText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(text(),'Tìm thấy') and contains(text(),'sản phẩm cho từ khoá')]")
+        ));
+        Assert.assertTrue(resultText.getText().toLowerCase().contains("iphone"));
+
+        // Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+        WebElement firstProduct = driver.findElement(By.cssSelector(".product.name.product-item-name"));
+        Assert.assertTrue(firstProduct.getText().toLowerCase().contains("iphone"));
+
+        // (Tùy chọn) In ra số sản phẩm tìm thấy
+        String text = resultText.getText(); // ví dụ: "Tìm thấy 4142 sản phẩm cho từ khoá 'iphone'"
+        LogUtils.info(">>> Kết quả: " + text);
+
     }
+
+    public void Search_Fail() {
+        LogUtils.info("Tìm kiếm với Iphone");
+        search_page.inputSearch2("xzyyy123");
+
+
+    }
+
+
 
 }
