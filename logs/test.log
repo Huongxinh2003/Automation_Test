@@ -101,3 +101,39 @@ Vui lòng nhập số điện thoại
 2025-06-09 13:52:16 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
 2025-06-09 13:53:48 INFO  LogUtils:10 - Bắt đầu test case
 2025-06-09 13:53:48 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-09 14:02:17 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 14:02:17 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-09 14:07:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 14:07:01 INFO  LogUtils:10 - Đăng nhập thành công _ Paste Mật khẩu
+2025-06-09 14:07:04 INFO  LogUtils:10 - FAIL: Đăng nhập thất bại sau khi paste Số điện thoại
+2025-06-09 14:07:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 14:07:37 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-09 14:07:43 ERROR LogUtils:14 - FAIL: 0332 | Expected: Số điện thoại không hợp lệ
+Vui lòng nhập lại | Got: Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-09 14:07:45 INFO  LogUtils:10 - PASS: 033201876 -> Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-09 14:07:48 INFO  LogUtils:10 - PASS: 1332019523 -> Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-09 14:07:51 INFO  LogUtils:10 - PASS: 0332589523 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-09 15:25:51 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 15:25:54 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-09 15:25:54 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-09 15:25:54 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-09 15:28:24 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 15:28:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-09 15:28:34 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-09 15:45:10 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 15:45:12 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-09 15:45:12 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-09 15:45:12 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-09 16:38:11 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 16:38:13 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-09 16:38:13 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-09 16:38:13 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-09 16:51:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 16:51:40 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-09 16:51:47 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-09 16:53:17 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-09 16:53:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-09 16:53:26 INFO  LogUtils:10 - Tìm kiếm với Iphone

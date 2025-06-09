@@ -1,6 +1,8 @@
 package com.cellphoneS.testcases;
 
 import com.cellphoneS.bases.BaseSetup;
+import com.cellphoneS.pages.Homepage_page;
+import com.cellphoneS.pages.Search_Page;
 import com.helpers.CaptureHelpers;
 import com.helpers.RecordVideo;
 import com.ultilities.ExcelUtils;
@@ -37,6 +39,8 @@ public class SignIn_Test extends BaseSetup {
     public WebDriverWait wait;
     public ExcelUtils excelHelper;
     public ValidateUIHelper validateUIHelper;
+    public Search_Page search_Page;
+    public Homepage_page homepage_page;
 
     @BeforeClass(groups = "Function")
     public void setUp() throws Exception {
@@ -91,10 +95,10 @@ public class SignIn_Test extends BaseSetup {
     public void login_cellphoneS_Success() throws Exception {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
-//        signIn_page.closePopupIfVisible();
-        signIn_page.SignIn();
+        signIn_page.closePopupIfVisible();
+//        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
-        signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
+        homepage_page = signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
         LogUtils.info("Đăng nhập thành công");
 //        List<WebElement> toasts = driver.findElements(By.xpath("//*[contains(text(),'Đăng nhập')]"));
 //        for (WebElement toast : toasts) {
@@ -273,7 +277,8 @@ public class SignIn_Test extends BaseSetup {
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Đăng nhập thất bại _ Validate SĐT");
-        excelHelper.setExcelFile("src/test/resources/SignIn_Fail.xlsx", "phone");
+        signIn_page.SignIn();
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "phone");
         List<String[]> data = excelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
 
         for (String[] row : data) {
@@ -301,7 +306,8 @@ public class SignIn_Test extends BaseSetup {
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Đăng nhập thất bại _ Validate Mật khẩu");
-        excelHelper.setExcelFile("src/test/resources/SignIn_Fail.xlsx", "pass");
+        signIn_page.SignIn();
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "pass");
 
         List<String[]> data = excelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
 
@@ -330,6 +336,7 @@ public class SignIn_Test extends BaseSetup {
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Mã hoá mật khẩu");
+        signIn_page.SignIn();
         signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
 
         String typeAfterShowPassword = signIn_page.getInputPassword().getAttribute("type");
@@ -345,6 +352,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Đăng nhập thành công _ Paste SĐT");
@@ -374,6 +382,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Đăng nhập thành công _ Paste Mật khẩu");
@@ -403,6 +412,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
         LogUtils.info("Đăng nhập thành công _ Google");
         signIn_page.ClickButtonGoogle();
@@ -417,6 +427,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Đăng nhập thành công _ Zalo");
@@ -433,6 +444,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("LinkQuen mat khau");
@@ -447,6 +459,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Link Đăng ký");
@@ -461,6 +474,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Link CellphoneS");
@@ -476,6 +490,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Link DienThoaiVui");
@@ -491,6 +506,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Con mắt ẩn và hiện Mật khẩu");
@@ -526,6 +542,7 @@ public class SignIn_Test extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
 
         LogUtils.info("Link Chính sách ưu đãi");

@@ -1,15 +1,13 @@
 package com.cellphoneS.pages;
 
-import com.Clickbuy.base.ValidateHelper;
 import com.helpers.ValidateUIHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
-public class SignIn_Page extends ValidateUIHelper {
+public class  SignIn_Page extends ValidateUIHelper {
     private static WebDriver driver;
     private WebDriverWait wait;
     private JavascriptExecutor js;
@@ -22,8 +20,7 @@ public class SignIn_Page extends ValidateUIHelper {
     private static final By inputPassword = By.xpath("//input[@placeholder='Nhập mật khẩu của bạn']");
     private static final By btnSignIn = By.xpath("//button[contains(text(),'Đăng nhập')]");
     public final By linkRegister = By.xpath("//a[contains(text(),'Đăng ký ngay')]");
-    public final By linkCellphoneS = By.xpath("//a[normalize-space()='dienthoaivui.com.vn']");
-    public final By LinkDienThoaiVui2 = By.linkText("dienthoaivui.com.vn");
+    public final By linkCellphoneS = By.xpath("//a[normalize-space()='cellphones.com.vn']");
     public final By linkDienThoaiVui = By.xpath("//a[normalize-space()='dienthoaivui.com.vn']");
     public final By linkChinhSachUuDai = By.xpath("//span[@class='text-primary-500 font-medium']");
     public final By buttonShowPassword = By.xpath("//button[contains(@aria-label,'Show password')]");
@@ -37,6 +34,14 @@ public class SignIn_Page extends ValidateUIHelper {
     private final By BoxText = By.xpath("//div[@class='w-full text-small p-1x-small border-");
     private final By BannerSignIn = By.xpath("//div[@class='flex-5 min-h-screen bg-neutral-50 flex justify-center items-center px-1x-small py-large tablet:px-large tablet:py-4x-large']");
     private final By ErrorMessage = By.xpath("//ol[@class='toaster group']//li");
+
+
+    public SignIn_Page(WebDriver driver) {
+        super(driver);
+        SignIn_Page.driver = driver;
+        this.js = (JavascriptExecutor) driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
     public void closePopupIfVisible() {
         try {
@@ -53,25 +58,17 @@ public class SignIn_Page extends ValidateUIHelper {
         clickElement(loginButton2);
     }
 
-    public SignIn_Page(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        this.js = (JavascriptExecutor) driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
-
     public void SignIn() {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[@class='modal-close is-large']")));
         clickElement(loginButton);
         clickElement(loginButton2);
     }
 
 
-    public void InputSignIn(String phoneNumber, String password) {
+    public Homepage_page InputSignIn(String phoneNumber, String password) {
         sendKeys(inputPhoneNumber, phoneNumber);
         sendKeys(inputPassword, password);
         clickElement(btnSignIn);
+        return new Homepage_page(driver);
     }
 
     public WebElement getInputPassword() {
@@ -117,11 +114,6 @@ public class SignIn_Page extends ValidateUIHelper {
     }
 
     public void ClickLinkCellphoneS() throws InterruptedException {
-//        WebElement link = driver.findElement(linkCellphoneS);
-//        // Cuộn xuống phần tử cần click
-//        js.executeScript("arguments[0].scrollIntoView(true);", link);
-//        Thread.sleep(1000); // đợi chút để cuộn xong
-//        js.executeScript("arguments[0].click();", link);
         WebElement clickElement = wait.until(ExpectedConditions.elementToBeClickable(linkCellphoneS));
         try {
             clickElement.click();
@@ -132,7 +124,7 @@ public class SignIn_Page extends ValidateUIHelper {
     }
 
     public void ClickLinkDienThoaiVui() {
-        WebElement clickElement = wait.until(ExpectedConditions.elementToBeClickable(LinkDienThoaiVui2));
+        WebElement clickElement = wait.until(ExpectedConditions.elementToBeClickable(linkDienThoaiVui));
         try {
             clickElement.click();
         } catch (ElementClickInterceptedException e) {
