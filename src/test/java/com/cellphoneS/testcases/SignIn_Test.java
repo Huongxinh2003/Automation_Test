@@ -38,16 +38,22 @@ public class SignIn_Test extends BaseSetup {
     public ExcelUtils excelHelper;
     public ValidateUIHelper validateUIHelper;
 
-    @BeforeClass(groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK"})
+    @BeforeClass(groups = "Function")
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
+        // Gọi lại hàm startRecord
+        try {
+            RecordVideo.startRecord("RecordVideo");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         // Lấy driver từ class cha BaseSetup
         driver = setupDriver(Properties_File.getPropValue("browser"));
         signIn_page = new SignIn_Page(driver);
-        validateUIHelper = new ValidateUIHelper(driver);
         excelHelper = new ExcelUtils();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        validateUIHelper = new ValidateUIHelper(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
     }
 
@@ -62,53 +68,34 @@ public class SignIn_Test extends BaseSetup {
             try {
                 CaptureHelpers.captureScreenshot(driver, result.getName());
             } catch (Exception e) {
-                LogUtils.info("Exception while taking screenshot " + e.getMessage());
+                System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
     }
 
-    @AfterMethod
-    public void tearDownTest(ITestResult result) throws Exception {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                RecordVideo.stopRecord();
-            } catch (Exception e) {
-                LogUtils.info("Exception while taking record " + e.getMessage());
-            }
-        }
-    }
+//    public Object[][] getExcelData(String filePath, String sheetName) throws Exception {
+//        excelHelper.setExcelFile(filePath, sheetName);
+//        int rowCount = excelHelper.getRowCount();
+//        int colCount = excelHelper.getColumnCount();
+//        Object[][] data = new Object[rowCount - 1][colCount];
+//
+//        for (int i = 1; i < rowCount; i++) {
+//            for (int j = 0; j < colCount; j++) {
+//                data[i - 1][j] = excelHelper.getCellData(j, i);
+//            }
+//        }
+//        return data;
+//    }
 
-    @BeforeMethod(groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK", "Link"})
-    public void setUpTest() throws Exception {
+    @Test(groups = {"SignIn_Success"}, priority = 1)
+    public void login_cellphoneS_Success() throws Exception {
         driver.get("https://cellphones.com.vn/");
-//        RecordVideo.startRecord("RecordVideo_" + System.currentTimeMillis());
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
         signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
-    }
-
-    public Object[][] getExcelData(String filePath, String sheetName) throws Exception {
-        excelHelper.setExcelFile(filePath, sheetName);
-        int rowCount = excelHelper.getRowCount();
-        int colCount = excelHelper.getColumnCount();
-        Object[][] data = new Object[rowCount - 1][colCount];
-
-        for (int i = 1; i < rowCount; i++) {
-            for (int j = 0; j < colCount; j++) {
-                data[i - 1][j] = excelHelper.getCellData(j, i);
-            }
-        }
-        return data;
-    }
-
-    @Test(groups = {"SignIn_Success"}, priority = 1)
-    public void login_cellphoneS_Success() throws Exception {
-        LogUtils.info("Đăng nhập thành công");
         signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
-
-
-
+        LogUtils.info("Đăng nhập thành công");
 //        List<WebElement> toasts = driver.findElements(By.xpath("//*[contains(text(),'Đăng nhập')]"));
 //        for (WebElement toast : toasts) {
 //            System.out.println("Found toast: " + toast.getText());
@@ -125,44 +112,42 @@ public class SignIn_Test extends BaseSetup {
 
     }
 
-    @DataProvider(name = "loginData")
-    public Object[][] loginData() throws Exception {
-        excelHelper = new ExcelUtils();
+
+    @Test(groups = "Function", priority = 1)
+    public void login_cellphoneS_17() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        signIn_page.SignIn();
+        LogUtils.info("Bắt đầu test case");
+
+        LogUtils.info("Đăng nhập thất bại khi nhập SĐT sai");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
-
-        // Giả sử sheet có dữ liệu từ dòng 1 đến dòng 5 (dòng 0 là header)
-        int totalRows = 6; // chỉnh theo file của bạn
-        Object[][] data = new Object[totalRows - 1][2]; // 2 cột: phonenumber và password
-
-        for (int i = 1; i < totalRows; i++) {
-            data[i - 1][0] = excelHelper.getCellData("phonenumber", i);
-            data[i - 1][1] = excelHelper.getCellData("password", i);
-        }
-        return data;
-    }
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 2), excelHelper.getCellData("password", 2));
 
 
-    @Test(dataProvider = "loginData", groups = "Function", priority = 1)
-    public void login_cellphoneS_17(String phoneNumber, String password) throws Exception {
-        LogUtils.info("Đăng nhập với SĐT: " + phoneNumber);
-
-        signIn_page.InputSignIn(phoneNumber, password);
-
-        // Kiểm tra lỗi hiển thị
         By alertBox = By.xpath("//li[contains(.,'Số điện thoại hoặc mật khẩu không hợp lệ')]");
         WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox));
         assertTrue(alertElement.isDisplayed(), "Không hiển thị thông báo lỗi khi nhập sai SĐT!");
 
+        // Kiểm tra inline lỗi tại trường SĐT
         By phoneInlineError = By.xpath("//*[contains(text(),'Số điện thoại không hợp lệ')]");
         WebElement inlineError = wait.until(ExpectedConditions.visibilityOfElementLocated(phoneInlineError));
         assertTrue(inlineError.isDisplayed(), "Không hiển thị inline lỗi tại trường SĐT!");
+
     }
 
 
-    @Test(dataProvider = "loginData", groups = "Function", priority = 2)
-    public void login_cellphoneS_18(String phoneNumber, String password) throws Exception {
+    @Test(groups = "Function", priority = 2)
+    public void login_cellphoneS_18() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
         LogUtils.info("Đăng nhập thất bại khi nhập Mât khẩu sai");
-        signIn_page.InputSignIn(phoneNumber, password);
+        excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
+        signIn_page.SignIn();
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 3), excelHelper.getCellData("password", 3));
 
         By alertBox = By.xpath("//ol[@class='toaster group']//li");
         WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox));
@@ -172,13 +157,16 @@ public class SignIn_Test extends BaseSetup {
         assertEquals(actualMessage, expectedMessage, "Thông báo lỗi không đúng khi nhập Mật Khẩu sai");
     }
 
-    @Test(dataProvider = "loginData", groups = "Function", priority = 3)
-    public void login_cellphoneS_19(String phonenumber, String password) throws Exception {
+    @Test(groups = "Function", priority = 3)
+    public void login_cellphoneS_19() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded(); // đợi popup hiển thị (nếu có)
+//        signIn_page.closePopupIfVisible();
+
         LogUtils.info("Bỏ trống SĐT và Mật khẩu");
-        signIn_page.InputSignIn(phonenumber, password);
-//        By alertBox = By.xpath("//li[contains(.,'Số điện thoại không được bỏ trống')]");
-//        boolean alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
-//        assertFalse(alertElement, "Hiển thị sai thông báo lỗi khi bỏ trống SĐT và mật khẩu!");
+        excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
+        signIn_page.SignIn();
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 4), excelHelper.getCellData("password", 4));
 
         By alertBox = By.xpath("//ol[@class='toaster group']//li");
         WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox));
@@ -191,10 +179,16 @@ public class SignIn_Test extends BaseSetup {
         LogUtils.info("End testcase: login_cellphoneS_19");
     }
 
-    @Test(dataProvider = "loginData", groups = "Function", priority = 4)
-    public void login_cellphoneS_20_46(String phonenumber, String password) throws Exception {
+    @Test(groups = "Function", priority = 4)
+    public void login_cellphoneS_20_46() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded(); // đợi popup hiển thị (nếu có)
+//        signIn_page.closePopupIfVisible();
         LogUtils.info("Bỏ trống Mật khẩu");
-        signIn_page.InputSignIn(phonenumber,password);
+
+        excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
+        signIn_page.SignIn();
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 5), excelHelper.getCellData("password", 5));
 
         By alertBox = By.xpath("//li[contains(.,'Mật khẩu không được bỏ trống')]");
         boolean alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
@@ -204,10 +198,16 @@ public class SignIn_Test extends BaseSetup {
 
     }
 
-    @Test(dataProvider = "loginData", groups = "Function", priority = 5)
-    public void login_cellphoneS_21(String phonenumber, String password) throws Exception {
+    @Test(groups = "Function", priority = 5)
+    public void login_cellphoneS_21() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded(); // đợi popup hiển thị (nếu có)
+//        signIn_page.closePopupIfVisible();
         LogUtils.info("Bỏ trống SĐT");
-        signIn_page.InputSignIn(phonenumber,password);
+
+        excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
+        signIn_page.SignIn();
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 6), excelHelper.getCellData("password", 6));
 
         By alertBox = By.xpath("//li[contains(.,'Số điện thoại không được bỏ trống')]");
         boolean alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
@@ -216,10 +216,13 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Function", priority = 6)
     public void login_cellphoneS_24() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded(); // đợi popup hiển thị (nếu có)
+//        signIn_page.closePopupIfVisible();
         LogUtils.info("Đăng nhập thất bại khi mất mạng");
 
+        signIn_page.SignIn();
         signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
-        Thread.sleep(2000);
 
         // Bắt đầu phiên DevTools để mô phỏng mất mạng
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
@@ -264,10 +267,13 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Validate_SĐT", priority = 1)
     public void login_cellphoneS_25() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Đăng nhập thất bại _ Validate SĐT");
-
         excelHelper.setExcelFile("src/test/resources/SignIn_Fail.xlsx", "phone");
-
         List<String[]> data = excelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
 
         for (String[] row : data) {
@@ -289,8 +295,12 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Validate_MK", priority = 1)
     public void login_cellphoneS_66() throws Exception {
-        LogUtils.info("Đăng nhập thất bại _ Validate Mật khẩu");
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
 
+        LogUtils.info("Đăng nhập thất bại _ Validate Mật khẩu");
         excelHelper.setExcelFile("src/test/resources/SignIn_Fail.xlsx", "pass");
 
         List<String[]> data = excelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
@@ -314,6 +324,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Validate_MK", priority = 2)
     public void login_cellphoneS_62() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Mã hoá mật khẩu");
         signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
 
@@ -327,8 +342,12 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Validate_MK", priority = 3)
     public void login_cellphoneS_48() throws Exception {
-        LogUtils.info("Đăng nhập thành công _ Paste SĐT");
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
 
+        LogUtils.info("Đăng nhập thành công _ Paste SĐT");
         String phonenumber = "0332019523";
         String password = "Huong2004";
         signIn_page.inputPhoneNumber(phonenumber);
@@ -352,8 +371,12 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Validate_SĐT", priority = 2)
     public void login_cellphoneS_43() throws Exception {
-        LogUtils.info("Đăng nhập thành công _ Paste Mật khẩu");
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
 
+        LogUtils.info("Đăng nhập thành công _ Paste Mật khẩu");
         String phonenumber = "0332019523";
         String password = "Huong2004";
         signIn_page.inputPassword(password);
@@ -377,6 +400,10 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 1)
     public void login_cellphoneS_67() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
         LogUtils.info("Đăng nhập thành công _ Google");
         signIn_page.ClickButtonGoogle();
         String currentUrl = driver.getCurrentUrl();
@@ -387,6 +414,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 2)
     public void login_cellphoneS_68() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Đăng nhập thành công _ Zalo");
         signIn_page.ClickButtonZalo();
         String currentUrl = driver.getCurrentUrl();
@@ -398,6 +430,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 3)
     public void login_cellphoneS_70() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("LinkQuen mat khau");
         signIn_page.ClickLinkForgotPassword();
         String currentUrl = driver.getCurrentUrl();
@@ -407,6 +444,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 4)
     public void login_cellphoneS_71() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Link Đăng ký");
         signIn_page.ClickLinkRegister();
         String currentUrl = driver.getCurrentUrl();
@@ -416,6 +458,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 5)
     public void login_cellphoneS_72() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Link CellphoneS");
         signIn_page.ClickLinkCellphoneS();
         String currentUrl = driver.getCurrentUrl();
@@ -426,6 +473,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 6)
     public void login_cellphoneS_73() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Link DienThoaiVui");
         signIn_page.ClickLinkDienThoaiVui();
         String currentUrl = driver.getCurrentUrl();
@@ -436,6 +488,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Validate_MK", priority = 4)
     public void login_cellphoneS_74() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Con mắt ẩn và hiện Mật khẩu");
 
         signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
@@ -466,6 +523,11 @@ public class SignIn_Test extends BaseSetup {
 
     @Test(groups = "Link", priority = 7)
     public void login_cellphoneS_75() throws Exception {
+        driver.get("https://cellphones.com.vn/");
+        validateUIHelper.waitForPageLoaded();
+//        signIn_page.closePopupIfVisible();
+        LogUtils.info("Bắt đầu test case");
+
         LogUtils.info("Link Chính sách ưu đãi");
 
         signIn_page.ClickLinkChinhSachUuDai();

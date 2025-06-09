@@ -11,7 +11,7 @@
         <classes>
             <class name="com.cellphoneS.testcases.SignIn_Test">
 <!--                <methods>-->
-<!--                    <include name="login_cellphoneS_Success"/>-->
+<!--                    <include name="login_cellphoneS_17"/>-->
 <!--                </methods>-->
             </class>
         </classes>

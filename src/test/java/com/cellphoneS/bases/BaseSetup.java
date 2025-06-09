@@ -4,14 +4,12 @@ import com.helpers.RecordVideo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class BaseSetup {
 
@@ -42,17 +40,7 @@ public class BaseSetup {
     private WebDriver initChromeDriver() throws Exception {
         System.out.println("Launching Chrome browser...");
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-
-        if (isCI()) {
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
-        }
-
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -62,16 +50,7 @@ public class BaseSetup {
     private WebDriver initEdgeDriver() {
         System.out.println("Launching Edge browser...");
         WebDriverManager.edgedriver().setup();
-        EdgeOptions options = new EdgeOptions();
-
-        if (isCI()) {
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-        }
-
-        driver = new EdgeDriver(options);
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -81,23 +60,11 @@ public class BaseSetup {
     private WebDriver initFirefoxDriver() {
         System.out.println("Launching Firefox browser...");
         WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options = new FirefoxOptions();
-
-        if (isCI()) {
-            options.addArguments("-headless");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-        }
-
-        driver = new FirefoxDriver(options);
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         return driver;
-    }
-
-    private boolean isCI() {
-        return System.getenv("CI") != null || System.getProperty("ci") != null;
     }
 
     @AfterClass
@@ -106,9 +73,10 @@ public class BaseSetup {
         if (driver != null) {
             driver.quit();
             System.out.println("Đã đóng trình duyệt.");
-            try {
+            try{
+                // Gọi lại hàm startRecord
                 RecordVideo.stopRecord();
-            } catch (Exception e) {
+            }catch (Exception e) {
                 e.printStackTrace();
             }
         }
