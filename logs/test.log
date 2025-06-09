@@ -146,3 +146,10 @@ Vui lòng nhập lại
 2025-06-10 01:06:18 INFO  LogUtils:10 - Bắt đầu test case
 2025-06-10 01:06:19 INFO  LogUtils:10 - Đăng nhập thành công
 2025-06-10 01:06:30 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 01:21:14 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 01:21:15 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 01:21:24 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 01:23:04 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 01:23:05 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 01:23:17 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 01:23:20 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
