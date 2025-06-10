@@ -75,40 +75,134 @@ public class Search_Test extends BaseSetup {
 
     @Test
     public void Search_Success() {
-        LogUtils.info("Tìm kiếm với Iphone");
+        LogUtils.info("Tìm kiếm với Iphone khi click icon Search");
         search_page.inputSearch("iphone");
 
-        // Đợi trang chuyển hướng
+        LogUtils.info("Đợi trang chuyển hướng");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("/catalogsearch/result?q=iphone"));
 
-        // Kiểm tra URL đúng
+        LogUtils.info("Kiểm tra URL đúng");
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue(currentUrl.contains("/catalogsearch/result?q=iphone"), "URL sai: " + currentUrl);
 
-        // Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+        LogUtils.info("Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”");
         WebElement resultText = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//h1[contains(text(),'Tìm th')]")
         ));
         Assert.assertTrue(resultText.getText().toLowerCase().contains("iphone"));
 
-//        // Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
-//        WebElement firstProduct = driver.findElement(By.cssSelector(".product.name.product-item-name"));
-//        Assert.assertTrue(firstProduct.getText().toLowerCase().contains("iphone"));
-
-        // (Tùy chọn) In ra số sản phẩm tìm thấy
+        LogUtils.info("In ra số sản phẩm tìm thấy");
         String text = resultText.getText(); // ví dụ: "Tìm thấy 4142 sản phẩm cho từ khoá 'iphone'"
         LogUtils.info(">>> Kết quả: " + text);
 
-    }
+        LogUtils.info("Kiểm tra hiển thị danh sách sản phẩm");
+        WebElement listProduct = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@class='search-result-content']")
+        ));
+        Assert.assertTrue(listProduct.isDisplayed(), "Không hiển thị danh sách sản phẩm");
 
+        LogUtils.info("Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone");
+        WebElement firstProduct = driver.findElement(By.xpath("(//div[@class='product-info-container product-item'])[1]"));
+        Assert.assertTrue(firstProduct.getText().toLowerCase().contains("iPhone"));
+
+    }
+    @Test
     public void Search_Fail() {
-        LogUtils.info("Tìm kiếm với Iphone");
-        search_page.inputSearch2("xzyyy123");
+        LogUtils.info("Tìm kiếm với Iphone khi click ENTER");
+        search_page.inputSearch2("hhah8473hcfd");
 
+        LogUtils.info("Đợi trang chuyển hướng");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("/catalogsearch/result?q=hhah8473hcfd"));
+
+        LogUtils.info("Kiểm tra URL đúng");
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("/catalogsearch/result?q=hhah8473hcfd"), "URL sai: " + currentUrl);
+
+        LogUtils.info("Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'");
+        WebElement resultText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//h1[contains(text(),'Tìm th')]")
+        ));
+        Assert.assertTrue(resultText.getText().toLowerCase().contains("hhah8473hcfd"));
+
+        LogUtils.info("In ra số sản phẩm tìm thấy");
+        String text = resultText.getText();
+        LogUtils.info(">>> Kết quả: " + text);
+
+        LogUtils.info("Kiểm tra hiển thị hình ảnh không tìm thấy");
+        WebElement imageNoResult = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@class='no-result']//img")
+        ));
+        Assert.assertTrue(imageNoResult.isDisplayed(), "không hiển thị hình ảnh không tìm thấy");
+
+        LogUtils.info("Kiểm tra hiển thị thông báo không tìm thấy");
+        WebElement textNoResult = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//p[contains(text(),'Không có kết quả bạn cần tìm')]")
+        ));
+        Assert.assertTrue(textNoResult.isDisplayed(), "Không hiển thị thông báo không tìm thấy");
 
     }
 
+    @Test
+    public void ClickProductSuggest() {
+        LogUtils.info("Click vào sản phẩm gợi ý");
+        search_page.ClickProductSuggest();
 
+        LogUtils.info("Đợi trang chuyển hướng");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("https://cellphones.com.vn/dien-thoai-samsung-galaxy-s25-ultra.html"));
+
+        LogUtils.info("Kiểm tra URL đúng");
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("/dien-thoai-samsung-galaxy-s25-ultra.html"), "URL sai: " + currentUrl);
+
+        LogUtils.info("Kiểm tra tiêu đề sản phẩm ");
+        search_page.isTitleProductDisplayed();
+        Assert.assertTrue(search_page.isTitleProductDisplayed(), "Không hiển thị tiêu đề sản phẩm");
+
+    }
+
+    @Test
+    public void ClickListSuggest() {
+        LogUtils.info("Click vào danh sách gợi ý");
+        search_page.ClickListSuggest();
+
+        LogUtils.info("Đợi trang chuyển hướng");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("https://cellphones.com.vn/mobile/apple/iphone-16.html"));
+
+        LogUtils.info("Kiểm tra hiển thị của slide");
+        WebElement slide = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@class='block-top-sliding-banner is-flex']")
+        ));
+        Assert.assertTrue(slide.isDisplayed(), "Không hiển thị slide");
+
+        LogUtils.info("Kiểm tra hiển thị list brand");
+        WebElement listBrand = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@class='brands__content']//div[@class='list-brand']")
+        ));
+        Assert.assertTrue(listBrand.isDisplayed(), "Không hiển thị list brand");
+
+        LogUtils.info("Kiểm tra hiển thị của danh sách sản phẩm");
+        WebElement listProduct = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@class='block-product-list-filter']")
+        ));
+        Assert.assertTrue(listProduct.isDisplayed(), "Không hiển thị danh sách sản phẩm");
+
+        LogUtils.info("Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest");
+        WebElement firstProduct = driver.findElement(By.xpath("(//div[@class='product-info-container product-item'])[1]"));
+        Assert.assertTrue(firstProduct.getText().toLowerCase().contains("iPhone"));
+
+    }
+
+    @Test
+    public void ClickInputSearch() {
+        LogUtils.info("Click vào ô tìm kiếm");
+        search_page.ClickInputSearch();
+
+        LogUtils.info("Kiểm tra hiển thi danh sách sản phẩm gợi ý");
+
+    }
 
 }

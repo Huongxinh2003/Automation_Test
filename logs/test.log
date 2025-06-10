@@ -153,3 +153,65 @@ Vui lòng nhập lại
 2025-06-10 01:23:05 INFO  LogUtils:10 - Đăng nhập thành công
 2025-06-10 01:23:17 INFO  LogUtils:10 - Tìm kiếm với Iphone
 2025-06-10 01:23:20 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-10 09:57:27 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 09:57:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 09:57:36 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 09:57:37 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-10 10:46:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 10:46:29 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 10:46:36 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 10:46:38 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-10 10:47:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 10:47:29 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 10:47:36 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 10:47:39 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-10 10:48:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 10:48:44 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 10:48:50 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 10:53:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 10:53:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 10:53:53 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 10:53:54 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 10:53:55 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-10 10:53:55 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-10 10:59:22 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 10:59:23 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 10:59:29 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 10:59:30 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 10:59:31 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-10 10:59:31 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-10 11:01:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 11:01:04 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 11:01:15 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 11:01:16 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 11:01:16 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-10 11:01:17 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-10 11:01:17 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-10 11:01:17 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-10 11:03:45 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 11:03:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 11:03:53 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 11:03:55 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 11:05:00 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 11:05:01 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 11:05:09 INFO  LogUtils:10 - Tìm kiếm với Iphone
+2025-06-10 11:05:11 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 11:05:12 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-10 11:05:12 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-10 11:05:12 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-10 11:05:12 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 0 sản phẩm cho từ khoá 'hhah8473hcfd'
+2025-06-10 11:05:12 INFO  LogUtils:10 - Kiểm tra hiển thị hình ảnh không tìm thấy
+2025-06-10 11:05:12 INFO  LogUtils:10 - Hình ảnh không tìm thấy hiển thị
+2025-06-10 11:05:12 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo không tìm thấy
+2025-06-10 11:05:12 INFO  LogUtils:10 - Thông báo không tìm thấy hiển thị
+2025-06-10 14:49:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 14:49:49 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 14:50:00 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-10 14:50:11 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 14:50:12 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-10 14:51:38 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-10 14:51:40 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-10 14:51:48 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-10 14:52:03 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-10 14:52:04 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-10 14:52:04 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm 

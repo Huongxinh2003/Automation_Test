@@ -22,18 +22,23 @@ public class Search_Page extends ValidateUIHelper {
     private final By TextHistory = By.xpath("//div[@id='history-search']");
     private final By TextTrending = By.xpath("//div[@class='trending-search']//div[@class='is-flex is-align-items-center']");
     private final By DeleteHistory = By.xpath("//a[contains(text(),'Xóa tất cả')]");
-    private final By LinkTrending = By.xpath("//p[normalize-space()='iPhone 16 Series']");
     private final By TextCoPhaiBanMuonTim = By.xpath("//p[contains(text(),'Có phải bạn muốn tìm')]");
     private final By TextSanPhamGoiY = By.xpath("//p[contains(text(),'Sản phẩm gợi ý')]");
     private final By LinkCoPhaiBanMuonTim = By.xpath("//div[normalize-space()='iPhone 15 | 15 Plus | 15 Pro | 15 Pro Max']");
     private final By LinkSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']//a[1]");
-    private final By TimKiem1 = By.xpath("//h1[contains(text(),'Tìm th')]");
+    private final By ProductSuggest = By.xpath("//p[normalize-space()='S25 Ultra']");
+    private final By ListSuggest = By.xpath("//p[normalize-space()='iPhone 16 Series']");
+    private final By TitleProduct = By.xpath("//h1[normalize-space()='Samsung Galaxy S25 Ultra 12GB 256GB']");
 
     public Search_Page(WebDriver driver) {
         super(driver);
         this.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    public void ClickInputSearch() {
+        clickElement(searchInput);
     }
 
     public void inputSearch(String searchText) {
@@ -56,11 +61,8 @@ public class Search_Page extends ValidateUIHelper {
     }
 
     public void ClickLinkAdSearch() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LinkAdSearch));
         clickElement(LinkAdSearch);
-    }
-
-    public void ClickLinkTrending() {
-        clickElement(LinkTrending);
     }
     public boolean isTextHistoryDisplayed() {
         return isElementDisplayed(TextHistory);
@@ -69,6 +71,7 @@ public class Search_Page extends ValidateUIHelper {
         return isElementDisplayed(TextTrending);
     }
     public void DeleteHistory() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteHistory));
         clickElement(DeleteHistory);
     }
     public boolean isTextCoPhaiBanMuonTimDisplayed() {
@@ -78,15 +81,30 @@ public class Search_Page extends ValidateUIHelper {
         return isElementDisplayed(TextSanPhamGoiY);
     }
     public void ClickLinkCoPhaiBanMuonTim() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LinkCoPhaiBanMuonTim));
         clickElement(LinkCoPhaiBanMuonTim);
     }
     public void ClickLinkSanPhamGoiY() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LinkSanPhamGoiY));
         clickElement(LinkSanPhamGoiY);
     }
+
+    public void ClickProductSuggest() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductSuggest));
+        clickElement(ProductSuggest);
+    }
+
+    public void ClickListSuggest() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ListSuggest));
+        clickElement(ListSuggest);
+    }
+
+    public boolean isTitleProductDisplayed() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
+        return isElementDisplayed(TitleProduct);
+    }
+
     public void scrollToElement() {
         js.executeScript("window.scrollBy(0, 1000)");
-    }
-    public boolean isTimKiem1Displayed() {
-        return isElementDisplayed(TimKiem1);
     }
 }
