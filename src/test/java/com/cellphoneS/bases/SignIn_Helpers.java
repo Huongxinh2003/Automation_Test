@@ -10,6 +10,7 @@ import com.ultilities.Properties_File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -20,6 +21,7 @@ public class SignIn_Helpers extends BaseSetup {
     public SignIn_Page signIn_page;
     public Homepage_page homepage_page;
     public Search_Page search_Page;
+
 
     public SignIn_Helpers(WebDriver driver) {
         this.driver = driver;
@@ -45,6 +47,5 @@ public class SignIn_Helpers extends BaseSetup {
         LogUtils.info("Đăng nhập thành công");
         search_Page = homepage_page.openSearchPage();
         return new Homepage_page(driver);
-        
     }
 }

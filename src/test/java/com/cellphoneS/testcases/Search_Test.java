@@ -5,14 +5,12 @@ import com.cellphoneS.bases.SignIn_Helpers;
 import com.cellphoneS.pages.Homepage_page;
 import com.cellphoneS.pages.Product_Detail_Page;
 import com.cellphoneS.pages.Search_Page;
-import com.cellphoneS.pages.SignIn_Page;
 import com.helpers.CaptureHelpers;
 import com.helpers.RecordVideo;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.LogUtils;
 import com.ultilities.Properties_File;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,7 +25,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 
 public class Search_Test extends BaseSetup {
@@ -61,7 +58,6 @@ public class Search_Test extends BaseSetup {
         signIn_helpers = new SignIn_Helpers(driver);
         homepage_page = signIn_helpers.SignIn(driver);
         search_page = homepage_page.openSearchPage();
-        product_detail_page = search_page.openProductDetail();
         log.info("Đã mở trang tìm kiếm");
 
     }
@@ -113,14 +109,6 @@ public class Search_Test extends BaseSetup {
         Assert.assertTrue(search_page.isTitleProductDisplayed(), "Không hiển thị tiêu đề sản phẩm");
 
 
-    }
-
-    @Test
-    public Product_Detail_Page Search(WebDriver driver) {
-        LogUtils.info("Tìm kiếm với Iphone");
-        search_page.inputSearch("iphone");
-        product_detail_page = search_page.openProductDetail();
-        return new Product_Detail_Page(driver);
     }
 
     @Test

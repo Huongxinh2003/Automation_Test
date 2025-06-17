@@ -40,7 +40,9 @@ public class Search_Page extends ValidateUIHelper {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public Product_Detail_Page openProductDetail() {
+    public Product_Detail_Page openProductDetail(String searchText) {
+        sendKeys(searchInput, searchText);
+        clickElement(IconSearch);
         clickElement(ProductCard);
         return new Product_Detail_Page(driver);
     }
