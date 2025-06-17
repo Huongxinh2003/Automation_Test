@@ -1,6 +1,7 @@
 package com.cellphoneS.bases;
 
 import com.cellphoneS.pages.Homepage_page;
+import com.cellphoneS.pages.Product_Detail_Page;
 import com.cellphoneS.pages.Search_Page;
 import com.cellphoneS.pages.SignIn_Page;
 import com.helpers.ValidateUIHelper;
@@ -44,5 +45,6 @@ public class SignIn_Helpers extends BaseSetup {
         LogUtils.info("Đăng nhập thành công");
         search_Page = homepage_page.openSearchPage();
         return new Homepage_page(driver);
+        
     }
 }

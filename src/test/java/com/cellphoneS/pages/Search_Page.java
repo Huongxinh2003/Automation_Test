@@ -1,14 +1,14 @@
 package com.cellphoneS.pages;
 
 import com.helpers.ValidateUIHelper;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Search_Page extends ValidateUIHelper {
     private static WebDriver driver;
@@ -17,24 +17,32 @@ public class Search_Page extends ValidateUIHelper {
 
     private final By searchInput = By.xpath("//input[@id='inp$earch']");
     private final By IconSearch = By.xpath("//button[@type='submit']//div//*[name()='svg']");
-    private final By  closeSearch = By.xpath("//span[@id='btn-close-search']");
+    private final By closeSearch = By.xpath("//span[@id='btn-close-search']");
+    private final By suggestBoxSearch = By.xpath("//div[@class='suggest-search']");
     private final By LinkAdSearch = By.xpath("//img[@alt='B2S 2025']");
-    private final By TextHistory = By.xpath("//div[@id='history-search']");
+    private final By TextHistory = By.xpath("//p[contains(text(),'Lịch sử tìm kiếm')]");
+    public By HistorySearch = By.xpath("//div[@class='is-block search-history-box']");
     private final By TextTrending = By.xpath("//div[@class='trending-search']//div[@class='is-flex is-align-items-center']");
     private final By DeleteHistory = By.xpath("//a[contains(text(),'Xóa tất cả')]");
-    private final By TextCoPhaiBanMuonTim = By.xpath("//p[contains(text(),'Có phải bạn muốn tìm')]");
-    private final By TextSanPhamGoiY = By.xpath("//p[contains(text(),'Sản phẩm gợi ý')]");
+    private final By BoxCoPhaiBanMuonTim = By.xpath("//div[@class='mb-1 category-box block']");
+    private final By BoxSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']");
     private final By LinkCoPhaiBanMuonTim = By.xpath("//div[normalize-space()='iPhone 15 | 15 Plus | 15 Pro | 15 Pro Max']");
     private final By LinkSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']//a[1]");
     private final By ProductSuggest = By.xpath("//p[normalize-space()='S25 Ultra']");
     private final By ListSuggest = By.xpath("//p[normalize-space()='iPhone 16 Series']");
-    private final By TitleProduct = By.xpath("//h1[normalize-space()='Samsung Galaxy S25 Ultra 12GB 256GB']");
+    public By TitleProduct = By.xpath("//h1[normalize-space()='Samsung Galaxy S25 Ultra 12GB 256GB']");
+    public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
 
     public Search_Page(WebDriver driver) {
         super(driver);
         this.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    public Product_Detail_Page openProductDetail() {
+        clickElement(ProductCard);
+        return new Product_Detail_Page(driver);
     }
 
     public void ClickInputSearch() {
@@ -50,6 +58,9 @@ public class Search_Page extends ValidateUIHelper {
         sendKeys(searchInput, searchText);
         sendKeys(searchInput, String.valueOf(Keys.ENTER));
     }
+    public void inputSearch3(String searchText) {
+        sendKeys(searchInput, searchText);
+    }
 
     public void SearchAndcloseSearch (String searchText) {
         sendKeys(searchInput, searchText);
@@ -60,26 +71,65 @@ public class Search_Page extends ValidateUIHelper {
         clickElement(closeSearch);
     }
 
+    public boolean isSuggestBoxSearchDisplayed() {
+        return isElementDisplayed(suggestBoxSearch);
+    }
+    public void checkSuggestBoxSearch1() {
+        boolean isSuggestionHidden = driver.findElements(suggestBoxSearch).isEmpty()
+                || !driver.findElements(suggestBoxSearch).get(0).isDisplayed();
+        Assert.assertTrue(isSuggestionHidden, "Danh sách gợi ý vẫn còn hiển thị sau khi click sản phẩm");
+    }
+
+    public void checkSuggestBoxSearch2() {
+        boolean isSuggestionHidden = driver.findElements(suggestBoxSearch).isEmpty()
+                ||!driver.findElements(suggestBoxSearch).get(0).isDisplayed();
+        Assert.assertTrue(isSuggestionHidden, "Danh sách gợi ý vẫn còn hiển thị sau khi tìm kiếm bằng từ khoá");
+    }
+
     public void ClickLinkAdSearch() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(LinkAdSearch));
         clickElement(LinkAdSearch);
     }
+
+    public boolean isLinkAdSearchDisplayed() {
+        return isElementDisplayed(LinkAdSearch);
+    }
+
     public boolean isTextHistoryDisplayed() {
         return isElementDisplayed(TextHistory);
     }
+
+    public boolean isHistorySearchDisplayed() {
+        return isElementDisplayed(HistorySearch);
+    }
+
+    public List<String> getSearchHistoryItems() {
+        List<String> historyTexts = new ArrayList<>();
+
+        List<WebElement> historyItems = driver.findElements(HistorySearch);
+
+        for (WebElement item : historyItems) {
+            historyTexts.add(item.getText().trim());
+        }
+        return historyTexts;
+    }
+
     public boolean isTextTrendingDisplayed() {
         return isElementDisplayed(TextTrending);
     }
+
     public void DeleteHistory() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteHistory));
         clickElement(DeleteHistory);
     }
-    public boolean isTextCoPhaiBanMuonTimDisplayed() {
-        return isElementDisplayed(TextCoPhaiBanMuonTim);
+    public boolean isBoxCoPhaiBanMuonTimDisplayed() {
+        return isElementDisplayed(BoxCoPhaiBanMuonTim);
     }
-    public boolean isTextSanPhamGoiYDisplayed() {
-        return isElementDisplayed(TextSanPhamGoiY);
+
+    public boolean isBoxSanPhamGoiYDisplayed() {
+        return isElementDisplayed(BoxSanPhamGoiY);
     }
+
     public void ClickLinkCoPhaiBanMuonTim() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(LinkCoPhaiBanMuonTim));
         clickElement(LinkCoPhaiBanMuonTim);
@@ -104,7 +154,4 @@ public class Search_Page extends ValidateUIHelper {
         return isElementDisplayed(TitleProduct);
     }
 
-    public void scrollToElement() {
-        js.executeScript("window.scrollBy(0, 1000)");
-    }
 }
