@@ -1,4 +1,4 @@
-name: Java TestNG CI
+name: Java TestNG Product Detail CI
 
 on:
   push:
