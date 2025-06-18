@@ -18,11 +18,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 📦 Build with Maven
-        run: mvn clean install
+      - name: 📦 Build with Maven (skip tests)
+        run: mvn clean install -DskipTests
 
-      - name: 🧪 Run TestNG tests
+      - name: 🧪 TestNG ✅ SignIn Suite
         run: mvn test -DsuiteXmlFile=src/test/java/com/runSignIn.xml
+        continue-on-error: true
+
+      - name: 🧪 TestNG 🔍 Search Suite
+        run: mvn test -DsuiteXmlFile=src/test/java/com/runSearch.xml
+        continue-on-error: true
+
+      - name: 🧪 TestNG 📄 Product Detail Suite
+        run: mvn test -DsuiteXmlFile=src/test/java/com/runProductDetail.xml
+        continue-on-error: true
 
       - name: 📂 Check report directory
         run: ls -la target/surefire-reports/

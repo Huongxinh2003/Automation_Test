@@ -44,11 +44,11 @@ public class Search_Test extends BaseSetup {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
         // Gọi lại hàm startRecord
-        try {
-            RecordVideo.startRecord("RecordVideo");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try {
+//            RecordVideo.startRecord("RecordVideo");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
         // Lấy driver từ class cha BaseSetup
         driver = setupDriver(Properties_File.getPropValue("browser"));
         search_page = new Search_Page(driver);

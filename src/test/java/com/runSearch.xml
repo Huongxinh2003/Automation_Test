@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SignIn">
+    <parameter name="browserType" value="chrome"/>
+    <!-- Kiêm tra các chức năng -->
+    <test name="Function">
+        <classes>
+            <class name="com.cellphoneS.testcases.Search_Test">
+                <methods>
+                    <include name="Search_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

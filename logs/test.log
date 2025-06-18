@@ -759,3 +759,62 @@ iphone
 2025-06-18 17:12:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
 2025-06-18 17:12:21 INFO  LogUtils:10 - Kiểm tra thay đổi ảnh lớn khi click thumbnail nhỏ
 2025-06-18 17:12:22 WARN  LogUtils:22 - Không đủ ảnh thumbnail để kiểm tra.
+2025-06-18 21:35:48 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 21:35:49 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 21:35:59 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-18 21:36:00 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 21:36:02 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-18 21:36:02 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-18 21:36:02 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-18 21:36:02 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-18 21:36:03 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-18 21:36:03 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-06-18 21:36:03 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+2025-06-18 21:36:04 INFO  LogUtils:10 - Tìm kiếm với fail khi click ENTER
+2025-06-18 21:36:05 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 21:36:06 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-18 21:39:10 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 21:39:13 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 21:39:22 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-18 21:39:34 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 21:39:34 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-18 21:39:34 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-18 21:39:34 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm 
+2025-06-18 21:39:34 INFO  LogUtils:10 - Tiêu đề sản phẩm: Samsung Galaxy S25 Ultra giá giảm sâu 12 triệu, bền đẹp
+2025-06-18 21:40:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 21:40:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 21:40:27 INFO  LogUtils:10 - Tìm kiếm với fail khi click ENTER
+2025-06-18 21:40:28 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 21:40:30 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-18 21:40:30 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-18 21:40:30 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-18 21:40:30 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-18 21:40:30 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 0 sản phẩm cho từ khoá 'hhah8473hcfd'
+2025-06-18 21:40:30 INFO  LogUtils:10 - Kiểm tra hiển thị hình ảnh không tìm thấy
+2025-06-18 21:40:30 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo không tìm thấy
+2025-06-18 21:41:24 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 21:41:26 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 21:41:34 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-18 21:41:45 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 21:41:46 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-18 21:41:46 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-18 21:41:46 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm 
+2025-06-18 21:41:46 INFO  LogUtils:10 - Tiêu đề sản phẩm: Samsung Galaxy S25 Ultra giá giảm sâu 12 triệu, bền đẹp
+2025-06-18 21:43:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 21:43:44 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 21:48:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 21:48:12 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate Mật khẩu
+2025-06-18 21:48:23 INFO  LogUtils:10 - PASS:        Huong2003        -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-18 21:48:26 INFO  LogUtils:10 - PASS: huong2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-18 21:48:27 INFO  LogUtils:10 - PASS: hương2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-18 21:48:29 INFO  LogUtils:10 - PASS: Hương2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-18 21:48:51 ERROR LogUtils:14 - FAIL: 12342003 | Expected: Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số | Got: No error message found
+2025-06-18 21:48:52 INFO  LogUtils:10 - PASS: Huongabcd -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-18 21:48:54 ERROR LogUtils:14 - FAIL:                                                 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: Đã có lỗi xảy ra. Vui lòng thử lại sau.
+2025-06-18 21:48:56 INFO  LogUtils:10 - PASS: Huong2003                   -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-18 21:49:17 ERROR LogUtils:14 - FAIL: Huong   2003 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: No error message found
+2025-06-18 21:49:19 ERROR LogUtils:14 - FAIL: <script>alert('hack')</script>Huong2003 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: Đăng nhập thất bại
+2025-06-18 21:49:42 ERROR LogUtils:14 - FAIL: Huong2003%^$# | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: No error message found
+2025-06-18 21:50:04 ERROR LogUtils:14 - FAIL: -123456 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: No error message found
+2025-06-18 21:50:06 ERROR LogUtils:14 - FAIL: Huo5 | Expected: Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số | Got: Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại

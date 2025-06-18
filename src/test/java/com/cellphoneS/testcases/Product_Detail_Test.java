@@ -44,12 +44,12 @@ public class Product_Detail_Test extends BaseSetup {
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
-        // Gọi lại hàm startRecord
-        try {
-            RecordVideo.startRecord("RecordVideo");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        // Gọi lại hàm startRecord
+//        try {
+//            RecordVideo.startRecord("RecordVideo");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
         // Lấy driver từ class cha BaseSetup
         driver = setupDriver(Properties_File.getPropValue("browser"));
         excelHelper = new ExcelUtils();
@@ -204,6 +204,4 @@ public class Product_Detail_Test extends BaseSetup {
 
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }
-    
-
 }
