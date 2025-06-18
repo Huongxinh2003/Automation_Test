@@ -882,3 +882,13 @@ Vui lòng nhập số điện thoại
 2025-06-19 00:12:28 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
 2025-06-19 00:12:30 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
 2025-06-19 00:12:30 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn phiên bản
+2025-06-19 00:30:09 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-19 00:30:10 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-19 00:30:17 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-19 00:30:26 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-19 00:30:29 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-19 00:30:29 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-19 00:30:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-19 00:30:34 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-19 00:30:35 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-19 00:30:35 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn phiên bản

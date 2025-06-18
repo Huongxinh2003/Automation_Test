@@ -43,6 +43,10 @@ public class Search_Page extends ValidateUIHelper {
     public Product_Detail_Page openProductDetail(String searchText) {
         sendKeys(searchInput, searchText);
         sendKeys(searchInput, String.valueOf(Keys.ENTER));
+        // Đợi overlay biến mất
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.header-overlay.active")));
+
         clickElement(ProductCard);
         return new Product_Detail_Page(driver);
     }
