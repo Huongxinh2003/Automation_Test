@@ -861,3 +861,14 @@ Vui lòng nhập số điện thoại
 2025-06-18 23:15:42 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
 2025-06-18 23:15:43 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
 2025-06-18 23:15:43 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn phiên bản
+2025-06-18 23:59:24 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 23:59:25 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 23:59:33 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-18 23:59:34 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 23:59:36 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-18 23:59:36 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-18 23:59:36 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-18 23:59:36 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-18 23:59:36 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-18 23:59:36 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-06-18 23:59:36 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
