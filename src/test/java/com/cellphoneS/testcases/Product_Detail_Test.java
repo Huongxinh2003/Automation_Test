@@ -205,4 +205,26 @@ public class Product_Detail_Test extends BaseSetup {
 
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }
+
+    @Test
+    public void testThumbnailChangeAfterClick() {
+        // Lấy src ảnh lớn ban đầu
+        String srcBefore = Product_Detail_Page.getMainThumbnailSrc();
+
+        // Click thumbnail nhỏ 1 và chờ ảnh lớn thay đổi
+        Product_Detail_Page.clickThumbnailAndWaitForMainChange(Product_Detail_Page.getSmallThumbnail1());
+
+        // Lấy src ảnh lớn sau click
+        String srcAfter = Product_Detail_Page.getMainThumbnailSrc();
+
+        // Kiểm tra ảnh lớn đã thay đổi
+        Assert.assertNotEquals("Ảnh lớn không thay đổi sau khi click thumbnail nhỏ 1", srcBefore, srcAfter);
+
+        // Lặp lại với thumbnail nhỏ 2
+        srcBefore = srcAfter;
+        Product_Detail_Page.clickThumbnailAndWaitForMainChange(Product_Detail_Page.getSmallThumbnail2());
+        srcAfter = Product_Detail_Page.getMainThumbnailSrc();
+
+        Assert.assertNotEquals("Ảnh lớn không thay đổi sau khi click thumbnail nhỏ 2", srcBefore, srcAfter);
+    }
 }

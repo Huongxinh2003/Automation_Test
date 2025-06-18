@@ -892,3 +892,12 @@ Vui lòng nhập số điện thoại
 2025-06-19 00:30:34 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
 2025-06-19 00:30:35 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
 2025-06-19 00:30:35 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn phiên bản
+2025-06-19 01:15:26 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-19 01:15:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-19 01:15:42 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-19 01:16:30 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-19 01:16:32 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-19 01:16:46 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-19 01:19:29 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-19 01:19:30 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-19 01:19:40 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết

@@ -13,8 +13,8 @@ import java.time.Duration;
 import java.util.List;
 
 public class Product_Detail_Page extends ValidateUIHelper {
-    private WebDriver driver;
-    private WebDriverWait wait;
+    private static WebDriver driver;
+    private static WebDriverWait wait;
     private JavascriptExecutor js;
 
 
@@ -24,16 +24,16 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By BoxRating = By.xpath("//div[@class='box-rating']");
     public By ColorPrice = By.xpath("//div[@class='box-product-variants']");
     public By CountStore = By.xpath("//span[@class='count']");
-    public By ProductPrice = By.xpath("//div[@class='box-product-price']");
+    public static By ProductPrice = By.xpath("//div[@class='box-product-price']");
     public By Sale_price = By.xpath("//div[@class='sale-price']");
     public By BasePrice = By.xpath("//div[@class='is-flex is-align-items-center']//del[@class='base-price']");
     public By PriceStickyBar = By.xpath("//div[@class='cta-product-price']");
     public By TitleProductBar = By.xpath("//div[@class='cta-product-info']");
     public By ProductThumbnail = By.xpath("//div[@class='box-gallery']");
-    public By ProductThumbnail2 = By.xpath("//div[@class='gallery-slide gallery-top swiper-container swiper-container-initialized swiper-container-horizontal']");
+    public static By MainThumbnail = By.xpath("//div[@class='box-ksp is-flex is-flex-direction-row']");
     public By swiperThumbnailNext = By.xpath("//div[@class='swiper-button-next button__view-gallery-next']//div[@class='icon']");
     public By swiperThumbnailPrev = By.xpath("//div[@class='swiper-button-prev button__view-gallery-prev']");
-    public By ProductThumbnailSmall = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-3.png2 - thumb']");
+    public static By ProductThumbnailSmall1 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-3.png2 - thumb']");
     public By ProductThumbnailSmall2 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-4.png3 - thumb']");
     public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
     public By DistrictOption = By.xpath("//select[@id='districtOptions']");
@@ -118,11 +118,33 @@ public class Product_Detail_Page extends ValidateUIHelper {
         throw new RuntimeException("Không tìm thấy màu sắc có tên: " + color);
     }
 
-    public void ClickProductThumbnailSmall() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductThumbnailSmall));
-        clickElement(ProductThumbnailSmall);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductThumbnailSmall2));
-        clickElement(ProductThumbnailSmall2);
+    // Lấy src của ảnh thumbnail lớn hiện tại
+    public static String getMainThumbnailSrc() {
+        WebElement mainImg = wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail));
+        return mainImg.getAttribute("src");
+    }
+
+
+    // Click vào thumbnail nhỏ (truyền locator vào)
+    public static void clickSmallThumbnail(By smallThumbnailLocator) {
+        WebElement thumb = wait.until(ExpectedConditions.elementToBeClickable(smallThumbnailLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", thumb);
+
+    }
+
+    // Click thumbnail nhỏ rồi chờ ảnh lớn thay đổi
+    public static void clickThumbnailAndWaitForMainChange(By smallThumbnailLocator) {
+        String srcBefore = getMainThumbnailSrc();
+        clickSmallThumbnail(smallThumbnailLocator);
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(MainThumbnail, "src", srcBefore)));
+    }
+
+    // Các getter để lấy locator thumbnail nhỏ (nếu cần)
+    public static By getSmallThumbnail1() {
+        return ProductThumbnailSmall1;
+    }
+    public static By getSmallThumbnail2() {
+        return ProductPrice;
     }
 
 //    public boolean isMainImageChangedAfterClickingThumbnail() {
@@ -189,11 +211,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public String getProductThumbnail() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ProductThumbnail));
        return getText(ProductThumbnail);
-    }
-
-    public String getProductThumbnail2() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductThumbnail2));
-        return getText(ProductThumbnail2);
     }
 
     public String getCountStore() {
