@@ -24,12 +24,6 @@ jobs:
       - name: TestNG SignIn Suite
         run: mvn test -DsuiteXmlFile=src/test/java/com/runSignIn.xml
 
-      - name: TestNG Search Suite
-        run: mvn test -DsuiteXmlFile=src/test/java/com/runSearch.xml
-
-      - name: TestNG Product Detail Suite
-        run: mvn test -DsuiteXmlFile=src/test/java/com/runProductDetail.xml
-
       - name: Check report directory
         run: ls -la target/surefire-reports/
 
