@@ -119,7 +119,7 @@ public class Search_Test extends BaseSetup {
 
         // Kiểm tra danh sách đã biến mất
         LogUtils.info("Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm");
-        search_page.checkSuggestBoxSearch2();
+        search_page.checkSuggestBoxSearch();
 
         LogUtils.info("Đợi trang chuyển hướng");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -157,7 +157,7 @@ public class Search_Test extends BaseSetup {
 
         // Kiểm tra danh sách đã biến mất
         LogUtils.info("Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm");
-        search_page.checkSuggestBoxSearch2();
+        search_page.checkSuggestBoxSearch();
 
         LogUtils.info("Đợi trang chuyển hướng");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -198,7 +198,7 @@ public class Search_Test extends BaseSetup {
 
         // Kiểm tra danh sách đã biến mất
         LogUtils.info("Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm");
-        search_page.checkSuggestBoxSearch1();
+        search_page.checkSuggestBoxSearch();
 
         LogUtils.info("Đợi trang chuyển hướng");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

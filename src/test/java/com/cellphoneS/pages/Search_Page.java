@@ -76,16 +76,15 @@ public class Search_Page extends ValidateUIHelper {
     public boolean isSuggestBoxSearchDisplayed() {
         return isElementDisplayed(suggestBoxSearch);
     }
-    public void checkSuggestBoxSearch1() {
-        boolean isSuggestionHidden = driver.findElements(suggestBoxSearch).isEmpty()
-                || !driver.findElements(suggestBoxSearch).get(0).isDisplayed();
-        Assert.assertTrue(isSuggestionHidden, "Danh sách gợi ý vẫn còn hiển thị sau khi click sản phẩm");
-    }
-
-    public void checkSuggestBoxSearch2() {
-        boolean isSuggestionHidden = driver.findElements(suggestBoxSearch).isEmpty()
-                ||!driver.findElements(suggestBoxSearch).get(0).isDisplayed();
-        Assert.assertTrue(isSuggestionHidden, "Danh sách gợi ý vẫn còn hiển thị sau khi tìm kiếm bằng từ khoá");
+    public void checkSuggestBoxSearch() {
+        try {
+            // Đợi tối đa 10s để hộp gợi ý biến mất
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            boolean disappeared = wait.until(ExpectedConditions.invisibilityOfElementLocated(suggestBoxSearch));
+            Assert.assertTrue(disappeared, "Danh sách gợi ý vẫn còn hiển thị sau khi click sản phẩm");
+        } catch (TimeoutException e) {
+            Assert.fail("Danh sách gợi ý không biến mất sau khi chờ");
+        }
     }
 
     public void ClickLinkAdSearch() {
