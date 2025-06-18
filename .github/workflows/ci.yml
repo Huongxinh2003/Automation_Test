@@ -9,34 +9,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: ☕ Set up JDK 17
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 📦 Build with Maven (skip tests)
+      - name: Build with Maven (skip tests)
         run: mvn clean install -DskipTests
 
-      - name: 🧪 TestNG ✅ SignIn Suite
-        run: mvn test -DsuiteXmlFile=src/test/java/com/runSignIn.xml
+      - name: Run SignIn Suite
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/java/com/runSignIn.xml
         continue-on-error: true
 
-      - name: 🧪 TestNG 🔍 Search Suite
-        run: mvn test -DsuiteXmlFile=src/test/java/com/runSearch.xml
+      - name: Run Search Suite
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/java/com/runSearch.xml
         continue-on-error: true
 
-      - name: 🧪 TestNG 📄 Product Detail Suite
-        run: mvn test -DsuiteXmlFile=src/test/java/com/runProductDetail.xml
+      - name: Run Product Detail Suite
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/java/com/runProductDetail.xml
         continue-on-error: true
 
-      - name: 📂 Check report directory
+      - name: Check report directory
         run: ls -la target/surefire-reports/
 
-      - name: 📊 Upload TestNG report
+      - name: Upload TestNG report
         uses: actions/upload-artifact@v4
         with:
           name: testng-report
