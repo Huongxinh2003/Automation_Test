@@ -33,7 +33,9 @@ public class SignIn_Helpers extends BaseSetup {
     @BeforeClass
     public void setupDriver() throws Exception {
         Properties_File.setPropertiesFile();
-        driver = setupDriver(Properties_File.getPropValue("browser"));
+        boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
+        driver = setupDriver(Properties_File.getPropValue("browser"), headless);
+
         LogUtils.info("Khởi tạo driver thành công");
     }
 

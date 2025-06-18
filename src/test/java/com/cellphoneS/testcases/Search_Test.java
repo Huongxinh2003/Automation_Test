@@ -50,7 +50,8 @@ public class Search_Test extends BaseSetup {
 //            e.printStackTrace();
 //        }
         // Lấy driver từ class cha BaseSetup
-        driver = setupDriver(Properties_File.getPropValue("browser"));
+        boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
+        driver = setupDriver(Properties_File.getPropValue("browser"), headless);
         search_page = new Search_Page(driver);
         excelHelper = new ExcelUtils();
         validateUIHelper = new ValidateUIHelper(driver);

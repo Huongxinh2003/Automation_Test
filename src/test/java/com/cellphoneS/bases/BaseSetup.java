@@ -21,72 +21,85 @@ public class BaseSetup {
         return driver;
     }
 
-    public WebDriver setupDriver(String browserType) throws Exception {
+    // Thêm tham số headless để tùy chọn
+    public WebDriver setupDriver(String browserType, boolean headless) throws Exception {
         switch (browserType.trim().toLowerCase()) {
             case "chrome":
-                driver = initChromeDriver();
+                driver = initChromeDriver(headless);
                 break;
             case "firefox":
-                driver = initFirefoxDriver();
+                driver = initFirefoxDriver(headless);
                 break;
             case "edge":
-                driver = initEdgeDriver();
+                driver = initEdgeDriver(headless);
                 break;
             default:
                 System.out.println("Browser: " + browserType + " is invalid, Launching Chrome as browser of choice...");
-                driver = initChromeDriver();
+                driver = initChromeDriver(headless);
         }
         return driver;
     }
 
-    private WebDriver initChromeDriver() throws Exception {
+    private WebDriver initChromeDriver(boolean headless) throws Exception {
         System.out.println("Launching Chrome browser...");
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+
+        if (headless) {
+            options.addArguments("--headless=new");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+        }
+
         options.addArguments("--window-size=1920,1080");
 
-        // Khắc phục lỗi "user-data-dir is already in use"
-        String uniqueProfile = System.getProperty("java.io.tmpdir") + "/chrome-profile-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + uniqueProfile);
+        // Để tránh lỗi user-data-dir khi chạy headless nhiều lần
+        if (headless) {
+            String uniqueProfile = System.getProperty("java.io.tmpdir") + "/chrome-profile-" + System.currentTimeMillis();
+            options.addArguments("--user-data-dir=" + uniqueProfile);
+        }
 
         driver = new ChromeDriver(options);
         setupTimeouts(driver);
         return driver;
     }
 
-    private WebDriver initFirefoxDriver() {
+    private WebDriver initFirefoxDriver(boolean headless) {
         System.out.println("Launching Firefox browser...");
         WebDriverManager.firefoxdriver().setup();
 
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("-headless"); // Chạy headless mode an toàn
-        options.addArguments("--width=1920");
-        options.addArguments("--height=1080");
+
+        if (headless) {
+            options.addArguments("-headless");
+            options.addArguments("--width=1920");
+            options.addArguments("--height=1080");
+        }
 
         driver = new FirefoxDriver(options);
         setupTimeouts(driver);
         return driver;
     }
 
-    private WebDriver initEdgeDriver() {
+    private WebDriver initEdgeDriver(boolean headless) {
         System.out.println("Launching Edge browser...");
         WebDriverManager.edgedriver().setup();
 
         EdgeOptions options = new EdgeOptions();
-        options.addArguments("--headless=new");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--window-size=1920,1080");
 
-        // Giống Chrome, cần user-data-dir riêng để tránh lỗi session
-        String uniqueProfile = System.getProperty("java.io.tmpdir") + "/edge-profile-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + uniqueProfile);
+        if (headless) {
+            options.addArguments("--headless=new");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+
+            String uniqueProfile = System.getProperty("java.io.tmpdir") + "/edge-profile-" + System.currentTimeMillis();
+            options.addArguments("--user-data-dir=" + uniqueProfile);
+        }
+
+        options.addArguments("--window-size=1920,1080");
 
         driver = new EdgeDriver(options);
         setupTimeouts(driver);

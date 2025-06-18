@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="ProductDetail">
+<suite name="Search">
     <parameter name="browserType" value="chrome"/>
     <!-- Kiêm tra các chức năng -->
     <test name="Function">
         <classes>
             <class name="com.cellphoneS.testcases.Product_Detail_Test">
                 <methods>
-                    <include name="ClickProductSuggest"/>
+                    <include name="verifyChangeAfterSelectVersionProduct"/>
                 </methods>
             </class>
         </classes>

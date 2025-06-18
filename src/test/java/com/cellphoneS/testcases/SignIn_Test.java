@@ -52,8 +52,8 @@ public class SignIn_Test extends BaseSetup {
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
-        // Lấy driver từ class cha BaseSetup
-        driver = setupDriver(Properties_File.getPropValue("browser"));
+        boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
+        driver = setupDriver(Properties_File.getPropValue("browser"), headless);
         signIn_page = new SignIn_Page(driver);
         excelHelper = new ExcelUtils();
         validateUIHelper = new ValidateUIHelper(driver);
@@ -77,19 +77,6 @@ public class SignIn_Test extends BaseSetup {
         }
     }
 
-//    public Object[][] getExcelData(String filePath, String sheetName) throws Exception {
-//        excelHelper.setExcelFile(filePath, sheetName);
-//        int rowCount = excelHelper.getRowCount();
-//        int colCount = excelHelper.getColumnCount();
-//        Object[][] data = new Object[rowCount - 1][colCount];
-//
-//        for (int i = 1; i < rowCount; i++) {
-//            for (int j = 0; j < colCount; j++) {
-//                data[i - 1][j] = excelHelper.getCellData(j, i);
-//            }
-//        }
-//        return data;
-//    }
 
     @Test(groups = {"SignIn_Success"}, priority = 1)
     public void login_cellphoneS_Success() throws Exception {

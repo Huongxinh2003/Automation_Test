@@ -818,3 +818,46 @@ iphone
 2025-06-18 21:50:04 ERROR LogUtils:14 - FAIL: -123456 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: No error message found
 2025-06-18 21:50:06 ERROR LogUtils:14 - FAIL: Huo5 | Expected: Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số | Got: Số điện thoại hoặc mật khẩu không hợp lệ
 Vui lòng nhập lại
+2025-06-18 22:57:38 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 22:57:39 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 22:57:45 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-18 22:57:45 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-18 22:57:46 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-18 22:57:46 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-18 22:57:46 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-18 22:57:47 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-18 22:57:47 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4144 sản phẩm cho từ khoá 'iphone'
+2025-06-18 22:57:47 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-06-18 22:57:47 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+2025-06-18 22:58:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 22:59:00 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 22:59:00 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-18 22:59:00 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-18 23:10:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 23:10:43 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-18 23:10:50 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 23:10:50 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập Mât khẩu sai
+2025-06-18 23:10:58 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-18 23:11:01 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-06-18 23:11:06 INFO  LogUtils:10 - Bỏ trống Mật khẩu
+2025-06-18 23:11:12 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-18 23:11:20 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-18 23:11:25 INFO  LogUtils:10 - Đã giả lập mất mạng
+2025-06-18 23:11:26 INFO  LogUtils:10 - Đã bật lại kết nối mạng
+2025-06-18 23:12:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 23:12:12 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-18 23:13:06 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 23:13:07 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 23:13:07 INFO  LogUtils:10 - Kiem tra thong bao
+2025-06-18 23:13:08 INFO  LogUtils:10 - Kiem tra chuyen trang
+2025-06-18 23:15:16 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 23:15:17 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 23:15:27 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 23:15:38 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 23:15:40 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 23:15:40 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 23:15:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 23:15:42 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 23:15:43 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-18 23:15:43 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn phiên bản
