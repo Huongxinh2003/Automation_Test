@@ -42,7 +42,7 @@ public class Search_Page extends ValidateUIHelper {
 
     public Product_Detail_Page openProductDetail(String searchText) {
         sendKeys(searchInput, searchText);
-        clickElement(IconSearch);
+        sendKeys(searchInput, String.valueOf(Keys.ENTER));
         clickElement(ProductCard);
         return new Product_Detail_Page(driver);
     }

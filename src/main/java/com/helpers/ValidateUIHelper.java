@@ -106,5 +106,6 @@ public class ValidateUIHelper {
             Assert.fail("Quá thời gian chờ tải trang (readyState không = complete)");
         }
     }
+
 }
 

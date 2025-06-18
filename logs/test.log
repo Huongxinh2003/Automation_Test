@@ -556,3 +556,206 @@ iphone
 2025-06-17 23:49:26 INFO  LogUtils:10 - Đăng nhập thành công
 2025-06-17 23:49:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
 2025-06-17 23:49:46 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề sản phẩm
+2025-06-18 09:23:30 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 09:23:32 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 09:23:38 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 09:23:49 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề sản phẩm
+2025-06-18 10:58:19 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 10:58:24 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 10:58:32 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:00:11 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:00:13 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:00:29 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:00:50 INFO  LogUtils:10 - Kiểm tra hiển thị nút yêu thích
+2025-06-18 11:00:50 INFO  LogUtils:10 - Kiểm tra thêm sản phẩm vào mục yêu thích
+2025-06-18 11:02:26 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:02:31 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:02:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:02:57 INFO  LogUtils:10 - Kiểm tra hiển thị nút yêu thích
+2025-06-18 11:05:18 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:05:20 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:05:28 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:06:46 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:06:52 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:07:01 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:07:17 INFO  LogUtils:10 - Kiểm tra hiển thị nút yêu thích
+2025-06-18 11:08:53 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:08:54 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:09:02 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:09:39 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:09:41 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:09:49 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:10:01 INFO  LogUtils:10 - Kiểm tra hiển thị nút yêu thích
+2025-06-18 11:10:02 INFO  LogUtils:10 - Kiểm tra thêm sản phẩm vào mục yêu thích
+2025-06-18 11:10:02 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo thêm vào mục yêu thích
+2025-06-18 11:10:04 INFO  LogUtils:10 - Kiểm tra mau sắc của thông báo thêm vào yêu thích
+2025-06-18 11:10:04 INFO  LogUtils:10 - Màu nền của thông báo: rgba(0, 0, 0, 0)
+2025-06-18 11:10:04 INFO  LogUtils:10 - Kiểm tra hiển thị nút xóa mục yêu thích
+2025-06-18 11:10:05 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo xóa mục yêu thích
+2025-06-18 11:12:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:12:14 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:12:22 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:12:56 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:13:00 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:13:09 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:13:23 INFO  LogUtils:10 - Kiểm tra hiển thị nút yêu thích
+2025-06-18 11:13:23 INFO  LogUtils:10 - Kiểm tra thêm sản phẩm vào mục yêu thích
+2025-06-18 11:13:23 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo thêm vào mục yêu thích
+2025-06-18 11:19:47 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:19:49 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:19:56 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:21:18 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 11:21:24 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 11:21:34 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 11:21:47 INFO  LogUtils:10 - Giá gốc: 34990000 | Giá sale: 30490000 | Giảm: 13%
+2025-06-18 14:46:09 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 14:46:12 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 14:46:19 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 14:46:32 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 14:48:32 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 14:48:34 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 14:48:44 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 14:48:55 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 14:48:56 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 14:48:57 INFO  LogUtils:10 - Đã chọn phiên bản: Phiên bản
+1TB
+512GB
+256GB
+2025-06-18 14:48:57 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 14:48:58 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 14:48:58 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-18 14:49:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 14:49:56 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 14:50:04 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 14:50:14 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 14:50:15 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 14:50:16 INFO  LogUtils:10 - Đã chọn phiên bản: Phiên bản
+1TB
+512GB
+256GB
+2025-06-18 14:50:16 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 14:50:17 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 14:50:17 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-18 14:55:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 14:55:43 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 14:55:50 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 14:56:02 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 14:56:03 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 14:56:03 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 14:56:03 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 14:56:05 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 15:00:57 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 15:00:59 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 15:01:07 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 15:01:27 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 15:01:28 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 15:01:28 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 15:01:28 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 15:01:30 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 15:01:31 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-18 15:05:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 15:05:39 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 15:05:46 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 15:05:53 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 15:05:57 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 15:05:58 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 15:05:58 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 15:06:00 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 15:06:01 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-18 15:11:30 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 15:11:32 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 15:11:39 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 15:11:51 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 15:11:52 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 15:11:53 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 15:11:53 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 15:11:55 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-18 15:11:57 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-18 15:11:57 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn phiên bản
+2025-06-18 15:41:49 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 15:41:53 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 15:42:01 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 15:42:11 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 15:42:12 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 15:42:12 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 15:42:16 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 16:08:08 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:08:10 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:08:18 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:08:27 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 16:08:28 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 16:08:28 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 16:08:31 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 16:08:33 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-18 16:11:49 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:11:54 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:12:03 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:12:13 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 16:12:14 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 16:12:14 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 16:12:17 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 16:12:18 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-18 16:12:19 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-18 16:12:19 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 16:12:20 INFO  LogUtils:10 - Lấy giá trị sau khi chọn màu sắc
+2025-06-18 16:12:20 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn màu sắc
+2025-06-18 16:14:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:14:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:14:55 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:15:06 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 16:15:07 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 16:15:07 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 16:15:10 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 16:17:56 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:17:58 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:18:57 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:19:01 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:19:11 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:19:24 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-18 16:19:25 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-18 16:19:25 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 16:19:28 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-18 16:19:29 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-18 16:19:30 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-18 16:19:30 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-18 16:19:31 INFO  LogUtils:10 - Lấy giá trị sau khi chọn màu sắc
+2025-06-18 16:19:31 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn màu sắc
+2025-06-18 16:19:31 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn màu sắc
+2025-06-18 16:25:50 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:25:52 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:26:02 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:44:21 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:44:24 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:44:31 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:44:41 INFO  LogUtils:10 - Kiểm tra ảnh chính thay đổi khi click ảnh thumbnail nhỏ
+2025-06-18 16:44:42 ERROR LogUtils:14 - Không đủ ảnh thumbnail để kiểm tra (ít nhất 2 ảnh)
+2025-06-18 16:45:42 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:45:44 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:45:51 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:46:02 INFO  LogUtils:10 - Kiểm tra ảnh chính thay đổi khi click ảnh thumbnail nhỏ
+2025-06-18 16:49:59 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:50:00 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:50:07 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:50:19 INFO  LogUtils:10 - Kiểm tra ảnh chính thay đổi khi click ảnh thumbnail nhỏ
+2025-06-18 16:50:19 ERROR LogUtils:14 - Không đủ ảnh thumbnail để kiểm tra!
+2025-06-18 16:51:57 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 16:51:59 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 16:52:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 16:52:18 INFO  LogUtils:10 - Kiểm tra ảnh chính thay đổi khi click ảnh thumbnail nhỏ
+2025-06-18 16:52:19 ERROR LogUtils:14 - Không đủ ảnh thumbnail để kiểm tra!
+2025-06-18 17:00:17 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 17:00:20 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 17:00:29 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 17:00:43 INFO  LogUtils:10 - Kiểm tra ảnh chính thay đổi khi click ảnh thumbnail nhỏ
+2025-06-18 17:08:25 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 17:08:26 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 17:08:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 17:08:46 INFO  LogUtils:10 - Kiểm tra thay đổi ảnh lớn khi click thumbnail nhỏ
+2025-06-18 17:08:47 INFO  LogUtils:10 - Đã click thumbnail thứ 2.
+2025-06-18 17:11:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-18 17:11:59 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-18 17:12:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-18 17:12:21 INFO  LogUtils:10 - Kiểm tra thay đổi ảnh lớn khi click thumbnail nhỏ
+2025-06-18 17:12:22 WARN  LogUtils:22 - Không đủ ảnh thumbnail để kiểm tra.
