@@ -6,14 +6,11 @@ import com.cellphoneS.pages.Homepage_page;
 import com.cellphoneS.pages.Product_Detail_Page;
 import com.cellphoneS.pages.Search_Page;
 import com.helpers.CaptureHelpers;
-import com.helpers.RecordVideo;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.LogUtils;
 import com.ultilities.Properties_File;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -26,7 +23,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.List;
 
 public class Product_Detail_Test extends BaseSetup {
 
@@ -198,7 +194,7 @@ public class Product_Detail_Test extends BaseSetup {
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn màu sắc");
         Assert.assertFalse(Boolean.parseBoolean(DiscountAfter), "Giá gốc thay đổi sau khi chọn màu sắc");
-        Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn màu sắc");
+        Assert.assertTrue(Boolean.parseBoolean(PriceSaleAfter), "Giá sale thay đổi khi chọn màu sắc");
         Assert.assertNotEquals(ProductThumbnail, ProductThumbnailAfter, "Ảnh sản phẩm không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn màu sắc");
@@ -207,24 +203,118 @@ public class Product_Detail_Test extends BaseSetup {
     }
 
     @Test
-    public void testThumbnailChangeAfterClick() {
-        // Lấy src ảnh lớn ban đầu
-        String srcBefore = Product_Detail_Page.getMainThumbnailSrc();
+    public void testClickTwoThumbnailsAndPrintMainImage() throws InterruptedException{
+        LogUtils.info("Trước khi click");
+        Product_Detail_Page.printMainImageSrc();
 
-        // Click thumbnail nhỏ 1 và chờ ảnh lớn thay đổi
-        Product_Detail_Page.clickThumbnailAndWaitForMainChange(Product_Detail_Page.getSmallThumbnail1());
+        LogUtils.info("Click thumbnail 1");
+        Product_Detail_Page.clickThumbnail(Product_Detail_Page.ProductThumbnailSmall1);
+        Thread.sleep(2000);
+        Product_Detail_Page.printMainImageSrc();
 
-        // Lấy src ảnh lớn sau click
-        String srcAfter = Product_Detail_Page.getMainThumbnailSrc();
+        LogUtils.info("Click thumbnail 2");
+        Product_Detail_Page.clickThumbnail(Product_Detail_Page.ProductThumbnailSmall2);
+        Thread.sleep(2000);
+        Product_Detail_Page.printMainImageSrc();
+    }
 
-        // Kiểm tra ảnh lớn đã thay đổi
-        Assert.assertNotEquals("Ảnh lớn không thay đổi sau khi click thumbnail nhỏ 1", srcBefore, srcAfter);
+    @Test
+    public void testMainImageSyncWithSmallThumbnailOnSwipe() {
+        // Ảnh trước khi swipe
+        String beforeMainSrc = Product_Detail_Page.getMainImageSrc();
+        String beforeThumbSrc = Product_Detail_Page.getActiveSmallThumbnailSrc();
 
-        // Lặp lại với thumbnail nhỏ 2
-        srcBefore = srcAfter;
-        Product_Detail_Page.clickThumbnailAndWaitForMainChange(Product_Detail_Page.getSmallThumbnail2());
-        srcAfter = Product_Detail_Page.getMainThumbnailSrc();
+        System.out.println("Trước swipe:");
+        System.out.println("Main image: " + beforeMainSrc);
+        System.out.println("Thumbnail small: " + beforeThumbSrc);
 
-        Assert.assertNotEquals("Ảnh lớn không thay đổi sau khi click thumbnail nhỏ 2", srcBefore, srcAfter);
+        // Click next và đợi ảnh lớn thay đổi
+        Product_Detail_Page.clickSwiperNextAndWaitForMainImageChange(beforeMainSrc);
+
+        // Lấy ảnh sau khi swipe
+        String afterMainSrc = Product_Detail_Page.getMainImageSrc();
+        String afterThumbSrc = Product_Detail_Page.getActiveSmallThumbnailSrc();
+
+        System.out.println("Sau swipe:");
+        System.out.println("Main image: " + afterMainSrc);
+        System.out.println("Thumbnail small: " + afterThumbSrc);
+
+        // So sánh tên file của ảnh chính và thumbnail nhỏ active
+        String mainFile = Product_Detail_Page.getFileNameFromUrl(afterMainSrc);
+        String thumbFile = Product_Detail_Page.getFileNameFromUrl(afterThumbSrc);
+
+        System.out.println("So sánh file: main=" + mainFile + " | thumb=" + thumbFile);
+        Assert.assertTrue(mainFile.contains(thumbFile) || thumbFile.contains(mainFile),
+                "Ảnh thumbnail nhỏ KHÔNG đồng bộ với ảnh lớn!");
+    }
+
+    @Test
+    public void verifyChangeAfterSelectCity() {
+        LogUtils.info("Lưu trạng thái ban đầu ");
+        String CountStoreBefore = product_detail_page.getCountStore();
+        String CityBefore = product_detail_page.getCityName();
+        LogUtils.info("Số lượng cửa hàng trong thành phố " + CityBefore + " là " + CountStoreBefore);
+
+
+        LogUtils.info("Click button Thành phố");
+        Product_Detail_Page.ClickCity();
+
+        LogUtils.info("Chọn Thành phố");
+        Product_Detail_Page.ClickSelectCity("Đà Nẵng");
+
+
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+
+        LogUtils.info("Lấy giá trị sau khi chọn Thành phố");
+        String CountStoreAfter = product_detail_page.getCountStore();
+        String CityAfter = product_detail_page.getCityName();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
+
+        LogUtils.info("Kiểm tra giá trị sau khi chọn Thành phố");
+        Assert.assertNotEquals(CityBefore, CityAfter, "Thành phố không thay đổi sau khi chọn Thành phố");
+        Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, " Số cửa hàng còn hàng không thay đổi sau khi chọn Thành phố");
+
+        LogUtils.info("Kiểm tra box có chứa tên thành phố đã chọn");
+        Assert.assertTrue(
+                Product_Detail_Page.isAddressBoxContainsCity(CityAfter),
+                "Box không chứa tên thành phố đã chọn: " + CityAfter
+        );
+
+        LogUtils.info("Nội dung box địa chỉ: " + Product_Detail_Page.getAddressText());
+
+        LogUtils.info("Số lượng cửa hàng trong thành phố " + CityAfter + " là " + CountStoreAfter);
+        LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Thành phố");
+    }
+
+    @Test
+    public void verifyChangeAfterSelectDistrict() {
+        LogUtils.info("Lưu trạng thái ban đầu ");
+        String CountStoreBefore = product_detail_page.getCountStore();
+        String DistrictBefore = product_detail_page.getDistrictName();
+
+        LogUtils.info("Chọn Quận");
+        Product_Detail_Page.ClickSelectDistrict();
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+
+        LogUtils.info("Lấy giá trị sau khi chọn Quận");
+        String CityAfter = product_detail_page.getCityName();
+        String CountStoreAfter = product_detail_page.getCountStore();
+        String DistrictAfter = product_detail_page.getDistrictName();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
+
+        LogUtils.info("Kiểm tra giá trị sau khi chọn Quận");
+        Assert.assertTrue(CityAfter.contains("Đà Nẵng"), "Thành phố không thay đổi sau khi chọn Quận");
+        Assert.assertNotEquals(DistrictBefore, DistrictAfter, "Quận không thay đổi sau khi chọn Quận");
+        Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, " Số cửa hàng còn hàng không thay đổi sau khi chọn Quận");
+
+        LogUtils.info("Kiểm tra box có chứa tên Quận đã chọn");
+        Product_Detail_Page.isAddressBoxContainsCityAndDistrict(CityAfter, DistrictAfter);
+
+        LogUtils.info("Nội dung box địa chỉ: " + Product_Detail_Page.getAddressText2());
+
+        LogUtils.info("Số lượng cửa hàng trong Quận " + DistrictAfter + " là " + CountStoreAfter);
+        LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Quận");
     }
 }

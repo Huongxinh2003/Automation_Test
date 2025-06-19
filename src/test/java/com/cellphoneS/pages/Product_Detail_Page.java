@@ -30,16 +30,17 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By PriceStickyBar = By.xpath("//div[@class='cta-product-price']");
     public By TitleProductBar = By.xpath("//div[@class='cta-product-info']");
     public By ProductThumbnail = By.xpath("//div[@class='box-gallery']");
-    public static By MainThumbnail = By.xpath("//div[@class='box-ksp is-flex is-flex-direction-row']");
-    public By swiperThumbnailNext = By.xpath("//div[@class='swiper-button-next button__view-gallery-next']//div[@class='icon']");
-    public By swiperThumbnailPrev = By.xpath("//div[@class='swiper-button-prev button__view-gallery-prev']");
+    public static By MainThumbnail = By.xpath("//div[contains(@class, 'gallery-slide') and contains(@class, 'gallery-top')]//div[contains(@class,'swiper-slide-active')]//img");
+    public static By SliderThumbnail =  By.xpath("//div[contains(@class,'gallery-thumbs')]//div[contains(@class,'swiper-slide-thumb-active') and not(contains(@class,'ksp-thumbs'))]//img");
+    public static By swiperThumbnailNext = By.xpath("//div[@class='swiper-button-next button__view-gallery-next']//div[@class='icon']");
+    public static By swiperThumbnailPrev = By.xpath("//div[@class='swiper-button-prev button__view-gallery-prev']");
     public static By ProductThumbnailSmall1 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-3.png2 - thumb']");
-    public By ProductThumbnailSmall2 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-4.png3 - thumb']");
-    public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
-    public By DistrictOption = By.xpath("//select[@id='districtOptions']");
-    public By SelectCity = By.xpath("//a[contains(text(),'Đà Nẵng')]");
-    public By SelectDistrict = By.xpath("//option[@value='40']");
-    public By AddressStore = By.xpath("//div[@class='box-on-stock-item']");
+    public static By ProductThumbnailSmall2 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-4.png3 - thumb']");
+    public static By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
+    public static By DistrictOption = By.xpath("//div[@class='box-on-stock-option']");
+    public static By SelectCity = By.xpath("//ul[@class='menu-list']");
+    public static By SelectDistrict = By.xpath("//option[@value='40']");
+    public static By BoxAddress = By.xpath("//div[@class='box-on-stock-address']");
     public By BuyNow = By.xpath("//button[@class='button-desktop button-desktop-order is-flex is-justify-content-center is-align-items-center']");
     public By AddToCart = By.xpath("//button[@class='button-desktop button-add-to-cart']");
     public By InstallmentOption = By.xpath("//button[@class='button-desktop button-desktop-installment is-flex is-justify-content-center is-align-items-center']");
@@ -59,6 +60,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By Question = By.xpath("//textarea[@placeholder='Viết câu hỏi của bạn tại đây']");
     public By QuestionButton = By.xpath("//button[contains(text(),'Gửi câu hỏi')]");
 
+
     public Product_Detail_Page(WebDriver driver) {
         super(driver);
         this.driver = driver;
@@ -75,6 +77,17 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public String getTitleProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
         return driver.getTitle();
+    }
+
+    // Lấy tên thành phố
+    public String getCityName() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CityOption));
+        return getText(CityOption);
+    }
+
+    public String getDistrictName() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
+        return getText(DistrictOption);
     }
 
     public void isFavoriteProductDisplayed() {
@@ -118,60 +131,44 @@ public class Product_Detail_Page extends ValidateUIHelper {
         throw new RuntimeException("Không tìm thấy màu sắc có tên: " + color);
     }
 
-    // Lấy src của ảnh thumbnail lớn hiện tại
-    public static String getMainThumbnailSrc() {
-        WebElement mainImg = wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail));
-        return mainImg.getAttribute("src");
+    // Lấy src ảnh lớn
+    public static String getMainImageSrc() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail)).getAttribute("src");
     }
 
-
-    // Click vào thumbnail nhỏ (truyền locator vào)
-    public static void clickSmallThumbnail(By smallThumbnailLocator) {
-        WebElement thumb = wait.until(ExpectedConditions.elementToBeClickable(smallThumbnailLocator));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", thumb);
-
+    // Lấy src thumbnail nhỏ đang active
+    public static String getActiveSmallThumbnailSrc() {
+        WebElement thumb = wait.until(ExpectedConditions.presenceOfElementLocated(SliderThumbnail));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", thumb);
+        wait.until(ExpectedConditions.visibilityOf(thumb));
+        return thumb.getAttribute("src");
     }
 
-    // Click thumbnail nhỏ rồi chờ ảnh lớn thay đổi
-    public static void clickThumbnailAndWaitForMainChange(By smallThumbnailLocator) {
-        String srcBefore = getMainThumbnailSrc();
-        clickSmallThumbnail(smallThumbnailLocator);
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(MainThumbnail, "src", srcBefore)));
+    // Click nút Next → đợi ảnh lớn thay đổi
+    public static void clickSwiperNextAndWaitForMainImageChange(String previousSrc) {
+        WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(swiperThumbnailNext));
+        btn.click();
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(MainThumbnail, "src", previousSrc)));
     }
 
-    // Các getter để lấy locator thumbnail nhỏ (nếu cần)
-    public static By getSmallThumbnail1() {
-        return ProductThumbnailSmall1;
-    }
-    public static By getSmallThumbnail2() {
-        return ProductPrice;
+    // Tiện ích lấy tên file ảnh từ URL
+    public static String getFileNameFromUrl(String url) {
+        return url.substring(url.lastIndexOf("/") + 1);
     }
 
-//    public boolean isMainImageChangedAfterClickingThumbnail() {
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(mainImage));
-//        WebElement oldImage = driver.findElement(mainImage);
-//        String oldSrc = oldImage.getAttribute("src");
-//
-//        List<WebElement> thumbnails = driver.findElements(thumbnailImages);
-//        if (thumbnails.size() < 2) {
-//            LogUtils.warn("Không đủ ảnh thumbnail để kiểm tra.");
-//            return false;
-//        }
-//
-//        // Click thumbnail thứ 2 (khác ảnh chính mặc định)
-//        thumbnails.get(1).click();
-//        LogUtils.info("Đã click thumbnail thứ 2.");
-//
-//        // Đợi ảnh chính thay đổi
-//        wait.until(ExpectedConditions.stalenessOf(oldImage)); // đợi ảnh cũ không còn trong DOM
-//
-//        WebElement newImage = driver.findElement(mainImage);
-//        String newSrc = newImage.getAttribute("src");
-//        LogUtils.info("Src cũ: " + oldSrc);
-//        LogUtils.info("Src mới: " + newSrc);
-//
-//        return !oldSrc.equals(newSrc);
-//    }
+    // Click ảnh nhỏ bất kỳ
+    public static void clickThumbnail(By thumbnailBy) {
+        WebElement thumb = wait.until(ExpectedConditions.elementToBeClickable(thumbnailBy));
+        thumb.click();
+    }
+
+    // In src ảnh lớn
+    public static void printMainImageSrc() {
+        WebElement img = wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", img);
+        String src = img.getAttribute("src");
+        System.out.println("Thumnail hiện tại: " + src);
+    }
 
     public String getBoxRating() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(BoxRating));
@@ -249,37 +246,57 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return isElementDisplayed(ProductThumbnail);
     }
 
-    public void ClickSwiperThumbnail() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(swiperThumbnailNext));
-        clickElement(swiperThumbnailNext);
-        clickElement(swiperThumbnailNext);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(swiperThumbnailPrev));
-        clickElement(swiperThumbnailPrev);
-        clickElement(swiperThumbnailPrev);
-    }
-
-
-    public void ClickCityOption() {
+    public static void ClickCity() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CityOption));
         clickElement(CityOption);
-        clickElement(SelectCity);
     }
 
-    public void ClickDistrictOption() {
+
+    public static void ClickSelectCity(String city) {
+        // Tạo xpath cho li chứa tên thành phố
+        String cityXpath = "//ul[@class='menu-list']/li[normalize-space()='" + city + "']";
+
+        // Đợi menu list hiển thị
+        WebElement menuList = wait.until(ExpectedConditions.visibilityOfElementLocated(SelectCity));
+
+        // Đợi và click thành phố
+        WebElement cityElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cityXpath)));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cityElement);
+        cityElement.click();
+    }
+
+    // Kiểm tra box có chứa tên thành phố đã chọn không
+    public static boolean isAddressBoxContainsCity(String cityName) {
+        WebElement box = wait.until(ExpectedConditions.visibilityOfElementLocated(BoxAddress));
+        return box.getText().toLowerCase().contains(cityName.toLowerCase());
+    }
+
+    // lấy nội dung trong box address
+    public static String getAddressText() {
+        WebElement box = wait.until(ExpectedConditions.visibilityOfElementLocated(BoxAddress));
+        return box.getText();
+    }
+
+    public static void ClickSelectDistrict() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
         clickElement(DistrictOption);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(SelectDistrict));
         clickElement(SelectDistrict);
     }
 
-    public boolean isCountStoreDisplayed() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(CountStore));
-        return isElementDisplayed(CountStore);
+    public static boolean isAddressBoxContainsCityAndDistrict(String cityName, String districtName) {
+        WebElement box = wait.until(ExpectedConditions.visibilityOfElementLocated(BoxAddress));
+        String boxText = box.getText().toLowerCase();
+
+        return boxText.contains(cityName.toLowerCase()) && boxText.contains(districtName.toLowerCase());
     }
 
-    public boolean isAddressStoreDisplayed() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(AddressStore));
-        return isElementDisplayed(AddressStore);
+    // lấy nội dung trong box address
+    public static String getAddressText2() {
+        WebElement box = wait.until(ExpectedConditions.visibilityOfElementLocated(BoxAddress));
+        return box.getText();
     }
+
 
     public void ClickBuyNow() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
