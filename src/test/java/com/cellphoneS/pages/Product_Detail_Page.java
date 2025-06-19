@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Product_Detail_Page extends ValidateUIHelper {
     private static WebDriver driver;
     private static WebDriverWait wait;
-    private JavascriptExecutor js;
+    private static JavascriptExecutor js;
 
 
     //public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
@@ -37,28 +38,26 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public static By ProductThumbnailSmall1 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-3.png2 - thumb']");
     public static By ProductThumbnailSmall2 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-4.png3 - thumb']");
     public static By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
-    public static By DistrictOption = By.xpath("//div[@class='box-on-stock-option']");
+    public static By DistrictOption = By.xpath("//select[@id='districtOptions']");
     public static By SelectCity = By.xpath("//ul[@class='menu-list']");
     public static By SelectDistrict = By.xpath("//option[@value='40']");
     public static By BoxAddress = By.xpath("//div[@class='box-on-stock-address']");
     public By BuyNow = By.xpath("//button[@class='button-desktop button-desktop-order is-flex is-justify-content-center is-align-items-center']");
     public By AddToCart = By.xpath("//button[@class='button-desktop button-add-to-cart']");
     public By InstallmentOption = By.xpath("//button[@class='button-desktop button-desktop-installment is-flex is-justify-content-center is-align-items-center']");
-    public By InstallmentOption2 = By.xpath("////body/div[@id='__nuxt']/div[@id='__layout']/div[@id='layout-desktop']/div[@class='cps-container cps-body']/div/div[@id='productDetailV2']/div[@class='cps-block-order-button-desktop show']/div[@class='cta-action']/div[@class='installment-section']/div[@class='popup-installment show']/div[1]");
+    public By InstallmentOption2 = By.xpath("//body/div[@id='__nuxt']/div[@id='__layout']/div[@id='layout-desktop']/div[@class='cps-container cps-body']/div/div[@id='productDetailV2']/div[@class='cps-block-order-button-desktop show']/div[@class='cta-action']/div[@class='installment-section']/div[@class='popup-installment show']/div[1]");
+    public static By activeTabBtn = By.xpath("//button[@class='tab-item active']");
     public By InstallmentOption3 = By.xpath("//body/div[@id='__nuxt']/div[@id='__layout']/div[@id='layout-desktop']/div[@class='cps-container cps-body']/div/div[@id='productDetailV2']/div[@class='cps-block-order-button-desktop show']/div[@class='cta-action']/div[@class='installment-section']/div[@class='popup-installment show']/div[1]");
-    public By ProductInfo = By.xpath("//div[@class='cta-product-info']");
-    public By StickyProductBar = By.xpath("//div[@class='cps-block-order-button-desktop show']");
-    public By LinkShowMore = By.xpath("//div[@class='btn-show-more']");
     public By ButtonEvaluate = By.xpath("//button[contains(text(),'Viết đánh giá')]");
     public By EvaluateStar = By.xpath("//div[@class='modal-review-star is-flex is-justify-content-space-between my-3 review-all']//div[4]//div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M381.2 150')]");
     public By EvaluatePerformance = By.xpath("//div[@class='modal modal-review is-active']//div[4]//div[1]//div[4]//div[1]//*[name()='svg']");
     public By EvaluateBatteryLife = By.xpath("//div[@class='boxReview']//div[5]//div[1]//div[3]//div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M381.2 150')]");
     public By EvaluateCamera = By.xpath("//div[6]//div[1]//div[4]//div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M381.2 150')]");
     public By EvaluateComment = By.xpath("//textarea[@placeholder='Xin mời chia sẻ một số cảm nhận về sản phẩm (nhập tối thiểu 15 kí tự)']");
-    public By EvaluateImage = By.xpath("//label[contains(text(),'Thêm hình ảnh')]");
+    public By EvaluateImage = By.xpath("//input[@id='image']");
     public By EvaluateButton = By.xpath("//button[contains(text(),'GỬI ĐÁNH GIÁ')]");
-    public By Question = By.xpath("//textarea[@placeholder='Viết câu hỏi của bạn tại đây']");
-    public By QuestionButton = By.xpath("//button[contains(text(),'Gửi câu hỏi')]");
+    public By EvaluateCount = By.xpath("//p[@class='boxReview-score__count']");
+    public static By StoreProduct = By.xpath("//div[@class='box-on-stock-stores']");
 
 
     public Product_Detail_Page(WebDriver driver) {
@@ -235,22 +234,15 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return discountPercentage;
     }
 
-
-    public void ClickProductThumbnail() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductThumbnail));
-        clickElement(ProductThumbnail);
-    }
-
-    public boolean isProductThumbnailDisplayed() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductThumbnail));
-        return isElementDisplayed(ProductThumbnail);
+    public static void ScrollToElement() {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(StoreProduct));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
 
     public static void ClickCity() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CityOption));
         clickElement(CityOption);
     }
-
 
     public static void ClickSelectCity(String city) {
         // Tạo xpath cho li chứa tên thành phố
@@ -277,11 +269,14 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return box.getText();
     }
 
-    public static void ClickSelectDistrict() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
-        clickElement(DistrictOption);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(SelectDistrict));
-        clickElement(SelectDistrict);
+    public static String ClickSelectDistrict(String districtName) {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+//        clickElement(DistrictOption);
+//        WebElement selectDistrict = wait.until(ExpectedConditions.visibilityOfElementLocated(SelectDistrict));
+        Select District = new Select(element);
+        District.selectByVisibleText(districtName);
+        return districtName;
     }
 
     public static boolean isAddressBoxContainsCityAndDistrict(String cityName, String districtName) {
@@ -299,13 +294,19 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
 
     public void ClickBuyNow() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
+        WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", Buynow);
         clickElement(BuyNow);
     }
 
     public void ClickAddToCart() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(AddToCart));
+        WebElement ClickAddToCart = wait.until(ExpectedConditions.visibilityOfElementLocated(AddToCart));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", ClickAddToCart);
         clickElement(AddToCart);
+    }
+
+    public static String getActiveTabText() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(activeTabBtn)).getText();
     }
 
     public void ClickInstallmentOption() {
@@ -321,21 +322,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public void ClickInstallmentOption3() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(InstallmentOption3));
         clickElement(InstallmentOption3);
-    }
-
-    public boolean isProductInfoDisplayed() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductInfo));
-        return isElementDisplayed(ProductInfo);
-    }
-
-    public boolean isStickyProductBarDisplayed() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(StickyProductBar));
-        return isElementDisplayed(StickyProductBar);
-    }
-
-    public void ClickLinkShowMore() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(LinkShowMore));
-        clickElement(LinkShowMore);
     }
 
     public void ClickButtonEvaluate() {
@@ -364,13 +350,15 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public void InputEvaluateComment(String comment) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(EvaluateComment));
+        WebElement Comment = wait.until(ExpectedConditions.visibilityOfElementLocated(EvaluateComment));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", Comment);
         sendKeys(EvaluateComment, comment);
     }
 
-    public void ClickEvaluateImage() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(EvaluateImage));
-        clickElement(EvaluateImage);
+    public void ClickEvaluateImage(String imagePath) {
+        WebElement input = wait.until(ExpectedConditions.presenceOfElementLocated(EvaluateImage));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", input);
+        input.sendKeys(imagePath);
     }
 
     public void ClickEvaluateButton() {
@@ -378,14 +366,9 @@ public class Product_Detail_Page extends ValidateUIHelper {
         clickElement(EvaluateButton);
     }
 
-    public void InputQuestion(String question) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(Question));
-        sendKeys(Question, question);
-    }
-
-    public void ClickQuestionButton() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(QuestionButton));
-        clickElement(QuestionButton);
+    public String getCountEvaluateProduct() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(EvaluateCount));
+        return getText(EvaluateCount);
     }
 
 }

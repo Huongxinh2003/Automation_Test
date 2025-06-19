@@ -24,6 +24,8 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+import static org.testng.Assert.assertTrue;
+
 public class Product_Detail_Test extends BaseSetup {
 
     private static final Logger log = LoggerFactory.getLogger(Search_Test.class);
@@ -250,11 +252,13 @@ public class Product_Detail_Test extends BaseSetup {
 
     @Test
     public void verifyChangeAfterSelectCity() {
+        Product_Detail_Page.ScrollToElement();
         LogUtils.info("Lưu trạng thái ban đầu ");
         String CountStoreBefore = product_detail_page.getCountStore();
         String CityBefore = product_detail_page.getCityName();
         LogUtils.info("Số lượng cửa hàng trong thành phố " + CityBefore + " là " + CountStoreBefore);
 
+        ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Click button Thành phố");
         Product_Detail_Page.ClickCity();
@@ -269,7 +273,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Lấy giá trị sau khi chọn Thành phố");
         String CountStoreAfter = product_detail_page.getCountStore();
         String CityAfter = product_detail_page.getCityName();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Thành phố");
         Assert.assertNotEquals(CityBefore, CityAfter, "Thành phố không thay đổi sau khi chọn Thành phố");
@@ -289,12 +293,15 @@ public class Product_Detail_Test extends BaseSetup {
 
     @Test
     public void verifyChangeAfterSelectDistrict() {
+        Product_Detail_Page.ScrollToElement();
         LogUtils.info("Lưu trạng thái ban đầu ");
         String CountStoreBefore = product_detail_page.getCountStore();
         String DistrictBefore = product_detail_page.getDistrictName();
 
+        ((JavascriptExecutor) driver).executeScript("location.reload();");
+
         LogUtils.info("Chọn Quận");
-        Product_Detail_Page.ClickSelectDistrict();
+        String districtName = Product_Detail_Page.ClickSelectDistrict("Quận Sơn Trà");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
@@ -302,7 +309,8 @@ public class Product_Detail_Test extends BaseSetup {
         String CityAfter = product_detail_page.getCityName();
         String CountStoreAfter = product_detail_page.getCountStore();
         String DistrictAfter = product_detail_page.getDistrictName();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
+
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Quận");
         Assert.assertTrue(CityAfter.contains("Đà Nẵng"), "Thành phố không thay đổi sau khi chọn Quận");
@@ -314,7 +322,126 @@ public class Product_Detail_Test extends BaseSetup {
 
         LogUtils.info("Nội dung box địa chỉ: " + Product_Detail_Page.getAddressText2());
 
-        LogUtils.info("Số lượng cửa hàng trong Quận " + DistrictAfter + " là " + CountStoreAfter);
+        LogUtils.info("Số lượng cửa hàng trong Quận " + districtName + " là " + CountStoreAfter);
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Quận");
     }
+
+    @Test
+    public void BuyProduct() {
+        LogUtils.info("Chọn phiên bản");
+        product_detail_page.selectVersionProduct("512GB");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+        LogUtils.info("Chọn màu sắc");
+        product_detail_page.selectColorProduct("Titan Đen");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+
+        LogUtils.info("Click button Mua ngay");
+        product_detail_page.ClickBuyNow();
+
+//        By successBuyNow = By.xpath("//div[@class='toasted toasted-primary success']");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(successBuyNow));
+//        WebElement toast = driver.findElement(successBuyNow);
+//        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Mua ngay");
+
+        LogUtils.info("Kiểm tra chuyển màn hình sang giỏ hàng");
+        String expectedUrl = "https://cellphones.com.vn/cart/";
+        String actualUrl = driver.getCurrentUrl();
+
+        Assert.assertEquals("URL không đúng sau khi click 'Mua ngay'", expectedUrl, actualUrl);
+    }
+
+    @Test
+    public void AddProductToCart() {
+        LogUtils.info("Chọn phiên bản");
+        product_detail_page.selectVersionProduct("512GB");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+        LogUtils.info("Chọn màu sắc");
+        product_detail_page.selectColorProduct("Titan Đen");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+
+        LogUtils.info("Click button Thêm vào giỏ hàng");
+        product_detail_page.ClickAddToCart();
+        LogUtils.info("Kiểm tra chuyển màn hình sang giỏ hàng");
+
+        By successAddToCart = By.xpath("//div[@class='toasted toasted-primary success']");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successAddToCart));
+        WebElement toast = driver.findElement(successAddToCart);
+        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thêm vào giỏ hàng");
+    }
+
+    @Test
+    public void ClickInstallmentOption2() {
+        LogUtils.info("Click button Thanh toán trả góp 0%");
+        product_detail_page.ClickInstallmentOption();
+        product_detail_page.ClickInstallmentOption2();
+
+        LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp 0%");
+        By successInstallmentOption = By.xpath("//div[@class='toasted toasted-primary success']");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successInstallmentOption));
+        WebElement toast = driver.findElement(successInstallmentOption);
+        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thanh toán trả góp");
+
+        LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
+        String activeTab = Product_Detail_Page.getActiveTabText();
+        Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
+
+    }
+
+    @Test
+    public void ClickInstallmentOption3() {
+        LogUtils.info("Click button Thanh toán trả góp qua thẻ");
+        product_detail_page.ClickInstallmentOption();
+        product_detail_page.ClickInstallmentOption3();
+
+        LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp qua thẻ");
+        By successInstallmentOption = By.xpath("//div[@class='toasted toasted-primary success']");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successInstallmentOption));
+        WebElement toast = driver.findElement(successInstallmentOption);
+        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thanh toán trả góp qua thẻ");
+
+        LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
+        String activeTab = Product_Detail_Page.getActiveTabText();
+        Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
+
+
+    }
+
+    @Test
+    public void EvaluateProduct() {
+        LogUtils.info("Lưu trạng thái ban đầu ");
+        String EvaluateBefore = product_detail_page.getCountEvaluateProduct();
+        LogUtils.info("Số lượng đánh giá của sản phẩm là " + EvaluateBefore);
+
+        LogUtils.info("Click button Đánh giá sản phẩm");
+        product_detail_page.ClickButtonEvaluate();
+        product_detail_page.ClickEvaluateStar();
+        product_detail_page.ClickEvaluatePerformance();
+        product_detail_page.ClickEvaluateBatteryLife();
+        product_detail_page.ClickEvaluateCamera();
+        product_detail_page.InputEvaluateComment("Sản phẩm trên cả tuyệt vời luôn ấy");
+        product_detail_page.ClickEvaluateImage("C:\\Users\\Admin\\Pictures\\kk.jpg");
+        product_detail_page.ClickEvaluateButton();
+
+        LogUtils.info("Kiểm tra thông báo khi đánh giá sản phẩm");
+        By successEvaluate = By.xpath("//b[contains(text(),'CellphoneS đã nhận được phản hồi của bạn')]");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successEvaluate));
+        WebElement toast = driver.findElement(successEvaluate);
+        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi đánh giá sản phẩm");
+
+    }
+
+    @Test
+    public void verifyChangeAfterEvaluateProduct() {
+        LogUtils.info("Lấy giá trị sau khi đánh giá sản phẩm");
+        String EvaluateAfter = product_detail_page.getCountEvaluateProduct();
+        LogUtils.info("Số lượng đánh giá của sản phẩm là " + EvaluateAfter);
+
+        LogUtils.info("Kiểm tra số lượng đánh giá của sản phẩm");
+        Assert.assertTrue(Boolean.parseBoolean(EvaluateAfter), "Số lượng đánh giá của sản phẩm không thay đổi");
+    }
+
 }
