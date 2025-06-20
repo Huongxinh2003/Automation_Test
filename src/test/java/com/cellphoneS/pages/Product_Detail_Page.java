@@ -17,6 +17,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     private static WebDriver driver;
     private static WebDriverWait wait;
     private static JavascriptExecutor js;
+    private static ValidateUIHelper validateUIHelper;
 
 
     //public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
@@ -62,9 +63,25 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
     public Product_Detail_Page(WebDriver driver) {
         super(driver);
-        this.driver = driver;
-        this.js = (JavascriptExecutor) driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Product_Detail_Page.driver = driver;
+        js = (JavascriptExecutor) driver;
+        this.validateUIHelper = new ValidateUIHelper(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+    public Cart_Page OpenCartPage() {
+        LogUtils.info("Chọn phiên bản");
+        selectVersionProduct("512GB");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+        LogUtils.info("Chọn màu sắc");
+        selectColorProduct("Titan Đen");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+
+        WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", Buynow);
+        clickElement(BuyNow);
+        return new Cart_Page(driver);
     }
 
     public boolean isTitleProductDisplayed() {
@@ -72,7 +89,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return isElementDisplayed(TitleProduct);
     }
 
-    // Lấy tiêu đề trang
+    // Lấy tiêu đề sản phẩm
     public String getTitleProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
         return driver.getTitle();

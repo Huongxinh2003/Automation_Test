@@ -1,4 +1,175 @@
 package com.cellphoneS.testcases;
 
-public class Cart_Test {
+import com.cellphoneS.bases.BaseSetup;
+import com.cellphoneS.bases.SignIn_Helpers;
+import com.cellphoneS.pages.Cart_Page;
+import com.cellphoneS.pages.Homepage_page;
+import com.cellphoneS.pages.Product_Detail_Page;
+import com.cellphoneS.pages.Search_Page;
+import com.helpers.CaptureHelpers;
+import com.helpers.ValidateUIHelper;
+import com.ultilities.ExcelUtils;
+import com.ultilities.LogUtils;
+import com.ultilities.Properties_File;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+public class Cart_Test extends BaseSetup {
+
+    private static final Logger log = LoggerFactory.getLogger(Cart_Test.class);
+    private WebDriver driver;
+    public WebDriverWait wait;
+    public ExcelUtils excelHelper;
+    public ValidateUIHelper validateUIHelper;
+    public Product_Detail_Page product_detail_page;
+    public SignIn_Helpers signIn_helpers;
+    public Homepage_page homepage_page;
+    public Search_Page search_page;
+    public Cart_Page cart_page;
+
+    @BeforeClass
+    public void setUp() throws Exception {
+        //gọi hàm khởi tạo properties
+        Properties_File.setPropertiesFile();
+        // Gọi lại hàm startRecord
+//        try {
+//            RecordVideo.startRecord("RecordVideo");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+        // Lấy driver từ class cha BaseSetup
+        boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
+        driver = setupDriver(Properties_File.getPropValue("browser"), headless);
+        search_page = new Search_Page(driver);
+        excelHelper = new ExcelUtils();
+        validateUIHelper = new ValidateUIHelper(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        signIn_helpers = new SignIn_Helpers(driver);
+        homepage_page = signIn_helpers.SignIn(driver);
+        search_page = homepage_page.openSearchPage();
+        log.info("Đã mở trang tìm kiếm");
+    }
+
+    @AfterMethod
+    public void takeScreenshot(ITestResult result) throws InterruptedException {
+        Thread.sleep(1000);
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                CaptureHelpers.captureScreenshot(driver, result.getName());
+            } catch (Exception e) {
+                LogUtils.info("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+    }
+
+    @BeforeMethod
+    public void SearchProduct() {
+        LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
+        product_detail_page = search_page.openProductDetail("iphone");
+        cart_page = product_detail_page.OpenCartPage();
+    }
+
+    @Test
+    public void BuyProduct() {
+        LogUtils.info("Click button Mua ngay");
+        product_detail_page.ClickBuyNow();
+
+        LogUtils.info("Kiểm tra hiển thị tiêu đề trang");
+        Cart_Page.verifyCartPageTitle();
+        String title = Cart_Page.getCartPageTitle();
+        LogUtils.info("Tiêu đề trang " + title);
+    }
+
+    @Test
+    public void AddToCart() {
+        LogUtils.info("Chọn phiên bản");
+        product_detail_page.selectVersionProduct("512GB");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+        LogUtils.info("Chọn màu sắc");
+        product_detail_page.selectColorProduct("Titan Đen");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+
+        LogUtils.info("Click button Mua ngay");
+        product_detail_page.ClickBuyNow();
+    }
+
+    @Test
+    public void verifyAfterAddToCart() {
+        LogUtils.info("Chọn phiên bản");
+        product_detail_page.selectVersionProduct("512GB");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+        LogUtils.info("Chọn màu sắc");
+        product_detail_page.selectColorProduct("Titan Đen");
+        LogUtils.info("Chờ trang cập nhật lại");
+        validateUIHelper.waitForPageLoaded();
+        String detailImage = Cart_Page.extractFileName(Product_Detail_Page.getMainImageSrc());
+
+        LogUtils.info("Click button Mua ngay");
+        product_detail_page.ClickBuyNow();
+
+        LogUtils.info("Kiểm tra cart sản phẩm hiển thị trong giỏ");
+        cart_page.isBoxProductDisplayed();
+        Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Cart sản phẩm không hiển thị trong giỏ hàng");
+
+        LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong giỏ hàng");
+        String cartImage = Cart_Page.extractFileName(Cart_Page.getCartImageSrc());
+        Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
+
+        LogUtils.info("Kiêểm tra giá trên Cart sản phẩm và giá tạm tính");
+        String price = Cart_Page.getPriceProduct();
+        LogUtils.info("Giá sản phẩm: " + price);
+        Assert.assertTrue(
+                price.matches("\\d{1,3}(\\.\\d{3})+đ"),
+                "Giá sản phẩm không hợp lệ: " + price
+        );
+
+        String priceTemp = Cart_Page.getPriceTemp();
+        LogUtils.info("Giá tạm tính: "+ priceTemp);
+        Assert.assertEquals(price, priceTemp, "Giá trên Cart sản phẩm và giá tạm tính không khớp");
+
+        LogUtils.info("Kiểm tra số lượng saản phẩm khi thêm vaào giỏ");
+        String quantity = Cart_Page.getProductQuantity();
+        Assert.assertEquals(quantity, "1", "Số lượng sản phẩm không khớp");
+
+    }
+
+    @Test
+    public void testCart_20_MinQuantityLimit() {
+        cart_page.clickMinusButton();
+        String qty = Cart_Page.getProductQuantity();
+        String toast = cart_page.getToastMessage();
+
+        Assert.assertEquals(qty, "1", "Số lượng đã bị giảm dưới 1");
+        Assert.assertTrue(toast.contains("Số lượng sản phẩm đã giảm đến mức tối thiểu"), "Thông báo không đúng: " + toast);
+    }
+
+    @Test
+    public void testCart_21_MaxQuantityLimit() {
+        if (cart_page.getProductQuantity().equals("3")) {
+            cart_page.clickPlusButton();
+            String qty = Cart_Page.getProductQuantity();
+            Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
+            Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
+        }else {
+            cart_page.clickPlusButton();
+            cart_page.clickPlusButton();
+            cart_page.clickPlusButton();
+            String qty = Cart_Page.getProductQuantity();
+            Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
+            Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
+        }
+    }
 }

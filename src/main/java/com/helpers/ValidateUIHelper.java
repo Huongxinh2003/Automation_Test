@@ -53,7 +53,7 @@ public class ValidateUIHelper {
     }
 
     // Kiểm tra phần tử có hiển thị không
-    public boolean isElementDisplayed(By element) {
+    public static boolean isElementDisplayed(By element) {
         try {
             return driver.findElement(element).isDisplayed();
         } catch (Exception e) {
@@ -71,7 +71,7 @@ public class ValidateUIHelper {
     }
 
     // Lấy text hiển thị trên phần tử
-    public String getText(By element) {
+    public static String getText(By element) {
         return driver.findElement(element).getText();
     }
 

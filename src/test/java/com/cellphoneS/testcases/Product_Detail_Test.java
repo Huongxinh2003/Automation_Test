@@ -28,7 +28,7 @@ import static org.testng.Assert.assertTrue;
 
 public class Product_Detail_Test extends BaseSetup {
 
-    private static final Logger log = LoggerFactory.getLogger(Search_Test.class);
+    private static final Logger log = LoggerFactory.getLogger(Product_Detail_Test.class);
     private WebDriver driver;
     public WebDriverWait wait;
     public ExcelUtils excelHelper;
@@ -432,16 +432,11 @@ public class Product_Detail_Test extends BaseSetup {
         WebElement toast = driver.findElement(successEvaluate);
         assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi đánh giá sản phẩm");
 
-    }
-
-    @Test
-    public void verifyChangeAfterEvaluateProduct() {
         LogUtils.info("Lấy giá trị sau khi đánh giá sản phẩm");
         String EvaluateAfter = product_detail_page.getCountEvaluateProduct();
         LogUtils.info("Số lượng đánh giá của sản phẩm là " + EvaluateAfter);
 
         LogUtils.info("Kiểm tra số lượng đánh giá của sản phẩm");
-        Assert.assertTrue(Boolean.parseBoolean(EvaluateAfter), "Số lượng đánh giá của sản phẩm không thay đổi");
+        Assert.assertEquals(EvaluateBefore, EvaluateAfter, "Số lượng đánh giá của sản phẩm không thay đổi");
     }
-
 }
