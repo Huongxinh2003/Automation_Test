@@ -220,6 +220,7 @@ public class Product_Detail_Test extends BaseSetup {
         Product_Detail_Page.printMainImageSrc();
     }
 
+    //Kiểm tra lại
     @Test
     public void testMainImageSyncWithSmallThumbnailOnSwipe() {
         // Ảnh trước khi swipe
@@ -291,6 +292,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Thành phố");
     }
 
+    //Mặc định chọn "Hà Nội"
     @Test
     public void verifyChangeAfterSelectDistrict() {
         Product_Detail_Page.ScrollToElement();
@@ -301,7 +303,7 @@ public class Product_Detail_Test extends BaseSetup {
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Chọn Quận");
-        String districtName = Product_Detail_Page.ClickSelectDistrict("Quận Sơn Trà");
+        String districtName = Product_Detail_Page.ClickSelectDistrict("Quận Hai Bà Trưng");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
@@ -439,4 +441,5 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Kiểm tra số lượng đánh giá của sản phẩm");
         Assert.assertEquals(EvaluateBefore, EvaluateAfter, "Số lượng đánh giá của sản phẩm không thay đổi");
     }
+
 }

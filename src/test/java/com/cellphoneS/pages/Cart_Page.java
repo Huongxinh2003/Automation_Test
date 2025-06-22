@@ -1,14 +1,17 @@
 package com.cellphoneS.pages;
 
 import com.helpers.ValidateUIHelper;
+import com.ultilities.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Cart_Page extends ValidateUIHelper {
 
@@ -16,7 +19,7 @@ public class Cart_Page extends ValidateUIHelper {
     private static WebDriverWait wait;
     private static JavascriptExecutor js;
 
-    public By CheckboxSelect = By.xpath("//input[@id='__BVID__28']");
+    public By CheckboxSelect = By.xpath("//div[@class='d-flex align-items-center justify-content-center']");
     public By ButtonDelete = By.xpath("//em[contains(text(),'Xóa sản phẩm đã chọn')]");
     public By CheckboxProduct = By.xpath("//label[@for='__BVID__32']");
     public By TitleProduct = By.xpath("//div[@class='product-name']");
@@ -31,7 +34,6 @@ public class Cart_Page extends ValidateUIHelper {
     public By PopupAnounce = By.xpath("//div[@id='cpsModalB2b___BV_modal_content_']");
     public By BoxPromotion = By.xpath("//div[@class='member-promotion']");
     public By BoxPromo = By.xpath("//div[@class='box_promo']");
-    public By buttonGuarantee = By.xpath("//span[@class='d-flex align-items-center action']");
     public By BuyCombo = By.xpath("//div[@class='combov2']");
     public By SelectBuyCombo = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[4]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]");
     public By ShowMoreCombo = By.xpath("//span[contains(text(),'Xem tất cả')]");
@@ -53,8 +55,10 @@ public class Cart_Page extends ValidateUIHelper {
     }
 
     // Kiểm tra tiêu đề trang
+    //False
     public static boolean verifyCartPageTitle() {
-        String expectedTitle = "cellphoneS Cart";
+        String expectedTitle = "CellphoneS Cart";
+        Assert.assertEquals(getCartPageTitle(), expectedTitle);
         return getCartPageTitle().equals(expectedTitle);
     }
 
@@ -63,14 +67,18 @@ public class Cart_Page extends ValidateUIHelper {
         clickElement(CheckboxSelect);
     }
 
+    public boolean isCheckboxSelectDisplayed() {
+        return isElementDisplayed(CheckboxSelect);
+    }
+
     public void clickDelete() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonDelete));
         clickElement(ButtonDelete);
     }
 
-    public void selectProduct() {
+    public boolean isSelectedProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CheckboxProduct));
-        clickElement(CheckboxProduct);
+        return isElementDisplayed(CheckboxProduct);
     }
 
     public boolean isTitleProductDisplayed() {
@@ -88,6 +96,36 @@ public class Cart_Page extends ValidateUIHelper {
     public static String getPriceProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(PriceProduct));
         return driver.findElement(PriceProduct).getText();
+    }
+
+    //Hàm chuển đổi string price sang int
+    public static int convertPriceStringToInt(String priceText) {
+        // Ví dụ input: "5.690.000₫"
+        priceText = priceText.replaceAll("[^\\d]", ""); // Bỏ dấu chấm, ₫
+        return Integer.parseInt(priceText);
+    }
+
+    public void getPriceTempInt() {
+        List<WebElement> priceElements = driver.findElements(PriceProduct);
+
+        int total = 0;
+        for (WebElement priceElement : priceElements) {
+            String priceText = priceElement.getText();
+            int price = convertPriceStringToInt(priceText);
+            total += price;
+        }
+
+        LogUtils.info("Tổng giá của các sản phẩm trong giỏ: " + total + " VND");
+
+        WebElement subtotalElement = driver.findElement(PriceTemp);
+        int subtotal = convertPriceStringToInt(subtotalElement.getText());
+
+        if (subtotal == total) {
+            LogUtils.info("Tạm tính đúng");
+        } else {
+            LogUtils.info("FALSE: Tạm tính sai. Tổng sản phẩm = " + total + ", nhưng Tạm tính = " + subtotal);
+        }
+
     }
 
     public static String getPriceTemp() {
@@ -126,13 +164,10 @@ public class Cart_Page extends ValidateUIHelper {
         }
     }
 
-    public boolean isPopupAnounceDisplayed() {
-        return isElementDisplayed(PopupAnounce);
+    public Checkout_Page openCheckout() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonBuyNow));
+        clickElement(ButtonBuyNow);
+        return new Checkout_Page(driver);
     }
-
-
-
-
-
 
 }

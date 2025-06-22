@@ -289,8 +289,9 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public static String ClickSelectDistrict(String districtName) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
-//        clickElement(DistrictOption);
+        clickElement(DistrictOption);
 //        WebElement selectDistrict = wait.until(ExpectedConditions.visibilityOfElementLocated(SelectDistrict));
+//        selectDropdownByVisibleText(DistrictOption, districtName);
         Select District = new Select(element);
         District.selectByVisibleText(districtName);
         return districtName;

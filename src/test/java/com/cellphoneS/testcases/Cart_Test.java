@@ -11,7 +11,10 @@ import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.LogUtils;
 import com.ultilities.Properties_File;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +26,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+
+import static com.cellphoneS.pages.Cart_Page.convertPriceStringToInt;
 
 public class Cart_Test extends BaseSetup {
 
@@ -57,6 +62,7 @@ public class Cart_Test extends BaseSetup {
         signIn_helpers = new SignIn_Helpers(driver);
         homepage_page = signIn_helpers.SignIn(driver);
         search_page = homepage_page.openSearchPage();
+        cart_page = new Cart_Page(driver);
         log.info("Đã mở trang tìm kiếm");
     }
 
@@ -80,30 +86,27 @@ public class Cart_Test extends BaseSetup {
     }
 
     @Test
-    public void BuyProduct() {
-        LogUtils.info("Click button Mua ngay");
-        product_detail_page.ClickBuyNow();
-
+    public void VerifyTitleCartPage() {
         LogUtils.info("Kiểm tra hiển thị tiêu đề trang");
         Cart_Page.verifyCartPageTitle();
         String title = Cart_Page.getCartPageTitle();
         LogUtils.info("Tiêu đề trang " + title);
     }
 
-    @Test
-    public void AddToCart() {
-        LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("512GB");
-        LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
-        LogUtils.info("Chọn màu sắc");
-        product_detail_page.selectColorProduct("Titan Đen");
-        LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
-
-        LogUtils.info("Click button Mua ngay");
-        product_detail_page.ClickBuyNow();
-    }
+//    @Test
+//    public void AddToCart() {
+//        LogUtils.info("Chọn phiên bản");
+//        product_detail_page.selectVersionProduct("512GB");
+//        LogUtils.info("Chờ trang cập nhật lại");
+//        validateUIHelper.waitForPageLoaded();
+//        LogUtils.info("Chọn màu sắc");
+//        product_detail_page.selectColorProduct("Titan Đen");
+//        LogUtils.info("Chờ trang cập nhật lại");
+//        validateUIHelper.waitForPageLoaded();
+//
+//        LogUtils.info("Click button Mua ngay");
+//        product_detail_page.ClickBuyNow();
+//    }
 
     @Test
     public void verifyAfterAddToCart() {
@@ -119,6 +122,10 @@ public class Cart_Test extends BaseSetup {
 
         LogUtils.info("Click button Mua ngay");
         product_detail_page.ClickBuyNow();
+
+        LogUtils.info("Kiểm tra checkbox sản phẩm đã được chọn");
+        cart_page.isSelectedProduct();
+        Assert.assertTrue(cart_page.isSelectedProduct(), "Checkbox sản phẩm chưa được chọn");
 
         LogUtils.info("Kiểm tra cart sản phẩm hiển thị trong giỏ");
         cart_page.isBoxProductDisplayed();
@@ -158,7 +165,7 @@ public class Cart_Test extends BaseSetup {
 
     @Test
     public void testCart_21_MaxQuantityLimit() {
-        if (cart_page.getProductQuantity().equals("3")) {
+        if (Cart_Page.getProductQuantity().equals("3")) {
             cart_page.clickPlusButton();
             String qty = Cart_Page.getProductQuantity();
             Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
@@ -172,4 +179,24 @@ public class Cart_Test extends BaseSetup {
             Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
         }
     }
+
+
+    //Kiểm tra lại
+    @Test
+    public void verifyPriceTemp() {
+        LogUtils.info("Kiểm tra giá tạm tính");
+        cart_page.selectCheckbox();
+        cart_page.isCheckboxSelectDisplayed();
+        Assert.assertTrue(cart_page.isCheckboxSelectDisplayed(), "Checkbox sản phẩm chưa được chọn");
+        cart_page.getPriceTempInt();
+    }
+
+    @Test
+    public void BuyProduct() {
+        LogUtils.info("Click button Mua ngay");
+        cart_page.openCheckout();
+    }
+
+
+
 }

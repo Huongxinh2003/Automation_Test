@@ -44,7 +44,7 @@ public class ValidateUIHelper {
 
 
     // Chọn giá trị từ dropdown theo visible text
-    public void selectDropdownByVisibleText(By element, String visibleText) {
+    public static void selectDropdownByVisibleText(By element, String visibleText) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         WebElement dropdownElement = driver.findElement(element);
         dropdownElement.click();

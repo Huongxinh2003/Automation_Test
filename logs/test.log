@@ -1679,3 +1679,456 @@ Bản đồ
 2025-06-20 16:09:48 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
 36.990.000₫
 2025-06-20 16:09:48 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 16:13:24 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 16:13:25 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 16:13:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 16:13:45 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 16:13:46 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 16:13:46 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 16:13:48 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 16:13:49 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 16:13:49 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:01:04 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:01:05 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:01:14 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:01:23 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:01:24 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:01:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:01:27 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:01:28 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:01:28 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:01:29 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:02:17 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:02:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:02:27 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:02:36 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:02:36 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:02:36 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:02:39 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:02:40 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:02:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:02:42 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:03:53 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:03:54 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:04:04 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:04:14 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:04:14 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:04:14 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:04:17 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:04:18 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:04:18 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:04:19 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:10:48 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:10:49 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:10:58 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:11:07 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:11:08 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:11:08 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:11:10 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:11:11 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:11:11 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:11:13 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:14:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:14:29 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:14:37 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:14:46 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:14:46 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:14:46 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:14:48 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:14:50 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:14:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:14:51 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:17:07 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:17:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:17:16 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:17:25 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:17:25 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:17:25 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:17:28 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:17:29 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:17:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:17:30 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:25:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:26:00 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:26:07 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:26:16 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:26:17 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:26:17 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:26:19 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:26:20 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:26:20 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:26:22 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:27:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:27:03 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:27:10 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:27:19 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:27:19 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:27:19 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:27:22 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:27:23 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:27:23 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:27:25 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:30:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:30:41 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:30:48 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:30:56 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:30:57 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:30:57 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:30:59 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:31:00 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:31:00 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:31:01 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:34:33 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:34:34 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:34:41 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:34:49 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:34:50 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:34:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:34:52 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:34:53 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:34:53 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:34:54 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:37:52 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:37:53 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:38:00 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:38:10 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:38:11 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:38:11 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:38:13 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:38:14 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:38:14 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:38:16 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:42:27 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:42:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:42:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:42:44 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:42:44 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:42:44 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:42:47 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:42:48 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:42:48 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:42:50 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 19:44:34 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 19:44:35 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 19:44:42 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 19:44:51 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 19:44:51 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 19:44:51 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:44:54 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 19:44:55 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 19:44:55 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 19:44:56 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:03:17 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:03:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:03:26 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:03:34 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:03:34 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:03:34 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:03:37 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:03:38 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:03:38 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:03:40 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:09:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:09:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:09:26 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:09:34 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:09:35 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:09:35 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:09:37 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:09:38 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:09:38 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:09:39 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-22 20:09:40 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-22 20:12:06 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:12:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:12:15 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:12:24 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:12:24 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:12:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:12:27 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:12:27 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:12:27 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:12:29 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-22 20:12:29 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-22 20:14:16 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:14:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:14:31 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:14:42 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:14:43 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:14:43 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:14:45 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:14:46 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:14:46 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:14:47 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-22 20:14:48 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-22 20:16:16 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:16:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:16:24 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:16:33 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:16:33 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:16:33 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:16:35 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:16:37 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:16:37 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:16:38 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-22 20:16:38 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-22 20:16:42 INFO  LogUtils:10 - Kiểm tra cart sản phẩm hiển thị trong giỏ
+2025-06-22 20:16:42 INFO  LogUtils:10 - Kiểm tra hình ảnh sản phẩm hiển thị trong giỏ hàng
+2025-06-22 20:16:42 INFO  LogUtils:10 - Kiêểm tra giá trên Cart sản phẩm và giá tạm tính
+2025-06-22 20:16:42 INFO  LogUtils:10 - Giá sản phẩm: 36.990.000đ
+2025-06-22 20:16:42 INFO  LogUtils:10 - Giá tạm tính: 36.990.000đ
+2025-06-22 20:16:42 INFO  LogUtils:10 - Kiểm tra số lượng saản phẩm khi thêm vaào giỏ
+2025-06-22 20:17:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:17:55 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:18:03 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:18:12 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:19:00 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:19:01 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:19:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:19:17 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:19:17 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:19:17 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:19:19 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:19:21 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:19:21 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:19:22 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:22:13 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:22:14 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:22:22 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:22:30 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:22:31 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:22:31 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:22:34 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:22:34 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:22:34 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:22:36 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:26:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:26:55 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:27:03 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:27:11 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:27:11 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:27:11 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:27:14 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:27:15 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:27:15 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:27:16 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:28:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:28:38 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:28:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:28:57 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:28:57 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:28:57 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:29:00 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:29:01 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:29:01 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:29:02 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:32:55 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:32:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:33:03 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:33:12 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:33:12 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:33:12 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:33:15 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:33:16 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:33:16 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:33:17 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:38:03 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:38:04 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:38:12 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:38:21 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:38:21 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:38:21 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:38:24 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:38:25 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:38:25 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:38:26 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:39:25 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:39:26 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:39:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:39:43 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:39:44 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:39:44 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:39:46 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:39:48 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:39:48 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:39:49 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:41:21 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:41:22 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:41:29 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:41:37 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:41:37 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:41:37 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:41:40 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:41:41 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:41:41 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:41:42 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:41:46 INFO  LogUtils:10 - Tổng giá của các sản phẩm trong giỏ: 167760000 VND
+2025-06-22 20:41:46 INFO  LogUtils:10 - Tạm tính sai. Tổng sản phẩm = 167760000, nhưng Tạm tính = 42690000
+2025-06-22 20:50:46 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 20:50:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 20:50:55 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 20:51:03 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 20:51:04 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 20:51:04 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:51:06 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 20:51:07 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 20:51:07 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 20:51:09 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 20:51:12 INFO  LogUtils:10 - Tổng giá của các sản phẩm trong giỏ: 79680000 VND
+2025-06-22 20:51:13 INFO  LogUtils:10 - Tạm tính sai. Tổng sản phẩm = 79680000, nhưng Tạm tính = 42690000
+2025-06-22 22:22:22 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 22:22:23 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 22:22:31 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 22:22:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 22:22:40 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 22:22:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 22:22:42 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 22:22:43 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 22:22:43 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 22:22:45 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 22:27:11 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 22:27:12 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 22:27:19 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 22:27:27 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 22:27:27 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 22:27:27 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 22:27:29 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 22:27:31 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 22:27:31 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 22:27:32 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 22:30:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 22:30:03 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 22:30:11 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 22:30:20 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 22:30:20 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 22:30:20 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 22:30:23 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 22:30:23 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 22:30:23 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 22:30:25 INFO  LogUtils:10 - Kiểm tra giá tạm tính
+2025-06-22 22:30:28 INFO  LogUtils:10 - Tổng giá của các sản phẩm trong giỏ: 167760000 VND
+2025-06-22 22:30:28 INFO  LogUtils:10 - FALSE: Tạm tính sai. Tổng sản phẩm = 167760000, nhưng Tạm tính = 42690000
+2025-06-22 23:06:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 23:06:45 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 23:06:54 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 23:07:03 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-22 23:07:06 INFO  LogUtils:10 - Chọn Quận
+2025-06-22 23:08:53 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 23:08:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 23:09:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 23:09:26 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-22 23:09:32 INFO  LogUtils:10 - Chọn Quận
+2025-06-22 23:34:08 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 23:34:09 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 23:34:17 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 23:34:26 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 23:34:27 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 23:34:27 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:34:28 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 23:34:30 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 23:34:30 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:34:31 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-22 23:38:56 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 23:38:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 23:39:06 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 23:39:14 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 23:39:15 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 23:39:15 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:39:17 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 23:39:18 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 23:39:18 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:39:19 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-22 23:57:04 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 23:57:05 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 23:57:14 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 23:57:23 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 23:57:24 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 23:57:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:57:26 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 23:57:27 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 23:57:27 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:57:33 INFO  LogUtils:10 - Kiem tra title trang checkout
+2025-06-22 23:59:14 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-22 23:59:15 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-22 23:59:24 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-22 23:59:33 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-22 23:59:34 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-22 23:59:34 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:59:36 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-22 23:59:37 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-22 23:59:37 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-22 23:59:42 INFO  LogUtils:10 - Kiem tra title trang checkout
+2025-06-22 23:59:42 INFO  LogUtils:10 - Tiêu đề trang: CellphoneS Cart
+2025-06-23 00:00:27 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 00:00:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 00:00:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-23 00:00:44 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 00:01:29 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 00:01:30 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 00:01:38 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-23 00:01:46 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 00:01:47 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 00:01:47 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 00:01:49 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 00:01:50 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 00:01:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 00:01:52 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề trang
+2025-06-23 00:01:55 INFO  LogUtils:10 - Tiêu đề trang CellphoneS Cart
+2025-06-23 00:03:45 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 00:03:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 00:03:55 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-23 00:04:03 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 00:04:04 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 00:04:04 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 00:04:06 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 00:04:07 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 00:04:07 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 00:04:09 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề trang
+2025-06-23 00:06:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 00:06:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 00:06:25 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-23 00:06:32 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 00:06:33 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 00:06:33 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 00:06:35 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 00:06:36 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 00:06:36 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 00:06:41 INFO  LogUtils:10 - Kiem tra title trang checkout
