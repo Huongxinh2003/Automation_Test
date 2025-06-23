@@ -8,9 +8,7 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.Reporter;
 
 
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

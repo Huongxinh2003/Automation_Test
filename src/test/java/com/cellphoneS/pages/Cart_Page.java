@@ -1,7 +1,7 @@
 package com.cellphoneS.pages;
 
 import com.helpers.ValidateUIHelper;
-import com.ultilities.LogUtils;
+import com.ultilities.logs.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -120,10 +120,11 @@ public class Cart_Page extends ValidateUIHelper {
         WebElement subtotalElement = driver.findElement(PriceTemp);
         int subtotal = convertPriceStringToInt(subtotalElement.getText());
 
+
         if (subtotal == total) {
             LogUtils.info("Tạm tính đúng");
         } else {
-            LogUtils.info("FALSE: Tạm tính sai. Tổng sản phẩm = " + total + ", nhưng Tạm tính = " + subtotal);
+            Assert.assertEquals(total, subtotal,"Tạm tính sai. Tổng sản phẩm = " + total + ", nhưng Tạm tính = " + subtotal);
         }
 
     }

@@ -1,7 +1,9 @@
 package com.cellphoneS.testcases;
 
-import com.cellphoneS.bases.BaseSetup;
-import com.cellphoneS.bases.SignIn_Helpers;
+import com.base.BaseSetup;
+import com.cellphoneS.helpers.SignIn_Helpers;
+import com.ultilities.listeners.ReportListener;
+import com.ultilities.listeners.TestListener;
 import com.cellphoneS.pages.Cart_Page;
 import com.cellphoneS.pages.Homepage_page;
 import com.cellphoneS.pages.Product_Detail_Page;
@@ -9,26 +11,20 @@ import com.cellphoneS.pages.Search_Page;
 import com.helpers.CaptureHelpers;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
-import com.ultilities.LogUtils;
+import com.ultilities.logs.LogUtils;
 import com.ultilities.Properties_File;
-import org.openqa.selenium.By;
+import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
-import static com.cellphoneS.pages.Cart_Page.convertPriceStringToInt;
-
+@Listeners(ReportListener.class)
 public class Cart_Test extends BaseSetup {
 
     private static final Logger log = LoggerFactory.getLogger(Cart_Test.class);
@@ -78,6 +74,7 @@ public class Cart_Test extends BaseSetup {
         }
     }
 
+//    @Description("Thực hiện mở trang giỏ hàng")
     @BeforeMethod
     public void SearchProduct() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
@@ -93,21 +90,7 @@ public class Cart_Test extends BaseSetup {
         LogUtils.info("Tiêu đề trang " + title);
     }
 
-//    @Test
-//    public void AddToCart() {
-//        LogUtils.info("Chọn phiên bản");
-//        product_detail_page.selectVersionProduct("512GB");
-//        LogUtils.info("Chờ trang cập nhật lại");
-//        validateUIHelper.waitForPageLoaded();
-//        LogUtils.info("Chọn màu sắc");
-//        product_detail_page.selectColorProduct("Titan Đen");
-//        LogUtils.info("Chờ trang cập nhật lại");
-//        validateUIHelper.waitForPageLoaded();
-//
-//        LogUtils.info("Click button Mua ngay");
-//        product_detail_page.ClickBuyNow();
-//    }
-
+    //Loại bỏ chọn màu sắc
     @Test
     public void verifyAfterAddToCart() {
         LogUtils.info("Chọn phiên bản");
@@ -190,13 +173,5 @@ public class Cart_Test extends BaseSetup {
         Assert.assertTrue(cart_page.isCheckboxSelectDisplayed(), "Checkbox sản phẩm chưa được chọn");
         cart_page.getPriceTempInt();
     }
-
-    @Test
-    public void BuyProduct() {
-        LogUtils.info("Click button Mua ngay");
-        cart_page.openCheckout();
-    }
-
-
 
 }

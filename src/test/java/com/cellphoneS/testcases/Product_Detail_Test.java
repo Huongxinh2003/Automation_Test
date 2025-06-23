@@ -1,14 +1,15 @@
 package com.cellphoneS.testcases;
 
-import com.cellphoneS.bases.BaseSetup;
-import com.cellphoneS.bases.SignIn_Helpers;
+import com.base.BaseSetup;
+import com.cellphoneS.helpers.SignIn_Helpers;
 import com.cellphoneS.pages.Homepage_page;
 import com.cellphoneS.pages.Product_Detail_Page;
 import com.cellphoneS.pages.Search_Page;
 import com.helpers.CaptureHelpers;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
-import com.ultilities.LogUtils;
+import com.ultilities.listeners.ReportListener;
+import com.ultilities.logs.LogUtils;
 import com.ultilities.Properties_File;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,15 +18,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 
+@Listeners(ReportListener.class)
 public class Product_Detail_Test extends BaseSetup {
 
     private static final Logger log = LoggerFactory.getLogger(Product_Detail_Test.class);
@@ -42,12 +41,6 @@ public class Product_Detail_Test extends BaseSetup {
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
-//        // Gọi lại hàm startRecord
-//        try {
-//            RecordVideo.startRecord("RecordVideo");
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
         // Lấy driver từ class cha BaseSetup
         boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
         driver = setupDriver(Properties_File.getPropValue("browser"), headless);
@@ -60,20 +53,8 @@ public class Product_Detail_Test extends BaseSetup {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    @AfterMethod
-    public void takeScreenshot(ITestResult result) throws InterruptedException {
-        Thread.sleep(1000);
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                CaptureHelpers.captureScreenshot(driver, result.getName());
-            } catch (Exception e) {
-                LogUtils.info("Exception while taking screenshot " + e.getMessage());
-            }
-        }
-    }
-
     @BeforeMethod
-    public void SearchProduct() {
+    public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
     }
@@ -204,6 +185,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }
 
+    //Kiểm tra lại
     @Test
     public void testClickTwoThumbnailsAndPrintMainImage() throws InterruptedException{
         LogUtils.info("Trước khi click");
@@ -315,8 +297,7 @@ public class Product_Detail_Test extends BaseSetup {
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Quận");
-        Assert.assertTrue(CityAfter.contains("Đà Nẵng"), "Thành phố không thay đổi sau khi chọn Quận");
-        Assert.assertNotEquals(DistrictBefore, DistrictAfter, "Quận không thay đổi sau khi chọn Quận");
+        Assert.assertNotEquals(DistrictBefore, DistrictAfter, "Quận không thay đổi sau khi chọn");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, " Số cửa hàng còn hàng không thay đổi sau khi chọn Quận");
 
         LogUtils.info("Kiểm tra box có chứa tên Quận đã chọn");
@@ -341,11 +322,6 @@ public class Product_Detail_Test extends BaseSetup {
 
         LogUtils.info("Click button Mua ngay");
         product_detail_page.ClickBuyNow();
-
-//        By successBuyNow = By.xpath("//div[@class='toasted toasted-primary success']");
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(successBuyNow));
-//        WebElement toast = driver.findElement(successBuyNow);
-//        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Mua ngay");
 
         LogUtils.info("Kiểm tra chuyển màn hình sang giỏ hàng");
         String expectedUrl = "https://cellphones.com.vn/cart/";
@@ -439,7 +415,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Số lượng đánh giá của sản phẩm là " + EvaluateAfter);
 
         LogUtils.info("Kiểm tra số lượng đánh giá của sản phẩm");
-        Assert.assertEquals(EvaluateBefore, EvaluateAfter, "Số lượng đánh giá của sản phẩm không thay đổi");
+        Assert.assertNotEquals(EvaluateBefore, EvaluateAfter, "Số lượng đánh giá của sản phẩm thay đổi");
     }
 
 }

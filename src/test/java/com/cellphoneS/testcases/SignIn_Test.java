@@ -1,21 +1,19 @@
 package com.cellphoneS.testcases;
 
-import com.cellphoneS.bases.BaseSetup;
+import com.base.BaseSetup;
 import com.cellphoneS.pages.Homepage_page;
 import com.cellphoneS.pages.Search_Page;
 import com.helpers.CaptureHelpers;
-import com.helpers.RecordVideo;
 import com.ultilities.ExcelUtils;
 import com.helpers.ValidateUIHelper;
 import com.cellphoneS.pages.SignIn_Page;
-import com.ultilities.LogUtils;
+import com.ultilities.logs.LogUtils;
 import com.ultilities.Properties_File;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v137.network.Network;
 import org.openqa.selenium.devtools.v137.network.model.ConnectionType;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -24,8 +22,6 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
@@ -46,12 +42,6 @@ public class SignIn_Test extends BaseSetup {
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
-        // Gọi lại hàm startRecord
-//        try {
-//            RecordVideo.startRecord("RecordVideo");
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
         boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
         driver = setupDriver(Properties_File.getPropValue("browser"), headless);
         signIn_page = new SignIn_Page(driver);
@@ -59,22 +49,6 @@ public class SignIn_Test extends BaseSetup {
         validateUIHelper = new ValidateUIHelper(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
-    }
-
-    // Nó sẽ thực thi sau mỗi lần thực thi testcase (@Test)
-    @AfterMethod
-    public void takeScreenshot(ITestResult result) throws InterruptedException {
-        Thread.sleep(1000);
-        //Khởi tạo đối tượng result thuộc ITestResult để lấy trạng thái và tên của từng Test Case
-        //Ở đây sẽ so sánh điều kiện nếu testcase passed hoặc failed
-        //passed = SUCCESS và failed = FAILURE
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                CaptureHelpers.captureScreenshot(driver, result.getName());
-            } catch (Exception e) {
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-        }
     }
 
 
