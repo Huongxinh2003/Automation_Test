@@ -7,25 +7,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ExtentManager {
-    private static ExtentReports extent;
+    public static ExtentReports extent;
 
     public static synchronized ExtentReports getExtentReports() {
         if (extent == null) {
-            // Tạo timestamp theo định dạng yyyyMMdd_HHmmss
-            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            // Tạo đường dẫn file báo cáo với timestamp trong tên file
-            String reportPath = "ExtentReports/ExtentReport_" + timeStamp + ".html";
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            String path = System.getProperty("user.dir") + "/ExtentReports/ExtentReport_" + timestamp + ".html";
 
-            ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
-            sparkReporter.config().setDocumentTitle("Automation Test Report");
-            sparkReporter.config().setReportName("Test Execution Report");
+            ExtentSparkReporter spark = new ExtentSparkReporter(path);
+            spark.config().setDocumentTitle("Automation Report");
+            spark.config().setReportName("Test Results");
 
             extent = new ExtentReports();
-            extent.attachReporter(sparkReporter);
+            extent.attachReporter(spark);
 
-            // Thêm thông tin hệ thống (tùy chọn)
             extent.setSystemInfo("OS", System.getProperty("os.name"));
-            extent.setSystemInfo("Java Version", System.getProperty("java.version"));
+            extent.setSystemInfo("Java", System.getProperty("java.version"));
         }
         return extent;
     }

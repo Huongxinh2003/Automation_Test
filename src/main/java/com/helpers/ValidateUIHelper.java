@@ -1,10 +1,7 @@
 package com.helpers;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
 import java.awt.*;
@@ -51,6 +48,22 @@ public class ValidateUIHelper {
         Select dropdown = new Select(dropdownElement);
         dropdown.selectByVisibleText(visibleText);
     }
+
+    public void selectDropdown(By element, String visibleText) {
+        WebElement dropdownElement = wait.until(ExpectedConditions.elementToBeClickable(element));
+        dropdownElement.click();
+
+        try {
+            // Thử dùng Select nếu là <select>
+            Select select = new Select(dropdownElement);
+            select.selectByVisibleText(visibleText);
+        } catch (UnexpectedTagNameException e) {
+            // Nếu không phải <select>, xử lý như custom dropdown
+            By optionLocator = By.xpath("//div[contains(text(),'" + visibleText + "')]");
+            wait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator)).click();
+        }
+    }
+
 
     // Kiểm tra phần tử có hiển thị không
     public static boolean isElementDisplayed(By element) {

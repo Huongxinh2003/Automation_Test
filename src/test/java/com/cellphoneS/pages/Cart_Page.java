@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cart_Page extends ValidateUIHelper {
 
@@ -27,7 +28,6 @@ public class Cart_Page extends ValidateUIHelper {
     public static By PriceProduct = By.xpath("//p[contains(text(),'đ')]");
     public static By ProductQuantity = By.xpath("//input[@readonly='readonly']");
     public static By BoxProduct = By.xpath("//div[@class='block__product-item']");
-    public By RemoveProduct = By.xpath("//button[@class='remove-item']//*[name()='svg']");
     public By MinusButton = By.xpath("//span[@class='minus d-flex justify-content-center align-items-center']");
     public By PlusButton = By.xpath("//span[@class='plus d-flex justify-content-center align-items-center']");
     public By ToastMessage1 = By.xpath("//div[@class='toast-body']");
@@ -75,6 +75,12 @@ public class Cart_Page extends ValidateUIHelper {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonDelete));
         clickElement(ButtonDelete);
     }
+
+    public List<String> getAllProductNamesInCart() {
+        List<WebElement> productElements = driver.findElements(By.cssSelector(".item__name")); // chỉnh selector
+        return productElements.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
 
     public boolean isSelectedProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CheckboxProduct));
@@ -141,10 +147,6 @@ public class Cart_Page extends ValidateUIHelper {
 
     public boolean isBoxProductDisplayed() {
         return isElementDisplayed(BoxProduct);
-    }
-    public void removeProduct() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(RemoveProduct));
-        clickElement(RemoveProduct);
     }
 
     public void clickMinusButton() {

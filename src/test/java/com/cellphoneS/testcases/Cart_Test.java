@@ -111,10 +111,9 @@ public class Cart_Test extends BaseSetup {
         Assert.assertTrue(cart_page.isSelectedProduct(), "Checkbox sản phẩm chưa được chọn");
 
         LogUtils.info("Kiểm tra cart sản phẩm hiển thị trong giỏ");
-        cart_page.isBoxProductDisplayed();
         Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Cart sản phẩm không hiển thị trong giỏ hàng");
 
-        LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong giỏ hàng");
+        LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng");
         String cartImage = Cart_Page.extractFileName(Cart_Page.getCartImageSrc());
         Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
 
@@ -172,6 +171,15 @@ public class Cart_Test extends BaseSetup {
         cart_page.isCheckboxSelectDisplayed();
         Assert.assertTrue(cart_page.isCheckboxSelectDisplayed(), "Checkbox sản phẩm chưa được chọn");
         cart_page.getPriceTempInt();
+    }
+
+    @Test
+    public void deleteProduct() {
+        LogUtils.info("Loại bỏ sản phẩm");
+        cart_page.clickDelete();
+        cart_page.isBoxProductDisplayed();
+        String productName = "iPhone 16 Pro Max 512GB | Chính hãng VN/A - Titan Đen";
+        Assert.assertNotEquals(cart_page.getAllProductNamesInCart(), productName, "Sản phẩm chưa bị xoá khỏi giỏ hàng");
     }
 
 }

@@ -3157,3 +3157,397 @@ Bản đồ
 2025-06-23 17:01:30 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is starting...
 2025-06-23 17:01:35 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is passed.
 2025-06-23 17:01:39 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 21:32:11 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 21:32:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 21:32:48 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 21:33:10 INFO  LogUtils:10 - AddProductToCart test is starting...
+2025-06-23 21:33:10 WARN  LogUtils:22 - AddProductToCart test is skipped.
+2025-06-23 21:33:10 INFO  LogUtils:10 - BuyProduct test is starting...
+2025-06-23 21:33:10 WARN  LogUtils:22 - BuyProduct test is skipped.
+2025-06-23 21:33:10 INFO  LogUtils:10 - ClickInstallmentOption2 test is starting...
+2025-06-23 21:33:10 WARN  LogUtils:22 - ClickInstallmentOption2 test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - ClickInstallmentOption3 test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - ClickInstallmentOption3 test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - EvaluateProduct test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - EvaluateProduct test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - FavoriteProduct test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - FavoriteProduct test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - Search test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - Search test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - testClickTwoThumbnailsAndPrintMainImage test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - testClickTwoThumbnailsAndPrintMainImage test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - testMainImageSyncWithSmallThumbnailOnSwipe test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - testMainImageSyncWithSmallThumbnailOnSwipe test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - verifyChangeAfterSelectCity test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - verifyChangeAfterSelectCity test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - verifyChangeAfterSelectColorProduct test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - verifyChangeAfterSelectColorProduct test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - verifyChangeAfterSelectDistrict test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - verifyChangeAfterSelectDistrict test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - verifyChangeAfterSelectVersionProduct test is skipped.
+2025-06-23 21:33:11 INFO  LogUtils:10 - verifyDiscountCalculation test is starting...
+2025-06-23 21:33:11 WARN  LogUtils:22 - verifyDiscountCalculation test is skipped.
+2025-06-23 21:33:12 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 21:40:44 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 21:41:12 INFO  LogUtils:10 - deleteProduct test is starting...
+2025-06-23 21:41:12 WARN  LogUtils:22 - deleteProduct test is skipped.
+2025-06-23 21:41:12 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 21:41:57 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 21:42:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 21:42:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 21:42:30 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-23 21:42:40 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 21:42:41 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 21:42:41 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 21:42:44 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 21:42:45 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 21:42:45 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 21:42:48 INFO  LogUtils:10 - deleteProduct test is starting...
+2025-06-23 21:42:48 INFO  LogUtils:10 - Loại bỏ sản phẩm
+2025-06-23 21:42:52 ERROR LogUtils:14 - deleteProduct test is failed.
+2025-06-23 21:42:59 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 21:47:49 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 21:48:04 INFO  LogUtils:10 - deleteProduct test is starting...
+2025-06-23 21:48:04 WARN  LogUtils:22 - deleteProduct test is skipped.
+2025-06-23 21:48:04 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 21:52:53 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 21:53:08 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 21:53:14 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 21:53:24 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-23 21:53:35 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 21:53:36 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 21:53:36 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 21:53:39 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 21:53:40 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 21:53:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 21:53:43 INFO  LogUtils:10 - deleteProduct test is starting...
+2025-06-23 21:53:43 INFO  LogUtils:10 - Loại bỏ sản phẩm
+2025-06-23 21:53:47 INFO  LogUtils:10 - deleteProduct test is passed.
+2025-06-23 21:53:51 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 22:44:42 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 22:45:00 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 22:45:03 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 22:45:24 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 22:45:24 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 22:45:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:45:27 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 22:45:28 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 22:45:28 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:45:34 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 22:45:35 ERROR LogUtils:14 - verifyDisplayCheckout test is failed.
+2025-06-23 22:45:39 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 22:46:59 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 22:47:13 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 22:47:17 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 22:47:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 22:47:39 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 22:47:39 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:47:42 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 22:47:43 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 22:47:43 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:47:49 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 22:47:49 ERROR LogUtils:14 - verifyDisplayCheckout test is failed.
+2025-06-23 22:47:53 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 22:49:21 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 22:49:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 22:49:40 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 22:50:01 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 22:50:02 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 22:50:02 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:50:04 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 22:50:05 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 22:50:05 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:50:11 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 22:50:13 ERROR LogUtils:14 - verifyDisplayCheckout test is failed.
+2025-06-23 22:50:17 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 22:56:46 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 22:57:00 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 22:57:04 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 22:57:24 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 22:57:25 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 22:57:25 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:57:28 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 22:57:29 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 22:57:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 22:57:34 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 22:57:35 ERROR LogUtils:14 - verifyDisplayCheckout test is failed.
+2025-06-23 22:57:39 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 22:59:22 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 22:59:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 22:59:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 23:00:10 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 23:00:10 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 23:00:10 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 23:00:14 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 23:00:15 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 23:00:15 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 23:00:23 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 23:00:24 ERROR LogUtils:14 - verifyDisplayCheckout test is failed.
+2025-06-23 23:00:28 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 23:02:03 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 23:02:43 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 23:02:43 WARN  LogUtils:22 - verifyDisplayCheckout test is skipped.
+2025-06-23 23:02:43 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-23 23:03:09 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-23 23:03:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-23 23:03:32 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-23 23:03:59 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-23 23:03:59 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-23 23:03:59 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 23:04:03 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-23 23:04:04 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-23 23:04:04 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-23 23:04:11 INFO  LogUtils:10 - verifyDisplayCheckout test is starting...
+2025-06-23 23:04:12 ERROR LogUtils:14 - verifyDisplayCheckout test is failed.
+2025-06-23 23:04:16 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:39:28 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:39:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:39:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:40:08 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:40:09 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 01:40:09 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:40:12 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 01:40:13 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 01:40:13 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:40:19 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 01:40:40 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 01:40:44 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:42:06 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:42:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:42:24 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:42:44 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:42:45 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 01:42:45 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:42:48 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 01:42:49 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 01:42:49 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:42:55 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 01:43:17 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 01:43:20 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:46:19 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:46:33 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:46:37 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:46:58 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:46:58 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 01:46:58 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:47:01 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 01:47:02 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 01:47:02 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:47:07 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 01:47:09 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 01:47:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:47:51 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:48:03 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:48:07 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:48:31 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:48:33 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 01:48:33 WARN  LogUtils:22 - verifyPaymennInfo test is skipped.
+2025-06-24 01:48:33 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:48:55 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:49:08 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:49:12 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:49:33 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:49:34 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 01:49:34 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:49:36 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 01:49:37 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 01:49:37 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 01:49:43 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 01:49:45 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 01:49:49 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:51:51 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:52:09 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:52:12 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:52:31 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:52:33 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-24 01:52:33 WARN  LogUtils:22 - verifyPaymennInfo2 test is skipped.
+2025-06-24 01:52:33 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 01:52:52 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 01:53:11 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 01:53:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 01:53:41 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 01:53:44 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 01:53:44 WARN  LogUtils:22 - verifyPaymennInfo test is skipped.
+2025-06-24 01:53:44 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:03:46 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:04:00 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:04:05 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:04:27 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:04:27 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:04:27 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:04:30 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:04:31 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:04:31 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:04:36 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-24 02:04:38 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-24 02:04:42 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:11:17 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:11:31 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:11:35 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:11:56 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:11:57 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:11:57 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:11:59 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:12:00 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:12:00 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:12:07 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:12:29 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:12:32 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:13:38 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:13:52 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:13:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:14:20 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:14:21 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:14:21 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:14:23 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:14:24 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:14:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:14:30 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:14:32 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:14:35 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:16:48 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:17:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:17:06 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:17:27 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:17:28 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:17:28 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:17:30 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:17:32 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:17:32 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:17:37 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:17:39 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:17:43 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:27:07 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:27:19 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:27:23 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:27:44 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:27:44 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:27:44 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:27:47 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:27:48 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:27:48 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:27:54 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:27:56 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:28:00 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:36:03 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:36:16 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:36:20 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:36:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:36:40 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:36:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:36:42 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:36:44 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:36:44 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:36:49 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:36:51 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:36:55 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:42:52 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:43:07 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:43:10 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:43:32 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:43:32 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:43:32 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:43:34 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:43:36 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:43:36 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:43:42 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:44:04 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:44:08 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:45:18 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:45:33 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:45:37 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:45:57 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:45:57 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:45:57 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:45:59 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:46:01 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:46:01 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:46:07 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:46:29 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:46:33 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:47:58 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:48:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:48:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:48:36 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:48:37 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:48:37 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:48:39 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:48:40 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:48:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:48:46 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:49:09 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:49:12 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:49:42 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:49:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:49:58 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:50:19 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:50:20 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:50:20 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:50:23 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:50:24 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:50:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:50:29 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-24 02:50:31 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-24 02:50:35 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:52:18 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:52:31 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:52:35 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:52:56 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:52:57 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:52:57 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:52:59 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:53:01 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:53:01 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:53:07 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:53:29 ERROR LogUtils:14 - verifyPaymennInfo test is failed.
+2025-06-24 02:53:33 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:53:50 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:54:03 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:54:07 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:54:29 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:54:30 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:54:30 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:54:32 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:54:33 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:54:33 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:54:41 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:54:43 INFO  LogUtils:10 - verifyPaymennInfo test is passed.
+2025-06-24 02:54:47 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-24 02:55:21 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-24 02:55:34 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-24 02:55:38 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-24 02:56:00 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-24 02:56:00 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-24 02:56:00 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:56:03 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-24 02:56:04 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+36.990.000₫
+2025-06-24 02:56:04 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-24 02:56:10 INFO  LogUtils:10 - verifyPaymennInfo test is starting...
+2025-06-24 02:56:12 INFO  LogUtils:10 - verifyPaymennInfo test is passed.
+2025-06-24 02:56:16 INFO  LogUtils:10 - End testing Automation_Test
