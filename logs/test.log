@@ -4308,3 +4308,19 @@ Bản đồ
 2025-06-24 17:27:47 INFO  LogUtils:10 - verifyPricePayment test is starting...
 2025-06-24 17:28:10 ERROR LogUtils:14 - verifyPricePayment test is failed.
 2025-06-24 17:28:14 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 00:22:02 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 00:22:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 00:22:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 00:22:38 INFO  LogUtils:10 - PaymentInfo test is starting...
+2025-06-25 00:22:38 WARN  LogUtils:22 - PaymentInfo test is skipped.
+2025-06-25 00:22:38 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 00:29:22 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 00:29:43 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 00:29:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 00:30:07 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-25 00:30:07 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-25 00:30:07 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-25 00:30:09 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-25 00:30:11 INFO  LogUtils:10 - verifyPricePayment test is starting...
+2025-06-25 00:30:11 WARN  LogUtils:22 - verifyPricePayment test is skipped.
+2025-06-25 00:30:11 INFO  LogUtils:10 - End testing Automation_Test

@@ -21,8 +21,6 @@ public class Checkout_Page extends ValidateUIHelper {
 
     String city = "Hà Nội";
     //Trang thông tin
-    public By TitleCheckout = By.xpath("//h1[contains(text(),'Thông tin giao hàng')]");
-    public By Blockinfo = By.xpath("//div[@class='block-info']");
     public By TabInfo = By.xpath("//div[@class='nav__item nav__item--active']");
     public By TabPayment = By.xpath("//div[@class='nav__item nav__item--active']");
     public By CheckoutCard = By.xpath("//div[@class='view-list']");

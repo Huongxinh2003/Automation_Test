@@ -1,4 +1,0 @@
-package com.Clickbuy.test;
-
-public class Checkout_Test {
-}

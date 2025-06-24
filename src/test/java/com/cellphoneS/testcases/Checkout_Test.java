@@ -1,11 +1,9 @@
 package com.cellphoneS.testcases;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.base.BaseTest;
 import com.cellphoneS.helpers.SignIn_Helpers;
 import com.cellphoneS.pages.*;
-import com.helpers.CaptureHelpers;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.extentreports.ExtentManager;
@@ -18,12 +16,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.time.Duration;
-
-import static com.ultilities.extentreports.ExtentManager.extent;
 
 @Listeners(ReportListener.class)
 public class Checkout_Test extends BaseTest {
@@ -416,9 +411,7 @@ public class Checkout_Test extends BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         checkout_page.SendKeysDistrict("Quận 2");
         checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
-        String AddressInfo = checkout_page.getAddressName();
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
-        String NoteInfo = checkout_page.getNote();
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
@@ -430,5 +423,6 @@ public class Checkout_Test extends BaseTest {
         }else {
             test.get().fail("Giá thanh toán không chính xác");
         }
+
     }
 }
