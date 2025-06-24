@@ -70,7 +70,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
     public Cart_Page OpenCartPage() {
         LogUtils.info("Chọn phiên bản");
-        selectVersionProduct("512GB");
+        selectVersionProduct("1TB");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
         LogUtils.info("Chọn màu sắc");
@@ -122,16 +122,20 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public void selectVersionProduct(String version) {
-        List<WebElement> versionOptions = driver.findElements(By.xpath("//a[@class='item-linked button__link linked-1 false']"));
-        for (WebElement option : versionOptions) {
-            String text = option.getText().replaceAll("\\s+", "").toLowerCase();
-            if (text.contains(version.replaceAll("\\s+", "").toLowerCase())) {
+        List<WebElement> options = driver.findElements(By.xpath("//div[@class='list-linked']//a"));
+
+        for (WebElement option : options) {
+            String optionText = option.getText().replaceAll("\\s+", "").toLowerCase();
+            String expectedText = version.replaceAll("\\s+", "").toLowerCase();
+
+            if (optionText.contains(expectedText)) {
                 option.click();
                 LogUtils.info("Đã chọn phiên bản: " + option.getText());
                 return;
             }
         }
-        throw new RuntimeException("Không tìm thấy phiên bản có tên: " + version);
+
+        throw new RuntimeException("Không tìm thấy phiên bản: " + version);
     }
 
     public void selectColorProduct(String color) {

@@ -1,6 +1,7 @@
 package com.cellphoneS.pages;
 
 import com.helpers.ValidateUIHelper;
+import com.ultilities.logs.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Checkout_Page extends ValidateUIHelper {
 
@@ -17,24 +19,31 @@ public class Checkout_Page extends ValidateUIHelper {
     private static WebDriverWait wait;
     private static JavascriptExecutor js;
 
+    String city = "Hà Nội";
     //Trang thông tin
     public By TitleCheckout = By.xpath("//h1[contains(text(),'Thông tin giao hàng')]");
+    public By Blockinfo = By.xpath("//div[@class='block-info']");
     public By TabInfo = By.xpath("//div[@class='nav__item nav__item--active']");
-    public By CheckoutCart = By.xpath("//div[@class='view-list']");
-    public By InputEmail = By.xpath("//div[@class='customer-input__2']//div[@class='box-input__line']");
+    public By TabPayment = By.xpath("//div[@class='nav__item nav__item--active']");
+    public By CheckoutCard = By.xpath("//div[@class='view-list']");
+    public By ProductQuantityCard = By.xpath("//span[@class='text-danger']");
+    public By BasePrice = By.xpath("//p[@class='product__price--through']");
+    public By PriceCard = By.xpath("//p[@class='product__price--show']");
+    public By InputEmail = By.xpath("//input[@placeholder='Email']");
     public By NameCustomer = By.xpath("//p[contains(text(),'Phùng Hương')]");
     public By PhoneCustomer = By.xpath("//p[@class='customer-phone']");
     public By CheckboxPromo = By.xpath("//input[@id='emailPromo']");
     public By CheckboxPickUp = By.xpath("//input[@id='pickup']");
-    public By DropdownCity = By.xpath("//input[@placeholder='Hà Nội']");
+    public By DropdownCity = By.xpath(String.format("//input[@placeholder='%s']", city));
+//    public By SuggestionCity = (By.xpath(String.format("//div[@class='dropdown__item dropdown__item--active']//span[contains(text(),'%s')]", city)));
     public By ButtonAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
     public By DropdownDistrict = By.xpath("//input[@placeholder='Chọn quận/huyện']");
     public By DropdownAddress = By.xpath("//input[@placeholder='Chọn địa chỉ cửa hàng']");
-    public By InputNote = By.xpath("//textarea[@placeholder='Ghi chú']");
+    public By InputNote = By.xpath("//input[@placeholder='Ghi chú khác (nếu có)']");
     public By CheckboxShipping = By.xpath("//input[@id='shipping']");
     public static By InputName = By.xpath("//input[@placeholder='Họ tên người nhận']");
     public By InputPhone = By.xpath("//input[@placeholder='Số điện thoại người nhận']");
-    public By DropdownCityShip = By.xpath("//input[@placeholder='Đà Nẵng']");
+    public By DropdownCityShip = By.xpath(String.format("//input[@placeholder='%s']", city));
     public By DropdownDistrictShip = By.xpath("//input[@placeholder='Chọn quận/huyện']");
     public By DropdownAddressShip = By.xpath("//input[@placeholder='Chọn phường/xã']");
     public By InputHomeNumberShip = By.xpath("//input[@placeholder='Số nhà, tên đường']");
@@ -43,22 +52,26 @@ public class Checkout_Page extends ValidateUIHelper {
     public By ButtonContinue = By.xpath("//button[contains(text(),'Tiếp tục')]");
 
     //TRang thanh toán
-    public By RadioVATYes = By.xpath("//input[@id='VAT-Yes']");
-    public By RadioVATNo = By.xpath("//input[@id='VAT-No']");
     public By DiscountCode = By.xpath("//input[@placeholder='Nhập mã giảm giá (chỉ áp dụng 1 lần)']");
+    public By ButtonApply1 = By.xpath("//button[contains(text(),'Xác nhận')]");
+    public By ToastMessageCode = By.xpath("//div[@class='b-toaster-slot vue-portal-target']");
     public By ButtonApply = By.xpath("//button[contains(text(),'Áp dụng')]");
     public By ProductQuantity = By.cssSelector("div[class='info-payment'] div:nth-child(1) div:nth-child(1) p:nth-child(1)");
-    public By TotalProduct = By.xpath("//p[contains(text(),'đ')]");
+    public By BasePriceProduct = By.xpath("//p[contains(text(),'đ')]");
     public By TotalShipping = By.xpath("//p[contains(text(),'Miễn phí')]");
     public By DiscountPrice = By.xpath("//p[@class='quote-block__price']");
     public By TotalPrice = By.xpath("//p[@class='quote-bottom__value']");
-    public By PaymentMethod = By.xpath("//div[@class='payment-quote__modal']");
+    public By PaymentMethod = By.xpath("//div[@class='payment-quote__main']");
+    public By ShopeePay = By.xpath("//p[normalize-space()='ShopeePay']");
+    public By ApplyPaymentMethod = By.xpath("//button[contains(text(),'Xác nhận')]");
+    public By TickPaymentMethod = By.xpath("//div[@class='list-payment__item list-payment__item--active list-payment__item-shopee_pay']//div[@class='payment-item__tick']//*[name()='svg']");
     public By CustomerName = By.xpath("//p[contains(text(),'Phùng Hương')]");
     public By PhoneNumber = By.xpath("//p[normalize-space()='0332019523']");
     public By Email = By.xpath("//p[normalize-space()='quynhhuong6319@gmail.com']");//p[normalize-space()='EMAIL']");
+    public By Address = By.xpath("//p[contains(text(),'55B Trần Quang Khải, P. Tân Định, Q. 1')]");
+    public By Note = By.xpath("//p[contains(text(),'Tới nhận hàng ngày 28/07/2025')]");
     public By CheckboxTerms = By.xpath("//input[@type='checkbox']");
-    public By TotalPricePay = By.xpath("//span[@class='total']");
-    public By ButtonBuyNow = By.xpath("//button[normalize-space()='Thanh toán']");
+    public By TotalPriceTemp = By.xpath("//span[@class='total']");
     public By ListProduct = By.xpath("//button[@id='viewListItemInQuote-btn']");
     public By TitleListProduct = By.xpath("//header[@id='modalViewListItemInQuote___BV_modal_header_']");
 
@@ -83,14 +96,23 @@ public class Checkout_Page extends ValidateUIHelper {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(TabInfo)).getText();
     }
 
-    public boolean isCheckoutCartDisplayed() {
-        return isElementDisplayed(CheckoutCart);
+    public String getTabPaymentActive() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(TabPayment)).getText();
     }
 
-    public String getInputEmail() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(InputEmail));
-        return emailElement.getText();
+    public boolean isCheckoutCartDisplayed() {
+        return isElementDisplayed(CheckoutCard);
+    }
+
+    public String getBasePrice() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(BasePrice)).getText();
+    }
+
+    public void SendKeysEmail(String email) {
+        WebElement clear = driver.findElement(InputEmail);
+        clear.clear();
+        wait.until(ExpectedConditions.elementToBeClickable(InputEmail));
+        driver.findElement(InputEmail).sendKeys(email);
     }
 
     public String getNameCustomer() {
@@ -108,7 +130,14 @@ public class Checkout_Page extends ValidateUIHelper {
     public void isSelectedCheckboxPromotion() {
         wait.until(ExpectedConditions.elementToBeClickable(CheckboxPromo));
         WebElement checkbox = driver.findElement(CheckboxPromo);
-        Assert.assertTrue(checkbox.isSelected(), "Checkbox chưa được chọn");
+        Assert.assertFalse(checkbox.isSelected(), "Checkbox được chọn");
+    }
+
+    public void clickCheckboxPromo() {
+        WebElement checkbox = driver.findElement(CheckboxPromo);
+        if (!checkbox.isSelected()) {
+            checkbox.click();
+        }
     }
 
     public boolean isSelectedCheckboxPickup() {
@@ -126,13 +155,17 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysCity(String city) {
-        wait.until(ExpectedConditions.elementToBeClickable(DropdownCity));
-        driver.findElement(DropdownCity).sendKeys(city);
-    }
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownCity));
+        (js).executeScript("arguments[0].scrollIntoView();", input);
+        input.click();
+        input.clear();
+        input.sendKeys(city);
 
-    public String getCityName() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(DropdownCity));
-        return getText(DropdownCity);
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + city + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
     public void ClickButtonAgree() {
@@ -145,8 +178,15 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysDistrict(String district) {
-        wait.until(ExpectedConditions.elementToBeClickable(DropdownDistrict));
-        driver.findElement(DropdownDistrict).sendKeys(district);
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownDistrict));
+        input.click();
+        input.sendKeys(district);
+
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + district + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
     public boolean isDropDownAddressDisplayed() {
@@ -154,10 +194,22 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysAddress(String address) {
-        wait.until(ExpectedConditions.elementToBeClickable(DropdownAddress));
-        driver.findElement(DropdownAddress).sendKeys(address);
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownAddress));
+        (js).executeScript("arguments[0].scrollIntoView();", input);
+        input.click();
+        input.sendKeys(address);
+
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + address + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
+    public String getAddressName() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(DropdownAddress));
+        return getText(DropdownAddress);
+    }
 
     public boolean isInputNoteDisplayed() {
         return driver.findElement(InputNoteShip).isDisplayed();
@@ -166,6 +218,11 @@ public class Checkout_Page extends ValidateUIHelper {
     public void SendKeysInputNote(String note) {
         wait.until(ExpectedConditions.elementToBeClickable(InputNote));
         sendKeys(InputNote, note);
+    }
+
+    public String getNote() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(InputNoteShip));
+        return getText(InputNoteShip);
     }
 
     public void ClickCheckboxShip() {
@@ -189,8 +246,16 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysCityShipping(String city) {
-        wait.until(ExpectedConditions.elementToBeClickable(DropdownCityShip));
-        driver.findElement(DropdownCityShip).sendKeys(city);
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownCityShip));
+        input.click();
+        input.clear();
+        input.sendKeys(city);
+
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + city + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
     public boolean isDropdownDistrictShippingDisplayed() {
@@ -198,8 +263,15 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysDistrictShipping(String district) {
-        wait.until(ExpectedConditions.elementToBeClickable(DropdownDistrictShip));
-        driver.findElement(DropdownDistrictShip).sendKeys(district);
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownDistrictShip));
+        input.click();
+        input.sendKeys(district);
+
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + district + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
     public boolean isDropdownAddressShippingDisplayed() {
@@ -207,8 +279,15 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysAddressShipping(String address) {
-        wait.until(ExpectedConditions.elementToBeClickable(DropdownAddressShip));
-        driver.findElement(DropdownAddressShip).sendKeys(address);
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownAddressShip));
+        input.click();
+        input.sendKeys(address);
+
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + address + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
     public boolean isInputHomeNumberDisplayed() {
@@ -216,8 +295,15 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public void SendKeysInputHomeNumber(String homeNumber) {
-        wait.until(ExpectedConditions.elementToBeClickable(InputHomeNumberShip));
-        driver.findElement(InputHomeNumberShip).sendKeys(homeNumber);
+        // Click input
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(InputHomeNumberShip));
+        input.click();
+        input.sendKeys(homeNumber);
+
+        // Chờ item hiện ra và click vào nó
+        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + homeNumber + "']";
+        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        cityOption.click();
     }
 
     public boolean isInputNoteShippingDisplayed() {
@@ -229,6 +315,11 @@ public class Checkout_Page extends ValidateUIHelper {
         driver.findElement(InputNoteShip).sendKeys(note);
     }
 
+    public String getPriceCard() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PriceCard));
+        return driver.findElement(PriceCard).getText();
+    }
+
     public String getPriceTemp() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(PriceTemp));
         return driver.findElement(PriceTemp).getText();
@@ -237,6 +328,118 @@ public class Checkout_Page extends ValidateUIHelper {
     public void ClickButtonCheckout() {
         wait.until(ExpectedConditions.elementToBeClickable(ButtonContinue));
         driver.findElement(ButtonContinue).click();
+    }
+
+    public void SendkeysDiscountCode(String discountCode) {
+        wait.until(ExpectedConditions.elementToBeClickable(DiscountCode));
+        sendKeys(DiscountCode, discountCode);
+    }
+
+    public void ClickButtonApply() {
+        wait.until(ExpectedConditions.elementToBeClickable(ButtonApply));
+        clickElement(ButtonApply);
+    }
+
+    public void ClickButtonApply1() {
+        wait.until(ExpectedConditions.elementToBeClickable(ButtonApply1));
+        clickElement(ButtonApply1);
+    }
+
+    public String getToastMessageCode() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ToastMessageCode));
+        return driver.findElement(ToastMessageCode).getText();
+    }
+
+    public String getProductQuantityPayment() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductQuantity)).getText();
+    }
+
+    public String getProductQuantityInfo() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductQuantityCard)).getText();
+    }
+
+    public String getBasePriceProduct() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(BasePriceProduct)).getText();
+    }
+
+    public String getTotalShipping() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(TotalShipping)).getText();
+    }
+
+    public String getDiscountPrice() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(DiscountPrice)).getText();
+    }
+
+    public String getTotalPrice() {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(TotalPrice));
+        (js).executeScript("arguments[0].scrollIntoView();", element);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(TotalPrice)).getText();
+    }
+
+    public void ClickPaymentMethod() {
+        wait.until(ExpectedConditions.elementToBeClickable(PaymentMethod));
+        (js).executeScript("arguments[0].scrollIntoView();", driver.findElement(PaymentMethod));
+        clickElement(PaymentMethod);
+    }
+
+    public void ClickShopeePay() {
+        wait.until(ExpectedConditions.elementToBeClickable(ShopeePay));
+        (js).executeScript("arguments[0].scrollIntoView();", driver.findElement(ShopeePay));
+        clickElement(ShopeePay);
+    }
+
+    public boolean isTickPaymentMethodDisplayed() {
+        return isElementDisplayed(TickPaymentMethod);
+    }
+
+    public void ClickApplyPaymentMethod() {
+        wait.until(ExpectedConditions.elementToBeClickable(ApplyPaymentMethod));
+        clickElement(ApplyPaymentMethod);
+    }
+
+    public String getCustomerName() {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(CustomerName));
+        (js).executeScript("arguments[0].scrollIntoView();", element);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(CustomerName)).getText();
+    }
+
+    public String getPhoneNumber() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNumber)).getText();
+    }
+
+    public String getEmail() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(Email)).getText();
+    }
+
+    public String getAddress() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(Address)).getText();
+    }
+
+    public String getNote2() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(Note)).getText();
+    }
+
+    public boolean isCheckboxTermsSelected() {
+        WebElement checkbox = driver.findElement(CheckboxTerms);
+        if(!checkbox.isSelected()){
+            LogUtils.info("Chưa tích chọn checkbox");
+        }else {
+            LogUtils.info("Đã tích chọn checkbox");
+        }
+        return checkbox.isSelected();
+    }
+
+    public String getTotalPriceTemp() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(TotalPriceTemp)).getText();
+    }
+
+    public void ClickListProduct() {
+        wait.until(ExpectedConditions.elementToBeClickable(ListProduct));
+        clickElement(ListProduct);
+    }
+
+    public boolean isTitleListProductDisplayed() {
+        return isElementDisplayed(TitleListProduct);
     }
 
 

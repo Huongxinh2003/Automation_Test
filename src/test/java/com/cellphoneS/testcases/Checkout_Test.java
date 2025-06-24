@@ -11,6 +11,7 @@ import com.ultilities.ExcelUtils;
 import com.ultilities.extentreports.ExtentManager;
 import com.ultilities.listeners.ReportListener;
 import com.ultilities.Properties_File;
+import com.ultilities.logs.LogUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -78,7 +79,7 @@ public class Checkout_Test extends BaseTest {
     }
 
     @Test
-    public void verifyDisplayCheckout() {
+    public void verifyDisplayTabInfo() {
         test.get().info("Kiểm tra sản phẩm chuyen sang trang Thông tin");
         String activeTab = checkout_page.getTabInfoActive();
         Assert.assertTrue(activeTab.contains("THÔNG TIN"), "Tab không phải 'THÔNG TIN'");
@@ -92,7 +93,6 @@ public class Checkout_Test extends BaseTest {
         test.get().info("Kiểm tra thông tin tự động điền");
         String expectedName = "Phùng Hương";
         String expectedPhone = "0332019523";
-        String expectedEmail = "quynhhuong6319@gmail.com";
 
 //        Assert.assertEquals(checkout_page.getNameCustomer(), expectedName, "Tự động điền tên người dùng sai");
 //        Assert.assertEquals(checkout_page.getPhoneCustomer(), expectedPhone, "Tự động điền sđt sai");
@@ -114,18 +114,19 @@ public class Checkout_Test extends BaseTest {
             test.get().fail("SĐT không đúng. Thực tế: " + actualPhone + ", Kỳ vọng: " + expectedPhone);
         }
 
-        test.get().info("Kiểm tra email khách hàng");
-        String actualEmail = checkout_page.getInputEmail();
-        if (actualEmail.equals(expectedEmail)) {
-            test.get().pass("Email chính xác: " + actualEmail);
-        } else {
-            test.get().fail("Email không đúng. Thực tế: " + actualEmail + ", Kỳ vọng: " + expectedEmail);
-        }
+        test.get().info("Kiểm tra nhập Email mới");
+        checkout_page.SendKeysEmail("huongcan6319@gmail.com");
+        LogUtils.info("Thành công nhập Email mới");
+
+        test.get().info("Kiểm tra click checkbox nhận ưu đãi");
+        checkout_page.clickCheckboxPromo();
+        LogUtils.info("Thành công click checkbox nhận ưu đãi");
 
     }
 
+    //Chuyển về thành phố Hà Nội
     @Test
-    public void verifyPaymennInfo() {
+    public void verifyPaymentInfo() {
         test.get().info("Kiểm tra thống tin 'Nhận hàng tại cửa hàng'");
         checkout_page.isSelectedCheckboxPickup();
         if (checkout_page.isSelectedCheckboxPickup()) {
@@ -145,19 +146,19 @@ public class Checkout_Test extends BaseTest {
 //        Assert.assertEquals(checkoutCityName,productCityName, "Thành phố được chọn khác nhau");
 
         test.get().info("Kiểm tra nhâp thống tin 'Nhận tại cửa hàng'");
-        checkout_page.SendKeysCity("Hà Nội");
-//        checkout_page.ClickButtonAgree();
-        checkout_page.SendKeysDistrict("Huyện Gia Lâm");
-        checkout_page.SendKeysAddress("51 Ngô Xuân Quảng, Thị trấn Trâu Quỳ, Huyện Gia Lâm, Hà Nội");
-//        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        checkout_page.SendKeysCity("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        checkout_page.SendKeysDistrict("Quận 2");
+        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
 
         test.get().info("Chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
 
-        test.get().info("Chuyển sang tab 'Thanh toán' thành công");
-
     }
 
+    //Chuyển về thành phố Hà Nội
     @Test
     public void verifyPaymennInfo2() {
         test.get().info("Kiểm tra thống tin 'Giao hàng tận nơi'");
@@ -184,21 +185,250 @@ public class Checkout_Test extends BaseTest {
         Assert.assertTrue(checkout_page.isDropdownCityShippingDisplayed(), "Dropdown city không hiển thị");
         Assert.assertTrue(checkout_page.isDropdownDistrictShippingDisplayed(), "Dropdown district không hiển thị");
         Assert.assertTrue(checkout_page.isDropdownAddressShippingDisplayed(), "Dropdown address không hiển thị");
-        Assert.assertTrue(checkout_page.isInputHomeNumberDisplayed(), "Input home number não hiển thị");
+        Assert.assertTrue(checkout_page.isInputHomeNumberDisplayed(), "Input home number không hiển thị");
         Assert.assertTrue(checkout_page.isInputNoteShippingDisplayed(), "Input note não hiển thị");
 
         test.get().info("Kiểm tra nhâp thống tin 'Giao hàng tận nơi'");
-        checkout_page.SendKeysCityShipping("Hà Nội");
-        checkout_page.SendKeysDistrictShipping("Huyện Gia Lâm");
-        checkout_page.SendKeysAddressShipping("Thị trấn Trâu Quỳ");
-        checkout_page.SendKeysInputHomeNumber("51 Ngô Xuân Quảng");
+        checkout_page.SendKeysCityShipping("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        checkout_page.SendKeysDistrictShipping("Quận 1");
+        checkout_page.SendKeysAddressShipping("Phường Tân Định");
+        checkout_page.SendKeysInputHomeNumber("55B Trần Quang Khải");
         checkout_page.SendKeysInputNoteShipping("ship hàng ngày 28/07/2025");
 
         test.get().info("Chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
 
-        test.get().info("Chuyển sang tab 'Thanh toán' thành công");
+    }
+
+    @Test
+    public void verifyPrice() {
+        LogUtils.info("Giá sản phẩm trên Card là: "+ checkout_page.getPriceCard());
+        LogUtils.info("Giá sản phẩm trên thanh toán là: "+ checkout_page.getPriceTemp());
+        test.get().info("So sánh giá sản phẩm trên trang thanh toán");
+        Assert.assertEquals(checkout_page.getPriceCard(),checkout_page.getPriceTemp(),"Giá sản phẩm không khớp");
+    }
+
+    @Test
+    public void verifySwitchTab() {
+        test.get().info("Nhập thông tin");
+        checkout_page.SendKeysCity("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        checkout_page.SendKeysDistrict("Quận 2");
+        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+
+        test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
+        checkout_page.ClickButtonCheckout();
+        String activeTab = checkout_page.getTabPaymentActive();
+        Assert.assertTrue(activeTab.contains("THANH TOÁN"),"Chưa chuyển sang tab 'Thanh toán'");
 
     }
 
+    @Test
+    public void verifyTabPayment() {
+        int quantityInfo = Integer.parseInt(checkout_page.getProductQuantityInfo());
+        String BasePriceInfo = checkout_page.getBasePrice();
+        test.get().info("Nhập thông tin");
+        checkout_page.SendKeysCity("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        checkout_page.SendKeysDistrict("Quận 2");
+        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+
+        test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
+        checkout_page.ClickButtonCheckout();
+
+        test.get().info("Kiểm tra nhập sai mã giảm giá");
+        checkout_page.SendkeysDiscountCode("123456");
+        checkout_page.ClickButtonApply();
+        checkout_page.ClickButtonApply1();
+        String expectedMessage = "Mã giảm giá không khả dụng. Vui lòng kiểm tra lại.";
+        String actualMessage = checkout_page.getToastMessageCode();
+        if(expectedMessage.equals(actualMessage)){
+            test.get().pass("Thông báo hiển thị đúng");
+        }else {
+            test.get().fail("Thông báo hiển thị sai");
+        }
+
+        test.get().info("Kiểm tra đồng bộ số lượng sản phẩm");
+        String quantityPayment = checkout_page.getProductQuantityPayment().replaceAll("[^0-9]", "");
+        if (quantityPayment.equals(quantityInfo)) {
+            test.get().pass("Số lượng sản phẩm đồng bộ");
+        }else {
+            test.get().fail("Số lượng sản phẩm không đồng bộ");
+        }
+
+        test.get().info("Kiểm tra đồng bộ giá niêm yết");
+        String BasePricePayment = checkout_page.getBasePriceProduct();
+        if (BasePriceInfo.equals(BasePricePayment)) {
+            test.get().pass("Giá niêm yết đồng bộ");
+        }else {
+            test.get().fail("Giá niêm yết không đồng bộ");
+        }
+
+        test.get().info("Kiểm tra hiển thị phí vận chuyển");
+        checkout_page.getTotalShipping();
+        LogUtils.info("Phí vận chuyển là: " + checkout_page.getTotalShipping());
+
+        test.get().info("Kiểm tra số tiền được giảm giá");
+        checkout_page.getDiscountPrice();
+        LogUtils.info("Số tiền được giảm giá là: " + checkout_page.getDiscountPrice());
+
+        test.get().info("Kiểm tra tổng tiền thanh toán");
+        checkout_page.getTotalPrice();
+        String BasePrice = checkout_page.getBasePriceProduct().replaceAll("[^0-9]", "");
+        String DiscountPrice = checkout_page.getDiscountPrice().replaceAll("[^0-9]", "");
+        String TotalPrice = checkout_page.getTotalPrice().replaceAll("[^0-9]", "");
+        // Chuyển sang kiểu long để tính toán
+        long basePrice = Long.parseLong(BasePrice);
+        long discountPrice = Long.parseLong(DiscountPrice);
+        long displayedTotalPrice = Long.parseLong(TotalPrice);
+
+        // Tính toán tổng tiền thanh toán
+        long calculatedTotalPrice = basePrice - discountPrice;
+        LogUtils.info("Tổng tiền thanh toán là: " + calculatedTotalPrice);
+
+        if (calculatedTotalPrice == displayedTotalPrice) {
+            test.get().pass("Tổng tiền thanh toán khớp: " + calculatedTotalPrice);
+        } else {
+            test.get().fail("Tổng tiền không khớp. Tính được: " + calculatedTotalPrice +
+                    " - Trang hiển thị: " + displayedTotalPrice);
+        }
+    }
+
+
+    @Test
+    public void selectPaymentMethod(){
+        test.get().info("Nhập thông tin");
+        checkout_page.SendKeysCity("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        checkout_page.SendKeysDistrict("Quận 2");
+        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+
+        test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
+        checkout_page.ClickButtonCheckout();
+
+        test.get().info("Kiểm tra chọn phương thức thanh toán");
+        checkout_page.ClickPaymentMethod();
+        checkout_page.ClickShopeePay();
+        checkout_page.isTickPaymentMethodDisplayed();
+        Assert.assertTrue(checkout_page.isTickPaymentMethodDisplayed(),"Chưa chọn phương thức thanh toán");
+        checkout_page.ClickApplyPaymentMethod();
+        checkout_page.getToastMessageCode();
+        String expectedMessage = "Thêm phương thức thanh toán thành công.";
+        String actualMessage = checkout_page.getToastMessageCode();
+        if(expectedMessage.equals(actualMessage)){
+            test.get().pass("Thông báo hiển thị đúng");
+        }else {
+            test.get().fail("Thông báo hiển thị sai");
+        }
+    }
+
+    @Test
+    public void PaymentInfo() {
+        String nameCustomerInfo = checkout_page.getNameCustomer();
+        String phoneCustomerInfo = checkout_page.getPhoneCustomer();
+        String emailCustomerInfo = "quynhhuong6319@gmail.com";
+
+        test.get().info("Nhập thông tin");
+        checkout_page.SendKeysCity("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        checkout_page.SendKeysDistrict("Quận 2");
+        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        String AddressInfo = checkout_page.getAddressName();
+        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        String NoteInfo = checkout_page.getNote();
+
+        test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
+        checkout_page.ClickButtonCheckout();
+
+        String nameCustomerPayment = checkout_page.getCustomerName();
+        String phoneCustomerPayment = checkout_page.getPhoneNumber();
+        String emailCustomerPayment = checkout_page.getEmail();
+
+        test.get().info("Kiểm tra đồng bộ thông tin khách hàng");
+        LogUtils.info("Đồng bộ tên");
+        if (nameCustomerInfo.equals(nameCustomerPayment)) {
+            test.get().pass("Tên khách hàng chính xác");
+        }else {
+            test.get().fail("Tên khách hàng không chính xác");
+        }
+
+        LogUtils.info("Đồng bộ SĐT");
+        if (phoneCustomerInfo.equals(phoneCustomerPayment)) {
+            test.get().pass("SĐT khách hàng chính xác");
+        }else {
+            test.get().fail("SĐT khách hàng không chính xác");
+        }
+
+        LogUtils.info("Đồng bộ email");
+        if (emailCustomerInfo.equals(emailCustomerPayment)) {
+            test.get().pass("Email khách hàng chính xác");
+        }else {
+            test.get().fail("Email khách hàng không chính xác");
+        }
+
+        String AddressPayment = checkout_page.getAddress();
+        String NotePayment = checkout_page.getNote2();
+
+        test.get().info("Kiểm tra đồng bộ thông tin địa chỉ");
+        LogUtils.info("Đồng bộ địa chỉ");
+        if (AddressInfo.equals(AddressPayment)) {
+            test.get().pass("Địa chỉ khách hàng chính xác");
+        }else {
+            test.get().fail("Địa chỉ khách hàng không chính xác");
+        }
+
+        LogUtils.info("Đồng bộ ghi chú");
+        if (NoteInfo.equals(NotePayment)) {
+            test.get().pass("Ghi chú khách hàng chính xác");
+        }else {
+            test.get().fail("Ghi chú khách hàng không chính xác");
+        }
+
+        checkout_page.isCheckboxTermsSelected();
+        if (checkout_page.isCheckboxTermsSelected()) {
+            test.get().pass("Checkbox 'Đồng ý điều khoản' đã được chọn");
+        }else {
+            test.get().fail("Checkbox 'Đồng ý điều khoản' chưa được chọn");
+        }
+
+        checkout_page.ClickListProduct();
+        checkout_page.isTitleListProductDisplayed();
+        if (checkout_page.isTitleListProductDisplayed()) {
+            test.get().pass("Hiển thị danh sách sản phẩm đang được chọn");
+        }else {
+            test.get().fail("Không hiển thị danh sách sản phẩm đang được chọn");
+        }
+    }
+
+    @Test
+    public void verifyPricePayment() {
+        test.get().info("Nhập thông tin");
+        checkout_page.SendKeysCity("Hồ Chí Minh");
+        checkout_page.ClickButtonAgree();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        checkout_page.SendKeysDistrict("Quận 2");
+        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        String AddressInfo = checkout_page.getAddressName();
+        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        String NoteInfo = checkout_page.getNote();
+
+        test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
+        checkout_page.ClickButtonCheckout();
+
+        String TotalPrice = checkout_page.getTotalPrice();
+        String Pricetemp = checkout_page.getTotalPriceTemp();
+        if (TotalPrice.equals(Pricetemp)) {
+            test.get().pass("Giá thanh toán chính xác");
+        }else {
+            test.get().fail("Giá thanh toán không chính xác");
+        }
+    }
 }

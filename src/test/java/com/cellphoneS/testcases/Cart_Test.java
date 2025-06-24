@@ -74,12 +74,15 @@ public class Cart_Test extends BaseSetup {
         }
     }
 
+    private String detailImage;
 //    @Description("Thực hiện mở trang giỏ hàng")
     @BeforeMethod
     public void SearchProduct() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
+        detailImage = Cart_Page.extractFileName(Product_Detail_Page.getMainImageSrc());
         cart_page = product_detail_page.OpenCartPage();
+
     }
 
     @Test
@@ -93,19 +96,6 @@ public class Cart_Test extends BaseSetup {
     //Loại bỏ chọn màu sắc
     @Test
     public void verifyAfterAddToCart() {
-        LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("512GB");
-        LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
-        LogUtils.info("Chọn màu sắc");
-        product_detail_page.selectColorProduct("Titan Đen");
-        LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
-        String detailImage = Cart_Page.extractFileName(Product_Detail_Page.getMainImageSrc());
-
-        LogUtils.info("Click button Mua ngay");
-        product_detail_page.ClickBuyNow();
-
         LogUtils.info("Kiểm tra checkbox sản phẩm đã được chọn");
         cart_page.isSelectedProduct();
         Assert.assertTrue(cart_page.isSelectedProduct(), "Checkbox sản phẩm chưa được chọn");
@@ -178,7 +168,7 @@ public class Cart_Test extends BaseSetup {
         LogUtils.info("Loại bỏ sản phẩm");
         cart_page.clickDelete();
         cart_page.isBoxProductDisplayed();
-        String productName = "iPhone 16 Pro Max 512GB | Chính hãng VN/A - Titan Đen";
+        String productName = "iPhone 16 Pro Max 1TB | Chính hãng VN/A - Titan Đen";
         Assert.assertNotEquals(cart_page.getAllProductNamesInCart(), productName, "Sản phẩm chưa bị xoá khỏi giỏ hàng");
     }
 
