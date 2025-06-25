@@ -17,15 +17,15 @@ import static com.helpers.CaptureHelpers.projectPath;
 import static org.monte.media.AudioFormatKeys.*;
 import static org.monte.media.VideoFormatKeys.*;
 
-public class RecordHelpers extends ScreenRecorder {
+public class RecordVideo extends ScreenRecorder {
 
     // ------Record with Monte Media library---------
     public static ScreenRecorder screenRecorder;
     public String name;
 
     //Hàm xây dựng
-    public RecordHelpers(GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat, Format screenFormat,
-                         Format mouseFormat, Format audioFormat, File movieFolder, String name) throws IOException, AWTException {
+    public RecordVideo(GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat, Format screenFormat,
+                       Format mouseFormat, Format audioFormat, File movieFolder, String name) throws IOException, AWTException {
         super(cfg, captureArea, fileFormat, screenFormat, mouseFormat, audioFormat, movieFolder);
         this.name = name;
     }
@@ -57,7 +57,7 @@ public class RecordHelpers extends ScreenRecorder {
 
         GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice()
                 .getDefaultConfiguration();
-        screenRecorder = new RecordHelpers(gc, captureSize,
+        screenRecorder = new RecordVideo(gc, captureSize,
                 new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
                 new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
                         CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, 24, FrameRateKey,

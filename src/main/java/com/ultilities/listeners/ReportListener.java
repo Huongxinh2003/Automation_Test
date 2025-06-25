@@ -1,7 +1,7 @@
 package com.ultilities.listeners;
 
 import com.aventstack.extentreports.Status;
-import com.helpers.RecordHelpers;
+import com.helpers.RecordVideo;
 import com.ultilities.extentreports.ExtentTestManager;
 import com.ultilities.logs.LogUtils;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +30,7 @@ public class ReportListener implements ITestListener {
         LogUtils.info("Start testing " + context.getName());
 
         try {
-            RecordHelpers.startRecord(context.getName());
+            RecordVideo.startRecord(context.getName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class ReportListener implements ITestListener {
         getExtentReports().flush();
         //Gọi hàm stopRecord video trong CaptureHelpers class
         try {
-            RecordHelpers.stopRecord();
+            RecordVideo.stopRecord();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
