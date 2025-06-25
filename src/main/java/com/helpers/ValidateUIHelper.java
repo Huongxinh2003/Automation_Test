@@ -19,12 +19,12 @@ public class ValidateUIHelper {
         this.js = (JavascriptExecutor) driver;
     }
 
-    // Click vào một phần tử
-    public static void clickElement(By element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        driver.findElement(element).click();
+    public static void clickElement(By by) {
+        WebElement element = driver.findElement(by);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
+
 
     public void clickElementByJs(By element) {
         WebElement element1 = driver.findElement(element);

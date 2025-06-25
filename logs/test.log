@@ -4400,3 +4400,49 @@ Vui lòng nhập lại
 2025-06-25 15:00:14 INFO  LogUtils:10 - enterDataNoExists test is starting...
 2025-06-25 15:00:21 ERROR LogUtils:14 - enterDataNoExists test is failed.
 2025-06-25 15:00:25 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:14:14 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:14:27 INFO  LogUtils:10 - testCart_21_MaxQuantityLimit test is starting...
+2025-06-25 16:14:27 WARN  LogUtils:22 - testCart_21_MaxQuantityLimit test is skipped.
+2025-06-25 16:14:33 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:16:07 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:16:20 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is starting...
+2025-06-25 16:16:20 WARN  LogUtils:22 - testCart_20_MinQuantityLimit test is skipped.
+2025-06-25 16:16:24 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:18:12 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:18:21 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-25 16:18:21 WARN  LogUtils:22 - Suggest_Box test is skipped.
+2025-06-25 16:18:24 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:20:12 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:20:21 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-25 16:20:21 WARN  LogUtils:22 - Suggest_Box test is skipped.
+2025-06-25 16:20:24 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:21:15 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:21:20 INFO  LogUtils:10 - enterDataNoExists test is starting...
+2025-06-25 16:21:20 ERROR LogUtils:14 - enterDataNoExists test is failed.
+2025-06-25 16:21:25 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:21:49 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:21:56 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-25 16:22:02 ERROR LogUtils:14 - verifySignInFailPhoneNumber test is failed.
+2025-06-25 16:22:09 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:24:41 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:24:44 INFO  LogUtils:10 - enterNoData test is starting...
+2025-06-25 16:25:07 ERROR LogUtils:14 - enterNoData test is failed.
+2025-06-25 16:25:11 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:25:29 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:25:54 INFO  LogUtils:10 - testCart_21_MaxQuantityLimit test is starting...
+2025-06-25 16:25:54 WARN  LogUtils:22 - testCart_21_MaxQuantityLimit test is skipped.
+2025-06-25 16:25:57 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:26:32 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:26:45 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 16:26:48 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 16:26:56 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 16:27:12 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-25 16:27:12 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-25 16:27:12 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-25 16:27:12 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-25 16:27:13 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-25 16:27:13 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-25 16:27:13 INFO  LogUtils:10 - testCart_21_MaxQuantityLimit test is starting...
+2025-06-25 16:27:17 ERROR LogUtils:14 - testCart_21_MaxQuantityLimit test is failed.
+2025-06-25 16:27:24 INFO  LogUtils:10 - End testing Automation_Test
