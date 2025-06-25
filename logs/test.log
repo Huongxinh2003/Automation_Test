@@ -4324,3 +4324,79 @@ Bản đồ
 2025-06-25 00:30:11 INFO  LogUtils:10 - verifyPricePayment test is starting...
 2025-06-25 00:30:11 WARN  LogUtils:22 - verifyPricePayment test is skipped.
 2025-06-25 00:30:11 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 11:45:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 11:45:54 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate Mật khẩu
+2025-06-25 11:46:00 INFO  LogUtils:10 - PASS:        Huong2003        -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:01 INFO  LogUtils:10 - PASS: huong2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:02 INFO  LogUtils:10 - PASS: hương2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:03 INFO  LogUtils:10 - PASS: Hương2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:04 ERROR LogUtils:14 - FAIL: 12342003 | Expected: Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số | Got: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:05 INFO  LogUtils:10 - PASS: Huongabcd -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:06 ERROR LogUtils:14 - FAIL:                                                 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: Đã có lỗi xảy ra. Vui lòng thử lại sau.
+2025-06-25 11:46:07 INFO  LogUtils:10 - PASS: Huong2003                   -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:08 INFO  LogUtils:10 - PASS: Huong   2003 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:09 ERROR LogUtils:14 - FAIL: <script>alert('hack')</script>Huong2003 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: Đăng nhập thất bại
+2025-06-25 11:46:10 INFO  LogUtils:10 - PASS: Huong2003%^$# -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:46:31 ERROR LogUtils:14 - FAIL: -123456 | Expected: Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại. | Got: No error message found
+2025-06-25 11:46:32 ERROR LogUtils:14 - FAIL: Huo5 | Expected: Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số | Got: Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-25 11:48:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 11:48:36 INFO  LogUtils:10 - Con mắt ẩn và hiện Mật khẩu
+2025-06-25 11:48:38 INFO  LogUtils:10 - Hiện mật khẩu cho phép click
+2025-06-25 11:48:41 INFO  LogUtils:10 - Ẩn mật khẩu cho phép click
+2025-06-25 11:49:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 11:49:01 INFO  LogUtils:10 - Link Chính sách ưu đãi
+2025-06-25 11:49:06 INFO  LogUtils:10 - Đã chuyển đúng sang trang chính sách ưu đãi
+2025-06-25 11:49:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 11:49:28 INFO  LogUtils:10 - Link DienThoaiVui
+2025-06-25 11:49:30 INFO  LogUtils:10 - Đã chuyển đúng sang trang dienthoaivui
+2025-06-25 11:50:05 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-25 11:50:28 INFO  LogUtils:10 - Đăng nhập thất bại khi mất mạng
+2025-06-25 11:50:31 INFO  LogUtils:10 - Đã giả lập mất mạng
+2025-06-25 11:50:31 INFO  LogUtils:10 - Đã bật lại kết nối mạng
+2025-06-25 11:52:03 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 11:52:03 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-25 11:52:06 ERROR LogUtils:14 - FAIL: 0332 | Expected: Số điện thoại không hợp lệ
+Vui lòng nhập lại | Got: Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-25 11:52:07 INFO  LogUtils:10 - PASS: 033201876 -> Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-25 11:52:08 INFO  LogUtils:10 - PASS: 1332019523 -> Số điện thoại hoặc mật khẩu không hợp lệ
+Vui lòng nhập lại
+2025-06-25 11:52:09 INFO  LogUtils:10 - PASS: 0332589523 -> Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.
+2025-06-25 11:53:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 11:53:40 INFO  LogUtils:10 - Đăng nhập thất bại _ Validate SĐT
+2025-06-25 14:08:45 INFO  LogUtils:10 - Link Chính sách ưu đãi
+2025-06-25 14:08:49 INFO  LogUtils:10 - Đã chuyển đúng sang trang chính sách ưu đãi
+2025-06-25 14:42:50 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:42:57 INFO  LogUtils:10 - verifySignInSuccess test is starting...
+2025-06-25 14:43:00 ERROR LogUtils:14 - verifySignInSuccess test is failed.
+2025-06-25 14:43:06 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 14:44:48 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:44:57 INFO  LogUtils:10 - verifySignInSuccess test is starting...
+2025-06-25 14:45:03 ERROR LogUtils:14 - verifySignInSuccess test is failed.
+2025-06-25 14:45:08 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 14:51:19 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:51:25 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-06-25 14:51:32 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-06-25 14:51:37 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 14:53:57 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:54:11 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-25 14:56:21 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is passed.
+2025-06-25 14:56:25 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 14:56:36 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:56:42 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-25 14:56:48 ERROR LogUtils:14 - verifyPopupSignIn test is failed.
+2025-06-25 14:56:52 INFO  LogUtils:10 - Kết thúc test Automation_Test
+2025-06-25 14:57:00 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:57:06 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-25 14:57:10 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-25 14:57:13 INFO  LogUtils:10 - Kết thúc test Automation_Test
+2025-06-25 14:59:36 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 14:59:40 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-25 14:59:43 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-25 14:59:47 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 15:00:06 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 15:00:14 INFO  LogUtils:10 - enterDataNoExists test is starting...
+2025-06-25 15:00:21 ERROR LogUtils:14 - enterDataNoExists test is failed.
+2025-06-25 15:00:25 INFO  LogUtils:10 - End testing Automation_Test

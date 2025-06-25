@@ -4,7 +4,6 @@ import com.Clickbuy.page.Homepage_page_Cb;
 import com.Clickbuy.page.Search_Page_Cb;
 import com.Clickbuy.page.SignIn_Page_Cb;
 import com.base.BaseSetup;
-import com.base.BaseTest;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.Properties_File;
 import com.ultilities.logs.LogUtils;
@@ -14,7 +13,7 @@ import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
 
-public class SignIn_helper extends BaseTest {
+public class SignIn_helper extends BaseSetup {
     private WebDriver driver;
     public WebDriverWait wait;
     public ValidateUIHelper validateUIHelper;

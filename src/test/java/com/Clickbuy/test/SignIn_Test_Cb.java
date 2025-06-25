@@ -3,22 +3,23 @@ package com.Clickbuy.test;
 import com.Clickbuy.page.Homepage_page_Cb;
 import com.base.BaseSetup;
 import com.Clickbuy.page.SignIn_Page_Cb;
-import com.base.BaseTest;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.Properties_File;
-import com.ultilities.logs.LogUtils;
+import com.ultilities.listeners.ReportListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
-public class SignIn_Test_Cb extends BaseTest {
+@Listeners(ReportListener.class)
+public class SignIn_Test_Cb extends BaseSetup {
     SignIn_Page_Cb signIn_page_cb;
     ExcelUtils excelHelper;
     WebDriver driver;
@@ -44,18 +45,18 @@ public class SignIn_Test_Cb extends BaseTest {
     public void beforeMethod() {
         driver.get("https://clickbuy.com.vn/");
         test.get().info("CLick button để mở popup đăng nhập");
-        signIn_page_cb.ClickButtonSignIn();
     }
 
     @Test
     public void SignIn() {
+        signIn_page_cb.ClickButtonSignIn();
         test.get().info("Nhâp thông tin đăng nhập");
         homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
     }
 
     @Test
     public void verifySignInSuccess() {
-
+        signIn_page_cb.ClickButtonSignIn();
         test.get().info("Nhâp thông tin đăng nhập");
         homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
 
@@ -63,10 +64,64 @@ public class SignIn_Test_Cb extends BaseTest {
         signIn_page_cb.verifySuccessToast();
     }
 
-    @Test(groups = "Validate_SĐT", priority = 1)
+    @Test
+    public void enterNoPassword() throws Exception {
+        signIn_page_cb.ClickButtonSignIn();
+        test.get().info("Nhâp thông tin đăng nhập");
+        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+        test.get().info("Bỏ trống trường password");
+        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 1), ExcelHelper.getCellData("password", 1));
+
+        test.get().info("Kiểm tra hiển thị thông báo lỗi");
+        String expectedError = "× \n Lỗi \n Mật khẩu không được bỏ trống";
+        String actualError = signIn_page_cb.getFailToast();
+        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    }
+
+    @Test
+    public void enterNoPhoneNumber() throws Exception {
+        signIn_page_cb.ClickButtonSignIn();
+        test.get().info("Nhâp thông tin đăng nhập");
+        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+        test.get().info("Bỏ trống trường phoneNumber");
+        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 2), ExcelHelper.getCellData("password", 2));
+        test.get().info("Kiểm tra hiển thị thông báo lỗi");
+        String expectedError = "× \n Lỗi \n Số điện thoại không được bỏ trống";
+        String actualError = signIn_page_cb.getFailToast();
+        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    }
+
+    @Test
+    public void enterNoData() throws Exception {
+        signIn_page_cb.ClickButtonSignIn();
+        test.get().info("Nhâp thông tin đăng nhập");
+        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+        test.get().info("Bỏ trống trường phoneNumber và password");
+        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 3), ExcelHelper.getCellData("password", 3));
+        test.get().info("Kiểm tra hiển thị thông báo lỗi");
+        String expectedError = "× \n Lỗi \n Bạn chưa nhập thông tin đăng nhập";
+        String actualError = signIn_page_cb.getFailToast();
+        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    }
+
+    @Test
+    public void enterDataNoExists() throws Exception {
+        signIn_page_cb.ClickButtonSignIn();
+        test.get().info("Nhâp thông tin đăng nhập");
+        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+        test.get().info("Nhập thông tin không tồn tại");
+        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 4), ExcelHelper.getCellData("password", 4));
+        test.get().info("Kiểm tra hiển thị thông báo lỗi");
+        String expectedError = "× \n Lỗi \n Số điện thoại hoặc mật khẩu không đúng";
+        String actualError = signIn_page_cb.getFailToast();
+        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    }
+
+    @Test(groups = "Validate_SĐT")
     public void verifySignInFailPhoneNumber() throws Exception {
+        signIn_page_cb.ClickButtonSignIn1();
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "phonenumber");
-        List<String[]> data = excelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
+        List<String[]> data = ExcelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
 
         for (String[] row : data) {
             String phonenumber = row[0];
@@ -74,22 +129,49 @@ public class SignIn_Test_Cb extends BaseTest {
             String expectedError = row[2];
 
             signIn_page_cb.InputSignIn(phonenumber, password);
-            String actualError = String.valueOf(signIn_page_cb.getSuccessToast());
+            String actualError = String.valueOf(signIn_page_cb.getFailToast());
 
             if (actualError.equals(expectedError)) {
                 test.get().pass("PASS: " + phonenumber + " -> " + actualError);
             } else {
                 test.get().fail("FAIL: " + phonenumber + " | Expected: " + expectedError + " | Got: " + actualError);
             }
-            driver.navigate().refresh(); // reset lại form
+            driver.navigate().refresh();
+            signIn_page_cb.ClickButtonSignIn1();
+        }
+    }
+
+    @Test(groups = "Validate_MK")
+    public void verifySignInFailPassword() throws Exception {
+        signIn_page_cb.ClickButtonSignIn1();
+        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "password");
+        List<String[]> data = ExcelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
+
+        for (String[] row : data) {
+            String phonenumber = row[0];
+            String password = row[1];
+            String expectedError = row[2];
+
+            signIn_page_cb.InputSignIn(phonenumber, password);
+            String actualError = String.valueOf(signIn_page_cb.getFailToast());
+
+            if (actualError.equals(expectedError)) {
+                test.get().pass("PASS: " + password + " -> " + actualError);
+            } else {
+                test.get().fail("FAIL: " + password + " | Expected: " + expectedError + " | Got: " + actualError);
+            }
+            driver.navigate().refresh();
+            signIn_page_cb.ClickButtonSignIn1();
         }
     }
 
     @Test
     public void verifyPopupSignIn() {
+        signIn_page_cb.ClickButtonSignIn();
         test.get().info("Kiểm tra tiêu đề trang");
         signIn_page_cb.verifyCartPageTitle();
 
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         test.get().info("Kiểm tra popup đăng nhập hiển thị");
         signIn_page_cb.isPopupSignInDisplayed();
         Assert.assertTrue(signIn_page_cb.isPopupSignInDisplayed(), "Popup đăng nhập không hiển thị");
@@ -140,6 +222,7 @@ public class SignIn_Test_Cb extends BaseTest {
 
     @Test
     public void LinkSignInWithSocial() {
+        signIn_page_cb.ClickButtonSignIn();
 
         test.get().info("Kiểm tra click đăng nhập bằng Google");
         if (signIn_page_cb.ClickLoginWithGoogle()) {

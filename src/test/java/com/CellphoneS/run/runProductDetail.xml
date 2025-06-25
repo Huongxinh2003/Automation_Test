@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Search">
+    <test name="Function">
+        <classes>
+            <class name="com.CellphoneS.testcases.Product_Detail_Test">
+                <methods>
+                    <include name="verifyChangeAfterSelectVersionProduct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
