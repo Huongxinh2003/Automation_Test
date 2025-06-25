@@ -260,7 +260,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
 
-    public static void ClickCity() {
+    public void ClickCity() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CityOption));
         clickElement(CityOption);
     }
@@ -290,7 +290,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return box.getText();
     }
 
-    public static String ClickSelectDistrict(String districtName) {
+    public String ClickSelectDistrict(String districtName) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
         clickElement(DistrictOption);

@@ -95,7 +95,7 @@ public class  SignIn_Page extends ValidateUIHelper {
         sendKeys(inputPassword, password);
     }
 
-    public static void ClickSignIn() {
+    public void ClickSignIn() {
         clickElement(btnSignIn);
     }
 
