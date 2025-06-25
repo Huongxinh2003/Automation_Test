@@ -242,7 +242,7 @@ public class Product_Detail_Test extends BaseSetup {
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Click button Thành phố");
-        Product_Detail_Page.ClickCity();
+        product_detail_page.ClickCity();
 
         LogUtils.info("Chọn Thành phố");
         Product_Detail_Page.ClickSelectCity("Đà Nẵng");
@@ -283,7 +283,7 @@ public class Product_Detail_Test extends BaseSetup {
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Chọn Quận");
-        String districtName = Product_Detail_Page.ClickSelectDistrict("Quận Hai Bà Trưng");
+        String districtName = product_detail_page.ClickSelectDistrict("Quận Hai Bà Trưng");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
