@@ -180,7 +180,7 @@ public class SignIn_Test extends BaseSetup{
         ));
         LogUtils.info("Đã giả lập mất mạng");
 
-        SignIn_Page.ClickSignIn();
+        signIn_page.ClickSignIn();
 
         By alertBox = By.xpath("//li[contains(.,'Đăng nhập thất bại')]");
         boolean alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
@@ -197,7 +197,7 @@ public class SignIn_Test extends BaseSetup{
                 Optional.empty()
         ));
         LogUtils.info("Đã bật lại kết nối mạng");
-        SignIn_Page.ClickSignIn();
+        signIn_page.ClickSignIn();
 
         By alertBox2 = By.xpath("//li[contains(.,'Đăng nhập thành công')]");
         WebElement alertElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox2));
@@ -284,7 +284,7 @@ public class SignIn_Test extends BaseSetup{
         ValidateUIHelper.copyToClipboard(password);
         ValidateUIHelper.pasteWithRobot();
         Thread.sleep(1000);
-        SignIn_Page.ClickSignIn();
+        signIn_page.ClickSignIn();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("cellphones.com.vn"));
@@ -312,7 +312,7 @@ public class SignIn_Test extends BaseSetup{
         ValidateUIHelper.copyToClipboard(phonenumber);
         ValidateUIHelper.pasteWithRobot();
         Thread.sleep(1000);
-        SignIn_Page.ClickSignIn();
+        signIn_page.ClickSignIn();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("cellphones.com.vn"));
