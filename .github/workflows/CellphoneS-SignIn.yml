@@ -21,8 +21,8 @@ jobs:
       - name: Build with Maven (skip tests)
         run: mvn clean install -DskipTests
 
-      - name: Run SignIn Suite
-        run: mvn test -Dsurefiree.suiteXmlFiles=src/test/java/com/CellphoneS/run/runSignIn.xml
+      - name: Run CellphoneS SignIn Suite
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/java/com/CellphoneS/run/runSignIn.xml
         continue-on-error: true
 
       - name: Check report directory

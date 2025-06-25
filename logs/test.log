@@ -4446,3 +4446,14 @@ Vui lòng nhập lại
 2025-06-25 16:27:13 INFO  LogUtils:10 - testCart_21_MaxQuantityLimit test is starting...
 2025-06-25 16:27:17 ERROR LogUtils:14 - testCart_21_MaxQuantityLimit test is failed.
 2025-06-25 16:27:24 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:30:56 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:31:04 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 16:31:06 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 16:31:10 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 16:31:19 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-25 16:31:19 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-25 16:31:19 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-25 16:31:19 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-25 16:31:21 INFO  LogUtils:10 - testCart_21_MaxQuantityLimit test is starting...
+2025-06-25 16:31:21 WARN  LogUtils:22 - testCart_21_MaxQuantityLimit test is skipped.
+2025-06-25 16:31:24 INFO  LogUtils:10 - End testing Automation_Test

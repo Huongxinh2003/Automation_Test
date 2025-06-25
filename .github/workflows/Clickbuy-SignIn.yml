@@ -22,7 +22,7 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Run Clickbuy SignIn Suite
-        run: mvn test -Dsurefiree.suiteXmlFiles=src/test/java/com/Clickbuy/run/runSignInCB.xml
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/java/com/Clickbuy/run/runSignInCB.xml
         continue-on-error: true
 
       - name: Check report directory
