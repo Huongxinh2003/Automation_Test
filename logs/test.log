@@ -4457,3 +4457,78 @@ Vui lòng nhập lại
 2025-06-25 16:31:21 INFO  LogUtils:10 - testCart_21_MaxQuantityLimit test is starting...
 2025-06-25 16:31:21 WARN  LogUtils:22 - testCart_21_MaxQuantityLimit test is skipped.
 2025-06-25 16:31:24 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:54:46 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:54:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 16:54:56 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 16:55:00 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-25 16:55:01 INFO  LogUtils:10 - Search_Success test is starting...
+2025-06-25 16:55:01 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-25 16:55:01 ERROR LogUtils:14 - Search_Success test is failed.
+2025-06-25 16:55:05 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 16:56:57 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 16:57:09 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 16:57:11 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 16:57:19 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-25 16:57:19 INFO  LogUtils:10 - Search_Success test is starting...
+2025-06-25 16:57:19 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-25 16:57:20 ERROR LogUtils:14 - Search_Success test is failed.
+2025-06-25 16:57:24 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 17:12:16 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 17:12:25 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 17:12:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 17:12:33 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 17:12:39 INFO  LogUtils:10 - verifyChangeAfterSelectDistrict test is starting...
+2025-06-25 17:12:39 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-25 17:12:41 INFO  LogUtils:10 - Chọn Quận
+2025-06-25 17:12:41 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-25 17:12:41 INFO  LogUtils:10 - Lấy giá trị sau khi chọn Quận
+2025-06-25 17:12:42 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn Quận
+2025-06-25 17:12:42 INFO  LogUtils:10 - Kiểm tra box có chứa tên Quận đã chọn
+2025-06-25 17:12:42 INFO  LogUtils:10 - Nội dung box địa chỉ: 282 Minh Khai, Q. Hai Bà Trưng, Hà Nội
+02471010282
+Bản đồ
+51 Đại Cồ Việt, Phường Lê Đại Hành, Quận Hai Bà Trưng
+02471000051
+2025-06-25 17:12:42 INFO  LogUtils:10 - Số lượng cửa hàng trong Quận Quận Hai Bà Trưng là 2
+2025-06-25 17:12:42 INFO  LogUtils:10 - Tất cả giá trị được thay đổi sau khi chọn Quận
+2025-06-25 17:12:42 INFO  LogUtils:10 - verifyChangeAfterSelectDistrict test is passed.
+2025-06-25 17:12:45 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 17:15:26 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 17:15:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 17:15:40 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 17:15:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 17:16:12 INFO  LogUtils:10 - ClickInstallmentOption3 test is starting...
+2025-06-25 17:16:12 WARN  LogUtils:22 - ClickInstallmentOption3 test is skipped.
+2025-06-25 17:16:17 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 17:16:46 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 17:16:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 17:16:56 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 17:17:00 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 17:17:06 INFO  LogUtils:10 - ClickInstallmentOption3 test is starting...
+2025-06-25 17:17:06 INFO  LogUtils:10 - Click button Thanh toán trả góp qua thẻ
+2025-06-25 17:17:06 INFO  LogUtils:10 - Kiểm tra thông báo khi click button Thanh toán trả góp qua thẻ
+2025-06-25 17:17:07 INFO  LogUtils:10 - Kiểm tra sản phẩm ở tab 'Trả góp'
+2025-06-25 17:17:09 INFO  LogUtils:10 - ClickInstallmentOption3 test is passed.
+2025-06-25 17:17:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 17:19:54 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 17:20:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 17:20:04 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 17:20:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 17:20:14 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-06-25 17:20:14 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-25 17:20:15 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-25 17:20:16 ERROR LogUtils:14 - verifyChangeAfterSelectVersionProduct test is failed.
+2025-06-25 17:20:20 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-25 17:22:37 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-25 17:22:48 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-25 17:22:50 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-25 17:22:55 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-25 17:23:01 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-06-25 17:23:01 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-25 17:23:01 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-25 17:23:02 INFO  LogUtils:10 - Đã chọn phiên bản: 512GB
+2025-06-25 17:23:02 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-25 17:23:02 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-06-25 17:23:04 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-06-25 17:23:04 ERROR LogUtils:14 - verifyChangeAfterSelectVersionProduct test is failed.
+2025-06-25 17:23:08 INFO  LogUtils:10 - End testing Automation_Test

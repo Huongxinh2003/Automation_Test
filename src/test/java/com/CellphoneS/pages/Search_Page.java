@@ -49,7 +49,7 @@ public class Search_Page extends ValidateUIHelper {
 
         List<WebElement> overlays = driver.findElements(overlay);
         if (!overlays.isEmpty() && overlays.get(0).isDisplayed()) {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.invisibilityOfElementLocated(overlay));
         }
         clickElement(ProductCard);
