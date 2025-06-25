@@ -19,56 +19,82 @@ import static org.monte.media.VideoFormatKeys.*;
 
 public class RecordVideo extends ScreenRecorder {
 
-    // ------Record with Monte Media library---------
     public static ScreenRecorder screenRecorder;
     public String name;
 
-    //Hàm xây dựng
+    // Constructor
     public RecordVideo(GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat, Format screenFormat,
-                       Format mouseFormat, Format audioFormat, File movieFolder, String name) throws IOException, AWTException {
+                       Format mouseFormat, Format audioFormat, File movieFolder, String name)
+            throws IOException, AWTException {
         super(cfg, captureArea, fileFormat, screenFormat, mouseFormat, audioFormat, movieFolder);
         this.name = name;
     }
 
-    //Hàm này bắt buộc để ghi đè custom lại hàm trong thư viên viết sẵn
+    // Ghi đè hàm để đặt tên file video
     @Override
     protected File createMovieFile(Format fileFormat) throws IOException {
-
         if (!movieFolder.exists()) {
             movieFolder.mkdirs();
         } else if (!movieFolder.isDirectory()) {
             throw new IOException("\"" + movieFolder + "\" is not a directory.");
         }
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
         return new File(movieFolder,
                 name + "-" + dateFormat.format(new Date()) + "." + Registry.getInstance().getExtension(fileFormat));
     }
 
-    // Hàm Start record video
-    public static void startRecord(String methodName) throws Exception {
-        Properties_File.setPropertiesFile();
-        //Tạo thư mục để lưu file video vào
-        File file = new File(projectPath + Properties_File.getPropValue("exportVideoPath") + "/" + methodName + "/");
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = screenSize.width;
-        int height = screenSize.height;
-
-        Rectangle captureSize = new Rectangle(0, 0, width, height);
-
-        GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice()
-                .getDefaultConfiguration();
-        screenRecorder = new RecordVideo(gc, captureSize,
-                new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
-                new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
-                        CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, 24, FrameRateKey,
-                        Rational.valueOf(15), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60),
-                new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)),
-                null, file, methodName);
-        screenRecorder.start();
+    // Kiểm tra môi trường headless (CI/CD hoặc không có GUI)
+    public static boolean isHeadlessEnvironment() {
+        return GraphicsEnvironment.isHeadless() || System.getenv("GITHUB_ACTIONS") != null;
     }
 
-    // Stop record video
+    // Bắt đầu ghi video
+    public static void startRecord(String methodName) throws Exception {
+        if (isHeadlessEnvironment()) {
+            System.out.println("Headless environment detected. Skipping video recording.");
+            return;
+        }
+
+        try {
+            Properties_File.setPropertiesFile();
+            File file = new File(projectPath + Properties_File.getPropValue("exportVideoPath") + "/" + methodName + "/");
+
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            int width = screenSize.width;
+            int height = screenSize.height;
+            Rectangle captureSize = new Rectangle(0, 0, width, height);
+
+            GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment()
+                    .getDefaultScreenDevice().getDefaultConfiguration();
+
+            screenRecorder = new RecordVideo(gc, captureSize,
+                    new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
+                    new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+                            CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, 24,
+                            FrameRateKey, Rational.valueOf(15), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60),
+                    new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)),
+                    null, file, methodName);
+
+            screenRecorder.start();
+            System.out.println("Bắt đầu ghi video cho: " + methodName);
+        } catch (Exception e) {
+            System.err.println("Không thể bắt đầu ghi hình: " + e.getMessage());
+        }
+    }
+
+    // Dừng ghi video
     public static void stopRecord() throws Exception {
-        screenRecorder.stop();
+        try {
+            if (screenRecorder != null) {
+                screenRecorder.stop();
+                System.out.println("Dừng ghi video.");
+                screenRecorder = null;
+            } else {
+                System.out.println("screenRecorder is null, không thể dừng ghi hình.");
+            }
+        } catch (Exception e) {
+            System.err.println("Lỗi khi dừng ghi hình: " + e.getMessage());
+        }
     }
 }
