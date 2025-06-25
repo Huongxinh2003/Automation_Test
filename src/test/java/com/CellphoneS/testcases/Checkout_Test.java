@@ -36,7 +36,7 @@ public class Checkout_Test extends BaseSetup {
     public JavascriptExecutor js;
     public Checkout_Page checkout_page;
 
-    @BeforeClass
+    @BeforeClass (groups = {"Function", "UI_Test", "Function_UI"}, description = "Thực hiện tìm kiếm sản phẩm 'iphone', mở trang chi tiết và thanh toán")
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -57,7 +57,7 @@ public class Checkout_Test extends BaseSetup {
     }
 
     private String productCityName;
-    @BeforeMethod
+    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"}, description = "Thực hiện tìm kiếm sản phẩm 'iphone', mở trang chi tiết và thanh toán")
     public void SearchProduct() {
         test.get().info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
@@ -66,14 +66,14 @@ public class Checkout_Test extends BaseSetup {
         checkout_page = cart_page.openCheckout();
     }
 
-    @Test
+    @Test (groups= "UI_Test", priority = 1, description = "Kiểm tra title trang checkout")
     public void verifyTitleCheckout() {
         test.get().info("Kiem tra title trang checkout");
         Checkout_Page.verifyTitleCheckout();
         test.get().info("Tiêu đề trang: " + Checkout_Page.getTitleCheckout());
     }
 
-    @Test
+    @Test (groups= "Function_UI", description = "Kiểm tra hiển thị và các chức năng trên trang checkout")
     public void verifyDisplayTabInfo() {
         test.get().info("Kiểm tra sản phẩm chuyen sang trang Thông tin");
         String activeTab = checkout_page.getTabInfoActive();
@@ -120,7 +120,7 @@ public class Checkout_Test extends BaseSetup {
     }
 
     //Chuyển về thành phố Hà Nội
-    @Test
+    @Test (groups = "Function" , description = "Kiểm tra nhập thống tin 'Nhận hàng tại cửa hàng'")
     public void verifyPaymentInfo() {
         test.get().info("Kiểm tra thống tin 'Nhận hàng tại cửa hàng'");
         checkout_page.isSelectedCheckboxPickup();
@@ -154,7 +154,7 @@ public class Checkout_Test extends BaseSetup {
     }
 
     //Chuyển về thành phố Hà Nội
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra nhập thống tin 'Giao hàng tận nơi'")
     public void verifyPaymennInfo2() {
         test.get().info("Kiểm tra thống tin 'Giao hàng tận nơi'");
         checkout_page.ClickCheckboxShip();
@@ -196,7 +196,7 @@ public class Checkout_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "UI_Test", priority = 2, description = "Kiểm tra đồng bộ giá sản phẩm trên trang thanh toán")
     public void verifyPrice() {
         LogUtils.info("Giá sản phẩm trên Card là: "+ checkout_page.getPriceCard());
         LogUtils.info("Giá sản phẩm trên thanh toán là: "+ checkout_page.getPriceTemp());
@@ -204,7 +204,7 @@ public class Checkout_Test extends BaseSetup {
         Assert.assertEquals(checkout_page.getPriceCard(),checkout_page.getPriceTemp(),"Giá sản phẩm không khớp");
     }
 
-    @Test
+    @Test (groups = "Function",description = "Kiểm tra chuyển sang tab 'Thanh toán'")
     public void verifySwitchTab() {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
@@ -221,7 +221,7 @@ public class Checkout_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "UI_Test", priority = 3, description = "Kiểm tra hiển thị thông tin bên trang thanh toán")
     public void verifyTabPayment() {
         int quantityInfo = Integer.parseInt(checkout_page.getProductQuantityInfo());
         String BasePriceInfo = checkout_page.getBasePrice();
@@ -229,8 +229,8 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận 2");
-        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysDistrict("Quận Thủ Đức");
+        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú'");
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
@@ -295,14 +295,14 @@ public class Checkout_Test extends BaseSetup {
     }
 
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra chọn phương thức thanh toán")
     public void selectPaymentMethod(){
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận 2");
-        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysDistrict("Quận Thủ Đức");
+        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú'");
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
@@ -324,7 +324,8 @@ public class Checkout_Test extends BaseSetup {
         }
     }
 
-    @Test
+    //Mặc định ở HN
+    @Test (groups = "UI_Test",priority = 4, description = "Kiểm tra hiển thị đồng bộ thông tin bên trang thanh toán")
     public void PaymentInfo() {
         String nameCustomerInfo = checkout_page.getNameCustomer();
         String phoneCustomerInfo = checkout_page.getPhoneCustomer();
@@ -334,8 +335,8 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận 2");
-        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysDistrict("Quận Tân Phú");
+        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
         String AddressInfo = checkout_page.getAddressName();
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
         String NoteInfo = checkout_page.getNote();
@@ -403,7 +404,7 @@ public class Checkout_Test extends BaseSetup {
         }
     }
 
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra hiển thị giá thanh toán")
     public void verifyPricePayment() {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");

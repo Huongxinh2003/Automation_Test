@@ -33,6 +33,11 @@ public class ValidateUIHelper {
         js.executeScript("arguments[0].click();", element);
     }
 
+    public void clickElement(WebElement element) {
+        js.executeScript("arguments[0].click();", element);
+
+    }
+
     // Gửi dữ liệu vào ô input
     public void sendKeys(By by, String text) {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));

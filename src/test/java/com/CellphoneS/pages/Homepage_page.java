@@ -20,6 +20,7 @@ public class Homepage_page extends ValidateUIHelper {
     }
 
     public Search_Page openSearchPage() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         clickElement(searchInput);
         return new Search_Page(driver);
     }

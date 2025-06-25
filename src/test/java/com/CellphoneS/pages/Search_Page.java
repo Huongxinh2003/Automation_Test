@@ -35,7 +35,7 @@ public class Search_Page extends ValidateUIHelper {
 
     public Search_Page(WebDriver driver) {
         super(driver);
-        this.driver = driver;
+        Search_Page.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

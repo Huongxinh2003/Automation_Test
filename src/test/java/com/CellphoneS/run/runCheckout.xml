@@ -1,13 +1,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Search">
     <test name="Function">
+        <groups>
+            <run>
+                <include name="UI_Test"/>
+            </run>
+        </groups>
         <classes>
             <class name="com.CellphoneS.testcases.Checkout_Test">
-                <methods>
-                    <include name="verifyDisplayTabInfo"/>
-                    <include name="verifyPaymentInfo"/>
-                    <include name="verifyPaymennInfo2"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="verifyDisplayTabInfo"/>-->
+<!--                    <include name="verifyPaymentInfo"/>-->
+<!--                    <include name="verifyPaymennInfo2"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

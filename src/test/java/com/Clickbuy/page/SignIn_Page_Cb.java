@@ -38,7 +38,6 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     }
 
     public void ClickButtonSignIn1() {
-        // Đóng popup nếu có
         try {
             WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
             WebElement popup = shortWait.until(ExpectedConditions.visibilityOfElementLocated(popupModal));
@@ -50,15 +49,21 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
             System.out.println("Không có popup xuất hiện.");
         }
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement loginBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonSignIn));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", loginBtn);
+        // Chờ cho trang ổn định
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(webDriver -> ((JavascriptExecutor) webDriver)
+                        .executeScript("return document.readyState").equals("complete"));
 
-        // Đảm bảo nút có thể click được
-        wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
+        try {
+            WebElement loginBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonSignIn));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", loginBtn);
+            wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn); // dùng JS click
+            System.out.println("Đã click vào nút Đăng nhập.");
+        } catch (Exception e) {
+            System.out.println("Không thể click nút Đăng nhập: " + e.getMessage());
+        }
     }
-
-
 
     public void ClickButtonSignIn() {
         clickElement(ClickpopupModal);

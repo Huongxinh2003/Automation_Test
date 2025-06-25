@@ -28,7 +28,7 @@ public class SignIn_Test_Cb extends BaseSetup {
     Homepage_page_Cb homepage_page;
     ExcelUtils ExcelHelper;
 
-    @BeforeClass(groups = "Function")
+    @BeforeClass(groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK", "UI_Test"})
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -41,22 +41,22 @@ public class SignIn_Test_Cb extends BaseSetup {
         homepage_page = new Homepage_page_Cb(driver);
     }
 
-    @BeforeMethod
+    @BeforeMethod (groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK", "UI_Test"})
     public void beforeMethod() {
         driver.get("https://clickbuy.com.vn/");
         test.get().info("CLick button để mở popup đăng nhập");
     }
 
-    @Test
+    @Test(groups = "SignIn_Success")
     public void SignIn() {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
         homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
     }
 
-    @Test
+    @Test (groups = "SignIn_Success")
     public void verifySignInSuccess() {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
         homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
 
@@ -64,9 +64,9 @@ public class SignIn_Test_Cb extends BaseSetup {
         signIn_page_cb.verifySuccessToast();
     }
 
-    @Test
+    @Test (groups = "Function")
     public void enterNoPassword() throws Exception {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
         test.get().info("Bỏ trống trường password");
@@ -78,9 +78,9 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test
+    @Test (groups = "Function")
     public void enterNoPhoneNumber() throws Exception {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
         test.get().info("Bỏ trống trường phoneNumber");
@@ -91,9 +91,9 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test
+    @Test (groups = "Function")
     public void enterNoData() throws Exception {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
         test.get().info("Bỏ trống trường phoneNumber và password");
@@ -104,9 +104,9 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test
+    @Test (groups = "Function")
     public void enterDataNoExists() throws Exception {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
         test.get().info("Nhập thông tin không tồn tại");
@@ -165,9 +165,9 @@ public class SignIn_Test_Cb extends BaseSetup {
         }
     }
 
-    @Test
+    @Test (groups = "UI_Test")
     public void verifyPopupSignIn() {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Kiểm tra tiêu đề trang");
         signIn_page_cb.verifyCartPageTitle();
 
@@ -220,9 +220,9 @@ public class SignIn_Test_Cb extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function")
     public void LinkSignInWithSocial() {
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
 
         test.get().info("Kiểm tra click đăng nhập bằng Google");
         if (signIn_page_cb.ClickLoginWithGoogle()) {

@@ -35,7 +35,7 @@ public class Product_Detail_Test extends BaseSetup {
     public Homepage_page homepage_page;
     public Search_Page search_page;
 
-    @BeforeClass
+    @BeforeClass (groups = {"UI_Test", "Function","Function_UI"}, description = "Kiểm tra các thông tin trên trang chi tiết sản phẩm")
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -48,16 +48,17 @@ public class Product_Detail_Test extends BaseSetup {
         signIn_helpers = new SignIn_Helpers(driver);
         homepage_page = signIn_helpers.SignIn(driver);
         search_page = homepage_page.openSearchPage();
+        product_detail_page = new Product_Detail_Page(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    @BeforeMethod
+    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"}, description = "Thực hiện tìm kiếm sản phẩm 'iphone', mở trang chi tiết")
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
     }
 
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra title của trang chi tiết sản phẩm")
     public void Search() {
         LogUtils.info("Kiểm tra hiển thị tiêu đề sản phẩm");
         product_detail_page.isTitleProductDisplayed();
@@ -66,7 +67,7 @@ public class Product_Detail_Test extends BaseSetup {
         Assert.assertTrue(product_detail_page.isTitleProductDisplayed(), "Tiêu đề sản phẩm không hiển thị");
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra các chức năng trên trang chi tiết sản phẩm")
     public void FavoriteProduct() {
         LogUtils.info("Kiểm tra hiển thị nút yêu thích");
         product_detail_page.isFavoriteProductDisplayed();
@@ -94,7 +95,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Màu nền của thông báo: " + backgroundColor1);
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra phần trang giảm giá của sản phẩm")
     public void verifyDiscountCalculation() {
         int actualDiscount = product_detail_page.calculateDiscountPercentage();
         // mong đợi khoảng 13%
@@ -102,7 +103,7 @@ public class Product_Detail_Test extends BaseSetup {
     }
 
 
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra hiển thị thông tin sản phẩm khi đổi giá trị")
     public void verifyChangeAfterSelectVersionProduct() {
         LogUtils.info("Lưu trạng thái ban đầu ");
         String TitleProductBefore = product_detail_page.getTitleProduct();
@@ -116,7 +117,7 @@ public class Product_Detail_Test extends BaseSetup {
         String CountStoreBefore = product_detail_page.getCountStore();
 
         LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("512GB");
+        product_detail_page.selectVersionProduct("1TB");
 
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
@@ -146,16 +147,14 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn phiên bản");
     }
 
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra hiển thị thông tin sản phẩm")
     public void verifyChangeAfterSelectColorProduct() {
         LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("512GB");
+        product_detail_page.selectVersionProduct("1TB");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
         LogUtils.info("Lưu trạng thái ban đầu ");
-        String DiscountBefore = product_detail_page.getBasePrice();
-        String PriceSaleBefore = product_detail_page.getSalePrice();
         String ProductThumbnail = product_detail_page.getProductThumbnail();
         String PriceStickyBarBefore = product_detail_page.getPriceStickyBar();
         String CountStoreBefore = product_detail_page.getCountStore();
@@ -184,7 +183,7 @@ public class Product_Detail_Test extends BaseSetup {
     }
 
     //Kiểm tra lại
-    @Test
+    @Test (groups = "Test_Fail")
     public void testClickTwoThumbnailsAndPrintMainImage() throws InterruptedException{
         LogUtils.info("Trước khi click");
         Product_Detail_Page.printMainImageSrc();
@@ -201,7 +200,7 @@ public class Product_Detail_Test extends BaseSetup {
     }
 
     //Kiểm tra lại
-    @Test
+    @Test (groups = "Test_Fail")
     public void testMainImageSyncWithSmallThumbnailOnSwipe() {
         // Ảnh trước khi swipe
         String beforeMainSrc = Product_Detail_Page.getMainImageSrc();
@@ -231,7 +230,7 @@ public class Product_Detail_Test extends BaseSetup {
                 "Ảnh thumbnail nhỏ KHÔNG đồng bộ với ảnh lớn!");
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra popup chọn thành phố")
     public void verifyChangeAfterSelectCity() {
         Product_Detail_Page.ScrollToElement();
         LogUtils.info("Lưu trạng thái ban đầu ");
@@ -273,7 +272,7 @@ public class Product_Detail_Test extends BaseSetup {
     }
 
     //Mặc định chọn "Hà Nội"
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra dropdown chọn quận")
     public void verifyChangeAfterSelectDistrict() {
         Product_Detail_Page.ScrollToElement();
         LogUtils.info("Lưu trạng thái ban đầu ");
@@ -283,7 +282,7 @@ public class Product_Detail_Test extends BaseSetup {
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Chọn Quận");
-        String districtName = product_detail_page.ClickSelectDistrict("Quận Hai Bà Trưng");
+        String districtName = product_detail_page.ClickSelectDistrict("Quận Sơn Trà");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
@@ -307,10 +306,10 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Quận");
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra chuyển màn hình sang giỏ hàng")
     public void BuyProduct() {
         LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("512GB");
+        product_detail_page.selectVersionProduct("1TB");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
         LogUtils.info("Chọn màu sắc");
@@ -328,10 +327,10 @@ public class Product_Detail_Test extends BaseSetup {
         Assert.assertEquals("URL không đúng sau khi click 'Mua ngay'", expectedUrl, actualUrl);
     }
 
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra thông báo khi chuyển màn hình sang giỏ hàng")
     public void AddProductToCart() {
         LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("512GB");
+        product_detail_page.selectVersionProduct("1TB");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
         LogUtils.info("Chọn màu sắc");
@@ -349,7 +348,7 @@ public class Product_Detail_Test extends BaseSetup {
         assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thêm vào giỏ hàng");
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra chuyển màn hình sang tab Trả góp")
     public void ClickInstallmentOption2() {
         LogUtils.info("Click button Thanh toán trả góp 0%");
         product_detail_page.ClickInstallmentOption();
@@ -367,7 +366,7 @@ public class Product_Detail_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra chuyển màn hình sang tab Trả góp")
     public void ClickInstallmentOption3() {
         LogUtils.info("Click button Thanh toán trả góp qua thẻ");
         product_detail_page.ClickInstallmentOption();
@@ -386,7 +385,7 @@ public class Product_Detail_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra đánh giá sản phẩm")
     public void EvaluateProduct() {
         LogUtils.info("Lưu trạng thái ban đầu ");
         String EvaluateBefore = product_detail_page.getCountEvaluateProduct();

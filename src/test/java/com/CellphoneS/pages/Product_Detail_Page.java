@@ -2,10 +2,7 @@ package com.CellphoneS.pages;
 
 import com.helpers.ValidateUIHelper;
 import com.ultilities.logs.LogUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,6 +18,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
 
     //public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
+    public By ClosepopupSupport = By.xpath("//span[@class='close-popup']");
     public By TitleProduct = By.xpath("//div[@class='box-product-name']");
     public By FavoriteProduct = By.xpath("//div[@class='box-bottom-item']//div[@id='wishListBtn']");
     public By BoxRating = By.xpath("//div[@class='box-rating']");
@@ -50,10 +48,10 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public static By activeTabBtn = By.xpath("//button[@class='tab-item active']");
     public By InstallmentOption3 = By.xpath("//body/div[@id='__nuxt']/div[@id='__layout']/div[@id='layout-desktop']/div[@class='cps-container cps-body']/div/div[@id='productDetailV2']/div[@class='cps-block-order-button-desktop show']/div[@class='cta-action']/div[@class='installment-section']/div[@class='popup-installment show']/div[1]");
     public By ButtonEvaluate = By.xpath("//button[contains(text(),'Viết đánh giá')]");
-    public By EvaluateStar = By.xpath("//div[@class='modal-review-star is-flex is-justify-content-space-between my-3 review-all']//div[4]//div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M381.2 150')]");
-    public By EvaluatePerformance = By.xpath("//div[@class='modal modal-review is-active']//div[4]//div[1]//div[4]//div[1]//*[name()='svg']");
-    public By EvaluateBatteryLife = By.xpath("//div[@class='boxReview']//div[5]//div[1]//div[3]//div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M381.2 150')]");
-    public By EvaluateCamera = By.xpath("//div[6]//div[1]//div[4]//div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M381.2 150')]");
+    public By EvaluateStar = By.xpath("(//div[@icon='star'])[3]");
+    public By EvaluatePerformance = By.xpath("(//div[@icon='star'])[5]");
+    public By EvaluateBatteryLife = By.xpath("(//div[@icon='star'])[2]");
+    public By EvaluateCamera = By.xpath("(//div[@icon='star'])[4]");
     public By EvaluateComment = By.xpath("//textarea[@placeholder='Xin mời chia sẻ một số cảm nhận về sản phẩm (nhập tối thiểu 15 kí tự)']");
     public By EvaluateImage = By.xpath("//input[@id='image']");
     public By EvaluateButton = By.xpath("//button[contains(text(),'GỬI ĐÁNH GIÁ')]");
@@ -84,6 +82,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return new Cart_Page(driver);
     }
 
+
     public boolean isTitleProductDisplayed() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
         return isElementDisplayed(TitleProduct);
@@ -92,7 +91,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     // Lấy tiêu đề sản phẩm
     public String getTitleProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
-        return driver.getTitle();
+        return getText(TitleProduct);
     }
 
     // Lấy tên thành phố
@@ -129,7 +128,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
             String expectedText = version.replaceAll("\\s+", "").toLowerCase();
 
             if (optionText.contains(expectedText)) {
-                option.click();
+                (js).executeScript("arguments[0].click();", option);
                 LogUtils.info("Đã chọn phiên bản: " + option.getText());
                 return;
             }
@@ -139,17 +138,24 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public void selectColorProduct(String color) {
-        List<WebElement> colorOptions = driver.findElements(By.xpath("//a[@title='Titan Đen']"));
-        for (WebElement option : colorOptions) {
-            String text = option.getText().replaceAll("\\s+", "").toLowerCase();
-            if (text.contains(color.replaceAll("\\s+", "").toLowerCase())) {
-                option.click();
-                LogUtils.info("Đã chọn màu sắc: " + option.getText());
-                return;
+        List<WebElement> colorOptions = driver.findElements(By.xpath("//a[@title='Titan Đen']")); // Bạn có thể cần generalize lại title này
+
+        for (int i = 0; i < colorOptions.size(); i++) {
+            try {
+                WebElement option = driver.findElements(By.xpath("//a[@title='Titan Đen']")).get(i); // re-find tránh stale
+                String text = option.getText().replaceAll("\\s+", "").toLowerCase();
+                if (text.contains(color.replaceAll("\\s+", "").toLowerCase())) {
+                    wait.until(ExpectedConditions.elementToBeClickable(option));
+                    js.executeScript("arguments[0].click();", option);
+                }
+            } catch (StaleElementReferenceException e) {
+                System.out.println("Element bị stale tại index: " + i + ", thử lại...");
             }
         }
         throw new RuntimeException("Không tìm thấy màu sắc có tên: " + color);
     }
+
+
 
     // Lấy src ảnh lớn
     public static String getMainImageSrc() {
