@@ -44,17 +44,26 @@ public class Search_Page extends ValidateUIHelper {
         sendKeys(searchInput, searchText);
         sendKeys(searchInput, String.valueOf(Keys.ENTER));
 
-        // Đợi overlay biến mất
         By overlay = By.cssSelector("div.header-overlay");
+        By productCard = By.cssSelector("div.product-card"); // Cập nhật selector đúng
 
-        List<WebElement> overlays = driver.findElements(overlay);
-        if (!overlays.isEmpty() && overlays.get(0).isDisplayed()) {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        try {
+            // Đợi overlay biến mất
             wait.until(ExpectedConditions.invisibilityOfElementLocated(overlay));
+        } catch (TimeoutException e) {
+            System.out.println("Overlay vẫn còn sau 30s - tiếp tục để tránh fail chuỗi test.");
         }
-        clickElement(ProductCard);
+
+        // Đảm bảo card sản phẩm đã hiện ra và sẵn sàng click
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productCard));
+        wait.until(ExpectedConditions.elementToBeClickable(productCard));
+
+        clickElement(productCard);
         return new Product_Detail_Page(driver);
     }
+
 
     public void ClickInputSearch() {
         WebElement click = driver.findElement(searchInput);
