@@ -35,7 +35,7 @@ public class Checkout_Page extends ValidateUIHelper {
 //    public By SuggestionCity = (By.xpath(String.format("//div[@class='dropdown__item dropdown__item--active']//span[contains(text(),'%s')]", city)));
     public By ButtonAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
     public By DropdownDistrict = By.xpath("//input[@placeholder='Chọn quận/huyện']");
-    public By DropdownAddress = By.xpath("//input[@placeholder='Chọn địa chỉ cửa hàng']");
+    public By DropdownAddress = By.xpath("//label[normalize-space()='CỬA HÀNG']/preceding-sibling::input");
     public By InputNote = By.xpath("//input[@placeholder='Ghi chú khác (nếu có)']");
     public By CheckboxShipping = By.xpath("//input[@id='shipping']");
     public static By InputName = By.xpath("//input[@placeholder='Họ tên người nhận']");
@@ -65,7 +65,7 @@ public class Checkout_Page extends ValidateUIHelper {
     public By CustomerName = By.xpath("//p[contains(text(),'Phùng Hương')]");
     public By PhoneNumber = By.xpath("//p[normalize-space()='0332019523']");
     public By Email = By.xpath("//p[normalize-space()='quynhhuong6319@gmail.com']");//p[normalize-space()='EMAIL']");
-    public By Address = By.xpath("//p[contains(text(),'55B Trần Quang Khải, P. Tân Định, Q. 1')]");
+    public By Address = By.xpath("//p[contains(text(),',')]");
     public By Note = By.xpath("//p[contains(text(),'Tới nhận hàng ngày 28/07/2025')]");
     public By CheckboxTerms = By.xpath("//input[@type='checkbox']");
     public By TotalPriceTemp = By.xpath("//span[@class='total']");
@@ -204,9 +204,10 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public String getAddressName() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(DropdownAddress));
-        return getText(DropdownAddress);
+        WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(DropdownAddress));
+        return input.getAttribute("placeholder");
     }
+
 
     public boolean isInputNoteDisplayed() {
         return driver.findElement(InputNoteShip).isDisplayed();

@@ -20,14 +20,17 @@ public class Cart_Page extends ValidateUIHelper {
     private static WebDriverWait wait;
     private static JavascriptExecutor js;
 
+//    static String model = "iPhone 16 Pro Max";
+//    static String capacity = "1TB";
+//    static String color = "Titan Đen";
     public By CheckboxSelect = By.xpath("//div[@class='d-flex align-items-center justify-content-center']");
     public By ButtonDelete = By.xpath("//em[contains(text(),'Xóa sản phẩm đã chọn')]");
     public By CheckboxProduct = By.xpath("//label[@for='__BVID__32']");
     public By TitleProduct = By.xpath("//div[@class='product-name']");
-    public static By ImageProduct = By.xpath("//img[@alt='iPhone 16 Pro Max 512GB | Chính hãng VN/A-Titan Đen']");
-    public static By PriceProduct = By.xpath("//p[contains(text(),'đ')]");
-    public static By ProductQuantity = By.xpath("//input[@readonly='readonly']");
-    public static By BoxProduct = By.xpath("//div[@class='block__product-item']");
+    public By ImageProduct = By.xpath(("//label[@for='__BVID__32']"));
+    public By PriceProduct = By.xpath("//p[contains(text(),'đ')]");
+    public By ProductQuantity = By.xpath("//input[@readonly='readonly']");
+    public By BoxProduct = By.xpath("//div[@class='block__product-item']");
     public By MinusButton = By.xpath("//span[@class='minus d-flex justify-content-center align-items-center']");
     public By PlusButton = By.xpath("//span[@class='plus d-flex justify-content-center align-items-center']");
     public By ToastMessage1 = By.xpath("//div[@class='toast-body']");
@@ -37,7 +40,7 @@ public class Cart_Page extends ValidateUIHelper {
     public By BuyCombo = By.xpath("//div[@class='combov2']");
     public By SelectBuyCombo = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[4]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]");
     public By ShowMoreCombo = By.xpath("//span[contains(text(),'Xem tất cả')]");
-    public static By PriceTemp = By.xpath("//p[contains(text(),'đ')]");
+    public By PriceTemp = By.xpath("//p[contains(text(),'đ')]");
     public By PriceSave = By.xpath("//div[@class='bmsm-info']");
     public By ButtonBuyNow = By.xpath("//button[contains(text(),'Mua ngay')]");
 
@@ -56,7 +59,7 @@ public class Cart_Page extends ValidateUIHelper {
 
     // Kiểm tra tiêu đề trang
     //False
-    public static boolean verifyCartPageTitle() {
+    public boolean verifyCartPageTitle() {
         String expectedTitle = "CellphoneS Cart";
         Assert.assertEquals(getCartPageTitle(), expectedTitle);
         return getCartPageTitle().equals(expectedTitle);
@@ -91,21 +94,21 @@ public class Cart_Page extends ValidateUIHelper {
         return isElementDisplayed(TitleProduct);
     }
 
-    public static String getCartImageSrc() {
+    public String getCartImageSrc() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(ImageProduct)).getAttribute("src");
     }
 
-    public static String extractFileName(String url) {
+    public String extractFileName(String url) {
         return url.split("\\?")[0].substring(url.lastIndexOf("/") + 1);
     }
 
-    public static String getPriceProduct() {
+    public String getPriceProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(PriceProduct));
         return driver.findElement(PriceProduct).getText();
     }
 
     //Hàm chuển đổi string price sang int
-    public static int convertPriceStringToInt(String priceText) {
+    public int convertPriceStringToInt(String priceText) {
         // Ví dụ input: "5.690.000₫"
         priceText = priceText.replaceAll("[^\\d]", ""); // Bỏ dấu chấm, ₫
         return Integer.parseInt(priceText);
@@ -135,12 +138,12 @@ public class Cart_Page extends ValidateUIHelper {
 
     }
 
-    public static String getPriceTemp() {
+    public String getPriceTemp() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(PriceTemp));
         return driver.findElement(PriceTemp).getText();
     }
 
-   public static String getProductQuantity() {
+   public String getProductQuantity() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ProductQuantity));
         return driver.findElement(ProductQuantity).getAttribute("value");
     }

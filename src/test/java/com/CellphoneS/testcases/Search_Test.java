@@ -36,7 +36,7 @@ public class Search_Test extends BaseSetup {
     public Product_Detail_Page product_detail_page;
 
 
-    @BeforeClass
+    @BeforeClass (groups = {"UI_Test", "Function"}, description = "Kiểm tra chức năng tìm kiếm")
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -53,13 +53,13 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @BeforeMethod
+    @BeforeMethod (groups = {"UI_Test", "Function"}, description = "Kiểm tra chức năng tìm kiếm")
     public void SearchProduct() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone'");
         search_page = homepage_page.openSearchPage();
     }
 
-    @Test
+    @Test (groups = "UI_Test", priority = 1, description = "Kiểm tra hiển thị khi nhập vào  tìm kiếm")
     public void Suggest_Box(){
         LogUtils.info("Tìm kiếm với Iphone khi click icon Search");
         search_page.inputSearch3("iphone");
@@ -96,7 +96,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function",priority = 1, description = "Kiểm tra tìm kiếm với từ khoá không hợp lệ khi click icon Search")
     public void Search_Success() {
         LogUtils.info("Tìm kiếm với Iphone khi click icon Search");
         search_page.inputSearch("iphone");
@@ -134,7 +134,7 @@ public class Search_Test extends BaseSetup {
         Assert.assertTrue(firstProduct.getText().toLowerCase().contains("iphone"));
 
     }
-    @Test
+    @Test (groups = "Function",priority = 2, description = "Kiểm tra tìm kiếm với từ khoá không hợp lệ khi click ENTER")
     public void Search_Fail() {
         LogUtils.info("Tìm kiếm với fail khi click ENTER");
         search_page.inputSearch2("hhah8473hcfd");
@@ -175,7 +175,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "UI_Test",priority = 2, description = "Kiểm tra hiển thị khi tìm kiếm với sản phẩm gợi ý")
     public void ClickProductSuggest() {
         LogUtils.info("Click vào sản phẩm gợi ý");
         search_page.ClickProductSuggest();
@@ -200,7 +200,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "UI_Test",priority = 3, description = "Kiểm tra hiển thị kết quả tìm kiếm khi tìm kiếm với danh sách gợi ý")
     public void ClickListSuggest() {
         LogUtils.info("Click vào danh sách gợi ý");
         search_page.ClickListSuggest();
@@ -233,10 +233,11 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function",priority = 3, description = "Kiểm tra hiển thị khi click Link, URL")
     public void ClickInputSearch() {
         LogUtils.info("Click vào ô tìm kiếm");
         search_page.ClickInputSearch();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         LogUtils.info("Kiểm tra hiển thi danh sách sản phẩm gợi ý");
         search_page.isSuggestBoxSearchDisplayed();
@@ -249,7 +250,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function",priority = 4, description = "Kiểm tra lịch sử tìm kiếm")
     public void HistorySearch() {
         LogUtils.info("Tìm kiếm với Iphone");
         search_page.inputSearch2("iphone");
@@ -284,13 +285,6 @@ public class Search_Test extends BaseSetup {
             LogUtils.info(item);
         }
 
-//        LogUtils.info("So sánh danh sách lịch sử tìm kiếm với dữ liệu mong đợi");
-//        List<String> expectedHistory = Arrays.asList( "samsung galaxy", "iphone");
-//        for (String expectedItem : expectedHistory) {
-//            Assert.assertTrue(actualHistory.contains(expectedItem),
-//                    "Không tìm thấy '" + expectedItem + "' trong danh sách lịch sử tìm kiếm");
-//        }
-
         LogUtils.info("Kiểm tra nút Xóa lịch sử tìm kiếm");
         search_page.DeleteHistory();
 
@@ -304,7 +298,7 @@ public class Search_Test extends BaseSetup {
         LogUtils.info("Kiểm tra hoàn tất - Lịch sử tìm kiếm hiển thị chính xác");
     }
 
-    @Test
+    @Test (groups = "Function",priority = 5, description = "Kiểm tra thời gian hiển thị danh sách gợi ý")
     public void TimeForSearch1() {
         LogUtils.info("Click vào ô tìm kiếm để kiểm tra thời gian hiển thị danh sách gợi ý");
         long startTimeClick = System.currentTimeMillis();
@@ -318,7 +312,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function",priority = 6, description = "Kiểm tra thời gian hiển thị danh sách gợi ý")
     public void TimeForSearch2() {
         LogUtils.info("Nhập từ khóa để kiểm tra thời gian hiển thị danh sách gợi ý");
         long startTimeInput = System.currentTimeMillis();
@@ -332,7 +326,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @Test
+    @Test (groups = "Function",priority = 7, description = "Kiểm tra nút X trên thanh tìm kiếm")
     public void DeleteSearch() {
         LogUtils.info("Click X trên thanh tìm kếm khi nhập từ khoá");
         search_page.SearchAndcloseSearch("iphone 16");

@@ -73,7 +73,7 @@ public class Checkout_Test extends BaseSetup {
         test.get().info("Tiêu đề trang: " + Checkout_Page.getTitleCheckout());
     }
 
-    @Test (groups= "Function_UI", description = "Kiểm tra hiển thị và các chức năng trên trang checkout")
+    @Test (groups= "Function_UI",priority = 1, description = "Kiểm tra hiển thị và các chức năng trên trang checkout")
     public void verifyDisplayTabInfo() {
         test.get().info("Kiểm tra sản phẩm chuyen sang trang Thông tin");
         String activeTab = checkout_page.getTabInfoActive();
@@ -120,7 +120,7 @@ public class Checkout_Test extends BaseSetup {
     }
 
     //Chuyển về thành phố Hà Nội
-    @Test (groups = "Function" , description = "Kiểm tra nhập thống tin 'Nhận hàng tại cửa hàng'")
+    @Test (groups = "Function",priority = 1, description = "Kiểm tra nhập thống tin 'Nhận hàng tại cửa hàng'")
     public void verifyPaymentInfo() {
         test.get().info("Kiểm tra thống tin 'Nhận hàng tại cửa hàng'");
         checkout_page.isSelectedCheckboxPickup();
@@ -144,8 +144,8 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận 2");
-        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
+        checkout_page.SendKeysDistrict("Quận Tân Phú");
+        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
 
         test.get().info("Chuyển sang tab 'Thanh toán'");
@@ -154,7 +154,7 @@ public class Checkout_Test extends BaseSetup {
     }
 
     //Chuyển về thành phố Hà Nội
-    @Test (groups = "Function", description = "Kiểm tra nhập thống tin 'Giao hàng tận nơi'")
+    @Test (groups = "Function",priority = 2, description = "Kiểm tra nhập thống tin 'Giao hàng tận nơi'")
     public void verifyPaymennInfo2() {
         test.get().info("Kiểm tra thống tin 'Giao hàng tận nơi'");
         checkout_page.ClickCheckboxShip();
@@ -204,7 +204,8 @@ public class Checkout_Test extends BaseSetup {
         Assert.assertEquals(checkout_page.getPriceCard(),checkout_page.getPriceTemp(),"Giá sản phẩm không khớp");
     }
 
-    @Test (groups = "Function",description = "Kiểm tra chuyển sang tab 'Thanh toán'")
+    //Măc định chọn HN
+    @Test (groups = "Function",priority = 3,description = "Kiểm tra chuyển sang tab 'Thanh toán'")
     public void verifySwitchTab() {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
@@ -221,6 +222,7 @@ public class Checkout_Test extends BaseSetup {
 
     }
 
+    //mặc định chọnu HN
     @Test (groups = "UI_Test", priority = 3, description = "Kiểm tra hiển thị thông tin bên trang thanh toán")
     public void verifyTabPayment() {
         int quantityInfo = Integer.parseInt(checkout_page.getProductQuantityInfo());
@@ -229,8 +231,8 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận Thủ Đức");
-        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú'");
+        checkout_page.SendKeysDistrict("Quận Tân Phú");
+        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
@@ -295,14 +297,15 @@ public class Checkout_Test extends BaseSetup {
     }
 
 
-    @Test (groups = "Function", description = "Kiểm tra chọn phương thức thanh toán")
+    //mặc định chọnu HN
+    @Test (groups = "Function",priority = 4, description = "Kiểm tra chọn phương thức thanh toán")
     public void selectPaymentMethod(){
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận Thủ Đức");
-        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú'");
+        checkout_page.SendKeysDistrict("Quận Tân Phú");
+        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
@@ -404,7 +407,7 @@ public class Checkout_Test extends BaseSetup {
         }
     }
 
-    @Test (groups = "UI_Test", description = "Kiểm tra hiển thị giá thanh toán")
+    @Test (groups = "UI_Test",priority = 5, description = "Kiểm tra hiển thị giá thanh toán")
     public void verifyPricePayment() {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");

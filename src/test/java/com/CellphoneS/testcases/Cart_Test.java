@@ -36,7 +36,7 @@ public class Cart_Test extends BaseSetup {
     public Search_Page search_page;
     public Cart_Page cart_page;
 
-    @BeforeClass
+    @BeforeClass (groups = {"Function", "UI_Test"}, description = "Kiểm tra giỏ hàng")
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -57,10 +57,11 @@ public class Cart_Test extends BaseSetup {
         homepage_page = signIn_helpers.SignIn(driver);
         search_page = homepage_page.openSearchPage();
         cart_page = new Cart_Page(driver);
+        product_detail_page = new Product_Detail_Page(driver);
         log.info("Đã mở trang tìm kiếm");
     }
 
-    @AfterMethod
+    @AfterMethod (groups = {"Function", "UI_Test"}, description = "Kiểm tra giỏ hàng")
     public void takeScreenshot(ITestResult result) throws InterruptedException {
         Thread.sleep(1000);
         if (ITestResult.FAILURE == result.getStatus()) {
@@ -78,21 +79,21 @@ public class Cart_Test extends BaseSetup {
     public void SearchProduct() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
-        detailImage = Cart_Page.extractFileName(Product_Detail_Page.getMainImageSrc());
+        detailImage = cart_page.extractFileName(product_detail_page.getMainImageSrc());
         cart_page = product_detail_page.OpenCartPage();
 
     }
 
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra tiêu đề trang giỏ hàng")
     public void VerifyTitleCartPage() {
         LogUtils.info("Kiểm tra hiển thị tiêu đề trang");
-        Cart_Page.verifyCartPageTitle();
-        String title = Cart_Page.getCartPageTitle();
+        cart_page.verifyCartPageTitle();
+        String title = cart_page.getCartPageTitle();
         LogUtils.info("Tiêu đề trang " + title);
     }
 
     //Loại bỏ chọn màu sắc
-    @Test
+    @Test (groups = "UI_Test", description = "Kiểm tra hiển thị thông tin sản phẩm trong giỏ hàng")
     public void verifyAfterAddToCart() {
         LogUtils.info("Kiểm tra checkbox sản phẩm đã được chọn");
         cart_page.isSelectedProduct();
@@ -102,66 +103,55 @@ public class Cart_Test extends BaseSetup {
         Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Cart sản phẩm không hiển thị trong giỏ hàng");
 
         LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng");
-        String cartImage = Cart_Page.extractFileName(Cart_Page.getCartImageSrc());
+        String cartImage = cart_page.extractFileName(cart_page.getCartImageSrc());
         Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
 
         LogUtils.info("Kiêểm tra giá trên Cart sản phẩm và giá tạm tính");
-        String price = Cart_Page.getPriceProduct();
+        String price = cart_page.getPriceProduct();
         LogUtils.info("Giá sản phẩm: " + price);
         Assert.assertTrue(
                 price.matches("\\d{1,3}(\\.\\d{3})+đ"),
                 "Giá sản phẩm không hợp lệ: " + price
         );
 
-        String priceTemp = Cart_Page.getPriceTemp();
+        String priceTemp = cart_page.getPriceTemp();
         LogUtils.info("Giá tạm tính: "+ priceTemp);
         Assert.assertEquals(price, priceTemp, "Giá trên Cart sản phẩm và giá tạm tính không khớp");
 
         LogUtils.info("Kiểm tra số lượng saản phẩm khi thêm vaào giỏ");
-        String quantity = Cart_Page.getProductQuantity();
+        String quantity = cart_page.getProductQuantity();
         Assert.assertEquals(quantity, "1", "Số lượng sản phẩm không khớp");
 
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra Min ")
     public void testCart_20_MinQuantityLimit() {
         cart_page.clickMinusButton();
-        String qty = Cart_Page.getProductQuantity();
+        String qty = cart_page.getProductQuantity();
         String toast = cart_page.getToastMessage();
 
         Assert.assertEquals(qty, "1", "Số lượng đã bị giảm dưới 1");
         Assert.assertTrue(toast.contains("Số lượng sản phẩm đã giảm đến mức tối thiểu"), "Thông báo không đúng: " + toast);
     }
 
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra Max")
     public void testCart_21_MaxQuantityLimit() {
-        if (Cart_Page.getProductQuantity().equals("3")) {
+        if (cart_page.getProductQuantity().equals("3")) {
             cart_page.clickPlusButton();
-            String qty = Cart_Page.getProductQuantity();
+            String qty = cart_page.getProductQuantity();
             Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
             Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
         }else {
             cart_page.clickPlusButton();
             cart_page.clickPlusButton();
             cart_page.clickPlusButton();
-            String qty = Cart_Page.getProductQuantity();
+            String qty = cart_page.getProductQuantity();
             Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
             Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
         }
     }
 
-
-    //Kiểm tra lại
-    @Test
-    public void verifyPriceTemp() {
-        LogUtils.info("Kiểm tra giá tạm tính");
-        cart_page.selectCheckbox();
-        cart_page.isCheckboxSelectDisplayed();
-        Assert.assertTrue(cart_page.isCheckboxSelectDisplayed(), "Checkbox sản phẩm chưa được chọn");
-        cart_page.getPriceTempInt();
-    }
-
-    @Test
+    @Test (groups = "Function", description = "Kiểm tra xóa sản phẩm")
     public void deleteProduct() {
         LogUtils.info("Loại bỏ sản phẩm");
         cart_page.clickDelete();
@@ -169,5 +159,4 @@ public class Cart_Test extends BaseSetup {
         String productName = "iPhone 16 Pro Max 1TB | Chính hãng VN/A - Titan Đen";
         Assert.assertNotEquals(cart_page.getAllProductNamesInCart(), productName, "Sản phẩm chưa bị xoá khỏi giỏ hàng");
     }
-
 }

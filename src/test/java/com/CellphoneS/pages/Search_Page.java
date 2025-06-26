@@ -57,12 +57,14 @@ public class Search_Page extends ValidateUIHelper {
     }
 
     public void ClickInputSearch() {
-        clickElement(searchInput);
+        WebElement click = driver.findElement(searchInput);
+        click.click();
     }
 
     public void inputSearch(String searchText) {
         sendKeys(searchInput, searchText);
-        clickElement(IconSearch);
+        WebElement click = driver.findElement(IconSearch);
+        click.click();
     }
 
     public void inputSearch2(String searchText) {

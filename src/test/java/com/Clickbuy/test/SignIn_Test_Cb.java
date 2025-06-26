@@ -64,7 +64,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         signIn_page_cb.verifySuccessToast();
     }
 
-    @Test (groups = "Function")
+    @Test (groups = "Function", priority = 1, description = "Kiểm tra thông báo khi bỏ trống trường password")
     public void enterNoPassword() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
@@ -78,7 +78,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test (groups = "Function")
+    @Test (groups = "Function", priority = 1, description = "Kiểm tra thông báo khi bỏ trống trường phoneNumber")
     public void enterNoPhoneNumber() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
@@ -91,7 +91,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test (groups = "Function")
+    @Test (groups = "Function", priority = 3, description = "Kiểm tra thông báo khi bỏ trống cả trường phoneNumber và password")
     public void enterNoData() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
@@ -104,7 +104,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test (groups = "Function")
+    @Test (groups = "Function", priority = 4, description = "Kiểm tra thông báo khi nhập thông tin không tồn tại")
     public void enterDataNoExists() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
@@ -117,7 +117,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test(groups = "Validate_SĐT")
+    @Test(groups = "Validate_SĐT", priority = 1, description = "Kiểm tra nhập số điện thoại hợp lệ")
     public void verifySignInFailPhoneNumber() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "phonenumber");
@@ -141,7 +141,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         }
     }
 
-    @Test(groups = "Validate_MK")
+    @Test(groups = "Validate_MK", priority = 2, description = "Kiểm tra nhập mật khẩu hợp lệ")
     public void verifySignInFailPassword() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "password");
@@ -165,7 +165,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         }
     }
 
-    @Test (groups = "UI_Test")
+    @Test (groups = "UI_Test", description = "Kiểm tra UI của popup đăng nhập")
     public void verifyPopupSignIn() {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Kiểm tra tiêu đề trang");
@@ -220,7 +220,7 @@ public class SignIn_Test_Cb extends BaseSetup {
 
     }
 
-    @Test (groups = "Function")
+    @Test (groups = "Function", priority = 5, description = "Kiểm tra click đăng nhập bằng Google và Zalo")
     public void LinkSignInWithSocial() {
         signIn_page_cb.ClickButtonSignIn1();
 

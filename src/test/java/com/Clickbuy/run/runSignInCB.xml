@@ -3,7 +3,7 @@
     <test name="Function">
         <groups>
             <run>
-                <include name="SignIn_Success"/>
+                <include name="Function"/>
             </run>
         </groups>
         <classes>
