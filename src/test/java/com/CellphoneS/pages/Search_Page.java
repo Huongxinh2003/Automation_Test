@@ -45,7 +45,6 @@ public class Search_Page extends ValidateUIHelper {
         sendKeys(searchInput, String.valueOf(Keys.ENTER));
 
         By overlay = By.cssSelector("div.header-overlay");
-        By productCard = By.cssSelector("div.product-card"); // Cập nhật selector đúng
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
@@ -57,10 +56,10 @@ public class Search_Page extends ValidateUIHelper {
         }
 
         // Đảm bảo card sản phẩm đã hiện ra và sẵn sàng click
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productCard));
-        wait.until(ExpectedConditions.elementToBeClickable(productCard));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductCard));
+        wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
 
-        clickElement(productCard);
+        clickElement(ProductCard);
         return new Product_Detail_Page(driver);
     }
 

@@ -69,3 +69,27 @@
 2025-06-26 17:25:18 INFO  LogUtils:10 - Kiểm tra số lượng đánh giá của sản phẩm
 2025-06-26 17:25:18 ERROR LogUtils:14 - EvaluateProduct test is failed.
 2025-06-26 17:25:22 INFO  LogUtils:10 - End testing Function
+2025-06-26 21:49:25 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-26 21:49:41 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-26 21:49:44 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-26 21:49:51 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 21:50:36 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-26 21:50:36 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-26 21:50:40 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-26 21:52:18 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-26 21:52:31 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-26 21:52:34 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-26 21:52:40 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 21:52:49 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-26 21:52:50 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-26 21:52:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-26 21:52:50 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-26 21:52:52 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-26 21:52:52 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-26 21:52:52 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-26 21:52:52 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-26 21:52:56 INFO  LogUtils:10 - Kiểm tra cart sản phẩm hiển thị trong giỏ
+2025-06-26 21:52:56 INFO  LogUtils:10 - Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng
+2025-06-26 21:52:56 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-26 21:53:00 INFO  LogUtils:10 - End testing Automation_Test
