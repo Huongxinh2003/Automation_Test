@@ -1,0 +1,71 @@
+2025-06-26 17:23:19 INFO  LogUtils:10 - Start testing Function
+2025-06-26 17:23:31 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-26 17:23:33 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-26 17:23:38 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:23:46 INFO  LogUtils:10 - FavoriteProduct test is starting...
+2025-06-26 17:23:46 INFO  LogUtils:10 - Kiểm tra hiển thị nút yêu thích
+2025-06-26 17:23:46 INFO  LogUtils:10 - Kiểm tra thêm sản phẩm vào mục yêu thích
+2025-06-26 17:23:46 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo thêm vào mục yêu thích
+2025-06-26 17:23:48 INFO  LogUtils:10 - Kiểm tra mau sắc của thông báo thêm vào yêu thích
+2025-06-26 17:23:48 INFO  LogUtils:10 - Màu nền của thông báo: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box
+2025-06-26 17:23:48 INFO  LogUtils:10 - Kiểm tra hiển thị nút xóa mục yêu thích
+2025-06-26 17:23:48 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo xóa mục yêu thích
+2025-06-26 17:23:49 INFO  LogUtils:10 - Kiểm tra mau sắc của thông báo khi bỏ yêu thích
+2025-06-26 17:23:49 INFO  LogUtils:10 - Màu nền của thông báo: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box
+2025-06-26 17:23:49 INFO  LogUtils:10 - FavoriteProduct test is passed.
+2025-06-26 17:23:49 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:23:57 INFO  LogUtils:10 - verifyDiscountCalculation test is starting...
+2025-06-26 17:23:58 INFO  LogUtils:10 - Giá gốc: 34990000 | Giá sale: 30290000 | Giảm: 13%
+2025-06-26 17:23:58 INFO  LogUtils:10 - verifyDiscountCalculation test is passed.
+2025-06-26 17:23:58 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:24:05 INFO  LogUtils:10 - verifyChangeAfterSelectCity test is starting...
+2025-06-26 17:24:05 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-26 17:24:05 INFO  LogUtils:10 - Số lượng cửa hàng trong thành phố Đà Nẵng là 4
+2025-06-26 17:24:07 INFO  LogUtils:10 - Click button Thành phố
+2025-06-26 17:24:08 INFO  LogUtils:10 - Chọn Thành phố
+2025-06-26 17:24:08 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-26 17:24:08 INFO  LogUtils:10 - Lấy giá trị sau khi chọn Thành phố
+2025-06-26 17:24:10 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn Thành phố
+2025-06-26 17:24:10 ERROR LogUtils:14 - verifyChangeAfterSelectCity test is failed.
+2025-06-26 17:24:10 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:24:17 INFO  LogUtils:10 - verifyChangeAfterSelectDistrict test is starting...
+2025-06-26 17:24:17 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-26 17:24:21 INFO  LogUtils:10 - Chọn Quận
+2025-06-26 17:24:22 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-26 17:24:22 INFO  LogUtils:10 - Lấy giá trị sau khi chọn Quận
+2025-06-26 17:24:22 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn Quận
+2025-06-26 17:24:22 ERROR LogUtils:14 - verifyChangeAfterSelectDistrict test is failed.
+2025-06-26 17:24:23 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:24:28 INFO  LogUtils:10 - BuyProduct test is starting...
+2025-06-26 17:24:28 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-26 17:24:28 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-26 17:24:28 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-26 17:24:28 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-26 17:24:29 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-26 17:24:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-26 17:24:29 INFO  LogUtils:10 - Click button Mua ngay
+2025-06-26 17:24:29 INFO  LogUtils:10 - Kiểm tra chuyển màn hình sang giỏ hàng
+2025-06-26 17:24:29 ERROR LogUtils:14 - BuyProduct test is failed.
+2025-06-26 17:24:30 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:24:38 INFO  LogUtils:10 - ClickInstallmentOption2 test is starting...
+2025-06-26 17:24:38 INFO  LogUtils:10 - Click button Thanh toán trả góp 0%
+2025-06-26 17:24:38 INFO  LogUtils:10 - Kiểm tra thông báo khi click button Thanh toán trả góp 0%
+2025-06-26 17:24:38 INFO  LogUtils:10 - Kiểm tra sản phẩm ở tab 'Trả góp'
+2025-06-26 17:24:40 INFO  LogUtils:10 - ClickInstallmentOption2 test is passed.
+2025-06-26 17:24:40 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:24:46 INFO  LogUtils:10 - ClickInstallmentOption3 test is starting...
+2025-06-26 17:24:46 INFO  LogUtils:10 - Click button Thanh toán trả góp qua thẻ
+2025-06-26 17:24:47 INFO  LogUtils:10 - Kiểm tra thông báo khi click button Thanh toán trả góp qua thẻ
+2025-06-26 17:25:07 ERROR LogUtils:14 - ClickInstallmentOption3 test is failed.
+2025-06-26 17:25:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-26 17:25:15 INFO  LogUtils:10 - EvaluateProduct test is starting...
+2025-06-26 17:25:15 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-06-26 17:25:15 INFO  LogUtils:10 - Số lượng đánh giá của sản phẩm là 312 lượt đánh giá
+2025-06-26 17:25:15 INFO  LogUtils:10 - Click button Đánh giá sản phẩm
+2025-06-26 17:25:17 INFO  LogUtils:10 - Kiểm tra thông báo khi đánh giá sản phẩm
+2025-06-26 17:25:18 INFO  LogUtils:10 - Lấy giá trị sau khi đánh giá sản phẩm
+2025-06-26 17:25:18 INFO  LogUtils:10 - Số lượng đánh giá của sản phẩm là 312 lượt đánh giá
+2025-06-26 17:25:18 INFO  LogUtils:10 - Kiểm tra số lượng đánh giá của sản phẩm
+2025-06-26 17:25:18 ERROR LogUtils:14 - EvaluateProduct test is failed.
+2025-06-26 17:25:22 INFO  LogUtils:10 - End testing Function
