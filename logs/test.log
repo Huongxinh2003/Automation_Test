@@ -93,3 +93,557 @@
 2025-06-26 21:52:56 INFO  LogUtils:10 - Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng
 2025-06-26 21:52:56 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
 2025-06-26 21:53:00 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 21:32:45 INFO  LogUtils:10 - Start testing Function
+2025-06-27 21:32:53 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:33:01 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:33:05 INFO  LogUtils:10 - End testing Function
+2025-06-27 21:34:09 INFO  LogUtils:10 - Start testing Function
+2025-06-27 21:34:15 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:34:23 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:34:25 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-27 21:35:14 ERROR LogUtils:14 - verifySignInFailPhoneNumber test is failed.
+2025-06-27 21:35:17 INFO  LogUtils:10 - End testing Function
+2025-06-27 21:36:10 INFO  LogUtils:10 - Start testing Function
+2025-06-27 21:36:16 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:36:25 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:36:27 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-27 21:36:32 ERROR LogUtils:14 - verifySignInFailPhoneNumber test is failed.
+2025-06-27 21:36:32 ERROR LogUtils:14 - verifySignInFailPhoneNumber test is failed.
+2025-06-27 21:36:35 INFO  LogUtils:10 - End testing Function
+2025-06-27 21:37:03 INFO  LogUtils:10 - Start testing Function
+2025-06-27 21:37:09 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:37:18 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:37:22 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-27 21:38:09 ERROR LogUtils:14 - verifySignInFailPhoneNumber test is failed.
+2025-06-27 21:38:13 INFO  LogUtils:10 - End testing Function
+2025-06-27 21:38:44 INFO  LogUtils:10 - Start testing Function
+2025-06-27 21:38:51 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:39:00 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:39:01 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-27 21:39:49 ERROR LogUtils:14 - verifySignInFailPhoneNumber test is failed.
+2025-06-27 21:39:53 INFO  LogUtils:10 - End testing Function
+2025-06-27 21:40:05 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 21:40:17 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:40:37 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:40:41 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 21:42:56 INFO  LogUtils:10 - Start testing Function
+2025-06-27 21:43:02 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 21:43:11 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 21:43:12 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-27 21:45:16 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is passed.
+2025-06-27 21:45:19 INFO  LogUtils:10 - End testing Function
+2025-06-27 21:58:26 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 21:58:31 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-06-27 22:00:43 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is passed.
+2025-06-27 22:01:14 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:01:37 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:01:45 INFO  LogUtils:10 - verifySignInFailPassword test is starting...
+2025-06-27 22:02:25 ERROR LogUtils:14 - verifySignInFailPassword test is failed.
+2025-06-27 22:02:29 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:02:43 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:02:50 INFO  LogUtils:10 - verifySignInFailPassword test is starting...
+2025-06-27 22:04:39 INFO  LogUtils:10 - verifySignInFailPassword test is passed.
+2025-06-27 22:04:43 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:05:28 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:05:36 INFO  LogUtils:10 - enterNoData test is starting...
+2025-06-27 22:05:45 ERROR LogUtils:14 - enterNoData test is failed.
+2025-06-27 22:05:55 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:07:17 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:07:24 INFO  LogUtils:10 - enterNoPhoneNumber test is starting...
+2025-06-27 22:07:33 ERROR LogUtils:14 - enterNoPhoneNumber test is failed.
+2025-06-27 22:07:38 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:12:29 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:12:35 INFO  LogUtils:10 - verifySignInFailPassword test is starting...
+2025-06-27 22:14:46 ERROR LogUtils:14 - verifySignInFailPassword test is failed.
+2025-06-27 22:14:49 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:16:05 INFO  LogUtils:10 - Start testing Function
+2025-06-27 22:16:13 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 22:16:43 ERROR LogUtils:14 - verifyPopupSignIn test is failed.
+2025-06-27 22:16:45 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-06-27 22:16:53 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-06-27 22:16:55 INFO  LogUtils:10 - enterNoPhoneNumber test is starting...
+2025-06-27 22:17:01 ERROR LogUtils:14 - enterNoPhoneNumber test is failed.
+2025-06-27 22:17:02 INFO  LogUtils:10 - enterNoData test is starting...
+2025-06-27 22:17:09 ERROR LogUtils:14 - enterNoData test is failed.
+2025-06-27 22:17:11 INFO  LogUtils:10 - enterDataNoExists test is starting...
+2025-06-27 22:17:20 ERROR LogUtils:14 - enterDataNoExists test is failed.
+2025-06-27 22:17:22 INFO  LogUtils:10 - LinkSignInWithSocial test is starting...
+2025-06-27 22:17:28 INFO  LogUtils:10 - LinkSignInWithSocial test is passed.
+2025-06-27 22:17:32 INFO  LogUtils:10 - End testing Function
+2025-06-27 22:20:31 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:20:39 INFO  LogUtils:10 - verifySignInFailPassword test is starting...
+2025-06-27 22:21:09 ERROR LogUtils:14 - verifySignInFailPassword test is failed.
+2025-06-27 22:21:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:24:46 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:25:04 INFO  LogUtils:10 - verifySignInFailPassword test is starting...
+2025-06-27 22:25:32 ERROR LogUtils:14 - verifySignInFailPassword test is failed.
+2025-06-27 22:25:39 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:26:11 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:26:20 INFO  LogUtils:10 - verifySignInFailPassword test is starting...
+2025-06-27 22:29:53 INFO  LogUtils:10 - verifySignInFailPassword test is passed.
+2025-06-27 22:29:57 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:31:16 INFO  LogUtils:10 - Start testing Function
+2025-06-27 22:31:21 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 22:31:34 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 22:31:38 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-06-27 22:32:11 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-06-27 22:32:16 INFO  LogUtils:10 - enterNoPhoneNumber test is starting...
+2025-06-27 22:32:26 ERROR LogUtils:14 - enterNoPhoneNumber test is failed.
+2025-06-27 22:32:28 INFO  LogUtils:10 - enterNoData test is starting...
+2025-06-27 22:32:51 INFO  LogUtils:10 - Start testing Function
+2025-06-27 22:32:59 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 22:33:11 ERROR LogUtils:14 - verifyPopupSignIn test is failed.
+2025-06-27 22:33:14 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-06-27 22:33:30 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-06-27 22:33:30 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-06-27 22:33:30 INFO  LogUtils:10 - End testing Function
+2025-06-27 22:34:15 INFO  LogUtils:10 - Start testing Function
+2025-06-27 22:34:26 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 22:35:26 INFO  LogUtils:10 - Start testing Function
+2025-06-27 22:35:34 INFO  LogUtils:10 - verifyPopupSignIn test is starting...
+2025-06-27 22:35:44 INFO  LogUtils:10 - verifyPopupSignIn test is passed.
+2025-06-27 22:35:46 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-06-27 22:35:55 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-06-27 22:35:58 INFO  LogUtils:10 - enterNoPhoneNumber test is starting...
+2025-06-27 22:36:05 ERROR LogUtils:14 - enterNoPhoneNumber test is failed.
+2025-06-27 22:36:07 INFO  LogUtils:10 - enterNoData test is starting...
+2025-06-27 22:36:14 ERROR LogUtils:14 - enterNoData test is failed.
+2025-06-27 22:36:16 INFO  LogUtils:10 - enterDataNoExists test is starting...
+2025-06-27 22:36:24 ERROR LogUtils:14 - enterDataNoExists test is failed.
+2025-06-27 22:36:26 INFO  LogUtils:10 - LinkSignInWithSocial test is starting...
+2025-06-27 22:36:33 INFO  LogUtils:10 - LinkSignInWithSocial test is passed.
+2025-06-27 22:36:37 INFO  LogUtils:10 - End testing Function
+2025-06-27 22:39:02 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:39:19 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 22:39:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 22:39:48 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 22:39:48 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 22:39:48 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 22:39:48 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 22:39:49 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 22:39:49 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 22:39:53 INFO  LogUtils:10 - verifyDisplayTabInfo test is starting...
+2025-06-27 22:39:55 INFO  LogUtils:10 - Thành công nhập Email mới
+2025-06-27 22:39:57 ERROR LogUtils:14 - verifyDisplayTabInfo test is failed.
+2025-06-27 22:40:00 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:44:55 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:45:16 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 22:45:20 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 22:45:40 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 22:45:40 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 22:45:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 22:45:40 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 22:45:42 INFO  LogUtils:10 - verifyDisplayTabInfo test is starting...
+2025-06-27 22:45:42 WARN  LogUtils:22 - verifyDisplayTabInfo test is skipped.
+2025-06-27 22:45:45 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:46:59 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:47:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 22:47:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 22:47:38 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 22:47:38 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 22:47:38 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 22:47:38 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 22:47:39 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 22:47:39 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 22:47:43 INFO  LogUtils:10 - verifyDisplayTabInfo test is starting...
+2025-06-27 22:47:44 INFO  LogUtils:10 - Thành công nhập Email mới
+2025-06-27 22:47:45 ERROR LogUtils:14 - verifyDisplayTabInfo test is failed.
+2025-06-27 22:47:49 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:53:52 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:54:04 INFO  LogUtils:10 - login_cellphoneS_17 test is starting...
+2025-06-27 22:54:06 INFO  LogUtils:10 - Đăng nhập thất bại khi nhập SĐT sai
+2025-06-27 22:54:10 INFO  LogUtils:10 - Kiểm tra Alert lỗi trường Mật khẩu
+2025-06-27 22:54:11 INFO  LogUtils:10 - Kiểm tra inline lỗi trường SĐT
+2025-06-27 22:54:12 INFO  LogUtils:10 - login_cellphoneS_17 test is passed.
+2025-06-27 22:54:15 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:54:33 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:54:45 INFO  LogUtils:10 - login_cellphoneS_19 test is starting...
+2025-06-27 22:54:45 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-06-27 22:54:54 INFO  LogUtils:10 - Kiểm tra Alert lỗi
+2025-06-27 22:54:54 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-06-27 22:54:54 ERROR LogUtils:14 - login_cellphoneS_19 test is failed.
+2025-06-27 22:54:58 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:55:15 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:55:27 INFO  LogUtils:10 - login_cellphoneS_21 test is starting...
+2025-06-27 22:55:27 INFO  LogUtils:10 - Bỏ trống SĐT
+2025-06-27 22:55:33 ERROR LogUtils:14 - login_cellphoneS_21 test is failed.
+2025-06-27 22:55:33 ERROR LogUtils:14 - login_cellphoneS_21 test is failed.
+2025-06-27 22:55:36 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:55:58 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:56:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 22:56:15 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 22:56:25 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-27 22:56:25 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 22:56:25 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-27 22:56:26 INFO  LogUtils:10 - Kiểm tra mục Có phải bạn muốn tìm hiển thị
+2025-06-27 22:56:27 INFO  LogUtils:10 - Kiểm tra mục Sản phẩm gợi ý hiển thị
+2025-06-27 22:56:27 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Có phải bạn muốn tìm"
+2025-06-27 22:56:32 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Sản phẩm gợi ý"
+2025-06-27 22:56:38 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm
+2025-06-27 22:56:38 INFO  LogUtils:10 - Tiêu đề sản phẩm: iPhone 16 Pro Max giá rẻ, trợ giá đến 4,5 triệu, chính hãng
+2025-06-27 22:56:58 ERROR LogUtils:14 - Suggest_Box test is failed.
+2025-06-27 22:57:02 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 22:59:25 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 22:59:39 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 22:59:43 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 22:59:52 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-27 22:59:52 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 22:59:52 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-27 22:59:53 INFO  LogUtils:10 - Kiểm tra mục Có phải bạn muốn tìm hiển thị
+2025-06-27 22:59:54 INFO  LogUtils:10 - Kiểm tra mục Sản phẩm gợi ý hiển thị
+2025-06-27 22:59:54 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Có phải bạn muốn tìm"
+2025-06-27 22:59:59 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Sản phẩm gợi ý"
+2025-06-27 23:00:06 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm
+2025-06-27 23:00:10 ERROR LogUtils:14 - Suggest_Box test is failed.
+2025-06-27 23:00:10 ERROR LogUtils:14 - Suggest_Box test is failed.
+2025-06-27 23:00:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:03:13 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:03:29 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:03:32 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:03:38 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-27 23:03:39 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 23:03:39 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-27 23:03:39 INFO  LogUtils:10 - Kiểm tra mục Có phải bạn muốn tìm hiển thị
+2025-06-27 23:03:40 INFO  LogUtils:10 - Kiểm tra mục Sản phẩm gợi ý hiển thị
+2025-06-27 23:03:40 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Có phải bạn muốn tìm"
+2025-06-27 23:03:45 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Sản phẩm gợi ý"
+2025-06-27 23:03:50 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm
+2025-06-27 23:04:01 ERROR LogUtils:14 - Suggest_Box test is failed.
+2025-06-27 23:04:01 ERROR LogUtils:14 - Suggest_Box test is failed.
+2025-06-27 23:04:04 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:04:16 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:04:30 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:04:34 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:04:44 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 23:04:44 WARN  LogUtils:22 - Suggest_Box test is skipped.
+2025-06-27 23:04:48 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:07:21 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:07:34 INFO  LogUtils:10 - login_cellphoneS_Success test is starting...
+2025-06-27 23:07:38 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:07:38 INFO  LogUtils:10 - Kiểm tra thông báo
+2025-06-27 23:07:38 INFO  LogUtils:10 - Kiểm tra chuyển sang
+2025-06-27 23:07:47 INFO  LogUtils:10 - login_cellphoneS_Success test is passed.
+2025-06-27 23:07:50 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:08:31 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:09:06 INFO  LogUtils:10 - login_cellphoneS_17 test is starting...
+2025-06-27 23:09:06 WARN  LogUtils:22 - login_cellphoneS_17 test is skipped.
+2025-06-27 23:09:17 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:09:45 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:09:59 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:10:02 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:10:09 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-27 23:10:10 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 23:10:10 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-27 23:10:12 INFO  LogUtils:10 - Kiểm tra mục Có phải bạn muốn tìm hiển thị
+2025-06-27 23:10:12 INFO  LogUtils:10 - Kiểm tra mục Sản phẩm gợi ý hiển thị
+2025-06-27 23:10:12 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Có phải bạn muốn tìm"
+2025-06-27 23:10:18 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Sản phẩm gợi ý"
+2025-06-27 23:10:25 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm
+2025-06-27 23:10:45 ERROR LogUtils:14 - Suggest_Box test is failed.
+2025-06-27 23:10:52 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:16:48 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:17:13 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 23:17:13 WARN  LogUtils:22 - Suggest_Box test is skipped.
+2025-06-27 23:17:16 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:17:35 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:17:59 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:18:10 INFO  LogUtils:10 - Suggest_Box test is starting...
+2025-06-27 23:18:10 WARN  LogUtils:22 - Suggest_Box test is skipped.
+2025-06-27 23:18:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:22:23 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:22:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:22:39 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:22:51 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-27 23:23:02 INFO  LogUtils:10 - Search test is starting...
+2025-06-27 23:23:02 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề sản phẩm
+2025-06-27 23:23:03 INFO  LogUtils:10 - Tiêu đề sản phẩm iPhone 16 Pro Max 256GB | Chính hãng VN/A
+2025-06-27 23:23:03 INFO  LogUtils:10 - Search test is passed.
+2025-06-27 23:23:07 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:23:50 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:24:05 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:24:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:24:29 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:24:29 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:24:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:24:29 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:24:29 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:24:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:24:33 INFO  LogUtils:10 - verifyDisplayTabInfo test is starting...
+2025-06-27 23:24:35 INFO  LogUtils:10 - Thành công nhập Email mới
+2025-06-27 23:24:35 INFO  LogUtils:10 - Thành công click checkbox nhận ưu đãi
+2025-06-27 23:24:35 INFO  LogUtils:10 - verifyDisplayTabInfo test is passed.
+2025-06-27 23:24:38 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:25:26 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:25:51 INFO  LogUtils:10 - verifyPaymentInfo test is starting...
+2025-06-27 23:25:51 WARN  LogUtils:22 - verifyPaymentInfo test is skipped.
+2025-06-27 23:25:54 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:26:11 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:26:24 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:26:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:26:48 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:26:49 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:26:49 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:26:49 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:26:52 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-27 23:26:52 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:27:12 INFO  LogUtils:10 - verifyPaymentInfo test is starting...
+2025-06-27 23:27:12 WARN  LogUtils:22 - verifyPaymentInfo test is skipped.
+2025-06-27 23:27:16 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:27:57 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:28:12 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:28:16 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:28:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:28:39 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:28:39 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:28:39 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:28:40 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:28:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:28:46 INFO  LogUtils:10 - verifyPaymentInfo test is starting...
+2025-06-27 23:28:46 WARN  LogUtils:22 - verifyPaymentInfo test is skipped.
+2025-06-27 23:28:49 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:29:06 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:29:22 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:29:29 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:29:51 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:29:51 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:29:51 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:29:51 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:29:52 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:29:52 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:29:57 INFO  LogUtils:10 - verifyPaymentInfo test is starting...
+2025-06-27 23:30:02 INFO  LogUtils:10 - verifyPaymentInfo test is passed.
+2025-06-27 23:30:06 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:30:36 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:31:08 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:31:08 WARN  LogUtils:22 - verifyPaymennInfo2 test is skipped.
+2025-06-27 23:31:23 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:31:34 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:31:49 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:31:53 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:32:12 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:32:13 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:32:13 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:32:13 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:32:13 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:32:13 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:32:18 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:32:42 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-27 23:32:45 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:39:00 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:39:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:39:19 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:39:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:39:39 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:39:39 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:39:39 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:39:40 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:39:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:39:44 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:39:51 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-27 23:39:51 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-27 23:39:54 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:40:11 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:40:26 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:40:29 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:40:49 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:40:49 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:40:49 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:40:49 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:40:50 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:40:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:40:55 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:40:55 WARN  LogUtils:22 - verifyPaymennInfo2 test is skipped.
+2025-06-27 23:40:58 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:41:23 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:41:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:41:41 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:42:03 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:42:03 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:42:03 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:42:03 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:42:05 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:42:05 WARN  LogUtils:22 - verifyPaymennInfo2 test is skipped.
+2025-06-27 23:42:09 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:42:26 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:42:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:42:43 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:43:02 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:43:03 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:43:03 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:43:03 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:43:05 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:43:05 WARN  LogUtils:22 - verifyPaymennInfo2 test is skipped.
+2025-06-27 23:43:09 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:43:36 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:43:51 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:43:54 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:44:15 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:44:15 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:44:15 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:44:15 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:44:18 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:44:18 WARN  LogUtils:22 - verifyPaymennInfo2 test is skipped.
+2025-06-27 23:44:21 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:45:10 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:45:25 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:45:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:45:50 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:45:50 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:45:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:45:50 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:45:51 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:45:51 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:45:55 INFO  LogUtils:10 - verifyPaymentInfo test is starting...
+2025-06-27 23:45:59 INFO  LogUtils:10 - verifyPaymentInfo test is passed.
+2025-06-27 23:46:03 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:46:42 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:46:55 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:46:59 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:47:20 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:47:20 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:47:20 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:47:20 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:47:21 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:47:21 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:47:26 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:47:40 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-27 23:47:40 ERROR LogUtils:14 - verifyPaymennInfo2 test is failed.
+2025-06-27 23:47:43 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:48:25 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:48:38 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:48:41 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:49:02 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:49:03 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:49:03 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:49:03 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:49:05 INFO  LogUtils:10 - verifyPaymentInfo test is starting...
+2025-06-27 23:49:05 WARN  LogUtils:22 - verifyPaymentInfo test is skipped.
+2025-06-27 23:49:09 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:49:33 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:49:46 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:49:49 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:50:11 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:50:12 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:50:12 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:50:12 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:50:12 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-27 23:50:12 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:50:16 INFO  LogUtils:10 - verifyPaymennInfo2 test is starting...
+2025-06-27 23:50:21 INFO  LogUtils:10 - verifyPaymennInfo2 test is passed.
+2025-06-27 23:50:25 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:51:39 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:51:58 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:52:01 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:52:12 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-27 23:52:12 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-27 23:52:15 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-27 23:53:24 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-27 23:53:37 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-27 23:53:40 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-27 23:53:48 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-27 23:53:58 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-27 23:53:59 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-27 23:53:59 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:53:59 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-27 23:54:03 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-27 23:54:03 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-27 23:54:03 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-27 23:54:03 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-27 23:54:06 INFO  LogUtils:10 - Kiểm tra cart sản phẩm hiển thị trong giỏ
+2025-06-27 23:54:06 INFO  LogUtils:10 - Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng
+2025-06-27 23:54:07 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-27 23:54:10 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-28 00:00:03 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-28 00:00:16 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-28 00:00:18 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-28 00:00:24 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-28 00:00:33 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-28 00:00:34 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-28 00:00:34 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:00:34 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-28 00:00:34 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-28 00:00:34 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:00:35 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-28 00:00:35 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-28 00:00:55 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-28 00:00:58 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-28 00:03:53 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-28 00:04:05 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-28 00:04:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-28 00:04:15 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-28 00:04:24 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-28 00:04:25 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-28 00:04:25 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:04:25 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-28 00:04:26 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-28 00:04:26 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:04:26 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-28 00:04:26 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-28 00:04:46 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-28 00:04:50 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-28 00:05:08 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-28 00:05:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-28 00:05:23 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-28 00:05:30 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-28 00:05:40 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-28 00:05:40 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-28 00:05:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:05:40 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-28 00:05:41 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-28 00:05:41 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:05:42 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-28 00:05:42 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-28 00:06:02 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-28 00:06:05 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-28 00:06:40 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-28 00:06:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-28 00:06:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-28 00:07:07 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-28 00:07:19 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-28 00:07:19 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-28 00:07:19 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:07:19 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-28 00:07:20 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+30.590.000₫
+2025-06-28 00:07:20 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:07:20 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-28 00:07:20 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-28 00:07:45 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-28 00:08:02 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-28 00:08:05 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-28 00:08:13 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-28 00:08:24 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-28 00:08:24 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-28 00:08:24 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:08:25 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-28 00:08:27 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-28 00:08:27 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-28 00:08:31 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-28 00:08:52 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-28 00:09:05 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-28 00:09:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-28 00:09:19 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-28 00:09:29 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-28 00:09:29 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-28 00:09:29 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-28 00:09:29 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-28 00:09:32 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-28 00:09:32 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-28 00:09:36 INFO  LogUtils:10 - End testing Automation_Test

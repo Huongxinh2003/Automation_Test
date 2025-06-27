@@ -2,6 +2,7 @@ package com.CellphoneS.pages;
 
 import com.helpers.ValidateUIHelper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,6 +21,8 @@ public class Homepage_page extends ValidateUIHelper {
     }
 
     public Search_Page openSearchPage() {
+        // Thu nhỏ website sau khi mở trang
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='80%'");
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         clickElement(searchInput);
         return new Search_Page(driver);

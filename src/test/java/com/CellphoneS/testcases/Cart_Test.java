@@ -61,18 +61,6 @@ public class Cart_Test extends BaseSetup {
         log.info("Đã mở trang tìm kiếm");
     }
 
-    @AfterMethod (groups = {"Function", "UI_Test"}, description = "Kiểm tra giỏ hàng")
-    public void takeScreenshot(ITestResult result) throws InterruptedException {
-        Thread.sleep(1000);
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                CaptureHelpers.captureScreenshot(driver, result.getName());
-            } catch (Exception e) {
-                LogUtils.info("Exception while taking screenshot " + e.getMessage());
-            }
-        }
-    }
-
     private String detailImage;
 //    @Description("Thực hiện mở trang giỏ hàng")
     @BeforeMethod
@@ -81,7 +69,6 @@ public class Cart_Test extends BaseSetup {
         product_detail_page = search_page.openProductDetail("iphone");
         detailImage = cart_page.extractFileName(product_detail_page.getMainImageSrc());
         cart_page = product_detail_page.OpenCartPage();
-
     }
 
     @Test (groups = "UI_Test", description = "Kiểm tra tiêu đề trang giỏ hàng")
@@ -93,6 +80,7 @@ public class Cart_Test extends BaseSetup {
     }
 
     //Loại bỏ chọn màu sắc
+    //Xem lại
     @Test (groups = "UI_Test", description = "Kiểm tra hiển thị thông tin sản phẩm trong giỏ hàng")
     public void verifyAfterAddToCart() {
         LogUtils.info("Kiểm tra checkbox sản phẩm đã được chọn");

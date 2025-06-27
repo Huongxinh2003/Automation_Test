@@ -47,6 +47,8 @@ public class Checkout_Page extends ValidateUIHelper {
     public By InputNoteShip = By.xpath("//input[@placeholder='Ghi chú khác (nếu có)']");
     public By PriceTemp = By.xpath("//span[@class='total']");
     public By ButtonContinue = By.xpath("//button[contains(text(),'Tiếp tục')]");
+    public By InputVatNo = By.xpath("//input[@id='VAT-No']");
+    public By InputVatYes = By.xpath("//input[@id='VAT-Yes']");
 
     //TRang thanh toán
     public By DiscountCode = By.xpath("//input[@placeholder='Nhập mã giảm giá (chỉ áp dụng 1 lần)']");
@@ -223,6 +225,15 @@ public class Checkout_Page extends ValidateUIHelper {
         return getText(InputNoteShip);
     }
 
+    public void CLickInputVatNo() {
+        wait.until(ExpectedConditions.elementToBeClickable(InputVatNo));
+        driver.findElement(InputVatNo).click();
+    }
+    public void ClickInputVatYes() {
+        wait.until(ExpectedConditions.elementToBeClickable(InputVatYes));
+        driver.findElement(InputVatYes).click();
+    }
+
     public void ClickCheckboxShip() {
         wait.until(ExpectedConditions.elementToBeClickable(CheckboxShipping));
         (js).executeScript("arguments[0].scrollIntoView();", driver.findElement(CheckboxShipping));
@@ -298,10 +309,6 @@ public class Checkout_Page extends ValidateUIHelper {
         input.click();
         input.sendKeys(homeNumber);
 
-        // Chờ item hiện ra và click vào nó
-        String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + homeNumber + "']";
-        WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-        cityOption.click();
     }
 
     public boolean isInputNoteShippingDisplayed() {

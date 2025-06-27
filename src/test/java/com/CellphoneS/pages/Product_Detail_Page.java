@@ -79,6 +79,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", Buynow);
         clickElement(BuyNow);
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Cart_Page(driver);
     }
 

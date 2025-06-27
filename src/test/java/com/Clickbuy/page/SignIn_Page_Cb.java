@@ -85,7 +85,6 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     public void InputSignIn1(String phoneNumber, String password) {
         sendKeys(InputPhoneNumber, phoneNumber);
         sendKeys(InputPassword, password);
-        clickElement(BtnSignIn);
     }
 
     public void SignInNotClick(String phoneNumber, String password) {

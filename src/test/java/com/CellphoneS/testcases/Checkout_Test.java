@@ -64,6 +64,7 @@ public class Checkout_Test extends BaseSetup {
         productCityName = product_detail_page.getCityName();
         cart_page = product_detail_page.OpenCartPage();
         checkout_page = cart_page.openCheckout();
+        applyZoom(driver, 80);
     }
 
     @Test (groups= "UI_Test", priority = 1, description = "Kiểm tra title trang checkout")
@@ -147,7 +148,7 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysDistrict("Quận Tân Phú");
         checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
         checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
-
+        checkout_page.CLickInputVatNo();
         test.get().info("Chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
 
@@ -190,6 +191,7 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysAddressShipping("Phường Tân Định");
         checkout_page.SendKeysInputHomeNumber("55B Trần Quang Khải");
         checkout_page.SendKeysInputNoteShipping("ship hàng ngày 28/07/2025");
+        checkout_page.CLickInputVatNo();
 
         test.get().info("Chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();

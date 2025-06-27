@@ -7,6 +7,7 @@ import com.ultilities.extentreports.ExtentManager;
 import com.ultilities.extentreports.ExtentTestManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.Getter;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -114,6 +115,12 @@ public class BaseSetup {
         wd.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
+
+    public void applyZoom(WebDriver driver, int percent) {
+        String script = String.format("document.body.style.zoom='%d%%'", percent);
+        ((JavascriptExecutor) driver).executeScript(script);
+    }
+
 
     public static WebDriver getDriver() {
         return driver.get();

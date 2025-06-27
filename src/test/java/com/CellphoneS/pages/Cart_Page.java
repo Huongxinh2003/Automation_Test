@@ -173,6 +173,7 @@ public class Cart_Page extends ValidateUIHelper {
     public Checkout_Page openCheckout() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonBuyNow));
         clickElement(ButtonBuyNow);
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='80%'");
         return new Checkout_Page(driver);
     }
 

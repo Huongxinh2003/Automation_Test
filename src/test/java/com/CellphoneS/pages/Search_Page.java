@@ -30,7 +30,7 @@ public class Search_Page extends ValidateUIHelper {
     private final By LinkSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']//a[1]");
     private final By ProductSuggest = By.xpath("//p[normalize-space()='S25 Ultra']");
     private final By ListSuggest = By.xpath("//p[normalize-space()='iPhone 16 Series']");
-    public By TitleProduct = By.xpath("//h1[normalize-space()='Samsung Galaxy S25 Ultra 12GB 256GB']");
+    public By TitleProduct = By.xpath("//h1[normalize-space()='iPhone 16 Pro Max 256GB | Chính hãng VN/A']");
     public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
 
     public Search_Page(WebDriver driver) {
@@ -38,6 +38,16 @@ public class Search_Page extends ValidateUIHelper {
         Search_Page.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    public static String getTitleCheckout() {
+        return driver.getTitle();
+    }
+
+    public static boolean verifyTitleCheckout() {
+        String expectedTitle = "CellphoneS Checkout";
+        Assert.assertEquals(getTitleCheckout(), expectedTitle);
+        return getTitleCheckout().equals(expectedTitle);
     }
 
     public Product_Detail_Page openProductDetail(String searchText) {
@@ -60,6 +70,7 @@ public class Search_Page extends ValidateUIHelper {
         wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
 
         clickElement(ProductCard);
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Product_Detail_Page(driver);
     }
 

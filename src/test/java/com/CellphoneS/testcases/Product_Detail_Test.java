@@ -56,6 +56,7 @@ public class Product_Detail_Test extends BaseSetup {
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
+        applyZoom(driver, 80);
     }
 
     @Test (groups = "UI_Test",priority = 1, description = "Kiểm tra title của trang chi tiết sản phẩm")

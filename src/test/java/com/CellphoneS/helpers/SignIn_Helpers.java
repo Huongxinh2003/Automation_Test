@@ -7,6 +7,7 @@ import com.CellphoneS.pages.SignIn_Page;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.logs.LogUtils;
 import com.ultilities.Properties_File;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
@@ -40,8 +41,9 @@ public class SignIn_Helpers extends BaseSetup {
 
     public Homepage_page SignIn(WebDriver driver) {
         driver.get("https://cellphones.com.vn/");
+
         validateUIHelper.waitForPageLoaded();
-//        signIn_page.closePopupIfVisible();
+//    signIn_page.closePopupIfVisible();
         signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
         homepage_page = signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
@@ -49,4 +51,5 @@ public class SignIn_Helpers extends BaseSetup {
         search_Page = homepage_page.openSearchPage();
         return new Homepage_page(driver);
     }
+
 }

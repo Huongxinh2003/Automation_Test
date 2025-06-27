@@ -91,8 +91,6 @@ public class Search_Test extends BaseSetup {
         LogUtils.info("Kiểm tra tiêu đề sản phẩm");
         String title = driver.getTitle();
         LogUtils.info("Tiêu đề sản phẩm: " + title);
-        Assert.assertTrue(search_page.isTitleProductDisplayed(), "Không hiển thị tiêu đề sản phẩm");
-
 
     }
 

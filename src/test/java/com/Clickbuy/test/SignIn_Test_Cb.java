@@ -183,7 +183,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertTrue(signIn_page_cb.isTitleSignInDisplayed(), "Không hiển thị Title đăng nhập");
 
         test.get().info("Nhâp thông tin đăng nhập");
-        homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
+        signIn_page_cb.InputSignIn1(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
         String expectedPhoneNumber = "0332019523";
         String expectedPassword = "Huong2003";
         if(signIn_page_cb.getInputPhoneNumber().equals(expectedPhoneNumber) && signIn_page_cb.getInputPassword().equals(expectedPassword)) {
