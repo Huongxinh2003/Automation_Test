@@ -73,7 +73,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 1), ExcelHelper.getCellData("password", 1));
 
         test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "× \n Lỗi \n Mật khẩu không được bỏ trống";
+        String expectedError = "Mật khẩu không được bỏ trống!";
         String actualError = signIn_page_cb.getFailToast();
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
@@ -86,7 +86,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         test.get().info("Bỏ trống trường phoneNumber");
         signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 2), ExcelHelper.getCellData("password", 2));
         test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "× \n Lỗi \n Số điện thoại không được bỏ trống";
+        String expectedError = "Số điện thoại không được bỏ trống!";
         String actualError = signIn_page_cb.getFailToast();
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
@@ -99,7 +99,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         test.get().info("Bỏ trống trường phoneNumber và password");
         signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 3), ExcelHelper.getCellData("password", 3));
         test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "× \n Lỗi \n Bạn chưa nhập thông tin đăng nhập";
+        String expectedError = "Bạn chưa nhập thông tin đăng nhập!";
         String actualError = signIn_page_cb.getFailToast();
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
@@ -112,7 +112,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         test.get().info("Nhập thông tin không tồn tại");
         signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 4), ExcelHelper.getCellData("password", 4));
         test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "× \n Lỗi \n Số điện thoại hoặc mật khẩu không đúng";
+        String expectedError = "Số điện thoại hoặc mật khẩu không đúng!";
         String actualError = signIn_page_cb.getFailToast();
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }

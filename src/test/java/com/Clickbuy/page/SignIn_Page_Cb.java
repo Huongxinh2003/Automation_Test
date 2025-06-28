@@ -39,7 +39,7 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
 
     public void ClickButtonSignIn1() {
         try {
-            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement popup = shortWait.until(ExpectedConditions.visibilityOfElementLocated(popupModal));
             WebElement clickpopup = shortWait.until(ExpectedConditions.elementToBeClickable(ClickpopupModal));
             clickpopup.click();
@@ -96,8 +96,13 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
         sendKeys(InputPassword, password);
     }
     public String getFailToast() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(FailToast));
-        return getText(FailToast);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("jq-toast-single")));
+        // Cách 1: Dùng JavaScript để lấy đúng phần text sau dấu "×" và "Lỗi"
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String errorMessage = (String) js.executeScript(
+                "return arguments[0].childNodes[3].nodeValue.trim();", toastElement);
+        return errorMessage;
     }
 
     public String getSuccessToast() {
@@ -106,10 +111,13 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     }
 
     public void verifySuccessToast() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(SuccessToast));
-        String expectedText = "× \n Thành công \n Đăng nhập thành công!.";
-        String actualText = getText(SuccessToast);
-        Assert.assertEquals(actualText, expectedText, "Success toast hiển thị không hợp lệ");
+        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(SuccessToast));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String errorMessage = (String) js.executeScript(
+                "return arguments[0].childNodes[3].nodeValue.trim();", toastElement);
+        System.out.println("Actual message: " + errorMessage);
+        String expectedMessage = "Đăng nhập thành công!.";
+        Assert.assertEquals(expectedMessage, errorMessage, "Success toast hiển thị không hợp lệ");
     }
 
     public String getInputPhoneNumber() {
@@ -119,8 +127,6 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     public String getInputPassword() {
         return getText(InputPassword);
     }
-
-
 
     public static String getTitle() {
         return driver.getTitle();

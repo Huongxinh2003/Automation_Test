@@ -35,7 +35,7 @@ public class Product_Detail_Test extends BaseSetup {
     public Homepage_page homepage_page;
     public Search_Page search_page;
 
-    @BeforeClass (groups = {"UI_Test", "Function","Function_UI"}, description = "Kiểm tra các thông tin trên trang chi tiết sản phẩm")
+    @BeforeClass (groups = {"UI_Test", "Function","Function_UI"})
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -52,11 +52,10 @@ public class Product_Detail_Test extends BaseSetup {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"}, description = "Thực hiện tìm kiếm sản phẩm 'iphone', mở trang chi tiết")
+    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"})
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
-        applyZoom(driver, 80);
     }
 
     @Test (groups = "UI_Test",priority = 1, description = "Kiểm tra title của trang chi tiết sản phẩm")
@@ -117,9 +116,10 @@ public class Product_Detail_Test extends BaseSetup {
         String TitleStickyBarBefore = product_detail_page.getTitleStickyBar();
         String CountStoreBefore = product_detail_page.getCountStore();
 
+
+
         LogUtils.info("Chọn phiên bản");
         product_detail_page.selectVersionProduct("1TB");
-
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
@@ -135,6 +135,8 @@ public class Product_Detail_Test extends BaseSetup {
         String CountStoreAfter = product_detail_page.getCountStore();
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn phiên bản");
+        LogUtils.info("Title sản pẩm: "+ TitleProductBefore);
+        LogUtils.info("Title sản phẩm: " + TitleProductAfter);
         Assert.assertNotEquals(TitleProductBefore, TitleProductAfter, "TitleProduct không thay đổi sau khi chọn phiên bản");
         Assert.assertNotEquals(BoxRatingBefore, BoxRatingAfter, "BoxRating không thay đổi sau khi chọn phiên bản");
         Assert.assertNotEquals(BoxPriceBefore, BoxPriceAfter, "BoxPrice không thay đổi sau khi chọn phiên bản");
@@ -156,6 +158,8 @@ public class Product_Detail_Test extends BaseSetup {
         validateUIHelper.waitForPageLoaded();
 
         LogUtils.info("Lưu trạng thái ban đầu ");
+        String DiscountBefore = product_detail_page.getBasePrice();
+        String PriceSaleBefore = product_detail_page.getSalePrice();
         String ProductThumbnail = product_detail_page.getProductThumbnail();
         String PriceStickyBarBefore = product_detail_page.getPriceStickyBar();
         String CountStoreBefore = product_detail_page.getCountStore();
@@ -174,8 +178,11 @@ public class Product_Detail_Test extends BaseSetup {
         String CountStoreAfter = product_detail_page.getCountStore();
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn màu sắc");
-        Assert.assertFalse(Boolean.parseBoolean(DiscountAfter), "Giá gốc thay đổi sau khi chọn màu sắc");
-        Assert.assertTrue(Boolean.parseBoolean(PriceSaleAfter), "Giá sale thay đổi khi chọn màu sắc");
+//        LogUtils.info("Giá sale: "+ DiscountAfter);
+        Assert.assertEquals(DiscountAfter, DiscountBefore, "Giá gốc không thay đổi sau khi chọn màu sắc");
+        Assert.assertEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn màu sắc");
+//        Assert.assertFalse(Boolean.parseBoolean(DiscountAfter), "Giá gốc thay đổi sau khi chọn màu sắc");
+//        Assert.assertTrue(Boolean.parseBoolean(PriceSaleAfter), "Giá sale thay đổi khi chọn màu sắc");
         Assert.assertNotEquals(ProductThumbnail, ProductThumbnailAfter, "Ảnh sản phẩm không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn màu sắc");
@@ -245,7 +252,7 @@ public class Product_Detail_Test extends BaseSetup {
         product_detail_page.ClickCity();
 
         LogUtils.info("Chọn Thành phố");
-        product_detail_page.ClickSelectCity("Đà Nẵng");
+        product_detail_page.ClickSelectCity("Hồ Chí Minh");
 
 
         LogUtils.info("Chờ trang cập nhật lại");
@@ -278,7 +285,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Thành phố");
     }
 
-    //Mặc định chọn "Đà Nẵng"
+    //Mặc định chọn "HCM"
     @Test (groups = "Function",priority = 4, description = "Kiểm tra dropdown chọn quận")
     public void verifyChangeAfterSelectDistrict() {
         product_detail_page.ScrollToElement();
@@ -289,7 +296,7 @@ public class Product_Detail_Test extends BaseSetup {
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Chọn Quận");
-        String districtName = product_detail_page.ClickSelectDistrict("Quận Sơn Trà");
+        String districtName = product_detail_page.ClickSelectDistrict("Quận Thủ Đức");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
@@ -392,7 +399,7 @@ public class Product_Detail_Test extends BaseSetup {
 
     }
 
-    @Test (groups = "Function",priority = 8, description = "Kiểm tra đánh giá sản phẩm")
+    @Test (groups = "Function",priority = 8)
     public void EvaluateProduct() {
         LogUtils.info("Lưu trạng thái ban đầu ");
         String EvaluateBefore = product_detail_page.getCountEvaluateProduct();

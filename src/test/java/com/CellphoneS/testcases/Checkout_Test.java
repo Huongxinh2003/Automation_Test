@@ -36,7 +36,7 @@ public class Checkout_Test extends BaseSetup {
     public JavascriptExecutor js;
     public Checkout_Page checkout_page;
 
-    @BeforeClass (groups = {"Function", "UI_Test", "Function_UI"}, description = "Thực hiện tìm kiếm sản phẩm 'iphone', mở trang chi tiết và thanh toán")
+    @BeforeClass (groups = {"Function", "UI_Test", "Function_UI"})
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -57,7 +57,7 @@ public class Checkout_Test extends BaseSetup {
     }
 
     private String productCityName;
-    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"}, description = "Thực hiện tìm kiếm sản phẩm 'iphone', mở trang chi tiết và thanh toán")
+    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"})
     public void SearchProduct() {
         test.get().info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
@@ -90,8 +90,8 @@ public class Checkout_Test extends BaseSetup {
         String expectedName = "Phùng Hương";
         String expectedPhone = "0332019523";
 
-//        Assert.assertEquals(checkout_page.getNameCustomer(), expectedName, "Tự động điền tên người dùng sai");
-//        Assert.assertEquals(checkout_page.getPhoneCustomer(), expectedPhone, "Tự động điền sđt sai");
+        Assert.assertEquals(checkout_page.getNameCustomer(), expectedName, "Tự động điền tên người dùng sai");
+        Assert.assertEquals(checkout_page.getPhoneCustomer(), expectedPhone, "Tự động điền sđt sai");
 //        Assert.assertEquals(checkout_page.getInputEmail(),  expectedEmail, "Tự động điền email sai");
 
         test.get().info("Kiểm tra tên khách hàng");
@@ -122,7 +122,7 @@ public class Checkout_Test extends BaseSetup {
 
     //Chuyển về thành phố Hà Nội
     @Test (groups = "Function",priority = 1, description = "Kiểm tra nhập thống tin 'Nhận hàng tại cửa hàng'")
-    public void verifyPaymentInfo() {
+    public void verifyPaymentInfo() throws Exception {
         test.get().info("Kiểm tra thống tin 'Nhận hàng tại cửa hàng'");
         checkout_page.isSelectedCheckboxPickup();
         if (checkout_page.isSelectedCheckboxPickup()) {
@@ -145,9 +145,10 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận Tân Phú");
-        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
-        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
         checkout_page.CLickInputVatNo();
         test.get().info("Chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
@@ -156,7 +157,7 @@ public class Checkout_Test extends BaseSetup {
 
     //Chuyển về thành phố Hà Nội
     @Test (groups = "Function",priority = 2, description = "Kiểm tra nhập thống tin 'Giao hàng tận nơi'")
-    public void verifyPaymennInfo2() {
+    public void verifyPaymennInfo2() throws Exception {
         test.get().info("Kiểm tra thống tin 'Giao hàng tận nơi'");
         checkout_page.ClickCheckboxShip();
 
@@ -187,10 +188,11 @@ public class Checkout_Test extends BaseSetup {
         test.get().info("Kiểm tra nhâp thống tin 'Giao hàng tận nơi'");
         checkout_page.SendKeysCityShipping("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
-        checkout_page.SendKeysDistrictShipping("Quận 1");
-        checkout_page.SendKeysAddressShipping("Phường Tân Định");
-        checkout_page.SendKeysInputHomeNumber("55B Trần Quang Khải");
-        checkout_page.SendKeysInputNoteShipping("ship hàng ngày 28/07/2025");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address2",1));
+        checkout_page.SendKeysInputHomeNumber(excelHelper.getCellData("HomeNumber",1));
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
         checkout_page.CLickInputVatNo();
 
         test.get().info("Chuyển sang tab 'Thanh toán'");
@@ -208,14 +210,15 @@ public class Checkout_Test extends BaseSetup {
 
     //Măc định chọn HN
     @Test (groups = "Function",priority = 3,description = "Kiểm tra chuyển sang tab 'Thanh toán'")
-    public void verifySwitchTab() {
+    public void verifySwitchTab() throws Exception {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận 2");
-        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
-        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
@@ -226,16 +229,17 @@ public class Checkout_Test extends BaseSetup {
 
     //mặc định chọnu HN
     @Test (groups = "UI_Test", priority = 3, description = "Kiểm tra hiển thị thông tin bên trang thanh toán")
-    public void verifyTabPayment() {
+    public void verifyTabPayment() throws Exception {
         int quantityInfo = Integer.parseInt(checkout_page.getProductQuantityInfo());
         String BasePriceInfo = checkout_page.getBasePrice();
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận Tân Phú");
-        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
-        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
@@ -301,14 +305,15 @@ public class Checkout_Test extends BaseSetup {
 
     //mặc định chọnu HN
     @Test (groups = "Function",priority = 4, description = "Kiểm tra chọn phương thức thanh toán")
-    public void selectPaymentMethod(){
+    public void selectPaymentMethod() throws Exception {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận Tân Phú");
-        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
-        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
@@ -331,7 +336,7 @@ public class Checkout_Test extends BaseSetup {
 
     //Mặc định ở HN
     @Test (groups = "UI_Test",priority = 4, description = "Kiểm tra hiển thị đồng bộ thông tin bên trang thanh toán")
-    public void PaymentInfo() {
+    public void PaymentInfo() throws Exception {
         String nameCustomerInfo = checkout_page.getNameCustomer();
         String phoneCustomerInfo = checkout_page.getPhoneCustomer();
         String emailCustomerInfo = "quynhhuong6319@gmail.com";
@@ -340,10 +345,11 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận Tân Phú");
-        checkout_page.SendKeysAddress("161 Nguyễn Sơn, P. Phú Thạnh, Q. Tân Phú");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
         String AddressInfo = checkout_page.getAddressName();
-        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
         String NoteInfo = checkout_page.getNote();
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
@@ -410,14 +416,15 @@ public class Checkout_Test extends BaseSetup {
     }
 
     @Test (groups = "UI_Test",priority = 5, description = "Kiểm tra hiển thị giá thanh toán")
-    public void verifyPricePayment() {
+    public void verifyPricePayment() throws Exception {
         test.get().info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        checkout_page.SendKeysDistrict("Quận 2");
-        checkout_page.SendKeysAddress("190 Nguyễn Thị Định, khu phố 2, phường An Phú, quận 2");
-        checkout_page.SendKeysInputNote("Tới nhận hàng ngày 28/07/2025");
+        excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
+        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
+        checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();

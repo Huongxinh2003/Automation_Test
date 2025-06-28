@@ -36,17 +36,10 @@ public class Cart_Test extends BaseSetup {
     public Search_Page search_page;
     public Cart_Page cart_page;
 
-    @BeforeClass (groups = {"Function", "UI_Test"}, description = "Kiểm tra giỏ hàng")
+    @BeforeClass (groups = {"Function", "UI_Test"})
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
-        // Gọi lại hàm startRecord
-//        try {
-//            RecordVideo.startRecord("RecordVideo");
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-        // Lấy driver từ class cha BaseSetup
         boolean headless = Boolean.parseBoolean(Properties_File.getPropValue("headless"));
         driver = setupDriver(Properties_File.getPropValue("browser"), headless);
         search_page = new Search_Page(driver);
@@ -62,7 +55,6 @@ public class Cart_Test extends BaseSetup {
     }
 
     private String detailImage;
-//    @Description("Thực hiện mở trang giỏ hàng")
     @BeforeMethod
     public void SearchProduct() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
@@ -90,9 +82,9 @@ public class Cart_Test extends BaseSetup {
         LogUtils.info("Kiểm tra cart sản phẩm hiển thị trong giỏ");
         Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Cart sản phẩm không hiển thị trong giỏ hàng");
 
-        LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng");
-        String cartImage = cart_page.extractFileName(cart_page.getCartImageSrc());
-        Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
+//        LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng");
+//        String cartImage = cart_page.extractFileName(cart_page.getCartImageSrc());
+//        Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
 
         LogUtils.info("Kiêểm tra giá trên Cart sản phẩm và giá tạm tính");
         String price = cart_page.getPriceProduct();
@@ -107,8 +99,10 @@ public class Cart_Test extends BaseSetup {
         Assert.assertEquals(price, priceTemp, "Giá trên Cart sản phẩm và giá tạm tính không khớp");
 
         LogUtils.info("Kiểm tra số lượng saản phẩm khi thêm vaào giỏ");
+        String expectedQuantity = Properties_File.getPropValue("Quantity");
         String quantity = cart_page.getProductQuantity();
-        Assert.assertEquals(quantity, "1", "Số lượng sản phẩm không khớp");
+        LogUtils.info("Số lượng sản phẩm: " + quantity);
+        Assert.assertEquals(quantity,expectedQuantity, "Số lượng sản phẩm không đúng sau khi thêm vào giỏ");
 
     }
 

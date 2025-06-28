@@ -79,7 +79,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", Buynow);
         clickElement(BuyNow);
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+//        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Cart_Page(driver);
     }
 
@@ -91,8 +91,13 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
     // Lấy tiêu đề sản phẩm
     public String getTitleProduct() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
-        return getText(TitleProduct);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String titleText = (String) js.executeScript("return arguments[0].textContent.trim();", titleElement);
+
+        return titleText;
     }
 
     // Lấy tên thành phố
@@ -102,8 +107,9 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public String getDistrictName() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
-        return getText(DistrictOption);
+        WebElement select = driver.findElement(DistrictOption);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (String) js.executeScript("return arguments[0].selectedOptions[0].textContent.trim();", select);
     }
 
     public void isFavoriteProductDisplayed() {
@@ -124,19 +130,32 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public void selectVersionProduct(String version) {
         List<WebElement> options = driver.findElements(By.xpath("//div[@class='list-linked']//a"));
 
+        // Lấy title hiện tại trước khi click
+        String oldTitle = getTitleProduct(); // hoặc getTitleStickyBar()
+
         for (WebElement option : options) {
             String optionText = option.getText().replaceAll("\\s+", "").toLowerCase();
             String expectedText = version.replaceAll("\\s+", "").toLowerCase();
 
             if (optionText.contains(expectedText)) {
-                (js).executeScript("arguments[0].click();", option);
+                // Click bằng JavaScript
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", option);
                 LogUtils.info("Đã chọn phiên bản: " + option.getText());
+
+                // Đợi title thay đổi
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                wait.until(driver -> {
+                    String newTitle = getTitleProduct(); // hoặc getTitleStickyBar()
+                    return !newTitle.equals(oldTitle);
+                });
+
                 return;
             }
         }
 
         throw new RuntimeException("Không tìm thấy phiên bản: " + version);
     }
+
 
     public void selectColorProduct(String color) {
         List<WebElement> colorOptions = driver.findElements(By.xpath("//a[@title='Titan Đen']"));
@@ -208,23 +227,41 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public String getSalePrice() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(Sale_price));
-        return getText(Sale_price);
+        WebElement priceElement = wait.until(ExpectedConditions.presenceOfElementLocated(Sale_price));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String rawText = (String) js.executeScript("return arguments[0].textContent.trim();", priceElement);
+        return normalizePriceText(rawText);
     }
 
     public String getBasePrice() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(BasePrice));
-        return getText(BasePrice);
+        WebElement priceElement = wait.until(ExpectedConditions.presenceOfElementLocated(BasePrice));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String rawText = (String) js.executeScript("return arguments[0].textContent.trim();", priceElement);
+        return normalizePriceText(rawText);
+    }
+
+    private String normalizePriceText(String rawText) {
+        return rawText.replaceAll("[^0-9]", "");
     }
 
     public String getPriceStickyBar() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(PriceStickyBar));
-        return getText(PriceStickyBar);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement priceElement = wait.until(ExpectedConditions.visibilityOfElementLocated(PriceStickyBar));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String priceText = (String) js.executeScript("return arguments[0].textContent.trim();", priceElement);
+
+        return priceText;
     }
 
     public String getTitleStickyBar() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProductBar));
-        return getText(TitleProductBar);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProductBar));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String titleText = (String) js.executeScript("return arguments[0].textContent.trim();", titleElement);
+
+        return titleText;
     }
 
     public String getProductThumbnail() {

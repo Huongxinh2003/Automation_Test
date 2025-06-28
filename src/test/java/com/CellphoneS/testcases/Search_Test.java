@@ -36,7 +36,7 @@ public class Search_Test extends BaseSetup {
     public Product_Detail_Page product_detail_page;
 
 
-    @BeforeClass (groups = {"UI_Test", "Function"}, description = "Kiểm tra chức năng tìm kiếm")
+    @BeforeClass (groups = {"UI_Test", "Function"})
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -53,7 +53,7 @@ public class Search_Test extends BaseSetup {
 
     }
 
-    @BeforeMethod (groups = {"UI_Test", "Function"}, description = "Kiểm tra chức năng tìm kiếm")
+    @BeforeMethod (groups = {"UI_Test", "Function"})
     public void SearchProduct() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone'");
         search_page = homepage_page.openSearchPage();

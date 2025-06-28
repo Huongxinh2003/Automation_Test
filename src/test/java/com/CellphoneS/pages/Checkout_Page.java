@@ -35,7 +35,7 @@ public class Checkout_Page extends ValidateUIHelper {
 //    public By SuggestionCity = (By.xpath(String.format("//div[@class='dropdown__item dropdown__item--active']//span[contains(text(),'%s')]", city)));
     public By ButtonAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
     public By DropdownDistrict = By.xpath("//input[@placeholder='Chọn quận/huyện']");
-    public By DropdownAddress = By.xpath("//label[normalize-space()='CỬA HÀNG']/preceding-sibling::input");
+    public By DropdownAddress = By.xpath("//input[@placeholder='Chọn phường/xã']");
     public By InputNote = By.xpath("//input[@placeholder='Ghi chú khác (nếu có)']");
     public By CheckboxShipping = By.xpath("//input[@id='shipping']");
     public static By InputName = By.xpath("//input[@placeholder='Họ tên người nhận']");

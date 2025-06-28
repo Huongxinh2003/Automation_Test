@@ -70,7 +70,7 @@ public class Search_Page extends ValidateUIHelper {
         wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
 
         clickElement(ProductCard);
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+//        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%'");
         return new Product_Detail_Page(driver);
     }
 

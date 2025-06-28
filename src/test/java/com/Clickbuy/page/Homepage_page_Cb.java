@@ -19,9 +19,4 @@ public class Homepage_page_Cb extends ValidateUIHelper {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
-
-    public Search_Page_Cb openSearchPage() {
-        clickElement(searchInput);
-        return new Search_Page_Cb(driver);
-    }
 }

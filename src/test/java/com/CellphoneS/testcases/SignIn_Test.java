@@ -38,7 +38,7 @@ public class SignIn_Test extends BaseSetup{
     public Search_Page search_Page;
     public Homepage_page homepage_page;
 
-    @BeforeClass(groups = "Function")
+    @BeforeClass(groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK"})
     public void setUp() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -51,13 +51,12 @@ public class SignIn_Test extends BaseSetup{
 
     }
 
-    @BeforeMethod
+    @BeforeMethod (groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK"})
     public void setUpMethod() {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
 //        signIn_page.closePopupIfVisible();
     }
-
 
     @Test(groups = {"SignIn_Success"}, priority = 1)
     public void login_cellphoneS_Success() throws Exception {
