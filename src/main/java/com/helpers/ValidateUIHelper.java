@@ -26,12 +26,12 @@ public class ValidateUIHelper {
         js.executeScript("arguments[0].click();", element);
     }
 
-    // Click element và scroll vào view
-    public void clickElementByJs(By by) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-        js.executeScript("arguments[0].click();", element);
-    }
+//    // Click element và scroll vào view
+//    public void clickElementByJs(By by) {
+//        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+//        js.executeScript("arguments[0].scrollIntoView(true);", element);
+//        js.executeScript("arguments[0].click();", element);
+//    }
 
     public void clickElement(WebElement element) {
         js.executeScript("arguments[0].click();", element);
@@ -112,10 +112,10 @@ public class ValidateUIHelper {
         robot.delay(300);
     }
 
-    // Đợi trang tải xong hoàn toàn
     public void waitForPageLoaded() {
         ExpectedCondition<Boolean> expectation = driver ->
-                ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+                ((JavascriptExecutor) driver).executeScript("return document.readyState")
+                        .toString().equals("complete");
 
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));

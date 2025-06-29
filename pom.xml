@@ -125,6 +125,5 @@
             <artifactId>maven-core</artifactId>
             <version>4.0.0-rc-3</version>
         </dependency>
-
     </dependencies>
 </project>

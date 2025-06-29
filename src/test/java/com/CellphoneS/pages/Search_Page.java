@@ -70,7 +70,7 @@ public class Search_Page extends ValidateUIHelper {
         wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
 
         clickElement(ProductCard);
-//        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Product_Detail_Page(driver);
     }
 
@@ -138,7 +138,7 @@ public class Search_Page extends ValidateUIHelper {
         List<String> historyTexts = new ArrayList<>();
 
         List<WebElement> historyItems = driver.findElements(HistorySearch);
-
+        wait.until(ExpectedConditions.visibilityOfAllElements(historyItems));
         for (WebElement item : historyItems) {
             historyTexts.add(item.getText().trim());
         }

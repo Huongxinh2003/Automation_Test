@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.base.BaseSetup;
 import com.CellphoneS.pages.Homepage_page;
@@ -61,13 +61,16 @@ public class SignIn_Test extends BaseSetup{
     @Test(groups = {"SignIn_Success"}, priority = 1)
     public void login_cellphoneS_Success() throws Exception {
         signIn_page.SignIn();
-        homepage_page = signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
+        homepage_page = signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"),
+                Properties_File.getPropValue("password"));
         LogUtils.info("Đăng nhập thành công");
 
         LogUtils.info("Kiểm tra thông báo");
         By successToast = By.xpath("//*[contains(text(),'Đăng nhập')]");
-        WebElement successToastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(successToast));
-        assertTrue(successToastElement.isDisplayed(), "Không hiển thị thông báo 'Đăng nhập thành công'!");
+        WebElement successToastElement = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(successToast));
+        assertTrue(successToastElement.isDisplayed(),
+                "Không hiển thị thông báo 'Đăng nhập thành công'!");
 
         LogUtils.info("Kiểm tra chuyển sang");
         boolean isOnHomepage = wait.until(ExpectedConditions.urlToBe("https://cellphones.com.vn/"));
@@ -79,7 +82,8 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thất bại khi nhập SĐT sai");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
-        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 2), excelHelper.getCellData("password", 2));
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 2),
+                excelHelper.getCellData("password", 2));
 
         LogUtils.info("Kiểm tra Alert lỗi trường Mật khẩu");
         By alertBox = By.xpath("//li[contains(.,'Số điện thoại hoặc mật khẩu không hợp lệ')]");
@@ -99,7 +103,8 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("Đăng nhập thất bại khi nhập Mât khẩu sai");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
         signIn_page.SignIn();
-        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 3), excelHelper.getCellData("password", 3));
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 3),
+                excelHelper.getCellData("password", 3));
 
         LogUtils.info("Kiểm tra Alert lỗi");
         By alertBox = By.xpath("//ol[@class='toaster group']//li");
@@ -115,7 +120,8 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("Bỏ trống SĐT và Mật khẩu");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
         signIn_page.SignIn();
-        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 4), excelHelper.getCellData("password", 4));
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 4),
+                excelHelper.getCellData("password", 4));
 
         LogUtils.info("Kiểm tra Alert lỗi");
         By alertBox = By.xpath("//ol[@class='toaster group']//li");
@@ -149,11 +155,13 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("Bỏ trống SĐT");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
         signIn_page.SignIn();
-        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 6), excelHelper.getCellData("password", 6));
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 6),
+                excelHelper.getCellData("password", 6));
 
         LogUtils.info("Kiểm tra Alert lỗi");
         By alertBox = By.xpath("//li[contains(.,'Số điện thoại không được bỏ trống')]");
-        boolean alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
+        boolean alertElement = wait.until
+                (ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
         assertTrue(alertElement, "Hiển thị sai thông báo lỗi khi bỏ trống SĐT!");
     }
 
@@ -258,7 +266,8 @@ public class SignIn_Test extends BaseSetup{
     public void login_cellphoneS_62() throws Exception {
         LogUtils.info("Mã hoá mật khẩu");
         signIn_page.SignIn();
-        signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
+        signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"),
+                Properties_File.getPropValue("password"));
 
         LogUtils.info("Kiểm tra mật khẩu đã được mã hoá");
         String typeAfterShowPassword = signIn_page.getInputPassword().getAttribute("type");
@@ -378,7 +387,8 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("Link CellphoneS");
         signIn_page.ClickLinkCellphoneS();
         String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("https://cellphones.com.vn/"), "Không chuyển sang trang cellphoneS!");
+        assertTrue(currentUrl.contains("https://cellphones.com.vn/"),
+                "Không chuyển sang trang cellphoneS!");
 
         LogUtils.info("Đã chuyển đúng sang trang cellphoneS");
     }

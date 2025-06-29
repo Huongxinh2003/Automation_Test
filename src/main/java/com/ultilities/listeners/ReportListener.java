@@ -22,7 +22,8 @@ public class ReportListener implements ITestListener {
     }
 
     public String getTestDescription(ITestResult result) {
-        return result.getMethod().getDescription() != null ? result.getMethod().getDescription() : getTestName(result);
+        return result.getMethod().getDescription() != null ? result.getMethod().getDescription()
+                : getTestName(result);
     }
 
     @Override

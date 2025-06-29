@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;
@@ -7,7 +7,6 @@ import com.CellphoneS.pages.Cart_Page;
 import com.CellphoneS.pages.Homepage_page;
 import com.CellphoneS.pages.Product_Detail_Page;
 import com.CellphoneS.pages.Search_Page;
-import com.helpers.CaptureHelpers;
 import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.logs.LogUtils;
@@ -17,7 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.time.Duration;
@@ -113,7 +111,8 @@ public class Cart_Test extends BaseSetup {
         String toast = cart_page.getToastMessage();
 
         Assert.assertEquals(qty, "1", "Số lượng đã bị giảm dưới 1");
-        Assert.assertTrue(toast.contains("Số lượng sản phẩm đã giảm đến mức tối thiểu"), "Thông báo không đúng: " + toast);
+        Assert.assertTrue(toast.contains("Số lượng sản phẩm đã giảm đến mức tối thiểu"),
+                "Thông báo không đúng: " + toast);
     }
 
     @Test (groups = "Function", description = "Kiểm tra Max")
@@ -122,14 +121,16 @@ public class Cart_Test extends BaseSetup {
             cart_page.clickPlusButton();
             String qty = cart_page.getProductQuantity();
             Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
-            Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
+            Assert.assertTrue(cart_page.isBoxProductDisplayed(),
+                    "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
         }else {
             cart_page.clickPlusButton();
             cart_page.clickPlusButton();
             cart_page.clickPlusButton();
             String qty = cart_page.getProductQuantity();
             Assert.assertEquals(qty, "3", "Số lượng đã tăng quá 3");
-            Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
+            Assert.assertTrue(cart_page.isBoxProductDisplayed(),
+                    "Không hiển thị popup thông báo khi vượt quá số lượng cho phép");
         }
     }
 
@@ -139,6 +140,7 @@ public class Cart_Test extends BaseSetup {
         cart_page.clickDelete();
         cart_page.isBoxProductDisplayed();
         String productName = "iPhone 16 Pro Max 1TB | Chính hãng VN/A - Titan Đen";
-        Assert.assertNotEquals(cart_page.getAllProductNamesInCart(), productName, "Sản phẩm chưa bị xoá khỏi giỏ hàng");
+        Assert.assertNotEquals(cart_page.getAllProductNamesInCart(), productName,
+                "Sản phẩm chưa bị xoá khỏi giỏ hàng");
     }
 }

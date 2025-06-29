@@ -97,7 +97,8 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     }
     public String getFailToast() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("jq-toast-single")));
+        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.className("jq-toast-single")));
         // Cách 1: Dùng JavaScript để lấy đúng phần text sau dấu "×" và "Lỗi"
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String errorMessage = (String) js.executeScript(
@@ -133,7 +134,8 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     }
 
     public void verifyCartPageTitle() {
-        String expectedTitle = "Clickbuy.com.vn - Hệ thống bán lẻ điện thoại, máy tính bảng, laptop, phụ kiện chính hãng";
+        String expectedTitle = "Clickbuy.com.vn - Hệ thống bán lẻ điện thoại, máy tính bảng, " +
+                "laptop, phụ kiện chính hãng";
         Assert.assertEquals(getTitle(), expectedTitle,"Title không hợp lệ");
     }
 

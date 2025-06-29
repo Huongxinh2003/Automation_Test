@@ -7,7 +7,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.CellphoneS.testcases.Search_Test">
+            <class name="com.CellphoneS.tests.Search_Test">
 <!--                <methods>-->
 <!--                    <include name="Search_Success"/>-->
 <!--                </methods>-->

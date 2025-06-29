@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;
@@ -188,7 +188,8 @@ public class Search_Test extends BaseSetup {
 
         LogUtils.info("Kiểm tra URL đúng");
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertTrue(currentUrl.contains("/dien-thoai-samsung-galaxy-s25-ultra.html"), "URL sai: " + currentUrl);
+        Assert.assertTrue(currentUrl.contains("/dien-thoai-samsung-galaxy-s25-ultra.html"), "URL sai: "
+                + currentUrl);
 
         LogUtils.info("Kiểm tra tiêu đề sản phẩm ");
         search_page.isTitleProductDisplayed();

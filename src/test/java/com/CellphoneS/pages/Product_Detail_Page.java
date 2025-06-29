@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
@@ -24,7 +25,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By BoxRating = By.xpath("//div[@class='box-rating']");
     public By ColorPrice = By.xpath("//div[@class='box-product-variants']");
     public By CountStore = By.xpath("//span[@class='count']");
-    public static By ProductPrice = By.xpath("//div[@class='box-product-price']");
+    public By ProductPrice = By.xpath("//div[@class='box-product-price']");
     public By Sale_price = By.xpath("//div[@class='sale-price']");
     public By BasePrice = By.xpath("//div[@class='is-flex is-align-items-center']//del[@class='base-price']");
     public By PriceStickyBar = By.xpath("//div[@class='cta-product-price']");
@@ -45,7 +46,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By AddToCart = By.xpath("//button[@class='button-desktop button-add-to-cart']");
     public By InstallmentOption = By.xpath("//button[@class='button-desktop button-desktop-installment is-flex is-justify-content-center is-align-items-center']");
     public By InstallmentOption2 = By.xpath("//body/div[@id='__nuxt']/div[@id='__layout']/div[@id='layout-desktop']/div[@class='cps-container cps-body']/div/div[@id='productDetailV2']/div[@class='cps-block-order-button-desktop show']/div[@class='cta-action']/div[@class='installment-section']/div[@class='popup-installment show']/div[1]");
-    public static By activeTabBtn = By.xpath("//button[@class='tab-item active']");
+    public By activeTabBtn = By.xpath("//button[@class='tab-item active']");
     public By InstallmentOption3 = By.xpath("//body/div[@id='__nuxt']/div[@id='__layout']/div[@id='layout-desktop']/div[@class='cps-container cps-body']/div/div[@id='productDetailV2']/div[@class='cps-block-order-button-desktop show']/div[@class='cta-action']/div[@class='installment-section']/div[@class='popup-installment show']/div[1]");
     public By ButtonEvaluate = By.xpath("//button[contains(text(),'Viết đánh giá')]");
     public By EvaluateStar = By.xpath("(//div[@icon='star'])[3]");
@@ -56,8 +57,8 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By EvaluateImage = By.xpath("//input[@id='image']");
     public By EvaluateButton = By.xpath("//button[contains(text(),'GỬI ĐÁNH GIÁ')]");
     public By EvaluateCount = By.xpath("//p[@class='boxReview-score__count']");
-    public static By StoreProduct = By.xpath("//div[@class='box-on-stock-stores']");
-
+    public By StoreProduct = By.xpath("//div[@class='box-on-stock-stores']");
+    public By ToastMessage = By.xpath("//div[@class='toasted toasted-primary success']");
 
     public Product_Detail_Page(WebDriver driver) {
         super(driver);
@@ -79,7 +80,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(BuyNow));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", Buynow);
         clickElement(BuyNow);
-//        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Cart_Page(driver);
     }
 
@@ -128,7 +129,8 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public void selectVersionProduct(String version) {
-        List<WebElement> options = driver.findElements(By.xpath("//div[@class='list-linked']//a"));
+        List<WebElement> options = driver.findElements
+                (By.xpath("//div[@class='list-linked']//a"));
 
         // Lấy title hiện tại trước khi click
         String oldTitle = getTitleProduct(); // hoặc getTitleStickyBar()
@@ -148,7 +150,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
                     String newTitle = getTitleProduct(); // hoặc getTitleStickyBar()
                     return !newTitle.equals(oldTitle);
                 });
-
                 return;
             }
         }
@@ -305,13 +306,9 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public void ClickSelectCity(String city) {
-        // Tạo xpath cho li chứa tên thành phố
         String cityXpath = "//ul[@class='menu-list']/li[normalize-space()='" + city + "']";
-
-        // Đợi menu list hiển thị
         WebElement menuList = wait.until(ExpectedConditions.visibilityOfElementLocated(SelectCity));
 
-        // Đợi và click thành phố
         WebElement cityElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cityXpath)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cityElement);
         cityElement.click();
@@ -333,8 +330,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(DistrictOption));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
         clickElement(DistrictOption);
-//        WebElement selectDistrict = wait.until(ExpectedConditions.visibilityOfElementLocated(SelectDistrict));
-//        selectDropdownByVisibleText(DistrictOption, districtName);
+
         Select District = new Select(element);
         District.selectByVisibleText(districtName);
         return districtName;
@@ -430,6 +426,14 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public String getCountEvaluateProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(EvaluateCount));
         return getText(EvaluateCount);
+    }
+
+    public boolean isToastMessageDisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.presenceOfElementLocated(ToastMessage));
+        Boolean toast = driver.findElement(ToastMessage).isDisplayed();
+        Assert.assertTrue(toast, "Không hiển thị thông báo khi click button Thanh toán trả góp");
+        return isElementDisplayed(ToastMessage);
     }
 
 }

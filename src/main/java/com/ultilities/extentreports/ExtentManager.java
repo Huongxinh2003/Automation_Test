@@ -12,7 +12,8 @@ public class ExtentManager {
     public static synchronized ExtentReports getExtentReports() {
         if (extent == null) {
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String path = System.getProperty("user.dir") + "/ExtentReports/ExtentReport_" + timestamp + ".html";
+            String path = System.getProperty("user.dir") + "/ExtentReports/ExtentReport_"
+                    + timestamp + ".html";
 
             ExtentSparkReporter spark = new ExtentSparkReporter(path);
             spark.config().setDocumentTitle("Automation Report");

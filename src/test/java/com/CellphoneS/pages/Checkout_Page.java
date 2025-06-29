@@ -32,10 +32,9 @@ public class Checkout_Page extends ValidateUIHelper {
     public By CheckboxPromo = By.xpath("//input[@id='emailPromo']");
     public By CheckboxPickUp = By.xpath("//input[@id='pickup']");
     public By DropdownCity = By.xpath(String.format("//input[@placeholder='%s']", city));
-//    public By SuggestionCity = (By.xpath(String.format("//div[@class='dropdown__item dropdown__item--active']//span[contains(text(),'%s')]", city)));
     public By ButtonAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
     public By DropdownDistrict = By.xpath("//input[@placeholder='Chọn quận/huyện']");
-    public By DropdownAddress = By.xpath("//input[@placeholder='Chọn phường/xã']");
+    public By DropdownAddress = By.xpath("//input[@placeholder='Chọn địa chỉ cửa hàng']");
     public By InputNote = By.xpath("//input[@placeholder='Ghi chú khác (nếu có)']");
     public By CheckboxShipping = By.xpath("//input[@id='shipping']");
     public static By InputName = By.xpath("//input[@placeholder='Họ tên người nhận']");
@@ -68,7 +67,7 @@ public class Checkout_Page extends ValidateUIHelper {
     public By PhoneNumber = By.xpath("//p[normalize-space()='0332019523']");
     public By Email = By.xpath("//p[normalize-space()='quynhhuong6319@gmail.com']");//p[normalize-space()='EMAIL']");
     public By Address = By.xpath("//p[contains(text(),',')]");
-    public By Note = By.xpath("//p[contains(text(),'Tới nhận hàng ngày 28/07/2025')]");
+    public By Note = By.xpath("//p[contains(text(),',')]");
     public By CheckboxTerms = By.xpath("//input[@type='checkbox']");
     public By TotalPriceTemp = By.xpath("//span[@class='total']");
     public By ListProduct = By.xpath("//button[@id='viewListItemInQuote-btn']");
@@ -178,6 +177,7 @@ public class Checkout_Page extends ValidateUIHelper {
 
     public void SendKeysDistrict(String district) {
         // Click input
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownDistrict));
         input.click();
         input.sendKeys(district);
@@ -196,7 +196,8 @@ public class Checkout_Page extends ValidateUIHelper {
         // Click input
         WebElement input = wait.until(ExpectedConditions.elementToBeClickable(DropdownAddress));
         (js).executeScript("arguments[0].scrollIntoView();", input);
-        input.click();
+        clickElement(input);
+//        input.click();
         input.sendKeys(address);
 
         // Chờ item hiện ra và click vào nó
@@ -206,8 +207,11 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public String getAddressName() {
-        WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(DropdownAddress));
-        return input.getAttribute("placeholder");
+        By addressInput = By.xpath("//label[normalize-space()='CỬA HÀNG']/preceding-sibling::input");
+        WebElement input = wait.until(ExpectedConditions.presenceOfElementLocated(addressInput));
+        String address = input.getAttribute("placeholder");
+        System.out.println("Địa chỉ cửa hàng: " + address);
+        return address;
     }
 
 

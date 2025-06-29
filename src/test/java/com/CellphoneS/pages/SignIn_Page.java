@@ -11,7 +11,6 @@ public class  SignIn_Page extends ValidateUIHelper {
     private static WebDriver driver;
     private WebDriverWait wait;
     private JavascriptExecutor js;
-
     // Định nghĩa các locator
     private final By popupCloseBtn = By.xpath("//button[@class='modal-close is-large']");
     private final By loginButton = By.xpath("//div[@class='header-item about-5 about-smember cta-smember button__login']");
@@ -62,7 +61,6 @@ public class  SignIn_Page extends ValidateUIHelper {
         clickElement(loginButton);
         clickElement(loginButton2);
     }
-
 
     public Homepage_page InputSignIn(String phoneNumber, String password) {
         sendKeys(inputPhoneNumber, phoneNumber);

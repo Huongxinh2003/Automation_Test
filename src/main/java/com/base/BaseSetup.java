@@ -29,11 +29,9 @@ public class BaseSetup {
 
     @Getter
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-
     protected static ExtentReports extent;
     protected static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
-    // --- Setup WebDriver ---
     public WebDriver setupDriver(String browserType, boolean headless) throws Exception {
         WebDriver wd;
         switch (browserType.trim().toLowerCase()) {
@@ -47,7 +45,8 @@ public class BaseSetup {
                 wd = initEdgeDriver(headless);
                 break;
             default:
-                System.out.println("Browser: " + browserType + " is invalid, Launching Chrome as default...");
+                System.out.println("Browser: " + browserType +
+                        " is invalid, Launching Chrome as default...");
                 wd = initChromeDriver(headless);
         }
         driver.set(wd);
@@ -64,7 +63,8 @@ public class BaseSetup {
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-            String uniqueProfile = System.getProperty("java.io.tmpdir") + "/chrome-profile-" + System.currentTimeMillis();
+            String uniqueProfile = System.getProperty("java.io.tmpdir") + "/chrome-profile-"
+                    + System.currentTimeMillis();
             options.addArguments("--user-data-dir=" + uniqueProfile);
         }
         options.addArguments("--window-size=1920,1080");
@@ -100,7 +100,8 @@ public class BaseSetup {
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-            String uniqueProfile = System.getProperty("java.io.tmpdir") + "/edge-profile-" + System.currentTimeMillis();
+            String uniqueProfile = System.getProperty("java.io.tmpdir") + "/edge-profile-"
+                    + System.currentTimeMillis();
             options.addArguments("--user-data-dir=" + uniqueProfile);
         }
         options.addArguments("--window-size=1920,1080");
@@ -144,7 +145,7 @@ public class BaseSetup {
         extent.flush();
     }
 
-    // --- Tear down WebDriver ---
+
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
         Thread.sleep(3000);

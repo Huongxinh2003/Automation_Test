@@ -23,7 +23,8 @@ public class RecordVideo extends ScreenRecorder {
     public String name;
 
     // Constructor
-    public RecordVideo(GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat, Format screenFormat,
+    public RecordVideo(GraphicsConfiguration cfg, Rectangle captureArea,
+                       Format fileFormat, Format screenFormat,
                        Format mouseFormat, Format audioFormat, File movieFolder, String name)
             throws IOException, AWTException {
         super(cfg, captureArea, fileFormat, screenFormat, mouseFormat, audioFormat, movieFolder);
@@ -98,3 +99,12 @@ public class RecordVideo extends ScreenRecorder {
         }
     }
 }
+
+
+
+
+
+
+
+
+

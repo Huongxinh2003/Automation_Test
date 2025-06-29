@@ -51,14 +51,16 @@ public class SignIn_Test_Cb extends BaseSetup {
     public void SignIn() {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
-        homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
+        homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"),
+                Properties_File.getPropValue("password2"));
     }
 
     @Test (groups = "SignIn_Success")
     public void verifySignInSuccess() {
         signIn_page_cb.ClickButtonSignIn1();
         test.get().info("Nhâp thông tin đăng nhập");
-        homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
+        homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"),
+                Properties_File.getPropValue("password2"));
 
         test.get().info("Kiểm tra hiển thị thông báo khi đăng nhập thành công");
         signIn_page_cb.verifySuccessToast();
@@ -70,7 +72,8 @@ public class SignIn_Test_Cb extends BaseSetup {
         test.get().info("Nhâp thông tin đăng nhập");
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
         test.get().info("Bỏ trống trường password");
-        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 1), ExcelHelper.getCellData("password", 1));
+        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 1),
+                ExcelHelper.getCellData("password", 1));
 
         test.get().info("Kiểm tra hiển thị thông báo lỗi");
         String expectedError = "Mật khẩu không được bỏ trống!";
@@ -84,7 +87,8 @@ public class SignIn_Test_Cb extends BaseSetup {
         test.get().info("Nhâp thông tin đăng nhập");
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
         test.get().info("Bỏ trống trường phoneNumber");
-        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 2), ExcelHelper.getCellData("password", 2));
+        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 2),
+                ExcelHelper.getCellData("password", 2));
         test.get().info("Kiểm tra hiển thị thông báo lỗi");
         String expectedError = "Số điện thoại không được bỏ trống!";
         String actualError = signIn_page_cb.getFailToast();
@@ -134,7 +138,8 @@ public class SignIn_Test_Cb extends BaseSetup {
             if (actualError.equals(expectedError)) {
                 test.get().pass("PASS: " + phonenumber + " -> " + actualError);
             } else {
-                test.get().fail("FAIL: " + phonenumber + " | Expected: " + expectedError + " | Got: " + actualError);
+                test.get().fail("FAIL: " + phonenumber + " | Expected: " + expectedError + " | Got: " +
+                        actualError);
             }
             driver.navigate().refresh();
             signIn_page_cb.ClickButtonSignIn1();

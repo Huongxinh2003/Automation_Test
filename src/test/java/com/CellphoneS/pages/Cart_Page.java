@@ -58,7 +58,6 @@ public class Cart_Page extends ValidateUIHelper {
     }
 
     // Kiểm tra tiêu đề trang
-    //False
     public boolean verifyCartPageTitle() {
         String expectedTitle = "CellphoneS Cart";
         Assert.assertEquals(getCartPageTitle(), expectedTitle);
@@ -99,7 +98,8 @@ public class Cart_Page extends ValidateUIHelper {
     }
 
     public String extractFileName(String url) {
-        return url.split("\\?")[0].substring(url.lastIndexOf("/") + 1);
+        return url.split("\\?")[0].substring(
+                url.lastIndexOf("/") + 1);
     }
 
     public String getPriceProduct() {
@@ -173,7 +173,7 @@ public class Cart_Page extends ValidateUIHelper {
     public Checkout_Page openCheckout() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonBuyNow));
         clickElement(ButtonBuyNow);
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='70%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Checkout_Page(driver);
     }
 

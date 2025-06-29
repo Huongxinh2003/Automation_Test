@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;
@@ -369,10 +369,7 @@ public class Product_Detail_Test extends BaseSetup {
         product_detail_page.ClickInstallmentOption2();
 
         LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp 0%");
-        By successInstallmentOption = By.xpath("//div[@class='toasted toasted-primary success']");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(successInstallmentOption));
-        WebElement toast = driver.findElement(successInstallmentOption);
-        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thanh toán trả góp");
+        product_detail_page.isToastMessageDisplayed();
 
         LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
         String activeTab = product_detail_page.getActiveTabText();
@@ -387,10 +384,7 @@ public class Product_Detail_Test extends BaseSetup {
         product_detail_page.ClickInstallmentOption3();
 
         LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp qua thẻ");
-        By successInstallmentOption = By.xpath("//div[@class='toasted toasted-primary success']");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(successInstallmentOption));
-        WebElement toast = driver.findElement(successInstallmentOption);
-        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thanh toán trả góp qua thẻ");
+        product_detail_page.isToastMessageDisplayed();
 
         LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
         String activeTab = product_detail_page.getActiveTabText();

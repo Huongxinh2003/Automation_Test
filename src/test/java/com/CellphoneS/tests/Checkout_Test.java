@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.base.BaseSetup;
@@ -81,7 +81,8 @@ public class Checkout_Test extends BaseSetup {
         Assert.assertTrue(activeTab.contains("THÔNG TIN"), "Tab không phải 'THÔNG TIN'");
 
         test.get().info("Kiểm tra hiển thị Card sản phâm");
-        Assert.assertTrue(checkout_page.isCheckoutCartDisplayed(), "Card sản phần không hiển thị");
+        Assert.assertTrue(checkout_page.isCheckoutCartDisplayed(),
+                "Card sản phần không hiển thị");
 
         test.get().info("Kiểm tra check box ưu đãi từ CellphoneS");
         checkout_page.isSelectedCheckboxPromotion();
@@ -107,7 +108,8 @@ public class Checkout_Test extends BaseSetup {
         if (actualPhone.equals(expectedPhone)) {
             test.get().pass("SĐT chính xác: " + actualPhone);
         } else {
-            test.get().fail("SĐT không đúng. Thực tế: " + actualPhone + ", Kỳ vọng: " + expectedPhone);
+            test.get().fail("SĐT không đúng. Thực tế: " + actualPhone + ", " +
+                    "Kỳ vọng: " + expectedPhone);
         }
 
         test.get().info("Kiểm tra nhập Email mới");
@@ -131,7 +133,7 @@ public class Checkout_Test extends BaseSetup {
             test.get().fail("Checkbox 'Nhận tại cửa hàng' chưa được chọn.");
         }
 
-        test.get().info("Kiểm tra hiển thị cu form 'Nhận tại cửa hàng'");
+        test.get().info("Kiểm tra hiển thị của form 'Nhận tại cửa hàng'");
         Assert.assertTrue(checkout_page.isDropDownCityDisplayed(), "Dropdown city không hiển thị");
         Assert.assertTrue(checkout_page.isDropDownDistrictDisplayed(), "Dropdown district không hiển thị");
         Assert.assertTrue(checkout_page.isDropDownAddressDisplayed(), "Dropdown address không hiển thị");
@@ -144,7 +146,6 @@ public class Checkout_Test extends BaseSetup {
         test.get().info("Kiểm tra nhâp thống tin 'Nhận tại cửa hàng'");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
         checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
         checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
@@ -168,14 +169,16 @@ public class Checkout_Test extends BaseSetup {
         if (checkout_page.getInputName().equals(expectedName)) {
             test.get().pass("Tên khách hàng chính xác: " + checkout_page.getInputName());
         } else {
-            test.get().fail("Tên khách hàng không chính xác. Thực tế: " + checkout_page.getInputName() + ", Kỳ vọng: " + expectedName);
+            test.get().fail("Tên khách hàng không chính xác. Thực tế: " + checkout_page.getInputName() +
+                    ", Kỳ vọng: " + expectedName);
         }
 
         test.get().info("Kiểm tra sđt khách hàng");
         if (checkout_page.getInputPhone().equals(expectedPhone)) {
             test.get().pass("SĐT khách hàng chính xác: " + checkout_page.getInputPhone());
         } else {
-            test.get().fail("SĐT khách hàng không chính xác. Thực tế: " + checkout_page.getInputPhone() + ", Kỳ vọng: " + expectedPhone);
+            test.get().fail("SĐT khách hàng không chính xác. Thực tế: " + checkout_page.getInputPhone() +
+                    ", Kỳ vọng: " + expectedPhone);
         }
 
         test.get().info("Kiểm tra hiển thị cu form 'Giao hàng tận nơi'");
@@ -219,6 +222,7 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
         checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
         checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
+        checkout_page.CLickInputVatNo();
 
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
@@ -240,7 +244,7 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
         checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
         checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
-
+        checkout_page.CLickInputVatNo();
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
 
@@ -314,7 +318,7 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
         checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
         checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
-
+        checkout_page.CLickInputVatNo();
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
 
@@ -348,6 +352,7 @@ public class Checkout_Test extends BaseSetup {
         excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
         checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
         checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
+        checkout_page.CLickInputVatNo();
         String AddressInfo = checkout_page.getAddressName();
         checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
         String NoteInfo = checkout_page.getNote();
@@ -425,7 +430,7 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
         checkout_page.SendKeysAddress(excelHelper.getCellData("Address",1));
         checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
-
+        checkout_page.CLickInputVatNo();
         test.get().info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
 
