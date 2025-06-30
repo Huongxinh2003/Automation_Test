@@ -2329,3 +2329,460 @@ Bản đồ
 2025-06-29 23:16:39 INFO  LogUtils:10 - Kiểm tra sản phẩm ở tab 'Trả góp'
 2025-06-29 23:16:43 INFO  LogUtils:10 - ClickInstallmentOption3 test is passed.
 2025-06-29 23:16:47 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-29 23:55:05 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-29 23:55:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-29 23:55:23 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-29 23:55:29 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-29 23:55:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-29 23:55:39 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-29 23:55:42 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-29 23:55:42 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-29 23:55:43 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-29 23:55:43 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-29 23:55:43 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-29 23:55:43 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-29 23:55:54 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-29 23:55:57 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-29 23:57:37 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-29 23:57:50 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-29 23:57:52 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-29 23:58:00 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-29 23:58:10 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-29 23:58:10 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-29 23:58:13 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-29 23:58:13 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-29 23:58:14 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-29 23:58:14 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-29 23:58:14 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-29 23:58:14 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-29 23:58:24 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-29 23:58:28 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:00:48 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:01:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:01:04 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:01:13 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:01:22 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:01:23 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:01:25 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:01:25 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:01:26 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:01:26 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:01:27 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:01:27 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:01:47 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:01:51 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:02:24 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:02:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:02:39 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:02:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:02:55 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:02:56 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:02:56 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:02:56 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:02:58 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:02:58 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:03:01 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:03:42 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:03:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:03:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:04:05 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:04:13 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:04:14 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:04:17 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:04:17 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:04:18 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:04:18 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:04:18 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:04:18 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:04:38 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:04:42 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:07:03 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:07:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:07:27 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:07:50 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:07:50 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:07:59 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:08:13 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:08:25 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:08:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:08:34 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:08:43 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:08:43 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:08:45 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:08:45 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:08:48 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:08:58 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:09:11 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:09:14 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:09:22 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:09:31 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:09:31 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:09:33 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:09:34 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:09:35 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:09:35 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:09:35 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:09:35 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:09:55 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:09:58 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:13:20 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:13:33 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:13:36 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:13:43 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:13:53 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:13:53 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:13:54 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:13:55 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:13:56 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:13:56 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:13:57 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:13:57 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:14:17 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:14:21 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:15:32 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:15:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:15:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:15:52 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:16:01 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:16:01 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:16:01 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:16:01 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:16:03 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:16:03 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:16:07 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:16:18 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:16:30 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:16:33 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:16:42 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:16:51 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:16:51 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:16:54 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:16:54 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:16:55 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:16:55 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:16:55 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:16:55 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:17:15 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:17:19 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:17:31 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:17:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:17:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:17:54 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:18:03 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:18:03 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:18:03 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:18:03 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:18:05 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:18:05 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:18:09 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:35:08 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:35:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:35:23 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:35:30 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:35:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:35:39 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:35:42 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:35:43 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:35:43 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:35:43 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:35:44 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:35:44 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:36:04 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:36:07 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:36:24 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:36:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:36:39 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:36:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:36:55 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:36:56 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:36:56 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:36:56 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:36:58 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:36:58 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:37:02 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:37:16 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:37:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:37:31 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:37:39 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:37:47 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:37:48 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:37:50 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:37:50 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:37:51 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:37:51 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:37:51 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is starting...
+2025-06-30 00:38:11 ERROR LogUtils:14 - testCart_20_MinQuantityLimit test is failed.
+2025-06-30 00:38:15 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:39:58 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:40:10 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:40:13 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:40:20 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:40:29 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:40:29 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:40:32 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:40:32 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:40:33 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:40:33 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:40:33 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:40:33 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:40:54 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:40:57 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:42:55 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:43:07 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:43:09 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:43:14 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:43:23 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:43:23 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:43:25 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:43:25 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-06-30 00:43:29 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 00:49:27 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 00:49:40 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 00:49:42 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 00:49:50 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-06-30 00:49:58 INFO  LogUtils:10 - Chọn phiên bản
+2025-06-30 00:49:59 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-06-30 00:50:01 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:50:01 INFO  LogUtils:10 - Chọn màu sắc
+2025-06-30 00:50:02 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-06-30 00:50:02 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-06-30 00:50:03 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-06-30 00:50:03 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
+2025-06-30 00:50:23 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
+2025-06-30 00:50:26 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:32:46 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:33:06 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:33:15 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:33:26 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:33:27 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:33:27 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 08:33:53 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 08:33:53 INFO  LogUtils:10 - Kiểm tra hiển thị của slide
+2025-06-30 08:33:53 INFO  LogUtils:10 - Kiểm tra hiển thị list brand
+2025-06-30 08:33:53 INFO  LogUtils:10 - Kiểm tra hiển thị của danh sách sản phẩm
+2025-06-30 08:33:53 INFO  LogUtils:10 - Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest
+2025-06-30 08:33:53 INFO  LogUtils:10 - ClickListSuggest test is passed.
+2025-06-30 08:33:57 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:34:42 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:34:59 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:35:08 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:35:17 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:35:17 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:35:17 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 08:35:27 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 08:35:27 INFO  LogUtils:10 - Kiểm tra hiển thị của slide
+2025-06-30 08:35:27 INFO  LogUtils:10 - Kiểm tra hiển thị list brand
+2025-06-30 08:35:27 INFO  LogUtils:10 - Kiểm tra hiển thị của danh sách sản phẩm
+2025-06-30 08:35:27 INFO  LogUtils:10 - Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest
+2025-06-30 08:35:27 INFO  LogUtils:10 - ClickListSuggest test is passed.
+2025-06-30 08:35:31 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:38:57 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:39:13 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:39:21 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:39:30 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:39:31 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:39:31 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 08:39:51 ERROR LogUtils:14 - ClickListSuggest test is failed.
+2025-06-30 08:39:59 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:41:14 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:41:29 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:41:35 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:41:48 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:41:49 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:41:49 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 08:42:04 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 08:42:04 INFO  LogUtils:10 - Kiểm tra hiển thị của slide
+2025-06-30 08:42:04 INFO  LogUtils:10 - Kiểm tra hiển thị list brand
+2025-06-30 08:42:04 INFO  LogUtils:10 - Kiểm tra hiển thị của danh sách sản phẩm
+2025-06-30 08:42:04 INFO  LogUtils:10 - Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest
+2025-06-30 08:42:04 INFO  LogUtils:10 - ClickListSuggest test is passed.
+2025-06-30 08:42:10 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:42:27 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:43:08 INFO  LogUtils:10 - ClickProductSuggest test is starting...
+2025-06-30 08:43:08 WARN  LogUtils:22 - ClickProductSuggest test is skipped.
+2025-06-30 08:43:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:44:20 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:44:35 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:44:41 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:44:51 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:44:52 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:44:52 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 08:45:07 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 08:45:07 INFO  LogUtils:10 - Kiểm tra hiển thị của slide
+2025-06-30 08:45:08 INFO  LogUtils:10 - Kiểm tra hiển thị list brand
+2025-06-30 08:45:08 INFO  LogUtils:10 - Kiểm tra hiển thị của danh sách sản phẩm
+2025-06-30 08:45:08 INFO  LogUtils:10 - Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest
+2025-06-30 08:45:08 INFO  LogUtils:10 - ClickListSuggest test is passed.
+2025-06-30 08:45:12 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:45:35 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:45:51 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:45:58 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:46:07 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:46:07 INFO  LogUtils:10 - Search_Success test is starting...
+2025-06-30 08:46:07 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-30 08:46:09 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 08:46:10 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 08:46:10 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 08:46:11 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-30 08:46:11 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-30 08:46:11 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4161 sản phẩm cho từ khoá 'iphone'
+2025-06-30 08:46:11 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-06-30 08:46:11 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+2025-06-30 08:46:11 INFO  LogUtils:10 - Search_Success test is passed.
+2025-06-30 08:46:15 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:47:39 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:47:55 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:48:01 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:48:11 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 08:48:11 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:48:11 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 08:48:24 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 08:48:24 INFO  LogUtils:10 - Kiểm tra hiển thị của slide
+2025-06-30 08:48:24 INFO  LogUtils:10 - Kiểm tra hiển thị list brand
+2025-06-30 08:48:24 INFO  LogUtils:10 - Kiểm tra hiển thị của danh sách sản phẩm
+2025-06-30 08:48:24 INFO  LogUtils:10 - Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest
+2025-06-30 08:48:25 INFO  LogUtils:10 - ClickListSuggest test is passed.
+2025-06-30 08:48:28 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 08:50:33 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 08:50:48 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 08:50:51 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 08:51:02 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 08:51:02 WARN  LogUtils:22 - ClickListSuggest test is skipped.
+2025-06-30 08:51:06 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:25:18 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 09:25:36 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:25:45 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:25:55 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:25:55 INFO  LogUtils:10 - ClickListSuggest test is starting...
+2025-06-30 09:25:55 INFO  LogUtils:10 - Click vào danh sách gợi ý
+2025-06-30 09:26:01 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:26:01 INFO  LogUtils:10 - Kiểm tra hiển thị của slide
+2025-06-30 09:26:01 INFO  LogUtils:10 - Kiểm tra hiển thị list brand
+2025-06-30 09:26:01 INFO  LogUtils:10 - Kiểm tra hiển thị của danh sách sản phẩm
+2025-06-30 09:26:01 INFO  LogUtils:10 - Kiểm tra sản phẩm có chứa chứa chữ trong List Suggest
+2025-06-30 09:26:01 INFO  LogUtils:10 - ClickListSuggest test is passed.
+2025-06-30 09:26:05 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:26:27 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 09:26:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:26:50 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:26:59 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:27:00 INFO  LogUtils:10 - ClickProductSuggest test is starting...
+2025-06-30 09:27:00 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-30 09:27:10 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:27:10 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:27:10 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:27:10 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm 
+2025-06-30 09:27:30 ERROR LogUtils:14 - ClickProductSuggest test is failed.
+2025-06-30 09:27:35 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:28:13 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 09:28:29 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:28:32 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:28:42 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:28:43 INFO  LogUtils:10 - ClickProductSuggest test is starting...
+2025-06-30 09:28:43 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-30 09:28:53 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:28:53 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:28:53 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:28:53 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm 
+2025-06-30 09:28:53 ERROR LogUtils:14 - ClickProductSuggest test is failed.
+2025-06-30 09:28:57 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:31:31 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 09:31:57 INFO  LogUtils:10 - ClickProductSuggest test is starting...
+2025-06-30 09:31:57 WARN  LogUtils:22 - ClickProductSuggest test is skipped.
+2025-06-30 09:32:01 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:32:16 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 09:32:32 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:32:38 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:32:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:32:48 INFO  LogUtils:10 - ClickProductSuggest test is starting...
+2025-06-30 09:32:48 INFO  LogUtils:10 - Click vào sản phẩm gợi ý
+2025-06-30 09:32:59 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:32:59 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:32:59 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:32:59 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm 
+2025-06-30 09:32:59 INFO  LogUtils:10 - Tiêu đề sản phẩm: Samsung Galaxy S25 Ultra giảm 5Tr, trợ giá lên đời 2Tr
+2025-06-30 09:32:59 INFO  LogUtils:10 - ClickProductSuggest test is passed.
+2025-06-30 09:33:03 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:35:36 INFO  LogUtils:10 - Start testing Automation_Test
+2025-06-30 09:36:01 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:36:04 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:36:13 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:36:14 INFO  LogUtils:10 - Search_Fail test is starting...
+2025-06-30 09:36:14 INFO  LogUtils:10 - Tìm kiếm với fail khi click ENTER
+2025-06-30 09:36:15 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:36:16 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:36:16 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:36:16 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-30 09:36:17 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-30 09:36:17 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 0 sản phẩm cho từ khoá 'hhah8473hcfd'
+2025-06-30 09:36:17 INFO  LogUtils:10 - Kiểm tra hiển thị hình ảnh không tìm thấy
+2025-06-30 09:36:17 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo không tìm thấy
+2025-06-30 09:36:17 INFO  LogUtils:10 - Search_Fail test is passed.
+2025-06-30 09:36:20 INFO  LogUtils:10 - End testing Automation_Test
+2025-06-30 09:37:25 INFO  LogUtils:10 - Start testing Function
+2025-06-30 09:37:41 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:37:46 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:37:53 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:37:54 INFO  LogUtils:10 - Search_Success test is starting...
+2025-06-30 09:37:54 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-30 09:37:55 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:37:56 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:37:56 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:37:56 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-30 09:37:57 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-30 09:37:57 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4161 sản phẩm cho từ khoá 'iphone'
+2025-06-30 09:37:57 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-06-30 09:37:57 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+2025-06-30 09:37:57 INFO  LogUtils:10 - Search_Success test is passed.
+2025-06-30 09:37:57 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:37:57 INFO  LogUtils:10 - Search_Fail test is starting...
+2025-06-30 09:37:57 INFO  LogUtils:10 - Tìm kiếm với fail khi click ENTER
+2025-06-30 09:37:58 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:37:59 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:37:59 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:37:59 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-30 09:37:59 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-30 09:37:59 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 0 sản phẩm cho từ khoá 'hhah8473hcfd'
+2025-06-30 09:37:59 INFO  LogUtils:10 - Kiểm tra hiển thị hình ảnh không tìm thấy
+2025-06-30 09:37:59 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo không tìm thấy
+2025-06-30 09:37:59 INFO  LogUtils:10 - Search_Fail test is passed.
+2025-06-30 09:38:03 INFO  LogUtils:10 - End testing Function
+2025-06-30 09:38:15 INFO  LogUtils:10 - Start testing Function
+2025-06-30 09:38:32 INFO  LogUtils:10 - Bắt đầu test case
+2025-06-30 09:38:36 INFO  LogUtils:10 - Đăng nhập thành công
+2025-06-30 09:38:43 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:38:44 INFO  LogUtils:10 - Search_Success test is starting...
+2025-06-30 09:38:44 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-06-30 09:38:45 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:38:47 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:38:47 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:38:47 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-06-30 09:38:47 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-30 09:38:47 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 4161 sản phẩm cho từ khoá 'iphone'
+2025-06-30 09:38:47 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-06-30 09:38:47 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+2025-06-30 09:38:47 INFO  LogUtils:10 - Search_Success test is passed.
+2025-06-30 09:38:47 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-06-30 09:38:47 INFO  LogUtils:10 - Search_Fail test is starting...
+2025-06-30 09:38:47 INFO  LogUtils:10 - Tìm kiếm với fail khi click ENTER
+2025-06-30 09:38:48 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-06-30 09:38:48 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-06-30 09:38:48 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-06-30 09:38:48 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'xxx'
+2025-06-30 09:38:48 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-06-30 09:38:48 INFO  LogUtils:10 - >>> Kết quả: Tìm thấy 0 sản phẩm cho từ khoá 'hhah8473hcfd'
+2025-06-30 09:38:48 INFO  LogUtils:10 - Kiểm tra hiển thị hình ảnh không tìm thấy
+2025-06-30 09:38:48 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo không tìm thấy
+2025-06-30 09:38:48 INFO  LogUtils:10 - Search_Fail test is passed.
+2025-06-30 09:38:52 INFO  LogUtils:10 - End testing Function

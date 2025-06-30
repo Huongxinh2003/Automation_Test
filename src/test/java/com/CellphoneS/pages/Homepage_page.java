@@ -4,6 +4,7 @@ import com.helpers.ValidateUIHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -24,7 +25,8 @@ public class Homepage_page extends ValidateUIHelper {
         // Thu nhỏ website sau khi mở trang
         ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        clickElement(searchInput);
+        WebElement search = driver.findElement(searchInput);
+        search.click();
         return new Search_Page(driver);
     }
 }

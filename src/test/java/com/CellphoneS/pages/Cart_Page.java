@@ -25,7 +25,7 @@ public class Cart_Page extends ValidateUIHelper {
 //    static String color = "Titan Đen";
     public By CheckboxSelect = By.xpath("//div[@class='d-flex align-items-center justify-content-center']");
     public By ButtonDelete = By.xpath("//em[contains(text(),'Xóa sản phẩm đã chọn')]");
-    public By CheckboxProduct = By.xpath("//label[@for='__BVID__32']");
+    public By CheckboxProduct = By.xpath("//input[@id='__BVID__32']");
     public By TitleProduct = By.xpath("//div[@class='product-name']");
     public By ImageProduct = By.xpath(("//label[@for='__BVID__32']"));
     public By PriceProduct = By.xpath("//p[contains(text(),'đ')]");
@@ -83,9 +83,9 @@ public class Cart_Page extends ValidateUIHelper {
         return productElements.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
-
     public boolean isSelectedProduct() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(CheckboxProduct));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CheckboxSelect));
         return isElementDisplayed(CheckboxProduct);
     }
 

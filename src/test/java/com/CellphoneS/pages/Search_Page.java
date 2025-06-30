@@ -30,7 +30,7 @@ public class Search_Page extends ValidateUIHelper {
     private final By LinkSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']//a[1]");
     private final By ProductSuggest = By.xpath("//p[normalize-space()='S25 Ultra']");
     private final By ListSuggest = By.xpath("//p[normalize-space()='iPhone 16 Series']");
-    public By TitleProduct = By.xpath("//h1[normalize-space()='iPhone 16 Pro Max 256GB | Chính hãng VN/A']");
+    public By TitleProduct = By.xpath("//h1[normalize-space()='Samsung Galaxy S25 Ultra 12GB 256GB']");
     public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
 
     public Search_Page(WebDriver driver) {
@@ -76,8 +76,9 @@ public class Search_Page extends ValidateUIHelper {
 
 
     public void ClickInputSearch() {
-        WebElement click = driver.findElement(searchInput);
-        click.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(searchInput));
+        input.click();
     }
 
     public void inputSearch(String searchText) {
@@ -171,13 +172,13 @@ public class Search_Page extends ValidateUIHelper {
     }
 
     public void ClickProductSuggest() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ProductSuggest));
-        clickElement(ProductSuggest);
+        WebElement ProductSug = driver.findElement(ProductSuggest);
+        ProductSug.click();
     }
 
     public void ClickListSuggest() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ListSuggest));
-        clickElement(ListSuggest);
+        WebElement suggest = driver.findElement(ListSuggest);
+        suggest.click();
     }
 
     public boolean isTitleProductDisplayed() {

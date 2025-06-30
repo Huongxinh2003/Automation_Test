@@ -1,16 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Search">
     <test name="Function">
-        <groups>
-            <run>
-                <include name="Function"/>
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Function"/>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
             <class name="com.CellphoneS.tests.Search_Test">
-<!--                <methods>-->
-<!--                    <include name="Search_Success"/>-->
-<!--                </methods>-->
+                <methods>
+                    <include name="Search_Success"/>
+                    <include name="Search_Fail"/>
+                </methods>
             </class>
         </classes>
     </test>
