@@ -13,7 +13,7 @@ public class  SignIn_Page extends ValidateUIHelper {
     private JavascriptExecutor js;
     // Định nghĩa các locator
     private final By popupCloseBtn = By.xpath("//button[@class='modal-close is-large']");
-    private final By loginButton = By.xpath("//div[@class='header-item about-5 about-smember cta-smember button__login']");
+    private final By loginButton = By.xpath("//button[@class='cta-smember']");
     private final By loginButton2 = By.xpath("//a[@class='login-btn']");
     private static final By inputPhoneNumber = By.xpath("//input[@placeholder='Nhập số điện thoại của bạn']");
     private static final By inputPassword = By.xpath("//input[@placeholder='Nhập mật khẩu của bạn']");
@@ -136,7 +136,8 @@ public class  SignIn_Page extends ValidateUIHelper {
     }
 
     public void ClickButtonHidePassword() {
-        clickElement(buttonHidePassword);
+        WebElement HidePassword = wait.until(ExpectedConditions.elementToBeClickable(buttonHidePassword));
+        HidePassword.click();
     }
 
     public boolean isButtonHidePasswordClickable() {
@@ -144,7 +145,8 @@ public class  SignIn_Page extends ValidateUIHelper {
     }
 
     public void ClickButtonShowPassword() {
-        clickElement(buttonShowPassword);
+        WebElement ShowPassword = wait.until(ExpectedConditions.elementToBeClickable(buttonShowPassword));
+        ShowPassword.click();
     }
 
     public boolean isButtonShowPasswordClickable() {

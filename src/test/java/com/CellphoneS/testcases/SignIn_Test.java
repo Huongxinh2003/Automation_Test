@@ -1,4 +1,4 @@
-package com.CellphoneS.test;
+package com.CellphoneS.testcases;
 
 import com.base.BaseSetup;
 import com.CellphoneS.pages.Homepage_page;
@@ -131,8 +131,8 @@ public class SignIn_Test extends BaseSetup{
 
         String actualMessage = alertElement.getText();
         String expectedMessage = "Vui lòng nhập email và mật khẩu để tiếp tục.";
-        Assert.assertEquals(actualMessage, expectedMessage, "Thông báo lỗi không đúng khi bỏ trống SĐT và mật khẩu!");
-        LogUtils.info("End testcase: login_cellphoneS_19");
+        Assert.assertEquals(actualMessage, expectedMessage,
+                "Thông báo lỗi không đúng khi bỏ trống SĐT và mật khẩu!");
     }
 
     @Test(groups = "Function", priority = 4)
@@ -140,7 +140,8 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("Bỏ trống Mật khẩu");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
         signIn_page.SignIn();
-        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 5), excelHelper.getCellData("password", 5));
+        signIn_page.InputSignIn(excelHelper.getCellData("phonenumber", 5),
+                excelHelper.getCellData("password", 5));
 
         LogUtils.info("Kiểm tra Alert lỗi");
         By alertBox = By.xpath("//li[contains(.,'Mật khẩu không được bỏ trống')]");
@@ -408,7 +409,8 @@ public class SignIn_Test extends BaseSetup{
     public void login_cellphoneS_74() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Con mắt ẩn và hiện Mật khẩu");
-        signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));
+        signIn_page.InputSignIn2_noclick(Properties_File.getPropValue("phonenumber"),
+                Properties_File.getPropValue("password"));
 
         LogUtils.info("Kiểm tra click hiện mật khẩu");
         if (signIn_page.isButtonShowPasswordClickable()) {

@@ -7,7 +7,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.CellphoneS.tests.Cart_Test">
+            <class name="com.CellphoneS.testcases.Cart_Test">
                 <methods>
 <!--                    <include name="testCart_20_MinQuantityLimit"/>-->
 <!--                    <include name="testCart_21_MaxQuantityLimit"/>-->

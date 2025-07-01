@@ -7,10 +7,10 @@
             </run>
         </groups>
         <classes>
-            <class name="com.CellphoneS.tests.SignIn_Test">
-                <methods>
-                    <include name="login_cellphoneS_17"/>
-                </methods>
+            <class name="com.CellphoneS.testcases.SignIn_Test">
+<!--                <methods>-->
+<!--                    <include name="login_cellphoneS_17"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

@@ -16,7 +16,7 @@ public class Search_Page extends ValidateUIHelper {
     private JavascriptExecutor js;
 
     private final By searchInput = By.xpath("//input[@id='inp$earch']");
-    private final By IconSearch = By.xpath("//button[@type='submit']//div//*[name()='svg']");
+    private final By IconSearch = By.xpath("//button[@type='submit']//*[name()='svg']");
     private final By closeSearch = By.xpath("//span[@id='btn-close-search']");
     private final By suggestBoxSearch = By.xpath("//div[@class='suggest-search']");
     private final By LinkAdSearch = By.xpath("//img[@alt='B2S 2025']");

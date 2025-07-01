@@ -7,7 +7,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.CellphoneS.tests.Product_Detail_Test">
+            <class name="com.CellphoneS.testcases.Product_Detail_Test">
 <!--                <methods>-->
 <!--                    <include name="verifyChangeAfterSelectVersionProduct"/>-->
 <!--                </methods>-->

@@ -1,4 +1,4 @@
-package com.CellphoneS.test;
+package com.CellphoneS.testcases;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;
@@ -45,6 +45,7 @@ public class Product_Detail_Test extends BaseSetup {
         excelHelper = new ExcelUtils();
         validateUIHelper = new ValidateUIHelper(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        signIn_helpers = new SignIn_Helpers(driver);
         homepage_page = signIn_helpers.SignIn(driver);
         search_page = homepage_page.openSearchPage();
         product_detail_page = new Product_Detail_Page(driver);
@@ -146,7 +147,6 @@ public class Product_Detail_Test extends BaseSetup {
         Assert.assertNotEquals(TitleStickyBarBefore, TitleStickyBarAfter, "TitleStickyBar không thay đổi sau khi chọn phiên bản");
         Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn phiên bản");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, " Số cửa hàng còn hàng không thay đổi sau khi chọn phiên bản");
-
         LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn phiên bản");
     }
 

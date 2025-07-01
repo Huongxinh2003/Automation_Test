@@ -74,7 +74,8 @@ public class Search_Test_Cb extends BaseSetup {
 
         LogUtils.info("Kiểm tra click vào từ khoá trong mục \"Có phải bạn muốn tìm\"");
         search_page_cb.clickLinkCoPhaiBanMuonTim();
-        List<WebElement> productNames = driver.findElements(By.xpath("//div[@class='list-products']//h3[@class='title_name']"));
+        List<WebElement> productNames = driver.findElements
+                (By.xpath("//div[@class='list-products']//h3[@class='title_name']"));
         String keyword = "iPhone 15";
 
         boolean found = false;

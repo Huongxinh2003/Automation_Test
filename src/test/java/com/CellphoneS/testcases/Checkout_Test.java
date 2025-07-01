@@ -1,4 +1,4 @@
-package com.CellphoneS.test;
+package com.CellphoneS.testcases;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.base.BaseSetup;
@@ -93,7 +93,6 @@ public class Checkout_Test extends BaseSetup {
 
         Assert.assertEquals(checkout_page.getNameCustomer(), expectedName, "Tự động điền tên người dùng sai");
         Assert.assertEquals(checkout_page.getPhoneCustomer(), expectedPhone, "Tự động điền sđt sai");
-//        Assert.assertEquals(checkout_page.getInputEmail(),  expectedEmail, "Tự động điền email sai");
 
         test.get().info("Kiểm tra tên khách hàng");
         String actualName = checkout_page.getNameCustomer();
@@ -111,7 +110,6 @@ public class Checkout_Test extends BaseSetup {
             test.get().fail("SĐT không đúng. Thực tế: " + actualPhone + ", " +
                     "Kỳ vọng: " + expectedPhone);
         }
-
         test.get().info("Kiểm tra nhập Email mới");
         checkout_page.SendKeysEmail("huongcan6319@gmail.com");
         LogUtils.info("Thành công nhập Email mới");
@@ -119,7 +117,6 @@ public class Checkout_Test extends BaseSetup {
         test.get().info("Kiểm tra click checkbox nhận ưu đãi");
         checkout_page.clickCheckboxPromo();
         LogUtils.info("Thành công click checkbox nhận ưu đãi");
-
     }
 
     //Chuyển về thành phố Hà Nội

@@ -125,7 +125,7 @@ public class SignIn_Test_Cb extends BaseSetup {
     public void verifySignInFailPhoneNumber() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "phonenumber");
-        List<String[]> data = ExcelHelper.readExcelData(1); // bỏ dòng tiêu đề (bắt đầu từ dòng 1)
+        List<String[]> data = ExcelHelper.readExcelData(1);
 
         for (String[] row : data) {
             String phonenumber = row[0];

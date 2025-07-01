@@ -1,4 +1,4 @@
-package com.CellphoneS.test;
+package com.CellphoneS.testcases;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;

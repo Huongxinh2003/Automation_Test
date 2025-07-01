@@ -1,4 +1,4 @@
-package com.CellphoneS.test;
+package com.CellphoneS.testcases;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;
@@ -104,18 +104,28 @@ public class Cart_Test extends BaseSetup {
 
     }
 
-    @Test (groups = "Function", description = "Kiểm tra Min ")
+    @Test(groups = "Function", description = "Kiểm tra Min - không thể giảm dưới 1 và hiển thị thông báo")
     public void testCart_20_MinQuantityLimit() {
+        LogUtils.info("Giảm số lượng về 1 (nếu chưa phải 1)");
+        while (!cart_page.getProductQuantity().equals("1")) {
+            cart_page.clickMinusButton();
+        }
+
+        LogUtils.info("Click tiếp nút giảm để test ngưỡng dưới 1");
         cart_page.clickMinusButton();
+
         String qty = cart_page.getProductQuantity();
         String toast = cart_page.getToastMessage();
 
-        Assert.assertEquals(qty, "1", "Số lượng đã bị giảm dưới 1");
+        LogUtils.info("Số lượng hiện tại: " + qty);
+        LogUtils.info("Thông báo hiện tại: " + toast);
+
+        Assert.assertEquals(qty, "1", " Số lượng đã bị giảm dưới 1");
         Assert.assertTrue(toast.contains("Số lượng sản phẩm đã giảm đến mức tối thiểu"),
-                "Thông báo không đúng: " + toast);
+                "Thông báo không đúng hoặc không hiển thị: " + toast);
     }
 
-    @Test (groups = "Function", description = "Kiểm tra Max")
+    @Test (groups = "Function", description = "Kiểm tra Max - số lượng quá 3 và hiển thị thông báo")
     public void testCart_21_MaxQuantityLimit() {
         if (cart_page.getProductQuantity().equals("3")) {
             cart_page.clickPlusButton();
