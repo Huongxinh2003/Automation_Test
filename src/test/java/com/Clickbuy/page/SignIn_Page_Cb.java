@@ -13,6 +13,7 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     private static WebDriver driver;
     private WebDriverWait wait;
     private JavascriptExecutor js;
+    private ValidateUIHelper validateUIHelper;
 
     public By popupModal = By.xpath("//div[@id='popup-modal']");
     public By ClickpopupModal = By.xpath("//span[@class='modal__button'][contains(text(),'Miền Bắc')]");
@@ -35,15 +36,17 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
         SignIn_Page_Cb.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        validateUIHelper = new ValidateUIHelper(driver);
     }
 
     public void ClickButtonSignIn1() {
+        validateUIHelper.waitForPageLoaded();
         try {
             WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement popup = shortWait.until(ExpectedConditions.visibilityOfElementLocated(popupModal));
             WebElement clickpopup = shortWait.until(ExpectedConditions.elementToBeClickable(ClickpopupModal));
             clickpopup.click();
-            wait.until(ExpectedConditions.invisibilityOf(popup));
+
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(popupModal));
             System.out.println("Popup chọn vùng miền đã được đóng.");
         } catch (TimeoutException e) {
             System.out.println("Không có popup xuất hiện.");
@@ -64,6 +67,7 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
             System.out.println("Không thể click nút Đăng nhập: " + e.getMessage());
         }
     }
+
 
     public void ClickButtonSignIn() {
         clickElement(ClickpopupModal);

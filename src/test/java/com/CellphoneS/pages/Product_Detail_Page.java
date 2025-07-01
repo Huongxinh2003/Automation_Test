@@ -64,7 +64,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         super(driver);
         Product_Detail_Page.driver = driver;
         js = (JavascriptExecutor) driver;
-        this.validateUIHelper = new ValidateUIHelper(driver);
+        validateUIHelper = new ValidateUIHelper(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     public Cart_Page OpenCartPage() {

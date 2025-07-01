@@ -118,7 +118,7 @@ public class ValidateUIHelper {
                         .toString().equals("complete");
 
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Quá thời gian chờ trang tải (readyState != complete)");
