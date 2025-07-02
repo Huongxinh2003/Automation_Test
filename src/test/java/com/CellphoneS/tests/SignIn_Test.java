@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.base.BaseSetup;
 import com.CellphoneS.pages.Homepage_page;
@@ -19,7 +19,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
 
 import java.time.Duration;
 import java.util.List;
@@ -51,7 +55,7 @@ public class SignIn_Test extends BaseSetup{
 
     }
 
-    @BeforeMethod (groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK"})
+    @BeforeMethod(groups = {"SignIn_Success", "Function", "Validate_SĐT", "Validate_MK"})
     public void setUpMethod() {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
@@ -75,6 +79,8 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("Kiểm tra chuyển sang");
         boolean isOnHomepage = wait.until(ExpectedConditions.urlToBe("https://cellphones.com.vn/"));
         assertTrue(isOnHomepage, "Không tự động chuyển về trang chủ sau đăng nhập!");
+
+        test.get().pass("Kiểm tra chuyển sang trang chủ thành công");
     }
 
     @Test(groups = "Function", priority = 1)
@@ -95,6 +101,8 @@ public class SignIn_Test extends BaseSetup{
         WebElement inlineError = wait.until(ExpectedConditions.visibilityOfElementLocated(phoneInlineError));
         assertTrue(inlineError.isDisplayed(), "Không hiển thị inline lỗi tại trường SĐT!");
 
+        test.get().pass("Kiểm tra đăng nhập thất bại khi nhập SĐT sai thành công");
+
     }
 
 
@@ -113,6 +121,8 @@ public class SignIn_Test extends BaseSetup{
         String actualMessage = alertElement.getText();
         String expectedMessage = "Thông tin đăng nhập không đúng. Vui lòng kiểm tra và thử lại.";
         assertEquals(actualMessage, expectedMessage, "Thông báo lỗi không đúng khi nhập Mật Khẩu sai");
+
+        test.get().pass("Kiểm tra đăng nhập thất bại khi nhập Mật khẩu sai thành công");
     }
 
     @Test(groups = "Function", priority = 3)
@@ -133,6 +143,8 @@ public class SignIn_Test extends BaseSetup{
         String expectedMessage = "Vui lòng nhập email và mật khẩu để tiếp tục.";
         Assert.assertEquals(actualMessage, expectedMessage,
                 "Thông báo lỗi không đúng khi bỏ trống SĐT và mật khẩu!");
+
+        test.get().pass("Kiểm tra bỏ trống SĐT và MK thành công");
     }
 
     @Test(groups = "Function", priority = 4)
@@ -148,6 +160,7 @@ public class SignIn_Test extends BaseSetup{
         boolean alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
         assertTrue(alertElement, "Hiển thị sai thông báo lỗi khi bỏ trống mật khẩu!");
 
+        test.get().pass("Kiểm tra bỏ trống Mật khẩu thành công");
 
     }
 
@@ -164,6 +177,8 @@ public class SignIn_Test extends BaseSetup{
         boolean alertElement = wait.until
                 (ExpectedConditions.visibilityOfElementLocated(alertBox)).isDisplayed();
         assertTrue(alertElement, "Hiển thị sai thông báo lỗi khi bỏ trống SĐT!");
+
+        test.get().pass("Kiểm tra bỏ trống SĐT thành công");
     }
 
     @Test(groups = "Function", priority = 6)
@@ -210,6 +225,8 @@ public class SignIn_Test extends BaseSetup{
         By alertBox2 = By.xpath("//li[contains(.,'Đăng nhập thành công')]");
         WebElement alertElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox2));
         assertTrue(alertElement2.isDisplayed(), "Không hiển thị thông báo lỗi khi Đăng nhập thành công!");
+
+        test.get().pass("Kiểm tra đăng nhập qua kết nối mạng thành công");
     }
 
     @Test(groups = "Validate_SĐT", priority = 1)
@@ -342,7 +359,7 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.ClickButtonGoogle();
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://accounts.google.com/v3/signin/"), "Không chuyển sang trang đăng nhập Google!");
-        LogUtils.info("Đã chuyển đúng sang trang đăng nhập Google OAuth");
+        test.get().pass("Đã chuyển đúng sang trang đăng nhập Google OAuth");
 
     }
 
@@ -355,7 +372,7 @@ public class SignIn_Test extends BaseSetup{
         boolean isZaloLoginPage = currentUrl.contains("oauth.zaloapp.com")
                 || currentUrl.contains("id.zalo.me");
         assertTrue(isZaloLoginPage, "Không chuyển sang trang đăng nhập Zalo!");
-        LogUtils.info("Đã chuyển đúng sang trang đăng nhập Zalo OAuth");
+        test.get().pass("Đã chuyển đúng sang trang đăng nhập Zalo OAuth");
     }
 
     @Test(groups = "Link", priority = 3)
@@ -369,7 +386,7 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.ClickLinkForgotPassword();
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://smember.com.vn/restore-password"), "Không chuyển sang trang quen mat khau!");
-        LogUtils.info("Đã chuyển đúng sang trang Quen mat khau");
+        test.get().pass("Đã chuyển đúng sang trang Quen mat khau");
     }
 
     @Test(groups = "Link", priority = 4)
@@ -379,7 +396,7 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.ClickLinkRegister();
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://smember.com.vn/register"), "Không chuyển sang trang Đăng ký!");
-        LogUtils.info("Đã chuyển đúng sang trang Đăng ký");
+        test.get().pass("Đã chuyển đúng sang trang Đăng ký");
     }
 
     @Test(groups = "Link", priority = 5)
@@ -391,18 +408,18 @@ public class SignIn_Test extends BaseSetup{
         assertTrue(currentUrl.contains("https://cellphones.com.vn/"),
                 "Không chuyển sang trang cellphoneS!");
 
-        LogUtils.info("Đã chuyển đúng sang trang cellphoneS");
+        test.get().pass("Đã chuyển đúng sang trang cellphoneS");
     }
 
     @Test(groups = "Link", priority = 6)
     public void login_cellphoneS_73() throws Exception {
         signIn_page.SignIn();
-        LogUtils.info("Link DienThoaiVui");
+        LogUtils.info("Kiểm tra Link DienThoaiVui");
         signIn_page.ClickLinkDienThoaiVui();
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://dienthoaivui.com.vn/"), "Không chuyển sang trang dienthoaivui!");
 
-        LogUtils.info("Đã chuyển đúng sang trang dienthoaivui");
+        test.get().pass("Đã chuyển đúng sang trang dienthoaivui");
     }
 
     @Test(groups = "Validate_MK", priority = 4)
@@ -420,7 +437,8 @@ public class SignIn_Test extends BaseSetup{
             Thread.sleep(3000);
 
             String typeAfterShowPassword = signIn_page.getInputPassword().getAttribute("type");
-            assertEquals(typeAfterShowPassword, "text", "Mật khẩu không hiển thị khi click con mắt lần 1!");
+            assertEquals(typeAfterShowPassword, "text",
+                    "Mật khẩu không hiển thị khi click con mắt lần 1!");
         }else {
             test.get().fail("Hiện mật khẩu không cho phép click");
         }
@@ -433,7 +451,8 @@ public class SignIn_Test extends BaseSetup{
             Thread.sleep(3000);
 
             String typeAfterShowPassword2 = signIn_page.getInputPassword().getAttribute("type");
-            assertEquals(typeAfterShowPassword2, "password", "Mật khẩu không hiển thị khi click con mắt lần 2!");
+            assertEquals(typeAfterShowPassword2, "password",
+                    "Mật khẩu không hiển thị khi click con mắt lần 2!");
         }else {
             test.get().fail("Ẩn mật khẩu không cho phép click");
         }
@@ -447,7 +466,7 @@ public class SignIn_Test extends BaseSetup{
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://cellphones.com.vn/uu-dai-smember"), "Không chuyển sang trang chính sách ưu đãi!");
 
-        LogUtils.info("Đã chuyển đúng sang trang chính sách ưu đãi");
+        test.get().pass("Đã chuyển đúng sang trang chính sách ưu đãi");
     }
 }
 

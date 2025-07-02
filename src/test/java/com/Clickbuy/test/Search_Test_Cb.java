@@ -66,11 +66,13 @@ public class Search_Test_Cb extends BaseSetup {
 
         LogUtils.info("Kiểm tra mục Có phải bạn muốn tìm hiển thị");
         search_page_cb.isBoxCoPhaiBanMuonTimDisplayed();
-        Assert.assertTrue(search_page_cb.isBoxCoPhaiBanMuonTimDisplayed(), "Không hiển thị mục Có phải bạn muốn tìm");
+        Assert.assertTrue(search_page_cb.isBoxCoPhaiBanMuonTimDisplayed(),
+                "Không hiển thị mục Có phải bạn muốn tìm");
 
         LogUtils.info("Kiểm tra mục Sản phẩm gợi ý hiển thị");
         search_page_cb.isBoxSanPhamGoiYDisplayed();
-        Assert.assertTrue(search_page_cb.isBoxSanPhamGoiYDisplayed(), "Không hiển thị mục Sản phẩm gợi ý");
+        Assert.assertTrue(search_page_cb.isBoxSanPhamGoiYDisplayed(),
+                "Không hiển thị mục Sản phẩm gợi ý");
 
         LogUtils.info("Kiểm tra click vào từ khoá trong mục \"Có phải bạn muốn tìm\"");
         search_page_cb.clickLinkCoPhaiBanMuonTim();
@@ -86,7 +88,6 @@ public class Search_Test_Cb extends BaseSetup {
             }
         }
         Assert.assertTrue(found, "Không có sản phẩm nào chứa từ khoá 'iPhone 15' trong tiêu đề.");
-
 
         LogUtils.info("Kiểm tra click vào từ khoá trong mục \"Sản phẩm gợi ý\"");
         search_page_cb.clickInputSearch();

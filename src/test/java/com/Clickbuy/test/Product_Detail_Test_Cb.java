@@ -1,6 +1,6 @@
 package com.Clickbuy.test;
 
-import com.CellphoneS.testcases.Product_Detail_Test;
+import com.CellphoneS.tests.Product_Detail_Test;
 import com.Clickbuy.helper.SignIn_Helper_Cb;
 import com.Clickbuy.page.Homepage_page_Cb;
 import com.Clickbuy.page.Product_Detail_Page_Cb;

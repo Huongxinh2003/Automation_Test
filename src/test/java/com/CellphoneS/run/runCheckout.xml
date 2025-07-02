@@ -7,7 +7,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.CellphoneS.testcases.Checkout_Test">
+            <class name="com.CellphoneS.tests.Checkout_Test">
 <!--                <methods>-->
 <!--                    <include name="verifyDisplayTabInfo"/>-->
 <!--                    <include name="verifyPaymentInfo"/>-->

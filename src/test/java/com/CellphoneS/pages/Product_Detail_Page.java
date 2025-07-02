@@ -90,7 +90,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return isElementDisplayed(TitleProduct);
     }
 
-    // Lấy tiêu đề sản phẩm
+    // Lấy tiêu đề trang
     public String getTitleProduct() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));

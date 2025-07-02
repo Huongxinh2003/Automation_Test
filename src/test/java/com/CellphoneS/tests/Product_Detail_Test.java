@@ -1,4 +1,4 @@
-package com.CellphoneS.testcases;
+package com.CellphoneS.tests;
 
 import com.base.BaseSetup;
 import com.CellphoneS.helpers.SignIn_Helpers;
@@ -16,7 +16,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
 
 import java.time.Duration;
 
@@ -35,7 +39,7 @@ public class Product_Detail_Test extends BaseSetup {
     public Homepage_page homepage_page;
     public Search_Page search_page;
 
-    @BeforeClass (groups = {"UI_Test", "Function","Function_UI"})
+    @BeforeClass(groups = {"UI_Test", "Function","Function_UI"})
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -52,20 +56,22 @@ public class Product_Detail_Test extends BaseSetup {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    @BeforeMethod (groups = {"Function", "UI_Test", "Function_UI"})
+    @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI"})
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
+        test.get().pass("Mở trang chi tiết sản phẩm thành công");
     }
 
-    @Test (groups = "UI_Test",priority = 1, description = "Kiểm tra title của trang chi tiết sản phẩm")
+    @Test(groups = "UI_Test",priority = 1, description = "Kiểm tra title của trang chi tiết sản phẩm")
     public void Search() {
-        LogUtils.info("Kiểm tra hiển thị tiêu đề sản phẩm");
+        LogUtils.info("Kiểm tra hiển thị tiêu đề trang");
         Assert.assertTrue(product_detail_page.isTitleProductDisplayed(), "Tiêu đề sản phẩm không hiển thị");
 
         LogUtils.info("Lấy tiêu đề trang");
         String title = product_detail_page.getTitleProduct();
-        LogUtils.info("Tiêu đề sản phẩm " + title);
+        test.get().info("Tiêu đề sản phẩm " + title);
+        test.get().pass("Kiểm tra hiển thị tiêu đề trang thành công");
     }
 
     @Test (groups = "Function",priority = 1, description = "Kiểm tra các chức năng trên trang chi tiết sản phẩm")
@@ -79,10 +85,11 @@ public class Product_Detail_Test extends BaseSetup {
         By alertBox = By.xpath("//b[contains(text(),'Đã thêm vào danh sách yêu thích!')]");
         WebElement alertAdd = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox));
         Assert.assertTrue(alertAdd.isDisplayed(), "Thông báo thêm vào mục yêu thích không hiển thị");
+        test.get().pass("Hiển thị thông báo thêm vào yêu thích");
 
         LogUtils.info("Kiểm tra mau sắc của thông báo thêm vào yêu thích");
         String backgroundColor = alertAdd.getCssValue("background");
-        LogUtils.info("Màu nền của thông báo: " + backgroundColor);
+        test.get().info("Màu nền của thông báo: " + backgroundColor);
 
         LogUtils.info("Kiểm tra hiển thị nút xóa mục yêu thích");
         product_detail_page.DeleteFavoriteProduct();
@@ -90,17 +97,19 @@ public class Product_Detail_Test extends BaseSetup {
         By alertBox1 = By.xpath("//div[@class='toasted toasted-primary default']");
         WebElement alertDetele = wait.until(ExpectedConditions.visibilityOfElementLocated(alertBox1));
         Assert.assertTrue(alertDetele.isDisplayed(), "Thông báo xóa mục yêu thích không hiển thị");
+        test.get().pass("Hiển thị thông báo xóa mục yêu thích");
 
-        LogUtils.info("Kiểm tra mau sắc của thông báo khi bỏ yêu thích");
+        LogUtils.info("Kiểm tra màu sắc của thông báo khi bỏ yêu thích");
         String backgroundColor1 = alertAdd.getCssValue("background");
-        LogUtils.info("Màu nền của thông báo: " + backgroundColor1);
+        test.get().info("Màu nền của thông báo: " + backgroundColor1);
     }
 
-    @Test (groups = "Function",priority = 2, description = "Kiểm tra phần trang giảm giá của sản phẩm")
+    @Test (groups = "Function",priority = 2, description = "Kiểm tra phần trăm giảm giá của sản phẩm")
     public void verifyDiscountCalculation() {
         int actualDiscount = product_detail_page.calculateDiscountPercentage();
         // mong đợi khoảng 13%
         Assert.assertEquals(actualDiscount, 13, "Phần trăm giảm không đúng!");
+        test.get().pass("Phần trăm giảm giá đúng");
     }
 
 
@@ -116,8 +125,7 @@ public class Product_Detail_Test extends BaseSetup {
         String PriceStickyBarBefore = product_detail_page.getPriceStickyBar();
         String TitleStickyBarBefore = product_detail_page.getTitleStickyBar();
         String CountStoreBefore = product_detail_page.getCountStore();
-
-
+        test.get().pass("Lưu trạng thái ban đầu thành công");
 
         LogUtils.info("Chọn phiên bản");
         product_detail_page.selectVersionProduct("1TB");
@@ -134,20 +142,30 @@ public class Product_Detail_Test extends BaseSetup {
         String TitleStickyBarAfter = product_detail_page.getTitleStickyBar();
         String PriceStickyBarAfter = product_detail_page.getPriceStickyBar();
         String CountStoreAfter = product_detail_page.getCountStore();
+        test.get().pass("Lấy giá trị sau khi chọn phiên bản thành công");
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn phiên bản");
         LogUtils.info("Title sản pẩm: "+ TitleProductBefore);
         LogUtils.info("Title sản phẩm: " + TitleProductAfter);
-        Assert.assertNotEquals(TitleProductBefore, TitleProductAfter, "TitleProduct không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(BoxRatingBefore, BoxRatingAfter, "BoxRating không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(BoxPriceBefore, BoxPriceAfter, "BoxPrice không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(DiscountBefore, DiscountAfter, "Giá gốc không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(ColorPriceBefore, ColorPriceAfter, "Giá trong nu màu sắc không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(TitleStickyBarBefore, TitleStickyBarAfter, "TitleStickyBar không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, " Số cửa hàng còn hàng không thay đổi sau khi chọn phiên bản");
-        LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(TitleProductBefore, TitleProductAfter,
+                "TitleProduct không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(BoxRatingBefore, BoxRatingAfter,
+                "BoxRating không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(BoxPriceBefore, BoxPriceAfter,
+                "BoxPrice không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(DiscountBefore, DiscountAfter,
+                "Giá gốc không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter,
+                "Giá sale không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(ColorPriceBefore, ColorPriceAfter,
+                "Giá trong nu màu sắc không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(TitleStickyBarBefore, TitleStickyBarAfter,
+                "TitleStickyBar không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter,
+                "PriceStickyBar không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(CountStoreBefore, CountStoreAfter,
+                " Số cửa hàng còn hàng không thay đổi sau khi chọn phiên bản");
+        test.get().pass("Tất cả giá trị được thay đổi sau khi chọn phiên bản");
     }
 
     @Test (groups = "UI_Test",priority = 3, description = "Kiểm tra hiển thị thông tin sản phẩm")
@@ -163,9 +181,11 @@ public class Product_Detail_Test extends BaseSetup {
         String ProductThumbnail = product_detail_page.getProductThumbnail();
         String PriceStickyBarBefore = product_detail_page.getPriceStickyBar();
         String CountStoreBefore = product_detail_page.getCountStore();
+        test.get().pass("Lưu trạng thái ban đầu thành công");
 
         LogUtils.info("Chọn màu sắc");
         product_detail_page.selectColorProduct("Titan Đen");
+        test.get().pass("Chọn màu sắc thành công");
 
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
@@ -176,6 +196,7 @@ public class Product_Detail_Test extends BaseSetup {
         String ProductThumbnailAfter = product_detail_page.getProductThumbnail();
         String PriceStickyBarAfter = product_detail_page.getPriceStickyBar();
         String CountStoreAfter = product_detail_page.getCountStore();
+        test.get().pass("Lấy giá trị sau khi chọn màu sắc thành công");
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn màu sắc");
 //        LogUtils.info("Giá sale: "+ DiscountAfter);
@@ -187,7 +208,7 @@ public class Product_Detail_Test extends BaseSetup {
         Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn màu sắc");
 
-        LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
+        test.get().pass("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }
 
     //Kiểm tra lại
@@ -244,7 +265,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Lưu trạng thái ban đầu ");
         String CountStoreBefore = product_detail_page.getCountStore();
         String CityBefore = product_detail_page.getCityName();
-        LogUtils.info("Số lượng cửa hàng trong thành phố " + CityBefore + " là " + CountStoreBefore);
+        test.get().info("Số lượng cửa hàng trong thành phố " + CityBefore + " là " + CountStoreBefore);
 
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
@@ -262,15 +283,15 @@ public class Product_Detail_Test extends BaseSetup {
         String CountStoreAfter = product_detail_page.getCountStore();
         String CityAfter = product_detail_page.getCityName();
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
+        test.get().pass("Lấy giá trị sau khi chọn Thành phố thành công");
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Thành phố");
         Assert.assertNotEquals(CityBefore, CityAfter, "Thành phố không thay đổi sau khi chọn Thành phố");
-
         if (CountStoreBefore == CountStoreAfter) {
-            LogUtils.info("Số của hàng của hai thành phố bằng nhau");
+            test.get().pass("Số của hàng của hai thành phố bằng nhau");
         }else {
             Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn Thành phố");
-            test.get().info("Số cửa hàng còn hàng thay đổi sau khi chọn Thành phố");
+            test.get().fail("Số cửa hàng còn hàng thay đổi sau khi chọn Thành phố");
         }
 
         LogUtils.info("Kiểm tra box có chứa tên thành phố đã chọn");
@@ -279,10 +300,10 @@ public class Product_Detail_Test extends BaseSetup {
                 "Box không chứa tên thành phố đã chọn: " + CityAfter
         );
 
-        LogUtils.info("Nội dung box địa chỉ: " + product_detail_page.getAddressText());
+        test.get().info("Nội dung box địa chỉ: " + product_detail_page.getAddressText());
+        test.get().info("Số lượng cửa hàng trong thành phố " + CityAfter + " là " + CountStoreAfter);
 
-        LogUtils.info("Số lượng cửa hàng trong thành phố " + CityAfter + " là " + CountStoreAfter);
-        LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Thành phố");
+        test.get().pass("Tất cả giá trị được thay đổi sau khi chọn Thành phố");
     }
 
     //Mặc định chọn "HCM"
@@ -292,6 +313,7 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Lưu trạng thái ban đầu ");
         String CountStoreBefore = product_detail_page.getCountStore();
         String DistrictBefore = product_detail_page.getDistrictName();
+        test.get().info("Số lượng cửa hàng trong Quận " + DistrictBefore + " là " + CountStoreBefore);
 
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
@@ -304,123 +326,228 @@ public class Product_Detail_Test extends BaseSetup {
         String CityAfter = product_detail_page.getCityName();
         String CountStoreAfter = product_detail_page.getCountStore();
         String DistrictAfter = product_detail_page.getDistrictName();
+        test.get().pass("Lấy giá trị sau khi chọn quận thành công");
 
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CityAfter);
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Quận");
         Assert.assertNotEquals(DistrictBefore, DistrictAfter, "Quận không thay đổi sau khi chọn");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, " Số cửa hàng còn hàng không thay đổi sau khi chọn Quận");
+        test.get().pass("Kiểm tra giá trị sau khi chọn quận thành công");
 
         LogUtils.info("Kiểm tra box có chứa tên Quận đã chọn");
         product_detail_page.isAddressBoxContainsCityAndDistrict(CityAfter, DistrictAfter);
+        test.get().pass("Box có chứa tên quận đã chọn");
 
         LogUtils.info("Nội dung box địa chỉ: " + product_detail_page.getAddressText2());
 
-        LogUtils.info("Số lượng cửa hàng trong Quận " + districtName + " là " + CountStoreAfter);
-        LogUtils.info("Tất cả giá trị được thay đổi sau khi chọn Quận");
+        test.get().info("Số lượng cửa hàng trong Quận " + districtName + " là " + CountStoreAfter);
+        test.get().pass("Tất cả giá trị được thay đổi sau khi chọn Quận");
     }
 
-    @Test (groups = "Function",priority = 5, description = "Kiểm tra chuyển màn hình sang giỏ hàng")
+    @Test(groups = "Function", priority = 5, description = "Kiểm tra chuyển màn hình sang giỏ hàng")
     public void BuyProduct() {
         LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("1TB");
+        try {
+            product_detail_page.selectVersionProduct("1TB");
+            test.get().pass("Đã chọn phiên bản 1TB.");
+        } catch (Exception e) {
+            test.get().fail("Không thể chọn phiên bản sản phẩm: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
+
         LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
+        try {
+            validateUIHelper.waitForPageLoaded();
+            test.get().pass("Trang đã cập nhật sau khi chọn phiên bản.");
+        } catch (Exception e) {
+            test.get().fail("Trang không cập nhật sau khi chọn phiên bản: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
+
         LogUtils.info("Chọn màu sắc");
-        product_detail_page.selectColorProduct("Titan Đen");
+        try {
+            product_detail_page.selectColorProduct("Titan Đen");
+            test.get().pass("Đã chọn màu Titan Đen.");
+        } catch (Exception e) {
+            test.get().fail("Không thể chọn màu sắc sản phẩm: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
+
         LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
+        try {
+            validateUIHelper.waitForPageLoaded();
+            test.get().pass("Trang đã cập nhật sau khi chọn màu.");
+        } catch (Exception e) {
+            test.get().fail("Trang không cập nhật sau khi chọn màu: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
 
         LogUtils.info("Click button Mua ngay");
-        product_detail_page.ClickBuyNow();
+        try {
+            product_detail_page.ClickBuyNow();
+            test.get().pass("Đã click nút 'Mua ngay'.");
+        } catch (Exception e) {
+            test.get().fail("Không thể click nút 'Mua ngay': " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
 
         LogUtils.info("Kiểm tra chuyển màn hình sang giỏ hàng");
-        String expectedUrl = "https://cellphones.com.vn/cart/";
-        String actualUrl = driver.getCurrentUrl();
+        try {
+            String expectedUrl = "https://cellphones.com.vn/cart/";
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.urlToBe(expectedUrl));
 
-        Assert.assertEquals("URL không đúng sau khi click 'Mua ngay'", expectedUrl, actualUrl);
+            String actualUrl = driver.getCurrentUrl();
+            Assert.assertEquals("URL không đúng sau khi click 'Mua ngay'", expectedUrl, actualUrl);
+            test.get().pass("Chuyển hướng đến giỏ hàng thành công: " + actualUrl);
+        } catch (Exception e) {
+            test.get().fail("Không chuyển sang trang giỏ hàng như mong đợi: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
     }
 
-    @Test (groups = "UI_Test",priority = 4, description = "Kiểm tra thông báo khi chuyển màn hình sang giỏ hàng")
+
+    @Test(groups = "UI_Test", priority = 4, description = "Kiểm tra thông báo khi chuyển màn hình sang giỏ hàng")
     public void AddProductToCart() {
-        LogUtils.info("Chọn phiên bản");
-        product_detail_page.selectVersionProduct("1TB");
-        LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
-        LogUtils.info("Chọn màu sắc");
-        product_detail_page.selectColorProduct("Titan Đen");
-        LogUtils.info("Chờ trang cập nhật lại");
-        validateUIHelper.waitForPageLoaded();
+        try {
+            LogUtils.info("Chọn phiên bản");
+            product_detail_page.selectVersionProduct("1TB");
+            test.get().pass("Đã chọn phiên bản 1TB.");
 
-        LogUtils.info("Click button Thêm vào giỏ hàng");
-        product_detail_page.ClickAddToCart();
-        LogUtils.info("Kiểm tra chuyển màn hình sang giỏ hàng");
+            LogUtils.info("Chờ trang cập nhật lại");
+            validateUIHelper.waitForPageLoaded();
+            test.get().pass("Trang đã cập nhật sau khi chọn phiên bản.");
 
-        By successAddToCart = By.xpath("//div[@class='toasted toasted-primary success']");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(successAddToCart));
-        WebElement toast = driver.findElement(successAddToCart);
-        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi click button Thêm vào giỏ hàng");
+            LogUtils.info("Chọn màu sắc");
+            product_detail_page.selectColorProduct("Titan Đen");
+            test.get().pass("Đã chọn màu Titan Đen.");
+
+            LogUtils.info("Chờ trang cập nhật lại");
+            validateUIHelper.waitForPageLoaded();
+            test.get().pass("Trang đã cập nhật sau khi chọn màu sắc.");
+
+            LogUtils.info("Click button Thêm vào giỏ hàng");
+            product_detail_page.ClickAddToCart();
+            test.get().pass("Đã click nút Thêm vào giỏ hàng.");
+
+            LogUtils.info("Kiểm tra hiển thị thông báo sau khi thêm vào giỏ hàng");
+            By successAddToCart = By.xpath("//div[@class='toasted toasted-primary success']");
+            wait.until(ExpectedConditions.visibilityOfElementLocated(successAddToCart));
+            WebElement toast = driver.findElement(successAddToCart);
+            assertTrue(toast.isDisplayed(), "Không hiển thị thông báo sau khi thêm vào giỏ hàng");
+            test.get().pass("Hiển thị thông báo thành công sau khi thêm vào giỏ hàng.");
+        } catch (Exception e) {
+            test.get().fail("Thêm sản phẩm vào giỏ hàng thất bại: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
     }
 
-    @Test (groups = "Function",priority = 6, description = "Kiểm tra chuyển màn hình sang tab Trả góp")
+
+    @Test(groups = "Function", priority = 6, description = "Kiểm tra chuyển màn hình sang tab Trả góp")
     public void ClickInstallmentOption2() {
         LogUtils.info("Click button Thanh toán trả góp 0%");
-        product_detail_page.ClickInstallmentOption();
-        product_detail_page.ClickInstallmentOption2();
+        try {
+            product_detail_page.ClickInstallmentOption();
+            product_detail_page.ClickInstallmentOption2();
+            test.get().pass("Đã click nút 'Thanh toán trả góp 0%'.");
+        } catch (Exception e) {
+            test.get().fail("Không thể click nút 'Thanh toán trả góp 0%': " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
 
         LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp 0%");
-        product_detail_page.isToastMessageDisplayed();
+        try {
+            Assert.assertTrue(product_detail_page.isToastMessageDisplayed(), "Không hiển thị toast message.");
+            test.get().pass("Toast message hiển thị thành công sau khi chọn trả góp 0%.");
+        } catch (Exception e) {
+            test.get().fail("Không hiển thị toast message sau khi chọn trả góp 0%: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
 
         LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
-        String activeTab = product_detail_page.getActiveTabText();
-        Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
-
+        try {
+            String activeTab = product_detail_page.getActiveTabText();
+            Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
+            test.get().pass("Chuyển sang tab 'Trả góp' thành công.");
+        } catch (Exception e) {
+            test.get().fail("Không chuyển sang tab 'Trả góp': " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
     }
 
-    @Test (groups = "Function",priority = 7, description = "Kiểm tra chuyển màn hình sang tab Trả góp")
+
+    @Test(groups = "Function", priority = 7, description = "Kiểm tra chuyển màn hình sang tab Trả góp")
     public void ClickInstallmentOption3() {
         LogUtils.info("Click button Thanh toán trả góp qua thẻ");
-        product_detail_page.ClickInstallmentOption();
-        product_detail_page.ClickInstallmentOption3();
+        try {
+            product_detail_page.ClickInstallmentOption();
+            product_detail_page.ClickInstallmentOption3();
+            test.get().pass("Đã click nút 'Thanh toán trả góp qua thẻ'.");
+        } catch (Exception e) {
+            test.get().fail("Không thể click nút 'Thanh toán trả góp qua thẻ': " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
 
         LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp qua thẻ");
-        product_detail_page.isToastMessageDisplayed();
+        try {
+            Assert.assertTrue(product_detail_page.isToastMessageDisplayed(), "Không hiển thị toast message.");
+            test.get().pass("Toast message hiển thị thành công sau khi chọn trả góp qua thẻ.");
+        } catch (Exception e) {
+            test.get().fail("Không hiển thị toast message sau khi chọn trả góp qua thẻ: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
 
         LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
-        String activeTab = product_detail_page.getActiveTabText();
-        Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
-
-
+        try {
+            String activeTab = product_detail_page.getActiveTabText();
+            Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
+            test.get().pass("Chuyển sang tab 'Trả góp' thành công.");
+        } catch (Exception e) {
+            test.get().fail("Không chuyển sang tab 'Trả góp': " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
     }
 
-    @Test (groups = "Function",priority = 8)
+
+    @Test(groups = "Function", priority = 8)
     public void EvaluateProduct() {
-        LogUtils.info("Lưu trạng thái ban đầu ");
-        String EvaluateBefore = product_detail_page.getCountEvaluateProduct();
-        LogUtils.info("Số lượng đánh giá của sản phẩm là " + EvaluateBefore);
+        try {
+            LogUtils.info("Lưu trạng thái ban đầu");
+            String EvaluateBefore = product_detail_page.getCountEvaluateProduct();
+            LogUtils.info("Số lượng đánh giá của sản phẩm là: " + EvaluateBefore);
+            test.get().pass("Số lượng đánh giá ban đầu: " + EvaluateBefore);
 
-        LogUtils.info("Click button Đánh giá sản phẩm");
-        product_detail_page.ClickButtonEvaluate();
-        product_detail_page.ClickEvaluateStar();
-        product_detail_page.ClickEvaluatePerformance();
-        product_detail_page.ClickEvaluateBatteryLife();
-        product_detail_page.ClickEvaluateCamera();
-        product_detail_page.InputEvaluateComment("Sản phẩm trên cả tuyệt vời luôn ấy");
-        product_detail_page.ClickEvaluateImage("C:\\Users\\Admin\\Pictures\\kk.jpg");
-        product_detail_page.ClickEvaluateButton();
+            LogUtils.info("Thực hiện đánh giá sản phẩm");
+            product_detail_page.ClickButtonEvaluate();
+            product_detail_page.ClickEvaluateStar();
+            product_detail_page.ClickEvaluatePerformance();
+            product_detail_page.ClickEvaluateBatteryLife();
+            product_detail_page.ClickEvaluateCamera();
+            product_detail_page.InputEvaluateComment("Sản phẩm trên cả tuyệt vời luôn ấy");
+            product_detail_page.ClickEvaluateImage("C:\\Users\\Admin\\Pictures\\kk.jpg");
+            product_detail_page.ClickEvaluateButton();
+            test.get().pass("Đã thực hiện đầy đủ các bước đánh giá sản phẩm.");
 
-        LogUtils.info("Kiểm tra thông báo khi đánh giá sản phẩm");
-        By successEvaluate = By.xpath("//b[contains(text(),'CellphoneS đã nhận được phản hồi của bạn')]");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(successEvaluate));
-        WebElement toast = driver.findElement(successEvaluate);
-        assertTrue(toast.isDisplayed(), "Không hiển thị thông báo khi đánh giá sản phẩm");
+            LogUtils.info("Kiểm tra thông báo sau khi đánh giá");
+            By successEvaluate = By.xpath("//b[contains(text(),'CellphoneS đã nhận được phản hồi của bạn')]");
+            wait.until(ExpectedConditions.visibilityOfElementLocated(successEvaluate));
+            WebElement toast = driver.findElement(successEvaluate);
+            assertTrue(toast.isDisplayed(), "Không hiển thị thông báo sau khi đánh giá");
+            test.get().pass("Hiển thị thông báo đánh giá thành công.");
 
-        LogUtils.info("Lấy giá trị sau khi đánh giá sản phẩm");
-        String EvaluateAfter = product_detail_page.getCountEvaluateProduct();
-        LogUtils.info("Số lượng đánh giá của sản phẩm là " + EvaluateAfter);
+            LogUtils.info("Lấy giá trị sau khi đánh giá sản phẩm");
+            String EvaluateAfter = product_detail_page.getCountEvaluateProduct();
+            LogUtils.info("Số lượng đánh giá sau: " + EvaluateAfter);
+            test.get().pass("Số lượng đánh giá sau: " + EvaluateAfter);
 
-        LogUtils.info("Kiểm tra số lượng đánh giá của sản phẩm");
-        Assert.assertNotEquals(EvaluateBefore, EvaluateAfter, "Số lượng đánh giá của sản phẩm thay đổi");
+            LogUtils.info("Kiểm tra số lượng đánh giá thay đổi");
+            Assert.assertNotEquals(EvaluateBefore, EvaluateAfter, "Số lượng đánh giá không thay đổi");
+            test.get().pass("Số lượng đánh giá đã thay đổi thành công.");
+        } catch (Exception e) {
+            test.get().fail("Đánh giá sản phẩm thất bại: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        }
     }
 
 }

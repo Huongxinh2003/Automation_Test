@@ -15,7 +15,7 @@ public class Search_Page extends ValidateUIHelper {
     private WebDriverWait wait;
     private JavascriptExecutor js;
 
-    private final By searchInput = By.xpath("//input[@id='inp$earch']");
+    private final By searchInput = By.cssSelector("input[id='inp\\$earch']");
     private final By IconSearch = By.xpath("//button[@type='submit']//*[name()='svg']");
     private final By closeSearch = By.xpath("//span[@id='btn-close-search']");
     private final By suggestBoxSearch = By.xpath("//div[@class='suggest-search']");
@@ -70,7 +70,7 @@ public class Search_Page extends ValidateUIHelper {
         wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
 
         clickElement(ProductCard);
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+//        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Product_Detail_Page(driver);
     }
 

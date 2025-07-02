@@ -98,9 +98,14 @@ public class Cart_Page extends ValidateUIHelper {
     }
 
     public String extractFileName(String url) {
-        return url.split("\\?")[0].substring(
-                url.lastIndexOf("/") + 1);
+        if (url == null || url.trim().isEmpty()) {
+            return "giá trị là null";
+        }
+
+        String cleanUrl = url.split("\\?")[0];
+        return cleanUrl.substring(cleanUrl.lastIndexOf("/") + 1);
     }
+
 
     public String getPriceProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(PriceProduct));
