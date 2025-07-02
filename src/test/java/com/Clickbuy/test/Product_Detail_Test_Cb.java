@@ -1,6 +1,6 @@
 package com.Clickbuy.test;
 
-import com.CellphoneS.tests.Product_Detail_Test;
+import com.Clickbuy.test.Product_Detail_Test_Cb;
 import com.Clickbuy.helper.SignIn_Helper_Cb;
 import com.Clickbuy.page.Homepage_page_Cb;
 import com.Clickbuy.page.Product_Detail_Page_Cb;
@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class Product_Detail_Test_Cb extends BaseSetup {
-    private static final Logger log = LoggerFactory.getLogger(Product_Detail_Test.class);
+    private static final Logger log = LoggerFactory.getLogger(Product_Detail_Test_Cb.class);
     private WebDriver driver;
     public WebDriverWait wait;
     public ExcelUtils excelHelper;

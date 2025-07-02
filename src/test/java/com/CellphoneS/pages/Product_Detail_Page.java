@@ -132,22 +132,20 @@ public class Product_Detail_Page extends ValidateUIHelper {
         List<WebElement> options = driver.findElements
                 (By.xpath("//div[@class='list-linked']//a"));
 
-        // Lấy title hiện tại trước khi click
-        String oldTitle = getTitleProduct(); // hoặc getTitleStickyBar()
+        String oldTitle = getTitleProduct();
 
         for (WebElement option : options) {
             String optionText = option.getText().replaceAll("\\s+", "").toLowerCase();
             String expectedText = version.replaceAll("\\s+", "").toLowerCase();
 
             if (optionText.contains(expectedText)) {
-                // Click bằng JavaScript
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", option);
                 LogUtils.info("Đã chọn phiên bản: " + option.getText());
 
-                // Đợi title thay đổi
+
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                 wait.until(driver -> {
-                    String newTitle = getTitleProduct(); // hoặc getTitleStickyBar()
+                    String newTitle = getTitleProduct();
                     return !newTitle.equals(oldTitle);
                 });
                 return;

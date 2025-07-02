@@ -324,3 +324,19 @@ Vui lòng nhập số điện thoại
 2025-07-02 16:52:11 INFO  LogUtils:10 - Kiểm tra checkbox sản phẩm đã được chọn
 2025-07-02 16:52:17 ERROR LogUtils:14 - verifyAfterAddToCart test is failed.
 2025-07-02 16:52:21 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-02 23:34:11 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-02 23:34:29 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-02 23:34:37 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-02 23:34:46 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-02 23:34:58 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-02 23:34:58 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-02 23:34:59 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-02 23:34:59 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-02 23:35:02 INFO  LogUtils:10 - verifyAfterAddToCart test is starting...
+2025-07-02 23:35:02 WARN  LogUtils:22 - verifyAfterAddToCart test is skipped.
+2025-07-02 23:35:06 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-02 23:39:39 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-02 23:39:48 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-02 23:39:53 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-02 23:39:55 INFO  LogUtils:10 - Kiểm tra title của trang chi tiết sản phẩm
+2025-07-02 23:39:56 INFO  LogUtils:10 - Tiêu đề sản phẩm: iPhone 13 128GB chính hãng VN/A - Tặng BH rơi vỡ vào nước
