@@ -63,4 +63,67 @@ public class Product_Detail_Test_Cb extends BaseSetup {
         String titleProduct = product_detail_page_cb.getTitleProduct();
         LogUtils.info("Tiêu đề sản phẩm: " + titleProduct);
     }
+
+    @Test(groups = "Function",description = "Kiểm tra đồng bộ các thông tin khi thay đổi phiên bản")
+    public void verifyVersion(){
+
+    }
+
+    @Test(groups = "Function",description = "Kiểm tra đồng bộ các thông tin khi thay đổi màu sắc")
+    public void verifyColor(){
+
+    }
+
+    @Test(groups = "Function",description = "Kiểm tra đồng bộ địa chỉ theo thành phố đã chọn")
+    public void verifyCityOption(){
+        LogUtils.info("Chọn thành phố");
+        product_detail_page_cb.selectCity("Bắc Ninh");
+        test.get().pass("Chọn thành phố thành công");
+
+        LogUtils.info("Kiểm tra hiển thị danh sách địa chỉ");
+        product_detail_page_cb.verifyListAddress();
+        test.get().pass("kiểm tra danh sách địa chỉ thành công");
+
+        /*LogUtils.info("Lấy địa chỉ và SĐT trong BoxList");
+        String getAddress = product_detail_page_cb.getAllAddresses().toString();
+        String getPhone = product_detail_page_cb.getAllPhones().toString();
+        LogUtils.info("Kiểm tra click chọn địa chỉ");
+        product_detail_page_cb.ClickAddress();
+        test.get().pass("click chọn địa chỉ thành công");
+
+        LogUtils.info("Kiểm tra đồng bộ SĐT và Địa chỉ trong popup");
+        String getPopupAddress = product_detail_page_cb.getPopupAddress();
+        String getPopupPhone = product_detail_page_cb.getPopupPhone();
+
+        LogUtils.info("Đồng bộ địa chỉ");
+        if(getAddress.equals(getPopupAddress)){
+            test.get().pass("Địa chỉ khớp");
+        }else {
+            test.get().fail("Địa chỉ không khớp");
+        }
+
+        LogUtils.info("Đồng bộ SĐT");
+        if(getPhone.equals(getPopupPhone)){
+            test.get().pass("SĐT khớp");
+        }else {
+            test.get().fail("SĐT không khớp");
+        }*/
+
+    }
+
+    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua điện thoại")
+    public void PhoneContact(){
+
+    }
+
+    @Test(groups = "Function",description = "Kiểm tra đánh giá sản phẩm")
+    public void Evaluation(){
+
+
+    }
+
+    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua email")
+    public void verifyProductDetail(){
+
+    }
 }

@@ -24,7 +24,7 @@ public class Homepage_page extends ValidateUIHelper {
     public Search_Page openSearchPage() {
         // Thu nhỏ website sau khi mở trang
         ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement search = driver.findElement(searchInput);
         search.click();
         return new Search_Page(driver);

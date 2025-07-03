@@ -40,7 +40,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
     public By DistrictOption = By.xpath("//select[@id='districtOptions']");
     public By SelectCity = By.xpath("//ul[@class='menu-list']");
-    public By SelectDistrict = By.xpath("//option[@value='40']");
     public By BoxAddress = By.xpath("//div[@class='box-on-stock-address']");
     public By BuyNow = By.xpath("//button[@class='button-desktop button-desktop-order is-flex is-justify-content-center is-align-items-center']");
     public By AddToCart = By.xpath("//button[@class='button-desktop button-add-to-cart']");

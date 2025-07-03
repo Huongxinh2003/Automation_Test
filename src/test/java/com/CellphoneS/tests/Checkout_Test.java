@@ -67,7 +67,6 @@ public class Checkout_Test extends BaseSetup {
         productCityName = product_detail_page.getCityName();
         cart_page = product_detail_page.OpenCartPage();
         checkout_page = cart_page.openCheckout();
-        applyZoom(driver, 80);
     }
 
     @Test(groups= "UI_Test", priority = 1, description = "Kiểm tra title trang checkout")

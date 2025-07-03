@@ -24,10 +24,12 @@ public class Homepage_page_Cb extends ValidateUIHelper {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
     public Search_Page_Cb openSearchPage() {
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement toast = driver.findElement(Toast);
         wait.until(ExpectedConditions.stalenessOf(toast));
+
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement search = driver.findElement(searchInput);
         wait.until(ExpectedConditions.elementToBeClickable(search));
         clickElement(search);

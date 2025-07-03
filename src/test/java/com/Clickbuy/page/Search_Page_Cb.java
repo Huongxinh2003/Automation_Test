@@ -25,7 +25,7 @@ public class Search_Page_Cb extends ValidateUIHelper {
     public By SubTitleSearchFail = By.xpath("//h3[contains(text(),'Quý khách có thể tham khảo thêm các sản phẩm mới n')]");
     public By ButtonGoHomePage = By.xpath("//span[@id='countdown']");
     public static By LogoClickbuy = By.xpath("//img[@title='Clickbuy.com.vn - Hệ thống bán lẻ điện thoại, máy tính bảng, laptop, phụ kiện chính hãng']");
-    public By ProductCard = By.xpath("//a[@title='iPhone 13 128GB chính hãng VN/A - Tặng BH rơi vỡ vào nước']");
+    public By ProductCard = By.xpath("//a[@title='iPhone 16 Pro Max 256GB Chính Hãng VN/A']");
 
     public Search_Page_Cb(WebDriver driver) {
         super(driver);
@@ -41,7 +41,7 @@ public class Search_Page_Cb extends ValidateUIHelper {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
         clickElement(ProductCard);
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='70%'");
         return new Product_Detail_Page_Cb(driver);
     }
 

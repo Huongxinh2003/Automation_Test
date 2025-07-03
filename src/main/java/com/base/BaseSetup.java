@@ -117,12 +117,6 @@ public class BaseSetup {
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
-    public void applyZoom(WebDriver driver, int percent) {
-        String script = String.format("document.body.style.zoom='%d%%'", percent);
-        ((JavascriptExecutor) driver).executeScript(script);
-    }
-
-
     public static WebDriver getDriver() {
         return driver.get();
     }
