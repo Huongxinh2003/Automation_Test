@@ -23,7 +23,7 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     private JavascriptExecutor js;
     private ValidateUIHelper validateUIHelper;
 
-    public By TitleProduct = By.cssSelector(".product-name");
+    public By ProductName = By.xpath("//h1[normalize-space()='iPhone 16 Pro Max 512GB Chính Hãng VN/A']");
     public By LeftBanner = By.xpath("//a[@class='leftside-banner']");
     public By RightBanner = By.xpath("//a[@class='rightside-banner']");
     public By Banner = By.xpath("//div[contains(@class,'product-slide-box')]//a[contains(@title,'iPhone 16 series')]");
@@ -56,7 +56,10 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By EvaluationStar = By.xpath("//span[@class='star']");
     public By EvaluationSubmit = By.xpath("//button[@title='Gửi']");
     public static By ToastEvaluation = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
-    public By ButtonBuyNow = By.xpath("//div[@class='order-available']");
+    public By ButtonBuyNow = By.xpath("//p[@class='add-to-cart']");
+    public By ColorNameAndPrice = By.xpath("//p[@class='flex active']/span[1]");
+    public By ProductPrice = By.cssSelector("div[class='col col-sm-5'] p[class='price']");
+    public By WarrantyActive = By.cssSelector("div.list-variant__item.list-item.active");
 
     public Product_Detail_Page_Cb(WebDriver driver) {
         super(driver);
@@ -68,77 +71,47 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
 
     public Checkout_Page_Cb openCheckoutPage() {
         LogUtils.info("Chọn phiên bản");
-        selectVersionProduct();
+        selectVersionProduct("512GB");
         validateUIHelper.waitForPageLoaded();
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='80%'");
         LogUtils.info("Chọn màu sắc");
         selectColorProduct("Natural");
 
+        ((JavascriptExecutor) driver).executeScript(
+                "document.querySelectorAll('iframe').forEach(f => f.style.display = 'none');"
+        );
+
         WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonBuyNow));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Buynow);
-        clickElement(Buynow);
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+        (js).executeScript("arguments[0].click();", Buynow);
+
+        js.executeScript("document.getElementById('popup-modal').style.display = 'inline-block';");
+        LogUtils.info("Đã click được vào button 'Buy Now'");
         return new Checkout_Page_Cb(driver);
     }
 
-    public boolean isTitleProductDisplayed() {
-        return isElementDisplayed(TitleProduct);
+    public boolean isProductNameDisplayed() {
+        return isElementDisplayed(ProductName);
     }
 
-    public String getTitleProduct() {
+    public String getProductName() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(TitleProduct));
+        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ProductName));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String titleText = (String) js.executeScript("return arguments[0].textContent.trim();", titleElement);
         return titleText;
     }
 
-    public void selectVersionProduct() {
+    public void selectVersionProduct(String version) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='512GB']")));
         webElement.click();
-//        List<WebElement> options = driver.findElements(By.xpath("//div[@class='related_versions list']"));
-//        String oldTitle = getTitleProduct();
-//
-//        for (WebElement option : options) {
-//            WebElement link = option.findElement(By.tagName("a"));
-//            String optionText = link.getAttribute("title").replaceAll("\\s+", "").toLowerCase();
-//            String expectedText = version.replaceAll("\\s+", "").toLowerCase();
-//
-//            if (optionText.contains(expectedText)) {
-//                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", option);
-//                LogUtils.info("Đã chọn phiên bản: " + link.getAttribute("title"));
-//
-//                wait.until(driver -> !getTitleProduct().equals(oldTitle));
-//                return;
-//            }
-//        }
-//
-//        throw new RuntimeException("Không tìm thấy phiên bản: " + version);
     }
 
     public void selectColorProduct(String color) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Natural']")));
         webElement.click();
-//        public void selectColorProduct(String color) {
-//    String xpath = "//div[contains(@class, 'list-variant__item')]";
-//    List<WebElement> options = driver.findElements(By.xpath(xpath));
-//
-//    for (int i = 0; i < options.size(); i++) {
-//        // Lấy lại element tại mỗi vòng lặp để tránh bị stale
-//        WebElement option = driver.findElements(By.xpath(xpath)).get(i);
-//        String text = option.getText().replaceAll("\\s+", "").toLowerCase();
-//        String expected = color.replaceAll("\\s+", "").toLowerCase();
-//
-//        if (text.contains(expected)) {
-//            option.click(); // click thường
-//            System.out.println("Đã chọn màu sắc: " + option.getText());
-//            return;
-//        }
-//    }
-//
-//    throw new RuntimeException("Không tìm thấy màu sắc: " + color);
-//}
     }
 
     public boolean isBoxRatingDisplayed() {
@@ -281,6 +254,24 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         giftBox.click();
     }
 
+    public String getColorName(){
+        // Lấy phần tử chứa tên màu
+        WebElement colorNameElement = driver.findElement(ColorNameAndPrice);
+        String colorName = colorNameElement.getText().trim();
+        System.out.println("Tên màu: " + colorName);
+        return colorName;
+    }
 
+    public String getProductPrice() {
+        String price = driver.findElement(ProductPrice).getText().trim();
+        System.out.println("Giá sản phẩm: " + price);
+        return price;
+    }
 
+    public String getActiveWarranty() {
+        WebElement activeOutside = driver.findElement(WarrantyActive);
+        String titleOutside = activeOutside.getAttribute("title").trim();
+        System.out.println("Bảo hành active: " + titleOutside);
+        return titleOutside;
+    }
 }

@@ -58,9 +58,9 @@ public class Product_Detail_Test_Cb extends BaseSetup {
     @Test(groups = "UI_Test",description = "Kiểm tra title của trang chi tiết sản phẩm")
     public void SearchProduct(){
         LogUtils.info("Kiểm tra title của trang chi tiết sản phẩm");
-        Assert.assertTrue(product_detail_page_cb.isTitleProductDisplayed(),"Title của trang chi tiết sản phẩm không hiển thị");
+        Assert.assertTrue(product_detail_page_cb.isProductNameDisplayed(),"Title của trang chi tiết sản phẩm không hiển thị");
 
-        String titleProduct = product_detail_page_cb.getTitleProduct();
+        String titleProduct = product_detail_page_cb.getProductName();
         LogUtils.info("Tiêu đề sản phẩm: " + titleProduct);
     }
 

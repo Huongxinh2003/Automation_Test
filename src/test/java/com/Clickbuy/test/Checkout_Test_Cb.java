@@ -11,6 +11,7 @@ import com.ultilities.ExcelUtils;
 import com.ultilities.Properties_File;
 import com.ultilities.listeners.ReportListener;
 import com.ultilities.logs.LogUtils;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class Checkout_Test_Cb extends BaseSetup {
     public SignIn_Helper_Cb signIn_helpers_cb;
     public Checkout_Page_Cb checkout_page_cb;
 
-    @BeforeClass(groups = {"UI_Test", "Function","Function_UI"})
+    @BeforeClass(groups = {"UI_Test", "Function", "Function_UI"})
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -53,24 +54,81 @@ public class Checkout_Test_Cb extends BaseSetup {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    private String TitleProduct;
+    private String ProductName;
+    private String ColorName;
+    public String ProductPrice;
+    public String WarrantyActive;
+
     @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI"})
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page_cb = search_page_cb.openProductDetail("iphone");
         checkout_page_cb = product_detail_page_cb.openCheckoutPage();
-        TitleProduct = product_detail_page_cb.getTitleProduct();
+        validateUIHelper.waitForPageLoaded();
+        ProductName = product_detail_page_cb.getProductName();
+        ColorName = product_detail_page_cb.getColorName();
+        ProductPrice = product_detail_page_cb.getProductPrice();
+        WarrantyActive = product_detail_page_cb.getActiveWarranty();
     }
 
-    @Test(groups = "UI_Test",description = "Kiểm tra thông tin của trang chi tiết sản phẩm")
-    public void verifyCheckoutPopup(){
+    @Test(groups = "UI_Test", description = "Kiểm tra thông tin của trang chi tiết sản phẩm")
+    public void verifyCheckoutPopup() {
         LogUtils.info("Kiểm tra popup trang chi tiết sản phẩm");
         checkout_page_cb.isPopupModalDisplayed();
         test.get().pass("Hiển thị popup thanh toán");
 
         LogUtils.info("Kiểm tra title của popup");
         checkout_page_cb.isTitlePopupModalDisplayed();
-        test.get().pass("Hiển thị title của popup" + checkout_page_cb.getTitlePopupModal());
+        test.get().pass("Hiển thị title của popup: " + checkout_page_cb.getTitlePopupModal());
 
+        LogUtils.info("Kiểm tra tên sản phẩm");
+        String ProductNamePopup = checkout_page_cb.getProductNamePopup();
+        LogUtils.info("Title popup: " + ProductNamePopup);
+        Assert.assertEquals(ProductName, ProductNamePopup);
+        if (ProductNamePopup.equals(ProductName)) {
+            test.get().pass("Tên sản phẩm trong popup khớp");
+        } else {
+            test.get().fail("Tên sản phẩm trong popup KHÔNG khớp");
+        }
+
+        LogUtils.info("Kiểm tra tên màu");
+        String colorNamePopup = checkout_page_cb.getColorNamePopup();
+        LogUtils.info("Màu: " + colorNamePopup);
+        Assert.assertEquals(ColorName, colorNamePopup);
+        if (colorNamePopup.equals(ColorName)) {
+            test.get().pass("Tên màu khớp");
+        } else {
+            test.get().fail("Tên màu KHÔNG khớp");
+        }
+
+        LogUtils.info("Kiểm tra tên màu trong mô tả sản phẩm");
+        String SpanNameColor = checkout_page_cb.getSpanColor();
+        if (SpanNameColor.toLowerCase().contains(colorNamePopup.toLowerCase())) {
+            test.get().pass("Tên màu '" + colorNamePopup + "' có trong '" + SpanNameColor + "'");
+        } else {
+            test.get().fail("Tên màu '" + colorNamePopup + "' KHÔNG có trong '" + SpanNameColor + "'");
+            Assert.fail("Tên màu không khớp với mô tả sản phẩm.");
+        }
+
+        LogUtils.info("Kiểm tra giá sản phẩm");
+        String productPricePopup = checkout_page_cb.getProductPricePopup();
+        LogUtils.info("Giá sản phẩm: " + productPricePopup);
+        Assert.assertEquals( ProductPrice, productPricePopup);
+        if (productPricePopup.equals(ProductPrice)) {
+            test.get().pass("Giá sản phẩm khớp");
+        } else {
+            test.get().fail("Giá sản phẩm KHÔNG khớp");
+        }
+
+        LogUtils.info("Kiểm tra bảo hành active bên ngoài và trong popup");
+        String warrantyPopup = checkout_page_cb.getActiveWarrantyPopup();
+        if (warrantyPopup.equalsIgnoreCase(WarrantyActive)) {
+            test.get().pass("Bảo hành active bên ngoài và popup KHỚP: " + WarrantyActive);
+        } else {
+            test.get().fail("Bảo hành active KHÔNG khớp!");
+            test.get().info("Bên ngoài: " + WarrantyActive);
+            test.get().info("Trong popup: " + warrantyPopup);
+            Assert.fail("Bảo hành active bên ngoài và trong popup không khớp.");
+        }
     }
 }
