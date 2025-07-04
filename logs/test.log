@@ -1,0 +1,410 @@
+2025-07-04 09:55:15 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 09:55:23 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 09:55:34 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 09:55:43 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 09:55:47 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 09:55:49 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 09:55:49 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 09:55:54 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 09:55:54 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 09:55:54 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 09:55:54 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 09:55:54 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 09:55:54 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 09:55:55 INFO  LogUtils:10 - Màu: Natural
+35.950.000 ₫
+2025-07-04 09:55:55 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 09:55:55 ERROR LogUtils:14 - verifyCheckoutPopup test is failed.
+2025-07-04 09:55:59 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 10:11:25 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 10:11:30 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 10:11:41 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 10:11:46 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 10:11:50 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 10:11:52 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 10:11:53 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 10:11:59 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 10:11:59 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 10:11:59 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 10:11:59 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 10:11:59 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 10:11:59 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 10:11:59 INFO  LogUtils:10 - Màu: Black
+2025-07-04 10:11:59 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 10:11:59 INFO  LogUtils:10 - Giá theo màu: 
+2025-07-04 10:11:59 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 10:11:59 ERROR LogUtils:14 - verifyCheckoutPopup test is failed.
+2025-07-04 10:12:03 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 10:19:20 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 10:19:26 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 10:19:36 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 10:19:44 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 10:19:47 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 10:19:48 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 10:19:49 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 10:20:09 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 10:20:09 WARN  LogUtils:22 - verifyCheckoutPopup test is skipped.
+2025-07-04 10:20:12 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 10:20:20 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 10:20:25 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 10:20:38 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 10:20:43 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 10:20:47 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 10:20:49 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 10:20:49 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 10:20:54 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 10:20:54 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 10:20:54 INFO  LogUtils:10 - Màu: Natural
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 10:20:54 INFO  LogUtils:10 - Giá theo màu: 
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 10:20:54 INFO  LogUtils:10 - Giá sản phẩm: 35,950,000 ₫
+2025-07-04 10:20:54 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 10:20:54 INFO  LogUtils:10 - verifyCheckoutPopup test is passed.
+2025-07-04 10:20:58 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 10:40:51 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 10:40:57 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 10:41:08 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 10:41:13 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 10:41:17 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 10:41:20 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 10:41:20 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 10:41:24 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 10:41:24 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 10:41:24 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 10:41:25 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 10:41:25 INFO  LogUtils:10 - Kiểm tra tên bảo hành trong mô tả sản phẩm
+2025-07-04 10:41:25 INFO  LogUtils:10 - verifyCheckoutPopup test is passed.
+2025-07-04 10:41:28 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 10:55:15 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 10:55:21 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 10:55:32 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 10:55:56 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 10:55:56 WARN  LogUtils:22 - verifyCheckoutPopup test is skipped.
+2025-07-04 10:56:03 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 10:56:10 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 10:56:22 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 10:56:27 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 10:56:35 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 10:56:39 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 10:56:39 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 10:56:44 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 10:56:44 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 10:56:44 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 10:56:44 ERROR LogUtils:14 - verifyCheckoutPopup test is failed.
+2025-07-04 10:56:49 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 11:11:47 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 11:11:53 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 11:12:03 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 11:12:09 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 11:12:13 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 11:12:15 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 11:12:16 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 11:12:22 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 11:12:22 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 11:12:23 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 11:12:23 INFO  LogUtils:10 - Kiểm tra tên bảo hành trong mô tả sản phẩm
+2025-07-04 11:12:23 INFO  LogUtils:10 - verifyCheckoutPopup test is passed.
+2025-07-04 11:12:26 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 11:16:26 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 11:16:32 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 11:16:43 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 11:16:49 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 11:16:53 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 11:16:56 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 11:17:00 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 11:17:11 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 11:17:11 WARN  LogUtils:22 - verifyCheckoutPopup test is skipped.
+2025-07-04 11:17:14 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 11:17:47 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 11:17:59 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 11:18:09 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 11:18:13 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 11:18:17 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 11:18:20 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 11:18:20 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 11:18:26 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 11:18:26 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 11:18:26 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 11:18:27 INFO  LogUtils:10 - Kiểm tra tên bảo hành trong mô tả sản phẩm
+2025-07-04 11:18:27 INFO  LogUtils:10 - verifyCheckoutPopup test is passed.
+2025-07-04 11:18:30 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 11:28:16 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 11:28:22 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 11:28:34 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 11:28:39 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 11:28:43 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 11:28:46 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 11:28:46 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 11:28:50 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 11:28:50 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 11:28:50 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 11:28:50 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 11:28:51 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 11:28:51 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 11:28:51 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 11:28:51 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 11:28:51 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 11:28:51 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 11:28:51 INFO  LogUtils:10 - Kiểm tra tên bảo hành trong mô tả sản phẩm
+2025-07-04 11:28:51 INFO  LogUtils:10 - verifyCheckoutPopup test is passed.
+2025-07-04 11:28:54 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:13:43 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 15:13:53 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 15:13:59 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 15:14:03 INFO  LogUtils:10 - Chọn thành phố
+2025-07-04 15:14:03 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách địa chỉ
+2025-07-04 15:14:04 INFO  LogUtils:10 - Có địa chỉ tại Bắc Ninh
+2025-07-04 15:14:04 INFO  LogUtils:10 - SĐT: 0941.442.468
+2025-07-04 15:14:04 INFO  LogUtils:10 - Địa chỉ: Ngã 3 Đông Yên, Yên Phong, Bắc Ninh (Khu công nghiệp Yên Phong)
+2025-07-04 15:14:04 INFO  LogUtils:10 - Lấy địa chỉ và SĐT trong BoxList
+2025-07-04 15:14:04 INFO  LogUtils:10 - Kiểm tra click chọn địa chỉ
+2025-07-04 15:41:53 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:42:07 INFO  LogUtils:10 - login_cellphoneS_19 test is starting...
+2025-07-04 15:42:07 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-07-04 15:42:15 INFO  LogUtils:10 - Kiểm tra Alert lỗi
+2025-07-04 15:42:15 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-07-04 15:42:15 ERROR LogUtils:14 - login_cellphoneS_19 test is failed.
+2025-07-04 15:42:19 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:46:23 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:46:36 INFO  LogUtils:10 - login_cellphoneS_74 test is starting...
+2025-07-04 15:46:37 INFO  LogUtils:10 - Con mắt ẩn và hiện Mật khẩu
+2025-07-04 15:46:40 INFO  LogUtils:10 - Kiểm tra click hiện mật khẩu
+2025-07-04 15:46:44 INFO  LogUtils:10 - Kiểm tra click ẩn mật khẩu
+2025-07-04 15:46:47 INFO  LogUtils:10 - login_cellphoneS_74 test is passed.
+2025-07-04 15:46:50 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:50:06 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:50:12 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 15:50:33 INFO  LogUtils:10 - search_Success test is starting...
+2025-07-04 15:50:33 WARN  LogUtils:22 - search_Success test is skipped.
+2025-07-04 15:50:37 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:50:40 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:50:55 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 15:50:58 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 15:51:04 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-07-04 15:51:05 INFO  LogUtils:10 - Search_Success test is starting...
+2025-07-04 15:51:05 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-07-04 15:51:06 INFO  LogUtils:10 - Kiểm tra danh sách gợi ý đã tự động ẩn sau khi click sản phẩm
+2025-07-04 15:51:08 INFO  LogUtils:10 - Đợi trang chuyển hướng
+2025-07-04 15:51:08 INFO  LogUtils:10 - Kiểm tra URL đúng
+2025-07-04 15:51:08 INFO  LogUtils:10 - Kiểm tra tiêu đề kết quả: “Tìm thấy xxxx sản phẩm cho từ khoá 'iphone'”
+2025-07-04 15:51:08 INFO  LogUtils:10 - In ra số sản phẩm tìm thấy
+2025-07-04 15:51:08 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách sản phẩm
+2025-07-04 15:51:08 INFO  LogUtils:10 - Kiểm tra sản phẩm đầu tiên có chứa chữ iPhone
+2025-07-04 15:51:08 INFO  LogUtils:10 - Search_Success test is passed.
+2025-07-04 15:51:12 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:55:07 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:55:20 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 15:55:22 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 15:55:26 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-07-04 15:55:26 WARN  LogUtils:22 - verifyChangeAfterSelectVersionProduct test is skipped.
+2025-07-04 15:55:30 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:55:44 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:55:57 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 15:55:59 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 15:56:08 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-07-04 15:56:08 WARN  LogUtils:22 - verifyChangeAfterSelectVersionProduct test is skipped.
+2025-07-04 15:56:11 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:56:30 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:56:44 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 15:56:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 15:56:56 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-07-04 15:56:56 WARN  LogUtils:22 - verifyChangeAfterSelectVersionProduct test is skipped.
+2025-07-04 15:56:59 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 15:57:41 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 15:57:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 15:57:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 15:58:06 INFO  LogUtils:10 - verifyChangeAfterSelectColorProduct test is starting...
+2025-07-04 15:58:06 WARN  LogUtils:22 - verifyChangeAfterSelectColorProduct test is skipped.
+2025-07-04 15:58:09 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:01:01 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:01:15 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 16:01:17 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 16:01:25 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:01:32 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is starting...
+2025-07-04 16:01:32 INFO  LogUtils:10 - Lưu trạng thái ban đầu 
+2025-07-04 16:01:37 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:01:37 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-04 16:01:40 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:01:40 INFO  LogUtils:10 - Lấy giá trị sau khi chọn phiên bản
+2025-07-04 16:01:41 INFO  LogUtils:10 - Kiểm tra giá trị sau khi chọn phiên bản
+2025-07-04 16:01:41 INFO  LogUtils:10 - Title sản pẩm: iPhone 16 Pro Max 256GB | Chính hãng VN/A
+2025-07-04 16:01:41 INFO  LogUtils:10 - Title sản phẩm: iPhone 16 Pro Max 1TB | Chính hãng VN/A
+2025-07-04 16:01:41 INFO  LogUtils:10 - verifyChangeAfterSelectVersionProduct test is passed.
+2025-07-04 16:01:44 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:03:13 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:03:28 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 16:03:33 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 16:03:42 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:03:54 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:03:54 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-04 16:03:56 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is starting...
+2025-07-04 16:03:56 WARN  LogUtils:22 - testCart_20_MinQuantityLimit test is skipped.
+2025-07-04 16:04:00 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:06:32 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:06:45 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 16:06:47 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 16:06:54 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:07:02 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:07:03 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-04 16:07:05 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:07:05 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 16:07:06 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Tự Nhiên
+42.990.000₫
+Titan Sa Mạc
+42.690.000₫
+Titan Trắng
+42.990.000₫
+Titan Đen
+42.990.000₫
+2025-07-04 16:07:06 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:07:07 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is starting...
+2025-07-04 16:07:07 INFO  LogUtils:10 - Giảm số lượng về 1 (nếu chưa phải 1)
+2025-07-04 16:07:11 INFO  LogUtils:10 - Click tiếp nút giảm để test ngưỡng dưới 1
+2025-07-04 16:07:12 INFO  LogUtils:10 - Số lượng hiện tại: 1
+2025-07-04 16:07:12 INFO  LogUtils:10 - Thông báo hiện tại: Số lượng sản phẩm đã giảm đến mức tối thiểu
+2025-07-04 16:07:12 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is passed.
+2025-07-04 16:07:15 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:09:06 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:09:19 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 16:09:22 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 16:09:29 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:09:39 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:09:39 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-04 16:09:41 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:09:42 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 16:09:42 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-07-04 16:09:42 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:09:43 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is starting...
+2025-07-04 16:09:43 INFO  LogUtils:10 - Giảm số lượng về 1 (nếu chưa phải 1)
+2025-07-04 16:09:50 INFO  LogUtils:10 - Click tiếp nút giảm để test ngưỡng dưới 1
+2025-07-04 16:09:50 INFO  LogUtils:10 - Số lượng hiện tại: 1
+2025-07-04 16:09:50 INFO  LogUtils:10 - Thông báo hiện tại: Số lượng sản phẩm đã giảm đến mức tối thiểu
+2025-07-04 16:09:50 INFO  LogUtils:10 - testCart_20_MinQuantityLimit test is passed.
+2025-07-04 16:09:54 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:10:59 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:11:13 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 16:11:15 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 16:11:24 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:11:33 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:11:34 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-04 16:11:36 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:11:36 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 16:11:37 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-07-04 16:11:37 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:11:37 INFO  LogUtils:10 - VerifyTitleCartPage test is starting...
+2025-07-04 16:11:37 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề trang
+2025-07-04 16:11:37 ERROR LogUtils:14 - VerifyTitleCartPage test is failed.
+2025-07-04 16:11:46 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:14:15 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:14:30 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-04 16:14:33 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-04 16:14:52 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:14:52 INFO  LogUtils:10 - Đã chọn phiên bản: 1TB
+2025-07-04 16:14:54 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:14:54 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 16:14:55 INFO  LogUtils:10 - Đã chọn màu sắc: Titan Đen
+42.990.000₫
+2025-07-04 16:14:55 INFO  LogUtils:10 - Chờ trang cập nhật lại
+2025-07-04 16:15:00 INFO  LogUtils:10 - verifyDisplayTabInfo test is starting...
+2025-07-04 16:15:00 INFO  LogUtils:10 - Kiểm tra sản phẩm chuyen sang trang Thông tin
+2025-07-04 16:15:01 INFO  LogUtils:10 - Kiểm tra hiển thị Card sản phâm
+2025-07-04 16:15:01 INFO  LogUtils:10 - Kiểm tra thông tin tự động điền
+2025-07-04 16:15:01 INFO  LogUtils:10 - Kiểm tra nhập Email mới
+2025-07-04 16:15:02 INFO  LogUtils:10 - Kiểm tra click checkbox nhận ưu đãi
+2025-07-04 16:15:02 INFO  LogUtils:10 - verifyDisplayTabInfo test is passed.
+2025-07-04 16:15:06 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:17:34 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:17:41 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is starting...
+2025-07-04 16:23:27 INFO  LogUtils:10 - verifySignInFailPhoneNumber test is passed.
+2025-07-04 16:23:30 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:25:17 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:25:23 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 16:25:33 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 16:25:35 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-07-04 16:25:38 INFO  LogUtils:10 - suggestBox test is starting...
+2025-07-04 16:25:38 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-07-04 16:25:39 INFO  LogUtils:10 - Kiểm tra mục Có phải bạn muốn tìm hiển thị
+2025-07-04 16:25:39 INFO  LogUtils:10 - Kiểm tra mục Sản phẩm gợi ý hiển thị
+2025-07-04 16:25:40 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Có phải bạn muốn tìm"
+2025-07-04 16:25:41 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Sản phẩm gợi ý"
+2025-07-04 16:25:44 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm
+2025-07-04 16:25:44 INFO  LogUtils:10 - Tiêu đề sản phẩm: iPhone 13 Chính hãng VN/A, giá rẻ nhất - Clickbuy
+2025-07-04 16:25:44 INFO  LogUtils:10 - suggestBox test is passed.
+2025-07-04 16:25:47 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:29:13 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:29:19 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 16:29:30 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 16:29:34 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone'
+2025-07-04 16:29:37 INFO  LogUtils:10 - suggestBox test is starting...
+2025-07-04 16:29:37 INFO  LogUtils:10 - Tìm kiếm với Iphone khi click icon Search
+2025-07-04 16:29:37 INFO  LogUtils:10 - Kiểm tra mục Có phải bạn muốn tìm hiển thị
+2025-07-04 16:29:38 INFO  LogUtils:10 - Kiểm tra mục Sản phẩm gợi ý hiển thị
+2025-07-04 16:29:38 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Có phải bạn muốn tìm"
+2025-07-04 16:29:40 INFO  LogUtils:10 - Kiểm tra click vào từ khoá trong mục "Sản phẩm gợi ý"
+2025-07-04 16:29:42 INFO  LogUtils:10 - Kiểm tra tiêu đề sản phẩm
+2025-07-04 16:29:42 INFO  LogUtils:10 - suggestBox test is passed.
+2025-07-04 16:29:46 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-04 16:31:06 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 16:31:17 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 16:31:21 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:31:24 INFO  LogUtils:10 - Chọn thành phố
+2025-07-04 16:31:25 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách địa chỉ
+2025-07-04 16:31:25 INFO  LogUtils:10 - Có địa chỉ tại Bắc Ninh
+2025-07-04 16:31:25 INFO  LogUtils:10 - SĐT: 0941.442.468
+2025-07-04 16:31:25 INFO  LogUtils:10 - Địa chỉ: Ngã 3 Đông Yên, Yên Phong, Bắc Ninh (Khu công nghiệp Yên Phong)
+2025-07-04 16:35:16 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-04 16:35:22 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-04 16:35:33 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-04 16:35:39 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-04 16:35:43 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-04 16:35:45 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-04 16:35:46 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-04 16:35:54 INFO  LogUtils:10 - verifyCheckoutPopup test is starting...
+2025-07-04 16:35:54 INFO  LogUtils:10 - Kiểm tra popup trang chi tiết sản phẩm
+2025-07-04 16:35:54 INFO  LogUtils:10 - Kiểm tra title của popup
+2025-07-04 16:35:54 INFO  LogUtils:10 - Kiểm tra tên sản phẩm
+2025-07-04 16:35:54 INFO  LogUtils:10 - Title popup: iPhone 16 Pro Max 512GB Chính Hãng VN/A
+2025-07-04 16:35:54 INFO  LogUtils:10 - Kiểm tra tên màu
+2025-07-04 16:35:54 INFO  LogUtils:10 - Kiểm tra giá theo màu sắc
+2025-07-04 16:35:54 INFO  LogUtils:10 - Kiểm tra tên màu trong mô tả sản phẩm
+2025-07-04 16:35:55 INFO  LogUtils:10 - Kiểm tra giá sản phẩm
+2025-07-04 16:35:55 INFO  LogUtils:10 - Kiểm tra bảo hành active bên ngoài và trong popup
+2025-07-04 16:35:55 INFO  LogUtils:10 - Kiểm tra tên bảo hành trong mô tả sản phẩm
+2025-07-04 16:35:55 INFO  LogUtils:10 - verifyCheckoutPopup test is passed.
+2025-07-04 16:35:58 INFO  LogUtils:10 - End testing Automation_Test

@@ -68,11 +68,13 @@ public class Search_Test_Cb extends BaseSetup {
         search_page_cb.isBoxCoPhaiBanMuonTimDisplayed();
         Assert.assertTrue(search_page_cb.isBoxCoPhaiBanMuonTimDisplayed(),
                 "Không hiển thị mục Có phải bạn muốn tìm");
+        test.get().pass("Hiển thị mục Có phải bạn muốn tìm");
 
         LogUtils.info("Kiểm tra mục Sản phẩm gợi ý hiển thị");
         search_page_cb.isBoxSanPhamGoiYDisplayed();
         Assert.assertTrue(search_page_cb.isBoxSanPhamGoiYDisplayed(),
                 "Không hiển thị mục Sản phẩm gợi ý");
+        test.get().pass("Hiển thị mục Sản phẩm gợi ý");
 
         LogUtils.info("Kiểm tra click vào từ khoá trong mục \"Có phải bạn muốn tìm\"");
         search_page_cb.clickLinkCoPhaiBanMuonTim();
@@ -88,6 +90,7 @@ public class Search_Test_Cb extends BaseSetup {
             }
         }
         Assert.assertTrue(found, "Không có sản phẩm nào chứa từ khoá 'iPhone 15' trong tiêu đề.");
+        test.get().pass("Tìm thấy sản phẩm chứa từ khoá 'iPhone 15' trong tiêu đề.");
 
         LogUtils.info("Kiểm tra click vào từ khoá trong mục \"Sản phẩm gợi ý\"");
         search_page_cb.clickInputSearch();
@@ -96,7 +99,7 @@ public class Search_Test_Cb extends BaseSetup {
 
         LogUtils.info("Kiểm tra tiêu đề sản phẩm");
         String title = driver.getTitle();
-        LogUtils.info("Tiêu đề sản phẩm: " + title);
+        test.get().info("Tiêu đề sản phẩm: " + title);
     }
 
     @Test (groups = "Function")

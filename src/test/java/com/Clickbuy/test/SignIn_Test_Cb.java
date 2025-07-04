@@ -121,7 +121,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
     }
 
-    @Test(groups = "Validate_SĐT", priority = 1, description = "Kiểm tra nhập số điện thoại hợp lệ")
+    @Test(groups = "Validate_SĐT", priority = 1, description = "Kiểm tra nhập số điện thoại không hợp lệ")
     public void verifySignInFailPhoneNumber() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "phonenumber");
@@ -146,7 +146,7 @@ public class SignIn_Test_Cb extends BaseSetup {
         }
     }
 
-    @Test(groups = "Validate_MK", priority = 2, description = "Kiểm tra nhập mật khẩu hợp lệ")
+    @Test(groups = "Validate_MK", priority = 2, description = "Kiểm tra nhập mật khẩu không hợp lệ")
     public void verifySignInFailPassword() throws Exception {
         signIn_page_cb.ClickButtonSignIn1();
         ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "password");

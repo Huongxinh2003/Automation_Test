@@ -57,9 +57,11 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By EvaluationSubmit = By.xpath("//button[@title='Gửi']");
     public static By ToastEvaluation = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
     public By ButtonBuyNow = By.xpath("//p[@class='add-to-cart']");
-    public By ColorNameAndPrice = By.xpath("//p[@class='flex active']/span[1]");
+    public By ColorName = By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]");
+    public By ColorPrice = By.xpath(".//span[@class='font-normal']");
     public By ProductPrice = By.cssSelector("div[class='col col-sm-5'] p[class='price']");
-    public By WarrantyActive = By.cssSelector("div.list-variant__item.list-item.active");
+    public By WarrantyActive = By.xpath("//p[@class='active']");
+
 
     public Product_Detail_Page_Cb(WebDriver driver) {
         super(driver);
@@ -254,12 +256,31 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         giftBox.click();
     }
 
-    public String getColorName(){
-        // Lấy phần tử chứa tên màu
-        WebElement colorNameElement = driver.findElement(ColorNameAndPrice);
-        String colorName = colorNameElement.getText().trim();
-        System.out.println("Tên màu: " + colorName);
+//    public String getColorName(){
+//        // Lấy phần tử chứa tên màu
+//        WebElement colorNameElement = driver.findElement(ColorNameAndPrice);
+//        String colorName = colorNameElement.getText().trim();
+//        System.out.println("Tên màu trang Product Detail: " + colorName);
+//        return colorName;
+//    }
+
+    public String getColorName() {
+        WebElement colorElement = driver.findElement(ColorName);
+        String colorName = colorElement.getAttribute("data-name").trim();
+        System.out.println("Tên màu trang Product Detail: " + colorName);
         return colorName;
+    }
+
+
+    public String getColorPrice() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement activeColor = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]")
+        ));
+        WebElement priceElement = activeColor.findElement(ColorPrice);
+        String colorPrice = priceElement.getText().trim();
+        System.out.println("Giá màu trong trang Product Detail: " + colorPrice);
+        return colorPrice;
     }
 
     public String getProductPrice() {
@@ -268,9 +289,17 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         return price;
     }
 
+//    String colorName = getColorName();
+//String colorPrice = getColorPrice();
+//
+//Assert.assertNotNull(colorName, "Tên màu không được null");
+//Assert.assertTrue(colorPrice.contains("₫"), "Giá không đúng định dạng");
+//
+//System.out.println("Màu: " + colorName + " | Giá: " + colorPrice);
+
     public String getActiveWarranty() {
         WebElement activeOutside = driver.findElement(WarrantyActive);
-        String titleOutside = activeOutside.getAttribute("title").trim();
+        String titleOutside = activeOutside.getAttribute("data-name").trim();
         System.out.println("Bảo hành active: " + titleOutside);
         return titleOutside;
     }

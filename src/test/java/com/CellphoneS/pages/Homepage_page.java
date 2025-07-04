@@ -13,7 +13,7 @@ public class Homepage_page extends ValidateUIHelper {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private final By searchInput = By.cssSelector("input[id='inp\\$earch']");
+    private final By searchInput = By.xpath("//input[@id='inp$earch']");
 
     public Homepage_page(WebDriver driver) {
         super(driver);

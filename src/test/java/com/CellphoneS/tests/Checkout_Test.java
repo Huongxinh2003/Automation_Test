@@ -79,7 +79,7 @@ public class Checkout_Test extends BaseSetup {
     @Test (groups= "Function_UI",priority = 1, description = "Kiểm tra hiển thị và các chức " +
             "năng trên trang checkout")
     public void verifyDisplayTabInfo() {
-        LogUtils.info("Kiểm tra sản phẩm chuyen sang trang Thông tin");
+        LogUtils.info("Kiểm tra sản phẩm chuyển sang trang Thông tin");
         String activeTab = checkout_page.getTabInfoActive();
         Assert.assertTrue(activeTab.contains("THÔNG TIN"), "Tab không phải 'THÔNG TIN'");
 

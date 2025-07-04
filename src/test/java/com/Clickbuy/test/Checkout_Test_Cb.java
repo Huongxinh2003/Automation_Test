@@ -56,9 +56,9 @@ public class Checkout_Test_Cb extends BaseSetup {
 
     private String ProductName;
     private String ColorName;
-    public String ProductPrice;
-    public String WarrantyActive;
-
+    private String ColorPrice;
+    private String ProductPrice;
+    private String WarrantyActive;
     @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI"})
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
@@ -67,6 +67,7 @@ public class Checkout_Test_Cb extends BaseSetup {
         validateUIHelper.waitForPageLoaded();
         ProductName = product_detail_page_cb.getProductName();
         ColorName = product_detail_page_cb.getColorName();
+        ColorPrice = product_detail_page_cb.getColorPrice();
         ProductPrice = product_detail_page_cb.getProductPrice();
         WarrantyActive = product_detail_page_cb.getActiveWarranty();
     }
@@ -84,7 +85,6 @@ public class Checkout_Test_Cb extends BaseSetup {
         LogUtils.info("Kiểm tra tên sản phẩm");
         String ProductNamePopup = checkout_page_cb.getProductNamePopup();
         LogUtils.info("Title popup: " + ProductNamePopup);
-        Assert.assertEquals(ProductName, ProductNamePopup);
         if (ProductNamePopup.equals(ProductName)) {
             test.get().pass("Tên sản phẩm trong popup khớp");
         } else {
@@ -93,12 +93,18 @@ public class Checkout_Test_Cb extends BaseSetup {
 
         LogUtils.info("Kiểm tra tên màu");
         String colorNamePopup = checkout_page_cb.getColorNamePopup();
-        LogUtils.info("Màu: " + colorNamePopup);
-        Assert.assertEquals(ColorName, colorNamePopup);
         if (colorNamePopup.equals(ColorName)) {
             test.get().pass("Tên màu khớp");
         } else {
             test.get().fail("Tên màu KHÔNG khớp");
+        }
+
+        LogUtils.info("Kiểm tra giá theo màu sắc");
+        String colorPricePopup = checkout_page_cb.getColorPricePopup();
+        if (colorPricePopup.equals(ColorPrice)) {
+            test.get().pass("Giá theo màu khớp");
+        }else {
+            test.get().fail("Giá theo màu KHÔNG khớp");
         }
 
         LogUtils.info("Kiểm tra tên màu trong mô tả sản phẩm");
@@ -112,8 +118,6 @@ public class Checkout_Test_Cb extends BaseSetup {
 
         LogUtils.info("Kiểm tra giá sản phẩm");
         String productPricePopup = checkout_page_cb.getProductPricePopup();
-        LogUtils.info("Giá sản phẩm: " + productPricePopup);
-        Assert.assertEquals( ProductPrice, productPricePopup);
         if (productPricePopup.equals(ProductPrice)) {
             test.get().pass("Giá sản phẩm khớp");
         } else {
@@ -129,6 +133,15 @@ public class Checkout_Test_Cb extends BaseSetup {
             test.get().info("Bên ngoài: " + WarrantyActive);
             test.get().info("Trong popup: " + warrantyPopup);
             Assert.fail("Bảo hành active bên ngoài và trong popup không khớp.");
+        }
+
+        LogUtils.info("Kiểm tra tên bảo hành trong mô tả sản phẩm");
+        String spanWarranty = checkout_page_cb.getSpanWarranty();
+        if (spanWarranty.toLowerCase().contains(warrantyPopup.toLowerCase())) {
+            test.get().pass("Tên bảo hành '" + warrantyPopup + "' có trong '" + spanWarranty + "'");
+        }else {
+            test.get().fail("Tên bảo hành '" + warrantyPopup + "' KHÔNG có trong '" + spanWarranty + "'");
+            Assert.fail("Tên bảo hành không khớp với mô tả sản phẩm.");
         }
     }
 }

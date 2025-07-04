@@ -156,7 +156,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
 
     public void selectColorProduct(String color) {
-        List<WebElement> colorOptions = driver.findElements(By.xpath("//a[@title='Titan Đen']"));
+        List<WebElement> colorOptions = driver.findElements(By.xpath("//ul[@class='list-variants']//a[contains(@class, 'button__change-color')]"));
         for (WebElement option : colorOptions) {
             String text = option.getText().replaceAll("\\s+", "").toLowerCase();
             if (text.contains(color.replaceAll("\\s+", "").toLowerCase())) {

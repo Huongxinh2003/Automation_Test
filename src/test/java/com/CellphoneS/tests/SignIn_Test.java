@@ -62,7 +62,7 @@ public class SignIn_Test extends BaseSetup{
 //        signIn_page.closePopupIfVisible();
     }
 
-    @Test(groups = {"SignIn_Success"}, priority = 1)
+    @Test(groups = {"SignIn_Success"}, priority = 1, description = "Kiểm tra đăng nhập thành công")
     public void login_cellphoneS_Success() throws Exception {
         signIn_page.SignIn();
         homepage_page = signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"),
@@ -83,7 +83,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Kiểm tra chuyển sang trang chủ thành công");
     }
 
-    @Test(groups = "Function", priority = 1)
+    @Test(groups = "Function", priority = 1, description = "Kiểm tra nhập sai SĐT")
     public void login_cellphoneS_17() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thất bại khi nhập SĐT sai");
@@ -106,7 +106,7 @@ public class SignIn_Test extends BaseSetup{
     }
 
 
-    @Test(groups = "Function", priority = 2)
+    @Test(groups = "Function", priority = 2, description = "Kiểm tra nhập sai mật khẩu")
     public void login_cellphoneS_18() throws Exception {
         LogUtils.info("Đăng nhập thất bại khi nhập Mât khẩu sai");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
@@ -125,7 +125,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Kiểm tra đăng nhập thất bại khi nhập Mật khẩu sai thành công");
     }
 
-    @Test(groups = "Function", priority = 3)
+    @Test(groups = "Function", priority = 3, description = "Kiểm tra bỏ trống số điện thoại và mật khẩu")
     public void login_cellphoneS_19() throws Exception {
         LogUtils.info("Bỏ trống SĐT và Mật khẩu");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
@@ -147,7 +147,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Kiểm tra bỏ trống SĐT và MK thành công");
     }
 
-    @Test(groups = "Function", priority = 4)
+    @Test(groups = "Function", priority = 4, description = "Kiểm tra bỏ trống mật khẩu")
     public void login_cellphoneS_20_46() throws Exception {
         LogUtils.info("Bỏ trống Mật khẩu");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
@@ -164,7 +164,7 @@ public class SignIn_Test extends BaseSetup{
 
     }
 
-    @Test(groups = "Function", priority = 5)
+    @Test(groups = "Function", priority = 5, description = "Kiểm tra bỏ trống SĐT")
     public void login_cellphoneS_21() throws Exception {
         LogUtils.info("Bỏ trống SĐT");
         excelHelper.setExcelFile("src/test/resources/SignIn.xlsx", "login");
@@ -181,7 +181,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Kiểm tra bỏ trống SĐT thành công");
     }
 
-    @Test(groups = "Function", priority = 6)
+    @Test(groups = "Function", priority = 6, description = "Kiểm tra đăng nhập khi mất kết nối mạng")
     public void login_cellphoneS_24() throws Exception {
         LogUtils.info("Đăng nhập thất bại khi mất mạng");
         signIn_page.SignIn();
@@ -229,7 +229,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Kiểm tra đăng nhập qua kết nối mạng thành công");
     }
 
-    @Test(groups = "Validate_SĐT", priority = 1)
+    @Test(groups = "Validate_SĐT", priority = 1, description = "Kiểm tra các trường hợp nhập sai SĐT")
     public void login_cellphoneS_25() throws Exception {
         LogUtils.info("Đăng nhập thất bại _ Validate SĐT");
         signIn_page.SignIn();
@@ -254,7 +254,7 @@ public class SignIn_Test extends BaseSetup{
         }
     }
 
-    @Test(groups = "Validate_MK", priority = 1)
+    @Test(groups = "Validate_MK", priority = 1, description = "Kiểm tra các trường hợp nhập sai Mật khẩu")
     public void login_cellphoneS_66() throws Exception {
         LogUtils.info("Đăng nhập thất bại _ Validate Mật khẩu");
         signIn_page.SignIn();
@@ -280,7 +280,7 @@ public class SignIn_Test extends BaseSetup{
         }
     }
 
-    @Test(groups = "Validate_MK", priority = 2)
+    @Test(groups = "Validate_MK", priority = 2, description = "Kiểm tra mã hoá Mật khẩu")
     public void login_cellphoneS_62() throws Exception {
         LogUtils.info("Mã hoá mật khẩu");
         signIn_page.SignIn();
@@ -296,7 +296,7 @@ public class SignIn_Test extends BaseSetup{
         }
     }
 
-    @Test(groups = "Validate_MK", priority = 3)
+    @Test(groups = "Validate_MK", priority = 3, description = "Kiểm tra paste dữ liệu vào trường SĐT")
     public void login_cellphoneS_48() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thành công _ Paste SĐT");
@@ -324,7 +324,7 @@ public class SignIn_Test extends BaseSetup{
         }
     }
 
-    @Test(groups = "Validate_SĐT", priority = 2)
+    @Test(groups = "Validate_SĐT", priority = 2, description = "Kiểm tra paste dữ liệu vào trường mật khẩu")
     public void login_cellphoneS_43() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thành công _ Paste Mật khẩu");
@@ -352,7 +352,7 @@ public class SignIn_Test extends BaseSetup{
         }
     }
 
-    @Test(groups = "Link", priority = 1)
+    @Test(groups = "Link", priority = 1, description = "Kiểm tra chuyển sang trang đăng nhập bằng Google")
     public void login_cellphoneS_67() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thành công _ Google");
@@ -363,7 +363,7 @@ public class SignIn_Test extends BaseSetup{
 
     }
 
-    @Test(groups = "Link", priority = 2)
+    @Test(groups = "Link", priority = 2, description = "Kiểm tra chuyển sang trang đăng nhập bằng zalo")
     public void login_cellphoneS_68() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thành công _ Zalo");
@@ -375,7 +375,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Đã chuyển đúng sang trang đăng nhập Zalo OAuth");
     }
 
-    @Test(groups = "Link", priority = 3)
+    @Test(groups = "Link", priority = 3, description = "Kiểm tra chuyển sang trang quên mật khẩu")
     public void login_cellphoneS_70() throws Exception {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
@@ -385,11 +385,11 @@ public class SignIn_Test extends BaseSetup{
         LogUtils.info("LinkQuen mat khau");
         signIn_page.ClickLinkForgotPassword();
         String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("https://smember.com.vn/restore-password"), "Không chuyển sang trang quen mat khau!");
+        assertTrue(currentUrl.contains("https://smember.com.vn/restore-password"), "Không chuyển sang trang quên mật khẩu!");
         test.get().pass("Đã chuyển đúng sang trang Quen mat khau");
     }
 
-    @Test(groups = "Link", priority = 4)
+    @Test(groups = "Link", priority = 4, description = "Kiểm tra chuyển sang trang Đăng ký")
     public void login_cellphoneS_71() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Link Đăng ký");
@@ -399,7 +399,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Đã chuyển đúng sang trang Đăng ký");
     }
 
-    @Test(groups = "Link", priority = 5)
+    @Test(groups = "Link", priority = 5, description = "Kiểm tra chuyển sang trang cellphoneS")
     public void login_cellphoneS_72() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Link CellphoneS");
@@ -411,7 +411,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Đã chuyển đúng sang trang cellphoneS");
     }
 
-    @Test(groups = "Link", priority = 6)
+    @Test(groups = "Link", priority = 6, description = "Kiểm tra chuyển sang trang dienthoaivui")
     public void login_cellphoneS_73() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Kiểm tra Link DienThoaiVui");
@@ -422,7 +422,7 @@ public class SignIn_Test extends BaseSetup{
         test.get().pass("Đã chuyển đúng sang trang dienthoaivui");
     }
 
-    @Test(groups = "Validate_MK", priority = 4)
+    @Test(groups = "Validate_MK", priority = 4, description = "Kiểm tra click con mắt")
     public void login_cellphoneS_74() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Con mắt ẩn và hiện Mật khẩu");
@@ -458,7 +458,7 @@ public class SignIn_Test extends BaseSetup{
         }
     }
 
-    @Test(groups = "Link", priority = 7)
+    @Test(groups = "Link", priority = 7, description = "Kiểm tra chuyển sang trang chính sách ưu đãi")
     public void login_cellphoneS_75() throws Exception {
         signIn_page.SignIn();
         LogUtils.info("Link Chính sách ưu đãi");

@@ -19,10 +19,12 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
     public By PopupModal = By.xpath("//div[@id='popup-modal']");
     public By TitlePopupModal = By.xpath("//h2[contains(text(),'Đặt hàng sản phẩm')]");
     public By ProductName = By.xpath("//div[@class='jquery-modal blocker current']//h1[1]");
-    public By ColorNameAndPrice = By.xpath("//div[@class='col col-sm-7']//p[@class='flex active']");
+    public By ColorName= By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]");
+    public By ColorPrice = By.xpath("(//span[contains(text(),'₫')])[8]");
     public By SpanColor = By.xpath("//span[@class='product-name-variant']");
+    public By SpanWarranty = By.cssSelector("span.product-name-variant");
     public By ProductPrice = By.cssSelector("div[class='col col-sm-5'] p[class='price']");
-    public By WarrantyActive = By.cssSelector("div.list-variant__item.list-item.active");
+    public By WarrantyActive = By.xpath("//div[@class='list-variant__item list-item active']//p[@class='active']");
 
     public Checkout_Page_Cb(WebDriver driver) {
         super(driver);
@@ -45,19 +47,38 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
         return validateUIHelper.getText(TitlePopupModal);
     }
 
-    public String getColorNamePopup(){
-        // Lấy phần tử chứa tên màu
-        WebElement colorNameElement = driver.findElement(ColorNameAndPrice);
-        String colorName = colorNameElement.getText().trim();
-        System.out.println("Tên màu: " + colorName);
+    public String getColorNamePopup() {
+        WebElement colorElement = driver.findElement(ColorName);
+        String colorName = colorElement.getAttribute("data-name").trim();
+        System.out.println("Tên màu trong Popup Checkout: " + colorName);
         return colorName;
     }
+
+    public String getColorPricePopup() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement activeColor = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]")
+        ));
+        WebElement priceElement = activeColor.findElement(ColorPrice);
+        String colorPrice = priceElement.getText().trim();
+        System.out.println("Giá màu trong popup Checkout: " + colorPrice);
+        return colorPrice;
+    }
+
 
     public String getSpanColor() {
         String SpanText = driver.findElement(SpanColor)
                 .getText()
                 .trim();
         System.out.println("Text từ Span color: " + SpanText);
+        return SpanText;
+    }
+
+    public String getSpanWarranty() {
+        String SpanText = driver.findElement(SpanWarranty)
+                .getText()
+                .trim();
+        System.out.println("Text từ Span warranty: " + SpanText);
         return SpanText;
     }
 
@@ -79,7 +100,7 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
 
     public String getActiveWarrantyPopup() {
         WebElement activeInPopup = driver.findElement(WarrantyActive);
-        String titlePopup = activeInPopup.getAttribute("title").trim();
+        String titlePopup = activeInPopup.getAttribute("data-name").trim();
         System.out.println("Bảo hành active: " + titlePopup);
         return titlePopup;
     }
