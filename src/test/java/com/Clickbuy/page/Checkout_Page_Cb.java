@@ -25,6 +25,11 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
     public By SpanWarranty = By.cssSelector("span.product-name-variant");
     public By ProductPrice = By.cssSelector("div[class='col col-sm-5'] p[class='price']");
     public By WarrantyActive = By.xpath("//div[@class='list-variant__item list-item active']//p[@class='active']");
+    public By InputName = By.xpath("//input[@placeholder='Họ tên người nhận']");
+    public By InputPhone = By.xpath("//input[@placeholder='Số điện thoại người nhận']");
+    public By InputEmail = By.xpath("//input[@placeholder='Email']");
+    public By ButtonBuy = By.xpath("//button[@id='btnSubInstallmentForm']");
+    public By ToastSuccess = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-error']");
 
     public Checkout_Page_Cb(WebDriver driver) {
         super(driver);
@@ -34,12 +39,12 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
         validateUIHelper = new ValidateUIHelper(driver);
     }
 
+
     public boolean isPopupModalDisplayed() {
         return validateUIHelper.isElementDisplayed(PopupModal);
     }
 
     public boolean isTitlePopupModalDisplayed() {
-
         return validateUIHelper.isElementDisplayed(TitlePopupModal);
     }
 
@@ -56,8 +61,8 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
 
     public String getColorPricePopup() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement activeColor = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]")
+        WebElement activeColor = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("div.list-variant__item.active")
         ));
         WebElement priceElement = activeColor.findElement(ColorPrice);
         String colorPrice = priceElement.getText().trim();
@@ -105,5 +110,49 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
         return titlePopup;
     }
 
+    public void inputName(String name) {
+        WebElement inputName = wait.until(ExpectedConditions.visibilityOfElementLocated(InputName));
+        inputName.clear();
+        sendKeys(InputName, name);
+    }
 
+    public void inputPhone(String phone) {
+        WebElement inputPhone = wait.until(ExpectedConditions.visibilityOfElementLocated(InputPhone));
+        inputPhone.clear();
+        sendKeys(InputPhone, phone);
+    }
+
+    public void inputEmail(String email) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(InputEmail));
+        sendKeys(InputEmail, email);
+    }
+
+    public void clickButtonBuy() {
+        WebElement ButtonBuyNow = wait.until(ExpectedConditions.elementToBeClickable(ButtonBuy));
+        (js).executeScript("arguments[0].scrollIntoView(true);", ButtonBuyNow);
+        clickElement(ButtonBuy);
+    }
+
+    public WebElement getInputNameElement() {
+        return driver.findElement(InputName);
+    }
+
+    public WebElement getInputPhoneElement() {
+        return driver.findElement(InputPhone);
+    }
+
+    public WebElement getInputEmailElement() {
+        return driver.findElement(InputEmail);
+    }
+
+    public String getFailToast() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.className("jq-toast-single")));
+        // Cách 1: Dùng JavaScript để lấy đúng phần text sau dấu "×" và "Lỗi"
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String errorMessage = (String) js.executeScript(
+                "return arguments[0].childNodes[3].nodeValue.trim();", toastElement);
+        return errorMessage;
+    }
 }

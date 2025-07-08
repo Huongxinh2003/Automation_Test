@@ -21,8 +21,7 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     public By popupSignIn = By.xpath("//div[@id='popup-modal']");
     public By InputPhoneNumber = By.xpath("//input[@placeholder='Nhập số điện thoại/email *']");
     public By InputPassword = By.xpath("//form[@id='loginForm']//input[@placeholder='Nhập mật khẩu *']");
-    public By SuccessToast= By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
-    public By FailToast = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-error']");
+    public By ToastMessage = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
     public By BtnSignIn = By.xpath("//input[@id='loginHandler']");
     public By Logo = By.xpath("//form[@id='loginForm']//img[@alt='logo clickbuy']");
     public By TitleSignIn = By.xpath("//form[@id='loginForm']//div[1]");
@@ -110,13 +109,8 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
         return errorMessage;
     }
 
-    public String getSuccessToast() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(SuccessToast));
-        return getText(SuccessToast);
-    }
-
     public void verifySuccessToast() {
-        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(SuccessToast));
+        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ToastMessage));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String errorMessage = (String) js.executeScript(
                 "return arguments[0].childNodes[3].nodeValue.trim();", toastElement);

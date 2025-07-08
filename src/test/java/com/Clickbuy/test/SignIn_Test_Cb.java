@@ -7,6 +7,7 @@ import com.helpers.ValidateUIHelper;
 import com.ultilities.ExcelUtils;
 import com.ultilities.Properties_File;
 import com.ultilities.listeners.ReportListener;
+import com.ultilities.logs.LogUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -58,67 +59,89 @@ public class SignIn_Test_Cb extends BaseSetup {
     @Test (groups = "SignIn_Success")
     public void verifySignInSuccess() {
         signIn_page_cb.ClickButtonSignIn1();
-        test.get().info("Nhâp thông tin đăng nhập");
+        LogUtils.info("Nhâp thông tin đăng nhập");
         homepage_page = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"),
                 Properties_File.getPropValue("password2"));
 
-        test.get().info("Kiểm tra hiển thị thông báo khi đăng nhập thành công");
+        LogUtils.info("Kiểm tra hiển thị thông báo khi đăng nhập thành công");
         signIn_page_cb.verifySuccessToast();
+        test.get().pass("Thông báo đăng nhập thành công hiển thị đúng");
     }
 
     @Test (groups = "Function", priority = 1, description = "Kiểm tra thông báo khi bỏ trống trường password")
-    public void enterNoPassword() throws Exception {
-        signIn_page_cb.ClickButtonSignIn1();
-        test.get().info("Nhâp thông tin đăng nhập");
-        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
-        test.get().info("Bỏ trống trường password");
-        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 1),
-                ExcelHelper.getCellData("password", 1));
+    public void enterNoPassword() {
+        try {
+            signIn_page_cb.ClickButtonSignIn1();
+            LogUtils.info("Nhâp thông tin đăng nhập");
+            ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+            test.get().info("Bỏ trống trường password");
+            signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 1),
+                    ExcelHelper.getCellData("password", 1));
 
-        test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "Mật khẩu không được bỏ trống!";
-        String actualError = signIn_page_cb.getFailToast();
-        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+            LogUtils.info("Kiểm tra hiển thị thông báo lỗi");
+            String expectedError = "Mật khẩu không được bỏ trống!";
+            String actualError = signIn_page_cb.getFailToast();
+            Assert.assertEquals(actualError, expectedError);
+            test.get().pass("Thông báo lỗi hiển thị đúng");
+        }catch (Exception e) {
+            test.get().fail("Thông báo lỗi hiển thị không đúng");
+        }
+
     }
 
     @Test (groups = "Function", priority = 1, description = "Kiểm tra thông báo khi bỏ trống trường phoneNumber")
-    public void enterNoPhoneNumber() throws Exception {
-        signIn_page_cb.ClickButtonSignIn1();
-        test.get().info("Nhâp thông tin đăng nhập");
-        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
-        test.get().info("Bỏ trống trường phoneNumber");
-        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 2),
-                ExcelHelper.getCellData("password", 2));
-        test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "Số điện thoại không được bỏ trống!";
-        String actualError = signIn_page_cb.getFailToast();
-        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    public void enterNoPhoneNumber() {
+        try {
+            signIn_page_cb.ClickButtonSignIn1();
+            LogUtils.info("Nhâp thông tin đăng nhập");
+            ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+            LogUtils.info("Bỏ trống trường phoneNumber");
+            signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 2),
+                    ExcelHelper.getCellData("password", 2));
+            LogUtils.info("Kiểm tra hiển thị thông báo lỗi");
+            String expectedError = "Số điện thoại không được bỏ trống!";
+            String actualError = signIn_page_cb.getFailToast();
+            Assert.assertEquals(actualError, expectedError);
+            test.get().pass("Thống báo lỗi hiển thị đúng");
+        }catch (Exception e) {
+            test.get().fail("Thống báo lỗi hiển thị không đúng");
+        }
     }
 
     @Test (groups = "Function", priority = 3, description = "Kiểm tra thông báo khi bỏ trống cả trường phoneNumber và password")
-    public void enterNoData() throws Exception {
-        signIn_page_cb.ClickButtonSignIn1();
-        test.get().info("Nhâp thông tin đăng nhập");
-        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
-        test.get().info("Bỏ trống trường phoneNumber và password");
-        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 3), ExcelHelper.getCellData("password", 3));
-        test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "Bạn chưa nhập thông tin đăng nhập!";
-        String actualError = signIn_page_cb.getFailToast();
-        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    public void enterNoData() {
+        try {
+            signIn_page_cb.ClickButtonSignIn1();
+            LogUtils.info("Nhâp thông tin đăng nhập");
+            ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+            LogUtils.info("Bỏ trống trường phoneNumber và password");
+            signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 3), ExcelHelper.getCellData("password", 3));
+            LogUtils.info("Kiểm tra hiển thị thông báo lỗi");
+            String expectedError = "Bạn chưa nhập thông tin đăng nhập!";
+            String actualError = signIn_page_cb.getFailToast();
+            Assert.assertEquals(actualError, expectedError);
+            test.get().pass("Thông báo lỗi hiển thị đúng");
+        }catch (Exception e) {
+            test.get().fail("Thông báo lỗi hiển thị không đúng");
+        }
     }
 
     @Test (groups = "Function", priority = 4, description = "Kiểm tra thông báo khi nhập thông tin không tồn tại")
-    public void enterDataNoExists() throws Exception {
-        signIn_page_cb.ClickButtonSignIn1();
-        test.get().info("Nhâp thông tin đăng nhập");
-        ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
-        test.get().info("Nhập thông tin không tồn tại");
-        signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 4), ExcelHelper.getCellData("password", 4));
-        test.get().info("Kiểm tra hiển thị thông báo lỗi");
-        String expectedError = "Số điện thoại hoặc mật khẩu không đúng!";
-        String actualError = signIn_page_cb.getFailToast();
-        Assert.assertEquals(actualError, expectedError, "Thông báo lỗi hiển thị không đúng");
+    public void enterDataNoExists() {
+        try{
+            signIn_page_cb.ClickButtonSignIn1();
+            LogUtils.info("Nhâp thông tin đăng nhập");
+            ExcelHelper.setExcelFile("src/test/resources/SignIn_clickbuy.xlsx", "signin_SC");
+            LogUtils.info("Nhập thông tin không tồn tại");
+            signIn_page_cb.InputSignIn(ExcelHelper.getCellData("phonenumber", 4), ExcelHelper.getCellData("password", 4));
+            LogUtils.info("Kiểm tra hiển thị thông báo lỗi");
+            String expectedError = "Số điện thoại hoặc mật khẩu không đúng!";
+            String actualError = signIn_page_cb.getFailToast();
+            Assert.assertEquals(actualError, expectedError);
+            test.get().pass("Thông báo lỗi hiển thị đúng");
+        }catch (Exception e) {
+            test.get().fail("Thông báo lỗi hiển thị không đúng");
+        }
     }
 
     @Test(groups = "Validate_SĐT", priority = 1, description = "Kiểm tra nhập số điện thoại không hợp lệ")
@@ -173,32 +196,35 @@ public class SignIn_Test_Cb extends BaseSetup {
     @Test (groups = "UI_Test", description = "Kiểm tra UI của popup đăng nhập")
     public void verifyPopupSignIn() {
         signIn_page_cb.ClickButtonSignIn1();
-        test.get().info("Kiểm tra tiêu đề trang");
+        LogUtils.info("Kiểm tra tiêu đề trang");
         signIn_page_cb.verifyCartPageTitle();
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        test.get().info("Kiểm tra popup đăng nhập hiển thị");
+        LogUtils.info("Kiểm tra popup đăng nhập hiển thị");
         signIn_page_cb.isPopupSignInDisplayed();
         Assert.assertTrue(signIn_page_cb.isPopupSignInDisplayed(), "Popup đăng nhập không hiển thị");
+        test.get().pass("Popup đăng nhập hiển thị");
 
-        test.get().info("Kiểm tra hiển thị logo ClickBuy");
+        LogUtils.info("Kiểm tra hiển thị logo ClickBuy");
         Assert.assertTrue(signIn_page_cb.isLogoDisplayed(), "Không hiển thị logo ClickBuy");
+        test.get().pass("Hiển thị logo ClickBuy");
 
-        test.get().info("Kiểm tra hiển thị Title đăng nhập");
+        LogUtils.info("Kiểm tra hiển thị Title đăng nhập");
         Assert.assertTrue(signIn_page_cb.isTitleSignInDisplayed(), "Không hiển thị Title đăng nhập");
+        test.get().pass("Hiển thị Title đăng nhập");
 
-        test.get().info("Nhâp thông tin đăng nhập");
+        LogUtils.info("Nhâp thông tin đăng nhập");
         signIn_page_cb.InputSignIn1(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));
         String expectedPhoneNumber = "0332019523";
         String expectedPassword = "Huong2003";
         if(signIn_page_cb.getInputPhoneNumber().equals(expectedPhoneNumber) && signIn_page_cb.getInputPassword().equals(expectedPassword)) {
-            test.get().info("Thông tin đăng nhập đúng");
+            test.get().pass("Thông tin đăng nhập đúng");
         }else {
-            test.get().info("Nhâp thông tin đăng nhập");
+            test.get().fail("Nhâp thông tin đăng nhập");
             signIn_page_cb.SignInNotClick(expectedPhoneNumber, expectedPassword);
         }
 
-        test.get().info("Kiểm tra hiển thị của các liên kết đăng nhập");
+        LogUtils.info("Kiểm tra hiển thị của các liên kết đăng nhập");
         if(signIn_page_cb.isLoginWithGoogleDisplayed()) {
             test.get().pass("Hiển thị liên kết đăng nhập với google");
         }else {
@@ -211,13 +237,14 @@ public class SignIn_Test_Cb extends BaseSetup {
             test.get().fail("Không hiển thị liên kết đăng nhập với zalo");
         }
 
-        test.get().info("Kiểm tra hiển thị text gợi ý đăng ký");
+        LogUtils.info("Kiểm tra hiển thị text gợi ý đăng ký");
         signIn_page_cb.isTextSuggestSignUpDisplayed();
         Assert.assertTrue(signIn_page_cb.isTextSuggestSignUpDisplayed(), "Text gợi ý đăng ký không hiển thị");
 
-        test.get().info("Kiểm tra link Đăng ký");
+        LogUtils.info("Kiểm tra link Đăng ký");
         if (signIn_page_cb.isLinkSignUpDisplayed()) {
             signIn_page_cb.ClickLinkSignUp();
+            test.get().pass("Chuyển trang đăng ký");
         }else {
             test.get().fail("Link Đăng ký không hiển thị");
         }
@@ -229,14 +256,14 @@ public class SignIn_Test_Cb extends BaseSetup {
     public void LinkSignInWithSocial() {
         signIn_page_cb.ClickButtonSignIn1();
 
-        test.get().info("Kiểm tra click đăng nhập bằng Google");
+        LogUtils.info("Kiểm tra click đăng nhập bằng Google");
         if (signIn_page_cb.ClickLoginWithGoogle()) {
             test.get().pass("Click đăng nhập bằng Google hợp lệ");
         } else {
             test.get().fail("Click đăng nhập bằng Google không hợp lệ");
         }
 
-        test.get().info("Kiểm tra URL liên kết Google");
+        LogUtils.info("Kiểm tra URL liên kết Google");
         String currentUrl = driver.getCurrentUrl();
         if (currentUrl.equals("https://accounts.google.com/v3/signin/")) {
             test.get().pass("URL liên kết Google hợp lệ");
@@ -244,13 +271,13 @@ public class SignIn_Test_Cb extends BaseSetup {
             test.get().fail("URL liên kết Google không hợp lệ");
         }
 
-        test.get().info("Kiểm tra click đăng nhập bằng Zalo");
+        LogUtils.info("Kiểm tra click đăng nhập bằng Zalo");
         if (signIn_page_cb.ClickLoginWithZalo()) {
             test.get().pass("Click đăng nhập bằng Zalo hợp lệ");
         } else {
             test.get().fail("Click đăng nhập bằng Zalo không hợp lệ");
         }
-        test.get().info("Kiểm tra URL liên kết Zalo");
+        LogUtils.info("Kiểm tra URL liên kết Zalo");
         String currentUrl2 = driver.getCurrentUrl();
         if (currentUrl2.equals("https://oauth.zaloapp.com/oauth2/authorize")) {
             test.get().pass("URL liên kết Zalo hợp lệ");

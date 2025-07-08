@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Search">
-    <test name="Function">
+<suite name="Clickbuy">
+    <test name="SignIn_CB">
         <groups>
             <run>
                 <include name="Function"/>

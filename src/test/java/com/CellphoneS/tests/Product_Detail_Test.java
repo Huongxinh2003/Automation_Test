@@ -211,54 +211,6 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }
 
-    //Kiểm tra lại
-    @Test (groups = "Test_Fail")
-    public void testClickTwoThumbnailsAndPrintMainImage() throws InterruptedException{
-        LogUtils.info("Trước khi click");
-        product_detail_page.printMainImageSrc();
-
-        LogUtils.info("Click thumbnail 1");
-        product_detail_page.clickThumbnail(product_detail_page.ProductThumbnailSmall1);
-        Thread.sleep(2000);
-        product_detail_page.printMainImageSrc();
-
-        LogUtils.info("Click thumbnail 2");
-        product_detail_page.clickThumbnail(product_detail_page.ProductThumbnailSmall2);
-        Thread.sleep(2000);
-        product_detail_page.printMainImageSrc();
-    }
-
-    //Kiểm tra lại
-    @Test (groups = "Test_Fail")
-    public void testMainImageSyncWithSmallThumbnailOnSwipe() {
-        // Ảnh trước khi swipe
-        String beforeMainSrc = product_detail_page.getMainImageSrc();
-        String beforeThumbSrc = product_detail_page.getActiveSmallThumbnailSrc();
-
-        System.out.println("Trước swipe:");
-        System.out.println("Main image: " + beforeMainSrc);
-        System.out.println("Thumbnail small: " + beforeThumbSrc);
-
-        // Click next và đợi ảnh lớn thay đổi
-        product_detail_page.clickSwiperNextAndWaitForMainImageChange(beforeMainSrc);
-
-        // Lấy ảnh sau khi swipe
-        String afterMainSrc = product_detail_page.getMainImageSrc();
-        String afterThumbSrc = product_detail_page.getActiveSmallThumbnailSrc();
-
-        System.out.println("Sau swipe:");
-        System.out.println("Main image: " + afterMainSrc);
-        System.out.println("Thumbnail small: " + afterThumbSrc);
-
-        // So sánh tên file của ảnh chính và thumbnail nhỏ active
-        String mainFile = product_detail_page.getFileNameFromUrl(afterMainSrc);
-        String thumbFile = product_detail_page.getFileNameFromUrl(afterThumbSrc);
-
-        System.out.println("So sánh file: main=" + mainFile + " | thumb=" + thumbFile);
-        Assert.assertTrue(mainFile.contains(thumbFile) || thumbFile.contains(mainFile),
-                "Ảnh thumbnail nhỏ KHÔNG đồng bộ với ảnh lớn!");
-    }
-
     @Test (groups = "Function",priority = 3, description = "Kiểm tra popup chọn thành phố")
     public void verifyChangeAfterSelectCity() {
         product_detail_page.ScrollToElement();

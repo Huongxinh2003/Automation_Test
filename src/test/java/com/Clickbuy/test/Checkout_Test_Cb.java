@@ -13,6 +13,7 @@ import com.ultilities.listeners.ReportListener;
 import com.ultilities.logs.LogUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,16 +61,20 @@ public class Checkout_Test_Cb extends BaseSetup {
     private String ProductPrice;
     private String WarrantyActive;
     @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI"})
-    public void SearchProduct1() {
+    public void SearchProduct1() throws InterruptedException {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page_cb = search_page_cb.openProductDetail("iphone");
-        checkout_page_cb = product_detail_page_cb.openCheckoutPage();
+        product_detail_page_cb.selectProductOptions();
         validateUIHelper.waitForPageLoaded();
+
         ProductName = product_detail_page_cb.getProductName();
         ColorName = product_detail_page_cb.getColorName();
         ColorPrice = product_detail_page_cb.getColorPrice();
         ProductPrice = product_detail_page_cb.getProductPrice();
         WarrantyActive = product_detail_page_cb.getActiveWarranty();
+
+        checkout_page_cb = product_detail_page_cb.clickBuyNowToOpenPopup();
+
     }
 
     @Test(groups = "UI_Test", description = "Kiểm tra thông tin của trang chi tiết sản phẩm")
@@ -144,4 +149,49 @@ public class Checkout_Test_Cb extends BaseSetup {
             Assert.fail("Tên bảo hành không khớp với mô tả sản phẩm.");
         }
     }
+
+    @Test(groups = "Function", description = "Kiểm tra bỏ trống nhập các thông tin")
+    public void verifyCheckoutForm() {
+        try {
+            LogUtils.info(" Bỏ trống các trường thông tin trong popup");
+            checkout_page_cb.inputName("");
+            test.get().pass("Bỏ trống tên");
+
+            checkout_page_cb.inputPhone("");
+            test.get().pass("Bỏ trống sđt");
+
+            checkout_page_cb.inputEmail("");
+            test.get().pass("Bỏ trống email");
+
+            LogUtils.info("Kiểm tra nút đặt hàng");
+            checkout_page_cb.clickButtonBuy();
+            test.get().pass("Click nút đặt hàng thành công");
+
+            LogUtils.info("Kiểm tra bị highlight đỏ");
+            WebElement nameField = checkout_page_cb.getInputNameElement();
+            WebElement phoneField = checkout_page_cb.getInputPhoneElement();
+            WebElement emailField = checkout_page_cb.getInputEmailElement();
+
+            Assert.assertTrue("Tên KHÔNG bị highlight đỏ",
+                    nameField.getAttribute("class").contains("input-error"));
+            test.get().pass("Ô nhập tên bị highlight đỏ khi để trống");
+
+            Assert.assertTrue("SĐT KHÔNG bị highlight đỏ",
+                    phoneField.getAttribute("class").contains("input-error"));
+            test.get().pass("Ô nhập SĐT bị highlight đỏ khi để trống");
+
+            Assert.assertTrue("Email KHÔNG bị highlight đỏ",
+                    emailField.getAttribute("class").contains("input-error"));
+            test.get().pass("Ô nhập email bị highlight đỏ khi để trống");
+
+            LogUtils.info("Kiểm tra thống báo lỗi");
+            String expectedError = "Vui lòng không bỏ trống thông tin!";
+            String actualError = checkout_page_cb.getFailToast();
+            Assert.assertEquals(actualError, expectedError);
+            test.get().pass("Thông báo lỗi hiển thị đúng");
+        }catch (Exception e) {
+            test.get().fail("Thông báo lỗi hiển thị không đúng");
+        }
+    }
+
 }

@@ -17,9 +17,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
     private static JavascriptExecutor js;
     private static ValidateUIHelper validateUIHelper;
 
-
-    //public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
-    public By ClosepopupSupport = By.xpath("//span[@class='close-popup']");
     public By TitleProduct = By.xpath("//div[@class='box-product-name']");
     public By FavoriteProduct = By.xpath("//div[@class='box-bottom-item']//div[@id='wishListBtn']");
     public By BoxRating = By.xpath("//div[@class='box-rating']");
@@ -34,7 +31,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By MainThumbnail = By.xpath("//div[contains(@class, 'gallery-slide') and contains(@class, 'gallery-top')]//div[contains(@class,'swiper-slide-active')]//img");
     public By SliderThumbnail =  By.xpath("//div[contains(@class,'gallery-thumbs')]//div[contains(@class,'swiper-slide-thumb-active') and not(contains(@class,'ksp-thumbs'))]//img");
     public By swiperThumbnailNext = By.xpath("//div[@class='swiper-button-next button__view-gallery-next']//div[@class='icon']");
-    public By swiperThumbnailPrev = By.xpath("//div[@class='swiper-button-prev button__view-gallery-prev']");
     public By ProductThumbnailSmall1 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-3.png2 - thumb']");
     public By ProductThumbnailSmall2 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-4.png3 - thumb']");
     public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");

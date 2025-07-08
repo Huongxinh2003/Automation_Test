@@ -23,31 +23,23 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     private JavascriptExecutor js;
     private ValidateUIHelper validateUIHelper;
 
-    public By ProductName = By.xpath("//h1[normalize-space()='iPhone 16 Pro Max 512GB Chính Hãng VN/A']");
+    public By ProductName = By.cssSelector(".product-name");
     public By LeftBanner = By.xpath("//a[@class='leftside-banner']");
     public By RightBanner = By.xpath("//a[@class='rightside-banner']");
     public By Banner = By.xpath("//div[contains(@class,'product-slide-box')]//a[contains(@title,'iPhone 16 series')]");
-    public By QuantityEvaluation = By.cssSelector("div[class='product-meta'] p");
-    public By QuantityStar = By.xpath("//div[@class='product-meta']//ul");
+    public By QuantityEvaluation = By.xpath("//div[contains(@class,'product-meta')]//p[contains(text(),'đánh giá')]");
     public By ProductThumb = By.xpath("//div[@class='product-slide']");
     public By BasePrice = By.xpath("//p[@class='price-old ']");
     public By SalePrice = By.xpath("//p[@class='price']");
     public By WarrantyContentBH = By.xpath("//th[@class='warranty-line basic ']");
-    public By WarrantyContentBH_price = By.xpath("//strong[contains(text(),'35.950.000 ₫')]");
+    public By WarrantyContentBH_price = By.xpath("//strong[contains(text(),'₫')]");
     public By WarrantyContent24M = By.xpath("//th[contains(@class,'warranty-line gold')]");
-    public By WarrantyContent24M_price = By.xpath("//strong[contains(text(),'37.250.000 ₫')]");
-    public By WarrantyContent24M_plus = By.xpath("//span[contains(text(),'( +1.300.000 ₫ )')]");
     public By ButtonWarrantyBH = By.xpath("//p[contains(@data-name,'BH chính hãng')]");
     public By ButtonWarranty24M = By.xpath("//div[@title='Gia hạn 24 tháng']");
     public By TitleSpecification = By.xpath("//div[contains(@class,'product-specification__title')]");
-    public By BoxRating = By.xpath("//div[@class='block-rate__star']");
+    public By BoxRating = By.xpath("//div[contains(@class,'block-rate__star')]//span[contains(text(),'đánh giá')]");
     public By GiftBox = By.xpath("//div[@class='gift-content']//p[1]");
     public By CityOption = By.xpath("//select[@name='area']");
-    public By SelectAddress = By.xpath("//svg[contains(@class, 'svg-icon-map')]/parent::*");
-    public By PopupAddress = By.xpath("substring-after(//div[@class='store']/h2, 'Địa chỉ:')");
-    public By PopupPhone = By.xpath("substring-after(//div[@class='store']//a[@title='Hotline']/@href, 'tel:')");
-    public By ListAddress = By.xpath("//div[@class='area-list show']//div[1]");
-    public By ListPhone = By.xpath("//div[@class='area-list__item store-list__item store-select__item']//span[@class='phone-number']");
     public By BoxAddress = By.xpath("//div[@class='area-list__item store-list__item store-select__item']");
     public By PhoneContact = By.xpath("//input[@placeholder='Tư vấn qua số điện thoại']");
     public By ButtonSumit = By.xpath("//button[@class='submit_call']");
@@ -57,10 +49,15 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By EvaluationSubmit = By.xpath("//button[@title='Gửi']");
     public static By ToastEvaluation = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
     public By ButtonBuyNow = By.xpath("//p[@class='add-to-cart']");
+    public By VersionName = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//a");
+    public By VersionPrice = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//span[contains(@class,'js-format-price')]");
     public By ColorName = By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]");
     public By ColorPrice = By.xpath(".//span[@class='font-normal']");
-    public By ProductPrice = By.cssSelector("div[class='col col-sm-5'] p[class='price']");
+    public By ProductPrice = By.xpath("//p[@class='price']");
     public By WarrantyActive = By.xpath("//p[@class='active']");
+    public By CustomerPromotionPrice = By.xpath("//div[@class='event-price-product event-member-price-product']");
+    public By ButtonBuyNowPrice = By.xpath("//span[@class='price']");
+
 
 
     public Product_Detail_Page_Cb(WebDriver driver) {
@@ -71,26 +68,36 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         validateUIHelper = new ValidateUIHelper(driver);
     }
 
-    public Checkout_Page_Cb openCheckoutPage() {
+
+    public void selectProductOptions() throws InterruptedException {
         LogUtils.info("Chọn phiên bản");
         selectVersionProduct("512GB");
         validateUIHelper.waitForPageLoaded();
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='80%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         LogUtils.info("Chọn màu sắc");
         selectColorProduct("Natural");
+
+        Thread.sleep(1000);
+    }
+
+    public Checkout_Page_Cb clickBuyNowToOpenPopup() throws InterruptedException {
+        Thread.sleep(1000);
 
         ((JavascriptExecutor) driver).executeScript(
                 "document.querySelectorAll('iframe').forEach(f => f.style.display = 'none');"
         );
 
-        WebElement Buynow = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonBuyNow));
+        WebElement Buynow = driver.findElement(ButtonBuyNow);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Buynow);
-        (js).executeScript("arguments[0].click();", Buynow);
 
+        Thread.sleep(500);
+        js.executeScript("arguments[0].click();", Buynow);
         js.executeScript("document.getElementById('popup-modal').style.display = 'inline-block';");
         LogUtils.info("Đã click được vào button 'Buy Now'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
         return new Checkout_Page_Cb(driver);
     }
+
 
     public boolean isProductNameDisplayed() {
         return isElementDisplayed(ProductName);
@@ -116,17 +123,6 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         webElement.click();
     }
 
-    public boolean isBoxRatingDisplayed() {
-        return isElementDisplayed(BoxRating);
-    }
-    public boolean isQuantityEvaluationDisplayed() {
-        return isElementDisplayed(QuantityEvaluation);
-    }
-
-    public boolean isQuantityStarDisplayed() {
-        return isElementDisplayed(QuantityStar);
-    }
-
     public String selectCity(String city) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(CityOption));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
@@ -145,13 +141,8 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         for (WebElement item : storeItems) {
             if (!item.isDisplayed()) continue;
 
-            // Lấy số điện thoại
             String phone = item.findElement(By.xpath(".//span[@class='phone-number']")).getText().trim();
-
-            // Lấy toàn bộ text của <p>
             String fullText = item.findElement(By.xpath(".//p")).getText().trim();
-
-            // Xóa phần số điện thoại khỏi chuỗi để lấy phần địa chỉ
             String address = fullText.replace(phone, "").trim();
 
             if (address.toLowerCase().contains(selectedCity.toLowerCase())) {
@@ -164,63 +155,39 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         }
     }
 
+    public void verifyAllAddressesInCity(String expectedCity) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    public void ClickAddress(){
-        // Lấy element thẻ <p> có địa chỉ và sđt — chính xác xpath bạn cung cấp
-        WebElement pElement = driver.findElement(By.xpath("//p[@xpath='1']"));
+        List<WebElement> allAddresses = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+                By.xpath("//div[contains(@class, 'area-list__item')]//p")
+        ));
 
-        // Tìm svg bản đồ bên trong thẻ <p> đó
-        WebElement mapIcon = pElement.findElement(By.xpath(".//svg[contains(@class, 'svg-icon-map')]"));
+        boolean allValid = true;
+        int countVisible = 0;
 
-        // Dùng Javascript click vì SVG thường không click được bằng WebElement.click()
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", mapIcon);
-    }
+        for (WebElement address : allAddresses) {
+            if (!address.isDisplayed()) {
+                continue;
+            }
 
-    public List<String> getAllAddresses() {
-        List<String> addressList = new ArrayList<>();
-        List<WebElement> storeItems = driver.findElements(BoxAddress);
+            countVisible++;
+            String addressText = address.getText().trim();
+            LogUtils.info("Địa chỉ hiển thị: " + addressText);
 
-        for (WebElement item : storeItems) {
-            if (!item.isDisplayed()) continue;
-
-            String phone = item.findElement(By.xpath(".//span[@class='phone-number']")).getText().trim();
-            String fullText = item.findElement(By.xpath(".//p")).getText().trim();
-            String address = fullText.replace(phone, "").trim();
-
-            addressList.add(address);
-        }
-        return addressList;
-    }
-
-    public List<String> getAllPhones() {
-        List<String> phoneList = new ArrayList<>();
-        List<WebElement> storeItems = driver.findElements(BoxAddress);
-        for (WebElement item : storeItems) {
-            if (!item.isDisplayed()) continue;
-
-            try {
-                String phone = item.findElement(By.xpath(".//span[@class='phone-number']")).getText().trim();
-                phoneList.add(phone);
-            } catch (Exception e) {
-                String fullText = item.findElement(By.xpath(".//p")).getText().trim();
-                String phone = fullText.split(" ")[0].trim();
-                phoneList.add(phone);
+            if (!addressText.toLowerCase().contains(expectedCity.toLowerCase())) {
+                LogUtils.info("Địa chỉ không chứa '" + expectedCity + "': " + addressText);
+                allValid = false;
             }
         }
-        return phoneList;
-    }
 
+        if (countVisible == 0) {
+            LogUtils.info("Không có địa chỉ nào đang hiển thị.");
+            return;
+        }
 
-    public String getPopupAddress(){
-        WebElement popupElement = wait.until(ExpectedConditions.visibilityOfElementLocated(PopupAddress));
-        String popupText = popupElement.getText();
-        return popupText;
-    }
-
-    public String getPopupPhone(){
-        WebElement popupElement = wait.until(ExpectedConditions.visibilityOfElementLocated(PopupPhone));
-        String popupText = popupElement.getText();
-        return popupText;
+        if (allValid) {
+            LogUtils.info("Tất cả địa chỉ đang hiển thị đều thuộc " + expectedCity + ".");
+        }
     }
 
     public void SendKeyPhoneContact(String phone){
@@ -256,14 +223,6 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         giftBox.click();
     }
 
-//    public String getColorName(){
-//        // Lấy phần tử chứa tên màu
-//        WebElement colorNameElement = driver.findElement(ColorNameAndPrice);
-//        String colorName = colorNameElement.getText().trim();
-//        System.out.println("Tên màu trang Product Detail: " + colorName);
-//        return colorName;
-//    }
-
     public String getColorName() {
         WebElement colorElement = driver.findElement(ColorName);
         String colorName = colorElement.getAttribute("data-name").trim();
@@ -289,18 +248,81 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         return price;
     }
 
-//    String colorName = getColorName();
-//String colorPrice = getColorPrice();
-//
-//Assert.assertNotNull(colorName, "Tên màu không được null");
-//Assert.assertTrue(colorPrice.contains("₫"), "Giá không đúng định dạng");
-//
-//System.out.println("Màu: " + colorName + " | Giá: " + colorPrice);
-
     public String getActiveWarranty() {
         WebElement activeOutside = driver.findElement(WarrantyActive);
         String titleOutside = activeOutside.getAttribute("data-name").trim();
         System.out.println("Bảo hành active: " + titleOutside);
         return titleOutside;
     }
+
+    public String getTitleSpecification() {
+        WebElement titleSpecification = driver.findElement(TitleSpecification);
+        String title = titleSpecification.getText().trim();
+        System.out.println("Tiêu đề thông số kỹ thuật: " + title);
+        return title;
+    }
+
+    public String getWarrantyContentBH_price() {
+        WebElement contentBH_price = driver.findElement(WarrantyContentBH_price);
+        String contentPrice = contentBH_price.getText().trim();
+        System.out.println("Nội dung bảo hành (thô): " + contentPrice);
+
+        // Chuẩn hóa: bỏ dấu chấm, phẩy, khoảng trắng và ký tự ₫
+        String normalizedPrice = contentPrice.replaceAll("[^\\d]", "");
+        System.out.println("Nội dung bảo hành (chuẩn hóa): " + normalizedPrice);
+
+        return normalizedPrice;
+    }
+
+    public String getCustomerService() {
+        WebElement customerService = driver.findElement(CustomerPromotionPrice);
+        String contentPrice = customerService.getText().trim();
+        System.out.println("Giá khuyến mãi cho khách hàng: " + contentPrice);
+        return contentPrice;
+    }
+
+    public int getReviewCount() {
+        WebElement reviewText = driver.findElement(QuantityEvaluation);
+        String rawText = reviewText.getText();
+        int reviewCount = Integer.parseInt(rawText.replaceAll("[^0-9]", ""));
+        LogUtils.info("Số lượng đánh giá: " + reviewCount);
+        return reviewCount;
+    }
+
+    public String getActiveVersionName() {
+        WebElement activeVersion = driver.findElement(VersionName);
+        String versionName = activeVersion.getAttribute("title").trim();  // hoặc aria-label
+        LogUtils.info("Tên phiên bản đang được chọn: " + versionName);
+        return versionName;
+    }
+
+    public String getActiveVersionPrice() {
+        WebElement priceElement = driver.findElement(VersionPrice);
+        String priceText = priceElement.getText().trim();
+        LogUtils.info("Giá phiên bản đang được chọn (thô): " + priceText);
+
+        // Chuẩn hóa: bỏ dấu chấm, phẩy, khoảng trắng và ký tự ₫
+        String normalizedPrice = priceText.replaceAll("[^\\d]", "");
+        LogUtils.info("Giá phiên bản đang được chọn (chuẩn hóa): " + normalizedPrice);
+
+        return normalizedPrice;
+    }
+
+    public String getButtonBuyNowPrice() {
+        WebElement priceElement = driver.findElement(ButtonBuyNowPrice);
+        String priceText = priceElement.getText().trim();
+        LogUtils.info("Giá mua ngay: " + priceText);
+        return priceText;
+    }
+
+    public int getRatingCount() {
+        WebElement ratingElement = driver.findElement(BoxRating);
+        String text = ratingElement.getText(); // (53 đánh giá và nhận xét)
+        int count = Integer.parseInt(text.replaceAll("[^0-9]", ""));
+        LogUtils.info("Số lượng đánh giá (block-rate): " + count);
+        return count;
+    }
+
+
+
 }

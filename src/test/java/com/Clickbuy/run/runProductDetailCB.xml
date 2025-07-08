@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Clickbuy">
+    <test name="ProductDetail_CB">
+        <groups>
+            <run>
+                <include name="Function"/>
+                <include name="UI_Test"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.Clickbuy.test.Product_Detail_Test_Cb">
+            </class>
+        </classes>
+    </test>
+</suite>

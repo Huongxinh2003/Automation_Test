@@ -155,14 +155,6 @@ public class Search_Test_Cb extends BaseSetup {
         search_page_cb.isTitleSearchFailDisplayed();
         Assert.assertTrue(search_page_cb.isTitleSearchFailDisplayed(), "Không hiển thị tiêu đề kết quả");
 
-//        LogUtils.info("Kiểm tra click button quay về trang chủ");
-//        search_page_cb.clickButtonGoHomePage();
-//        Boolean url1 = wait.until(ExpectedConditions.urlToBe("https://clickbuy.com.vn/"));
-//        Assert.assertEquals(url1,"Không chuyển về trang Homepage");
-//        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        search_page_cb.clickInputSearch();
-//        search_page_cb.inputSearch3("hhah8473hcfd");
-
         LogUtils.info("Kiểm tra chuyển trang sau khi đồng hồ đếm ngược ở button kêt thúc");
         try {
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -1,15 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Clickbuy">
-    <test name="Checkout_CB">
+    <test name="Search_CB">
         <groups>
             <run>
-<!--                <include name="Function"/>-->
+                <include name="Function"/>
                 <include name="UI_Test"/>
             </run>
         </groups>
         <classes>
-            <class name="com.Clickbuy.test.Checkout_Test_Cb">
-            </class>
+            <class name="com.Clickbuy.test.Search_Test_Cb"/>
         </classes>
     </test>
 </suite>

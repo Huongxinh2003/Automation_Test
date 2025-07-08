@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Search">
-    <test name="Function">
+<suite name="CellphoneS">
+    <test name="Cart">
         <groups>
             <run>
                 <include name="UI_Test"/>
@@ -8,12 +8,12 @@
         </groups>
         <classes>
             <class name="com.CellphoneS.tests.Cart_Test">
-                <methods>
+<!--                <methods>-->
 <!--                    <include name="testCart_20_MinQuantityLimit"/>-->
 <!--                    <include name="testCart_21_MaxQuantityLimit"/>-->
 <!--                    <include name="verifyPriceTemp"/>-->
 <!--                    <include name="deleteProduct"/>-->
-                </methods>
+<!--                </methods>-->
             </class>
         </classes>
     </test>
