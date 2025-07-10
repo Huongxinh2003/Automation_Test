@@ -1,6 +1,8 @@
 package com.ultilities.listeners;
 
 import com.aventstack.extentreports.Status;
+import com.base.BaseSetup;
+import com.helpers.CaptureHelpers;
 import com.helpers.RecordVideo;
 import com.ultilities.extentreports.ExtentTestManager;
 import com.ultilities.logs.LogUtils;
@@ -13,8 +15,6 @@ import static com.ultilities.extentreports.ExtentManager.getExtentReports;
 
 
 public class ReportListener implements ITestListener {
-
-    WebDriver driver;
 
     public String getTestName(ITestResult result) {
         return result.getTestName() != null ? result.getTestName()
@@ -73,6 +73,12 @@ public class ReportListener implements ITestListener {
 
         ExtentTestManager.logMessage(Status.FAIL, iTestResult.getThrowable().toString());
         ExtentTestManager.logMessage(Status.FAIL, iTestResult.getName() + " is failed.");
+        try {
+            CaptureHelpers.captureScreenshot(BaseSetup.getDriver(), iTestResult.getName());
+        } catch (Exception e) {
+            LogUtils.info("Exception while taking screenshot " + e.getMessage());
+        }
+
     }
 
     @Override

@@ -43,7 +43,7 @@ public class SignIn_Helpers extends BaseSetup {
         driver.get("https://cellphones.com.vn/");
 
         validateUIHelper.waitForPageLoaded();
-//    signIn_page.closePopupIfVisible();
+          signIn_page.closePopupIfVisible();
         signIn_page.SignIn();
         LogUtils.info("Bắt đầu test case");
         homepage_page = signIn_page.InputSignIn(Properties_File.getPropValue("phonenumber"), Properties_File.getPropValue("password"));

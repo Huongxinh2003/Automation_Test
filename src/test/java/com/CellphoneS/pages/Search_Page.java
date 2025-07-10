@@ -15,11 +15,12 @@ public class Search_Page extends ValidateUIHelper {
     private WebDriverWait wait;
     private JavascriptExecutor js;
 
-    private final By searchInput = By.cssSelector("input[id='inp\\$earch']");
+    private final By searchInput = By.cssSelector("input[id='inp$earch']");
     private final By IconSearch = By.xpath("//button[@type='submit']//*[name()='svg']");
     private final By closeSearch = By.xpath("//span[@id='btn-close-search']");
-    private final By suggestBoxSearch = By.xpath("//div[@class='suggest-search']");
-    private final By LinkAdSearch = By.xpath("//img[@alt='B2S 2025']");
+    private final By suggestBoxSearch = By.xpath("//div[@id='suggestSearch']");
+    private final By suggestBoxSearch1 = By.xpath("//div[@id='search_autocomplete']");
+    private final By LinkAdSearch = By.xpath("//div[@class='banner-search']//a");
     private final By TextHistory = By.xpath("//p[contains(text(),'Lịch sử tìm kiếm')]");
     public By HistorySearch = By.xpath("//div[@class='is-block search-history-box']");
     private final By TextTrending = By.xpath("//div[@class='trending-search']//div[@class='is-flex is-align-items-center']");
@@ -107,6 +108,7 @@ public class Search_Page extends ValidateUIHelper {
     public boolean isSuggestBoxSearchDisplayed() {
         return isElementDisplayed(suggestBoxSearch);
     }
+
     public void checkSuggestBoxSearch() {
         try {
             // Đợi tối đa 10s để hộp gợi ý biến mất

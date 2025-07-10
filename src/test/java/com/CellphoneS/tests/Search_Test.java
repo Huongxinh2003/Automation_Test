@@ -451,7 +451,6 @@ public class Search_Test extends BaseSetup {
         search_page.SearchAndcloseSearch("iphone 16");
 
         LogUtils.info("Kiểm tra danh sách gợi ý trước khi click X");
-        search_page.isSuggestBoxSearchDisplayed();
         Assert.assertTrue(search_page.isLinkAdSearchDisplayed(), "Không hiển thị danh sách sản phẩm gợi ý");
         test.get().pass("Hiển thị danh sách sản phẩm gợi ý");
 

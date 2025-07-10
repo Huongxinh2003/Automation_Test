@@ -59,7 +59,7 @@ public class SignIn_Test extends BaseSetup{
     public void setUpMethod() {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
-//        signIn_page.closePopupIfVisible();
+        signIn_page.closePopupIfVisible();
     }
 
     @Test(groups = {"SignIn_Success"}, priority = 1, description = "Kiểm tra đăng nhập thành công")
