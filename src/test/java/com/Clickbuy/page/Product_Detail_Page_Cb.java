@@ -48,11 +48,11 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By EvaluationStar = By.xpath("//span[@class='star']");
     public By EvaluationSubmit = By.xpath("//button[@title='Gửi']");
     public static By ToastEvaluation = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
-    public By ButtonBuyNow = By.xpath("//p[@class='add-to-cart']");
+    public By ButtonBuyNow = By.xpath("//div[@class='order-available']//p[@class='product-action__item add-to-cart']");
     public By VersionName = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//a");
     public By VersionPrice = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//span[contains(@class,'js-format-price')]");
     public By ColorName = By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]");
-    public By ColorPrice = By.xpath(".//span[@class='font-normal']");
+    public By ColorPrice = By.xpath(".//span[contains(@class, 'js-format-price')]");
     public By ProductPrice = By.xpath("//p[@class='price']");
     public By WarrantyActive = By.xpath("//p[@class='active']");
     public By CustomerPromotionPrice = By.xpath("//div[@class='event-price-product event-member-price-product']");
@@ -234,7 +234,7 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public String getColorPrice() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement activeColor = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]")
+                By.xpath("//div[contains(@class,'list-item') and contains(@class,'active')]")
         ));
         WebElement priceElement = activeColor.findElement(ColorPrice);
         String colorPrice = priceElement.getText().trim();

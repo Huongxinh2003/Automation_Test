@@ -129,8 +129,8 @@ public class Cart_Test extends BaseSetup {
             String qty = cart_page.getProductQuantity();
             String toast = cart_page.getToastMessage();
 
-            LogUtils.info("Số lượng hiện tại: " + qty);
-            LogUtils.info("Thông báo hiện tại: " + toast);
+            test.get().info("Số lượng hiện tại: " + qty);
+            test.get().info("Thông báo hiện tại: " + toast);
 
             Assert.assertEquals(qty, "1", "Số lượng đã bị giảm dưới 1");
             Assert.assertTrue(toast.contains("Số lượng sản phẩm đã giảm đến mức tối thiểu"), "Thông báo không đúng");
@@ -150,13 +150,13 @@ public class Cart_Test extends BaseSetup {
             if (!cart_page.getProductQuantity().equals("3")) {
                 cart_page.clickPlusButton();
                 cart_page.clickPlusButton();
-                cart_page.clickPlusButton(); // tổng cộng 3 lần
+                cart_page.clickPlusButton();
             } else {
-                cart_page.clickPlusButton(); // đang là 3 rồi, thử tăng thêm
+                cart_page.clickPlusButton();
             }
 
             String qty = cart_page.getProductQuantity();
-            LogUtils.info("Số lượng hiện tại: " + qty);
+            test.get().info("Số lượng hiện tại: " + qty);
             Assert.assertEquals(qty, "3", "Số lượng vượt quá giới hạn 3");
             test.get().pass("Không thể tăng quá 3 sản phẩm.");
 

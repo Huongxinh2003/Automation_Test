@@ -3,7 +3,7 @@
     <test name="Checkout_CB">
         <groups>
             <run>
-<!--                <include name="Function"/>-->
+                <include name="Function"/>
                 <include name="UI_Test"/>
             </run>
         </groups>

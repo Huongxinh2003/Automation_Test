@@ -20,11 +20,8 @@ public class Cart_Page extends ValidateUIHelper {
     private static WebDriverWait wait;
     private static JavascriptExecutor js;
 
-//    static String model = "iPhone 16 Pro Max";
-//    static String capacity = "1TB";
-//    static String color = "Titan Đen";
     public By CheckboxSelect = By.xpath("//div[@class='d-flex align-items-center justify-content-center']");
-    public By ButtonDelete = By.xpath("//em[contains(text(),'Xóa sản phẩm đã chọn')]");
+    public By ButtonDelete = By.xpath("//button[@class='remove-item']");
     public By CheckboxProduct = By.xpath("//input[@id='__BVID__32']");
     public By TitleProduct = By.xpath("//div[@class='product-name']");
     public By ImageProduct = By.xpath(("//label[@for='__BVID__32']"));
@@ -34,14 +31,7 @@ public class Cart_Page extends ValidateUIHelper {
     public By MinusButton = By.xpath("//span[@class='minus d-flex justify-content-center align-items-center']");
     public By PlusButton = By.xpath("//span[@class='plus d-flex justify-content-center align-items-center']");
     public By ToastMessage1 = By.xpath("//div[@class='toast-body']");
-    public By PopupAnounce = By.xpath("//div[@id='cpsModalB2b___BV_modal_content_']");
-    public By BoxPromotion = By.xpath("//div[@class='member-promotion']");
-    public By BoxPromo = By.xpath("//div[@class='box_promo']");
-    public By BuyCombo = By.xpath("//div[@class='combov2']");
-    public By SelectBuyCombo = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[4]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]");
-    public By ShowMoreCombo = By.xpath("//span[contains(text(),'Xem tất cả')]");
     public By PriceTemp = By.xpath("//p[contains(text(),'đ')]");
-    public By PriceSave = By.xpath("//div[@class='bmsm-info']");
     public By ButtonBuyNow = By.xpath("//button[contains(text(),'Mua ngay')]");
 
 
@@ -74,8 +64,8 @@ public class Cart_Page extends ValidateUIHelper {
     }
 
     public void clickDelete() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonDelete));
-        clickElement(ButtonDelete);
+        WebElement deleteButton = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonDelete));
+        deleteButton.click();
     }
 
     public List<String> getAllProductNamesInCart() {
@@ -110,37 +100,6 @@ public class Cart_Page extends ValidateUIHelper {
     public String getPriceProduct() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(PriceProduct));
         return driver.findElement(PriceProduct).getText();
-    }
-
-    //Hàm chuển đổi string price sang int
-    public int convertPriceStringToInt(String priceText) {
-        // Ví dụ input: "5.690.000₫"
-        priceText = priceText.replaceAll("[^\\d]", ""); // Bỏ dấu chấm, ₫
-        return Integer.parseInt(priceText);
-    }
-
-    public void getPriceTempInt() {
-        List<WebElement> priceElements = driver.findElements(PriceProduct);
-
-        int total = 0;
-        for (WebElement priceElement : priceElements) {
-            String priceText = priceElement.getText();
-            int price = convertPriceStringToInt(priceText);
-            total += price;
-        }
-
-        LogUtils.info("Tổng giá của các sản phẩm trong giỏ: " + total + " VND");
-
-        WebElement subtotalElement = driver.findElement(PriceTemp);
-        int subtotal = convertPriceStringToInt(subtotalElement.getText());
-
-
-        if (subtotal == total) {
-            LogUtils.info("Tạm tính đúng");
-        } else {
-            Assert.assertEquals(total, subtotal,"Tạm tính sai. Tổng sản phẩm = " + total + ", nhưng Tạm tính = " + subtotal);
-        }
-
     }
 
     public String getPriceTemp() {

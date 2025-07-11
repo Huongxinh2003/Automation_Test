@@ -102,7 +102,7 @@ public class Search_Test_Cb extends BaseSetup {
         test.get().info("Tiêu đề sản phẩm: " + title);
     }
 
-    @Test (groups = "Function")
+    @Test (groups = "Function", priority = 1,description = "Kiểm tra tìm kiếm với từ khoá hợp lệ")
     public void search_Success() {
         wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         LogUtils.info("Tìm kiếm với Iphone khi click icon Search");
@@ -142,7 +142,7 @@ public class Search_Test_Cb extends BaseSetup {
         test.get().info("Đã kiểm tra thành công");
     }
 
-    @Test(groups = "Function", description = "Kiểm tra tìm kiếm với từ khoá không hợp lệ")
+    @Test(groups = "Function",priority = 2, description = "Kiểm tra tìm kiếm với từ khoá không hợp lệ")
     public void search_Fail() {
         LogUtils.info("Tìm kiếm với fail khi click ENTER");
         search_page_cb.inputSearch1("hhah8473hcfd");

@@ -87,29 +87,34 @@ public class Checkout_Test_Cb extends BaseSetup {
         checkout_page_cb.isTitlePopupModalDisplayed();
         test.get().pass("Hiển thị title của popup: " + checkout_page_cb.getTitlePopupModal());
 
-        LogUtils.info("Kiểm tra tên sản phẩm");
-        String ProductNamePopup = checkout_page_cb.getProductNamePopup();
-        LogUtils.info("Title popup: " + ProductNamePopup);
-        if (ProductNamePopup.equals(ProductName)) {
+        try {
+            LogUtils.info("Kiểm tra tên sản phẩm");
+            String ProductNamePopup = checkout_page_cb.getProductNamePopup();
+            LogUtils.info("Title popup: " + ProductNamePopup);
+            Assert.assertEquals(ProductNamePopup, ProductName);
             test.get().pass("Tên sản phẩm trong popup khớp");
-        } else {
+        }catch (Exception e) {
             test.get().fail("Tên sản phẩm trong popup KHÔNG khớp");
         }
 
-        LogUtils.info("Kiểm tra tên màu");
         String colorNamePopup = checkout_page_cb.getColorNamePopup();
-        if (colorNamePopup.equals(ColorName)) {
+        try {
+            LogUtils.info("Kiểm tra tên màu");
+            Assert.assertEquals(colorNamePopup, ColorName);
             test.get().pass("Tên màu khớp");
-        } else {
+        }catch (Exception e) {
             test.get().fail("Tên màu KHÔNG khớp");
         }
 
-        LogUtils.info("Kiểm tra giá theo màu sắc");
         String colorPricePopup = checkout_page_cb.getColorPricePopup();
-        if (colorPricePopup.equals(ColorPrice)) {
+        try {
+            LogUtils.info("Kiểm tra giá theo màu sắc");
+            Assert.assertEquals(colorPricePopup, ColorPrice);
             test.get().pass("Giá theo màu khớp");
-        }else {
+        }catch (Exception e) {
             test.get().fail("Giá theo màu KHÔNG khớp");
+            test.get().info("Giá trong popup: " + colorPricePopup);
+            test.get().info("Gía trong trang chi tiết sản phẩm: " + ColorPrice);
         }
 
         LogUtils.info("Kiểm tra tên màu trong mô tả sản phẩm");
@@ -121,11 +126,12 @@ public class Checkout_Test_Cb extends BaseSetup {
             Assert.fail("Tên màu không khớp với mô tả sản phẩm.");
         }
 
-        LogUtils.info("Kiểm tra giá sản phẩm");
-        String productPricePopup = checkout_page_cb.getProductPricePopup();
-        if (productPricePopup.equals(ProductPrice)) {
+        try {
+            LogUtils.info("Kiểm tra giá sản phẩm");
+            String productPricePopup = checkout_page_cb.getProductPricePopup();
+            Assert.assertEquals(productPricePopup, ProductPrice);
             test.get().pass("Giá sản phẩm khớp");
-        } else {
+        }catch (Exception e) {
             test.get().fail("Giá sản phẩm KHÔNG khớp");
         }
 
@@ -180,9 +186,9 @@ public class Checkout_Test_Cb extends BaseSetup {
                     phoneField.getAttribute("class").contains("input-error"));
             test.get().pass("Ô nhập SĐT bị highlight đỏ khi để trống");
 
-            Assert.assertTrue("Email KHÔNG bị highlight đỏ",
+            Assert.assertFalse("Email bị highlight đỏ",
                     emailField.getAttribute("class").contains("input-error"));
-            test.get().pass("Ô nhập email bị highlight đỏ khi để trống");
+            test.get().pass("Ô nhập email không bị highlight đỏ khi để trống");
 
             LogUtils.info("Kiểm tra thống báo lỗi");
             String expectedError = "Vui lòng không bỏ trống thông tin!";

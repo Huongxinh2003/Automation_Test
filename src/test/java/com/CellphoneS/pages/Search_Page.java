@@ -15,7 +15,7 @@ public class Search_Page extends ValidateUIHelper {
     private WebDriverWait wait;
     private JavascriptExecutor js;
 
-    private final By searchInput = By.cssSelector("input[id='inp$earch']");
+    private final By searchInput = By.xpath("//input[@id='inp$earch']");
     private final By IconSearch = By.xpath("//button[@type='submit']//*[name()='svg']");
     private final By closeSearch = By.xpath("//span[@id='btn-close-search']");
     private final By suggestBoxSearch = By.xpath("//div[@id='suggestSearch']");
@@ -29,9 +29,9 @@ public class Search_Page extends ValidateUIHelper {
     private final By BoxSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']");
     private final By LinkCoPhaiBanMuonTim = By.xpath("//div[normalize-space()='iPhone 15 | 15 Plus | 15 Pro | 15 Pro Max']");
     private final By LinkSanPhamGoiY = By.xpath("//div[@class='mt-2 product-box']//a[1]");
-    private final By ProductSuggest = By.xpath("//p[normalize-space()='S25 Ultra']");
+    private final By ProductSuggest = By.xpath("//p[normalize-space()='Samsung Galaxy Watch8']");
     private final By ListSuggest = By.xpath("//p[normalize-space()='iPhone 16 Series']");
-    public By TitleProduct = By.xpath("//h1[normalize-space()='Samsung Galaxy S25 Ultra 12GB 256GB']");
+    public By TitleProduct = By.xpath("//h1[contains(text(),'Đồng hồ thông minh Samsung Galaxy Watch8')]");
     public By ProductCard = By.xpath("//div[@class='product-list-filter is-flex is-flex-wrap-wrap']//div[1]//div[1]//a[1]");
 
     public Search_Page(WebDriver driver) {
@@ -71,7 +71,7 @@ public class Search_Page extends ValidateUIHelper {
         wait.until(ExpectedConditions.elementToBeClickable(ProductCard));
 
         clickElement(ProductCard);
-//        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='70%'");
         return new Product_Detail_Page(driver);
     }
 

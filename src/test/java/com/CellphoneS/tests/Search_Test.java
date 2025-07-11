@@ -248,11 +248,11 @@ public class Search_Test extends BaseSetup {
         LogUtils.info("Đợi trang chuyển hướng");
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.urlContains("https://cellphones.com.vn/dien-thoai-samsung-galaxy-s25-ultra.html"));
+            wait.until(ExpectedConditions.urlContains("https://cellphones.com.vn/dong-ho-thong-minh-samsung-galaxy-watch-8.html"));
 
             String currentUrl = driver.getCurrentUrl();
             LogUtils.info("URL hiện tại: " + currentUrl);
-            Assert.assertTrue(currentUrl.contains("/dien-thoai-samsung-galaxy-s25-ultra.html"), "URL sai: " + currentUrl);
+            Assert.assertTrue(currentUrl.contains("dong-ho-thong-minh-samsung-galaxy-watch-8.html"), "URL sai: " + currentUrl);
             test.get().pass("URL đúng sau khi click sản phẩm gợi ý.");
         } catch (Exception e) {
             test.get().fail("Chuyển hướng URL không đúng: " + e.getMessage());

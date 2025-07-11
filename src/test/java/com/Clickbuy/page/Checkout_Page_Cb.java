@@ -20,13 +20,13 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
     public By TitlePopupModal = By.xpath("//h2[contains(text(),'Đặt hàng sản phẩm')]");
     public By ProductName = By.xpath("//div[@class='jquery-modal blocker current']//h1[1]");
     public By ColorName= By.xpath("//p[contains(@class, 'flex') and contains(@class, 'active')]");
-    public By ColorPrice = By.xpath("(//span[contains(text(),'₫')])[8]");
+    public By ColorPrice = By.xpath("(//span[@class='font-normal'][contains(text(),'₫')])[6]");
     public By SpanColor = By.xpath("//span[@class='product-name-variant']");
     public By SpanWarranty = By.cssSelector("span.product-name-variant");
     public By ProductPrice = By.cssSelector("div[class='col col-sm-5'] p[class='price']");
     public By WarrantyActive = By.xpath("//div[@class='list-variant__item list-item active']//p[@class='active']");
-    public By InputName = By.xpath("//input[@placeholder='Họ tên người nhận']");
-    public By InputPhone = By.xpath("//input[@placeholder='Số điện thoại người nhận']");
+    public By InputName = By.xpath("//input[@placeholder='Họ và tên*']");
+    public By InputPhone = By.xpath("//input[@placeholder='Điện thoại*']");
     public By InputEmail = By.xpath("//input[@placeholder='Email']");
     public By ButtonBuy = By.xpath("//button[@id='btnSubInstallmentForm']");
     public By ToastSuccess = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-error']");
@@ -62,7 +62,7 @@ public class Checkout_Page_Cb extends ValidateUIHelper{
     public String getColorPricePopup() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement activeColor = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.cssSelector("div.list-variant__item.active")
+                By.xpath("//div[contains(@class, 'list-item') and contains(@class, 'active')]")
         ));
         WebElement priceElement = activeColor.findElement(ColorPrice);
         String colorPrice = priceElement.getText().trim();

@@ -18,10 +18,10 @@ public class Product_Detail_Page extends ValidateUIHelper {
     private static ValidateUIHelper validateUIHelper;
 
     public By TitleProduct = By.xpath("//div[@class='box-product-name']");
-    public By FavoriteProduct = By.xpath("//div[@class='box-bottom-item']//div[@id='wishListBtn']");
+    public By FavoriteProduct = By.xpath("//button[@id='wishListBtn']");
     public By BoxRating = By.xpath("//div[@class='box-rating']");
     public By ColorPrice = By.xpath("//div[@class='box-product-variants']");
-    public By CountStore = By.xpath("//span[@class='count']");
+    public By CountStore = By.xpath("//div[@class='box-on-stock-count']//span[@class='count']");
     public By ProductPrice = By.xpath("//div[@class='box-product-price']");
     public By Sale_price = By.xpath("//div[@class='sale-price']");
     public By BasePrice = By.xpath("//div[@class='is-flex is-align-items-center']//del[@class='base-price']");
@@ -29,11 +29,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By TitleProductBar = By.xpath("//div[@class='cta-product-info']");
     public By ProductThumbnail = By.xpath("//div[@class='box-gallery']");
     public By MainThumbnail = By.xpath("//div[contains(@class, 'gallery-slide') and contains(@class, 'gallery-top')]//div[contains(@class,'swiper-slide-active')]//img");
-    public By SliderThumbnail =  By.xpath("//div[contains(@class,'gallery-thumbs')]//div[contains(@class,'swiper-slide-thumb-active') and not(contains(@class,'ksp-thumbs'))]//img");
-    public By swiperThumbnailNext = By.xpath("//div[@class='swiper-button-next button__view-gallery-next']//div[@class='icon']");
-    public By ProductThumbnailSmall1 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-3.png2 - thumb']");
-    public By ProductThumbnailSmall2 = By.xpath("//img[@alt='/i/p/iphone-16-pro-max-4.png3 - thumb']");
-    public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
+   public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
     public By DistrictOption = By.xpath("//select[@id='districtOptions']");
     public By SelectCity = By.xpath("//ul[@class='menu-list']");
     public By BoxAddress = By.xpath("//div[@class='box-on-stock-address']");
@@ -152,18 +148,28 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
 
     public void selectColorProduct(String color) {
+        String normalizedColor = color.replaceAll("\\s+", "").toLowerCase();
+
         List<WebElement> colorOptions = driver.findElements(By.xpath("//ul[@class='list-variants']//a[contains(@class, 'button__change-color')]"));
-        for (WebElement option : colorOptions) {
-            String text = option.getText().replaceAll("\\s+", "").toLowerCase();
-            if (text.contains(color.replaceAll("\\s+", "").toLowerCase())) {
-                wait.until(ExpectedConditions.elementToBeClickable(option));
-                (js).executeScript("arguments[0].click();", option);
-                LogUtils.info("Đã chọn màu sắc: " + option.getText());
-                return;
+        for (int i = 0; i < colorOptions.size(); i++) {
+            try {
+                WebElement option = driver.findElements(By.xpath("//ul[@class='list-variants']//a[contains(@class, 'button__change-color')]")).get(i);
+
+                String text = option.getText().replaceAll("\\s+", "").toLowerCase();
+                if (text.contains(normalizedColor)) {
+                    wait.until(ExpectedConditions.elementToBeClickable(option));
+                    js.executeScript("arguments[0].click();", option);
+                    LogUtils.info("Đã chọn màu sắc: " + option.getText());
+                    return;
+                }
+            } catch (StaleElementReferenceException e) {
+                LogUtils.warn("Phần tử màu bị stale, thử lại lần nữa...");
+                i--;
             }
         }
         throw new RuntimeException("Không tìm thấy màu sắc có tên: " + color);
     }
+
 
 
     // Lấy src ảnh lớn
@@ -171,39 +177,6 @@ public class Product_Detail_Page extends ValidateUIHelper {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail)).getAttribute("src");
     }
 
-    // Lấy src thumbnail nhỏ đang active
-    public String getActiveSmallThumbnailSrc() {
-        WebElement thumb = wait.until(ExpectedConditions.presenceOfElementLocated(SliderThumbnail));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", thumb);
-        wait.until(ExpectedConditions.visibilityOf(thumb));
-        return thumb.getAttribute("src");
-    }
-
-    // Click nút Next → đợi ảnh lớn thay đổi
-    public void clickSwiperNextAndWaitForMainImageChange(String previousSrc) {
-        WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(swiperThumbnailNext));
-        btn.click();
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(MainThumbnail, "src", previousSrc)));
-    }
-
-    // Tiện ích lấy tên file ảnh từ URL
-    public String getFileNameFromUrl(String url) {
-        return url.substring(url.lastIndexOf("/") + 1);
-    }
-
-    // Click ảnh nhỏ bất kỳ
-    public void clickThumbnail(By thumbnailBy) {
-        WebElement thumb = wait.until(ExpectedConditions.elementToBeClickable(thumbnailBy));
-        thumb.click();
-    }
-
-    // In src ảnh lớn
-    public void printMainImageSrc() {
-        WebElement img = wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail));
-//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", img);
-        String src = img.getAttribute("src");
-        System.out.println("Thumnail hiện tại: " + src);
-    }
 
     public String getBoxRating() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(BoxRating));
@@ -264,8 +237,8 @@ public class Product_Detail_Page extends ValidateUIHelper {
     }
 
     public String getCountStore() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(CountStore));
-        return getText(CountStore);
+        String countStore = driver.findElement(CountStore).getText().trim();
+        return countStore;
     }
 
     public int calculateDiscountPercentage() {

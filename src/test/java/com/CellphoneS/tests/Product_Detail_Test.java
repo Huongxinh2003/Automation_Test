@@ -181,6 +181,11 @@ public class Product_Detail_Test extends BaseSetup {
         String ProductThumbnail = product_detail_page.getProductThumbnail();
         String PriceStickyBarBefore = product_detail_page.getPriceStickyBar();
         String CountStoreBefore = product_detail_page.getCountStore();
+        LogUtils.info("Giá gốc: " + DiscountBefore);
+        LogUtils.info("Giá sale: " + PriceSaleBefore);
+        LogUtils.info("Hinh ảnh: " + ProductThumbnail);
+        LogUtils.info("Giá trên sticky bar: " + PriceStickyBarBefore);
+        LogUtils.info("Số cửa hàng còn hàng: " + CountStoreBefore);
         test.get().pass("Lưu trạng thái ban đầu thành công");
 
         LogUtils.info("Chọn màu sắc");
@@ -199,11 +204,8 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Lấy giá trị sau khi chọn màu sắc thành công");
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn màu sắc");
-//        LogUtils.info("Giá sale: "+ DiscountAfter);
         Assert.assertEquals(DiscountAfter, DiscountBefore, "Giá gốc không thay đổi sau khi chọn màu sắc");
-        Assert.assertEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn màu sắc");
-//        Assert.assertFalse(Boolean.parseBoolean(DiscountAfter), "Giá gốc thay đổi sau khi chọn màu sắc");
-//        Assert.assertTrue(Boolean.parseBoolean(PriceSaleAfter), "Giá sale thay đổi khi chọn màu sắc");
+        Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(ProductThumbnail, ProductThumbnailAfter, "Ảnh sản phẩm không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn màu sắc");
         Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn màu sắc");
@@ -211,25 +213,25 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }
 
+    //chọn 1 thành phố khác bất kì
     @Test (groups = "Function",priority = 3, description = "Kiểm tra popup chọn thành phố")
-    public void verifyChangeAfterSelectCity() {
+    public void verifyChangeAfterSelectCity() throws InterruptedException {
         product_detail_page.ScrollToElement();
         LogUtils.info("Lưu trạng thái ban đầu ");
         String CountStoreBefore = product_detail_page.getCountStore();
         String CityBefore = product_detail_page.getCityName();
         test.get().info("Số lượng cửa hàng trong thành phố " + CityBefore + " là " + CountStoreBefore);
 
-        ((JavascriptExecutor) driver).executeScript("location.reload();");
-
+        Thread.sleep(2000);
         LogUtils.info("Click button Thành phố");
         product_detail_page.ClickCity();
 
         LogUtils.info("Chọn Thành phố");
         product_detail_page.ClickSelectCity("Hồ Chí Minh");
 
-
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='70%'");
 
         LogUtils.info("Lấy giá trị sau khi chọn Thành phố");
         String CountStoreAfter = product_detail_page.getCountStore();
@@ -239,9 +241,9 @@ public class Product_Detail_Test extends BaseSetup {
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Thành phố");
         Assert.assertNotEquals(CityBefore, CityAfter, "Thành phố không thay đổi sau khi chọn Thành phố");
-        if (CountStoreBefore == CountStoreAfter) {
-            test.get().pass("Số của hàng của hai thành phố bằng nhau");
-        }else {
+        if (CountStoreBefore.equals(CountStoreAfter)) {
+            test.get().pass("Số cửa hàng của hai thành phố bằng nhau");
+        } else {
             Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn Thành phố");
             test.get().fail("Số cửa hàng còn hàng thay đổi sau khi chọn Thành phố");
         }
@@ -351,7 +353,7 @@ public class Product_Detail_Test extends BaseSetup {
             wait.until(ExpectedConditions.urlToBe(expectedUrl));
 
             String actualUrl = driver.getCurrentUrl();
-            Assert.assertEquals("URL không đúng sau khi click 'Mua ngay'", expectedUrl, actualUrl);
+            Assert.assertEquals(expectedUrl, actualUrl);
             test.get().pass("Chuyển hướng đến giỏ hàng thành công: " + actualUrl);
         } catch (Exception e) {
             test.get().fail("Không chuyển sang trang giỏ hàng như mong đợi: " + e.getMessage());

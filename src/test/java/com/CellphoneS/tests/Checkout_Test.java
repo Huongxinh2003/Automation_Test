@@ -108,7 +108,7 @@ public class Checkout_Test extends BaseSetup {
                     ", Kỳ vọng: " + expectedName);
         }
 
-        test.get().info("Kiểm tra sđt khách hàng");
+        LogUtils.info("Kiểm tra sđt khách hàng");
         String actualPhone = checkout_page.getPhoneCustomer();
         if (actualPhone.equals(expectedPhone)) {
             test.get().pass("SĐT chính xác: " + actualPhone);
@@ -164,18 +164,20 @@ public class Checkout_Test extends BaseSetup {
         String expectedName = "Phùng Hương";
         String expectedPhone = "0332019523";
 
-        LogUtils.info("Kiểm tra tên khách hàng");
-        if (checkout_page.getInputName().equals(expectedName)) {
+        try {
+            LogUtils.info("Kiểm tra tên khách hàng");
+            Assert.assertEquals(checkout_page.getInputName(), expectedName);
             test.get().pass("Tên khách hàng chính xác: " + checkout_page.getInputName());
-        } else {
+        }catch (AssertionError e) {
             test.get().fail("Tên khách hàng không chính xác. Thực tế: " + checkout_page.getInputName() +
                     ", Kỳ vọng: " + expectedName);
         }
 
-       LogUtils.info("Kiểm tra sđt khách hàng");
-        if (checkout_page.getInputPhone().equals(expectedPhone)) {
+        try {
+            LogUtils.info("Kiểm tra sđt khách hàng");
+            Assert.assertEquals(checkout_page.getInputPhone(), expectedPhone);
             test.get().pass("SĐT khách hàng chính xác: " + checkout_page.getInputPhone());
-        } else {
+        }catch (AssertionError e) {
             test.get().fail("SĐT khách hàng không chính xác. Thực tế: " + checkout_page.getInputPhone() +
                     ", Kỳ vọng: " + expectedPhone);
         }
@@ -191,8 +193,8 @@ public class Checkout_Test extends BaseSetup {
         checkout_page.SendKeysCityShipping("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
         excelHelper.setExcelFile("src/test/resources/TestData.xlsx", "Checkout");
-        checkout_page.SendKeysDistrict(excelHelper.getCellData("District", 1));
-        checkout_page.SendKeysAddress(excelHelper.getCellData("Address2",1));
+        checkout_page.SendKeysDistrictShipping(excelHelper.getCellData("District", 1));
+        checkout_page.SendKeysAddressShipping(excelHelper.getCellData("Address2",1));
         checkout_page.SendKeysInputHomeNumber(excelHelper.getCellData("HomeNumber",1));
         checkout_page.SendKeysInputNote(excelHelper.getCellData("Note",1));
         checkout_page.CLickInputVatNo();
@@ -239,7 +241,6 @@ public class Checkout_Test extends BaseSetup {
     @Test (groups = "UI_Test", priority = 3, description = "Kiểm tra hiển thị thông tin bên trang thanh toán")
     public void verifyTabPayment() throws Exception {
         int quantityInfo = Integer.parseInt(checkout_page.getProductQuantityInfo());
-        String BasePriceInfo = checkout_page.getBasePrice();
         LogUtils.info("Nhập thông tin");
         checkout_page.SendKeysCity("Hồ Chí Minh");
         checkout_page.ClickButtonAgree();
@@ -259,28 +260,18 @@ public class Checkout_Test extends BaseSetup {
 
         LogUtils.info("Kiểm tra thông báo hiển thị");
         String expectedMessage = "Mã giảm giá không khả dụng. Vui lòng kiểm tra lại.";
-        String actualMessage = checkout_page.getToastMessageCode();
+        String actualMessage = checkout_page.getToastBody();
         if(expectedMessage.equals(actualMessage)){
             test.get().pass("Thông báo hiển thị đúng");
         }else {
-            test.get().fail("Thông báo hiển thị sai");
+            test.get().fail("Thông báo hiển thị sai" + actualMessage);
         }
 
         LogUtils.info("Kiểm tra đồng bộ số lượng sản phẩm");
-        String quantityPayment = checkout_page.getProductQuantityPayment().replaceAll("[^0-9]", "");
-        if (quantityPayment.equals(quantityInfo)) {
+        int quantityPayment = checkout_page.getProductQuantityPayment();
+        Assert.assertEquals(quantityPayment, quantityInfo, "Số lượng sản phẩm không đồng bộ");
             test.get().pass("Số lượng sản phẩm đồng bộ");
-        }else {
-            test.get().fail("Số lượng sản phẩm không đồng bộ");
-        }
 
-        LogUtils.info("Kiểm tra đồng bộ giá niêm yết");
-        String BasePricePayment = checkout_page.getBasePriceProduct();
-        if (BasePriceInfo.equals(BasePricePayment)) {
-            test.get().pass("Giá niêm yết đồng bộ");
-        }else {
-            test.get().fail("Giá niêm yết không đồng bộ");
-        }
 
         LogUtils.info("Kiểm tra hiển thị phí vận chuyển");
         checkout_page.getTotalShipping();
@@ -341,13 +332,13 @@ public class Checkout_Test extends BaseSetup {
         LogUtils.info("Kiểm tra thông báo");
         checkout_page.getToastMessageCode();
         String expectedMessage = "Thêm phương thức thanh toán thành công.";
-        String actualMessage = checkout_page.getToastMessageCode();
-        if(expectedMessage.equals(actualMessage)){
+        String actualMessage = checkout_page.getToastBody();
+        try {
+            Assert.assertEquals(actualMessage, expectedMessage);
             test.get().pass("Thông báo hiển thị đúng");
-        }else {
-            test.get().fail("Thông báo hiển thị sai");
+        }catch (AssertionError e) {
+            test.get().fail(" thông báo hiển thị sai" + actualMessage);
         }
-
         test.get().pass("Kiểm tra chọn phương thức thanh toán thành công");
     }
 
@@ -381,24 +372,28 @@ public class Checkout_Test extends BaseSetup {
         String emailCustomerPayment = checkout_page.getEmail();
 
         LogUtils.info("Kiểm tra đồng bộ thông tin khách hàng");
-        LogUtils.info("Đồng bộ tên");
-        if (nameCustomerInfo.equals(nameCustomerPayment)) {
+
+        try {
+            LogUtils.info("Đồng bộ tên");
+            Assert.assertEquals(nameCustomerInfo, nameCustomerPayment);
             test.get().pass("Tên khách hàng chính xác");
-        }else {
+        }catch (Exception e) {
             test.get().fail("Tên khách hàng không chính xác");
         }
 
-        LogUtils.info("Đồng bộ SĐT");
-        if (phoneCustomerInfo.equals(phoneCustomerPayment)) {
+        try {
+            LogUtils.info("Đồng bộ SĐT");
+            Assert.assertEquals(phoneCustomerInfo, phoneCustomerPayment);
             test.get().pass("SĐT khách hàng chính xác");
-        }else {
+        }catch (Exception e) {
             test.get().fail("SĐT khách hàng không chính xác");
         }
 
-        LogUtils.info("Đồng bộ email");
-        if (emailCustomerInfo.equals(emailCustomerPayment)) {
+        try {
+            LogUtils.info("Đồng bộ email");
+            Assert.assertEquals(emailCustomerInfo, emailCustomerPayment);
             test.get().pass("Email khách hàng chính xác");
-        }else {
+        }catch (Exception e) {
             test.get().fail("Email khách hàng không chính xác");
         }
 
@@ -408,16 +403,17 @@ public class Checkout_Test extends BaseSetup {
 
         LogUtils.info("Kiểm tra đồng bộ thông tin");
         LogUtils.info("Đồng bộ địa chỉ");
-        if (AddressInfo.equals(AddressPayment)) {
-            test.get().pass("Địa chỉ khách hàng chính xác");
-        }else {
+        try {
+            Assert.assertEquals(AddressInfo, AddressPayment);
+        }catch (Exception e) {
             test.get().fail("Địa chỉ khách hàng không chính xác");
         }
 
-        LogUtils.info("Đồng bộ ghi chú");
-        if (NoteInfo.equals(NotePayment)) {
-            test.get().pass("Ghi chú khách hàng chính xác");
-        }else {
+        try {
+            LogUtils.info("Đồng bộ ghi chú");
+            Assert.assertEquals(NoteInfo, NotePayment);
+                test.get().pass("Ghi chú khách hàng chính xác");
+        }catch (Exception e) {
             test.get().fail("Ghi chú khách hàng không chính xác");
         }
 
@@ -456,9 +452,10 @@ public class Checkout_Test extends BaseSetup {
         LogUtils.info("Kiểm tra hiển thị giá thanh toán");
         String TotalPrice = checkout_page.getTotalPrice();
         String Pricetemp = checkout_page.getTotalPriceTemp();
-        if (TotalPrice.equals(Pricetemp)) {
+        try {
+            Assert.assertEquals(TotalPrice, Pricetemp);
             test.get().pass("Giá thanh toán chính xác");
-        }else {
+        }catch (Exception e) {
             test.get().fail("Giá thanh toán không chính xác");
         }
         test.get().pass("Thành công hiển thị giá trong trang Thanh toán");

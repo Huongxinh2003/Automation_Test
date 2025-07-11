@@ -54,7 +54,7 @@ public class Checkout_Page extends ValidateUIHelper {
     public By ButtonApply1 = By.xpath("//button[contains(text(),'Xác nhận')]");
     public By ToastMessageCode = By.xpath("//div[@class='b-toaster-slot vue-portal-target']");
     public By ButtonApply = By.xpath("//button[contains(text(),'Áp dụng')]");
-    public By ProductQuantity = By.cssSelector("div[class='info-payment'] div:nth-child(1) div:nth-child(1) p:nth-child(1)");
+    public By ProductQuantity = By.xpath("//div[@class='quote-block__item'][.//p[text()='Số lượng sản phẩm']]//p[@class='quote-block__value']");
     public By BasePriceProduct = By.xpath("//p[contains(text(),'đ')]");
     public By TotalShipping = By.xpath("//p[contains(text(),'Miễn phí')]");
     public By DiscountPrice = By.xpath("//p[@class='quote-block__price']");
@@ -72,6 +72,7 @@ public class Checkout_Page extends ValidateUIHelper {
     public By TotalPriceTemp = By.xpath("//span[@class='total']");
     public By ListProduct = By.xpath("//button[@id='viewListItemInQuote-btn']");
     public By TitleListProduct = By.xpath("//header[@id='modalViewListItemInQuote___BV_modal_header_']");
+    public By ToastBody = By.xpath("//div[@class='toast-body']");
 
     public Checkout_Page(WebDriver driver) {
         super(driver);
@@ -359,9 +360,16 @@ public class Checkout_Page extends ValidateUIHelper {
         return driver.findElement(ToastMessageCode).getText();
     }
 
-    public String getProductQuantityPayment() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductQuantity)).getText();
+    public String getToastBody() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ToastBody));
+        return driver.findElement(ToastBody).getText();
     }
+
+    public int getProductQuantityPayment() {
+        String quantityText = wait.until(ExpectedConditions.visibilityOfElementLocated(ProductQuantity)).getText();
+        return Integer.parseInt(quantityText.trim());  // "02" → 2
+    }
+
 
     public String getProductQuantityInfo() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductQuantityCard)).getText();

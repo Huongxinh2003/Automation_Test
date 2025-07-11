@@ -125,21 +125,16 @@ public class Product_Detail_Test_Cb extends BaseSetup {
         test.get().pass("Số lượng đánh giá thay đổi sau khi chọn phiên bản");
         Assert.assertEquals(versionPriceAfter,warrantyContentAfter,"Giá sản phẩm không khớp với giá bảo hành");
         test.get().pass("Giá sản phẩm khớp với giá bảo hành");
-        Assert.assertEquals(CustomerServiceBefore, CustomerServiceAfter,"Thông tin dịch vụ khách hàng không thay đổi sau khi chọn phiên bản");
+        Assert.assertNotEquals(CustomerServiceBefore, CustomerServiceAfter,"Thông tin dịch vụ khách hàng không thay đổi sau khi chọn phiên bản");
         test.get().pass("Thống tin dịch vụ khách hàng thay đổi sau khi chọn phiên bản");
-        Assert.assertEquals(titleSpecificationAfter, titleSpecificationBefore,"Title specification khớp với title specification trong box specification");
-        test.get().pass("Title specification khớp với title specification trong box specification");
+        Assert.assertNotEquals(titleSpecificationAfter, titleSpecificationBefore,"Title specification khớp với title specification trong box specification");
+        test.get().pass("Title specification có thay đổi với title specification trong box specification");
         Assert.assertEquals(ratingCountAfter, reviewCountAfter,"Số lượng đánh giá không khớp với số lượng đánh giá trong box đánh giá");
         test.get().pass("Số lượng đánh giá khớp với số lượng đánh giá trong box đan giá");
 
         test.get().pass("Kiểm tra đồng bộ các thông tin khi thay đổi phiên bản thành công");
     }
 
-    @Test(groups = "Function",description = "Kiểm tra đồng bộ các thông tin khi thay đổi màu sắc")
-    public void verifyColor(){
-
-
-    }
     @Test(groups = "Function", description = "Kiểm tra đồng bộ địa chỉ theo thành phố đã chọn")
     public void verifyCityOption() {
         LogUtils.info("Chọn thành phố");
@@ -155,19 +150,19 @@ public class Product_Detail_Test_Cb extends BaseSetup {
         test.get().pass("Kiểm tra tất cả địa chỉ có chúa 'Bắc Ninh'");
     }
 
-    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua điện thoại")
-    public void PhoneContact(){
-
-    }
-
-    @Test(groups = "Function",description = "Kiểm tra đánh giá sản phẩm")
-    public void Evaluation(){
-
-
-    }
-
-    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua email")
-    public void verifyProductDetail(){
-
-    }
+//    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua điện thoại")
+//    public void PhoneContact(){
+//
+//    }
+//
+//    @Test(groups = "Function",description = "Kiểm tra đánh giá sản phẩm")
+//    public void Evaluation(){
+//
+//
+//    }
+//
+//    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua email")
+//    public void verifyProductDetail(){
+//
+//    }
 }
