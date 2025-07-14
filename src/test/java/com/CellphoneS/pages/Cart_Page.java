@@ -59,10 +59,6 @@ public class Cart_Page extends ValidateUIHelper {
         clickElement(CheckboxSelect);
     }
 
-    public boolean isCheckboxSelectDisplayed() {
-        return isElementDisplayed(CheckboxSelect);
-    }
-
     public void clickDelete() {
         WebElement deleteButton = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonDelete));
         deleteButton.click();
@@ -77,10 +73,6 @@ public class Cart_Page extends ValidateUIHelper {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.visibilityOfElementLocated(CheckboxSelect));
         return isElementDisplayed(CheckboxProduct);
-    }
-
-    public boolean isTitleProductDisplayed() {
-        return isElementDisplayed(TitleProduct);
     }
 
     public String getCartImageSrc() {

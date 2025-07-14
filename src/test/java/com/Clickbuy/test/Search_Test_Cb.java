@@ -59,7 +59,7 @@ public class Search_Test_Cb extends BaseSetup {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    @Test(groups = "UI_Test")
+    @Test(groups = "UI_Test", description = "Kiểm tra tìm kiếm bằng Iphone khi click icon Search")
     public void suggestBox(){
         LogUtils.info("Tìm kiếm với Iphone khi click icon Search");
         search_page_cb.inputSearch2("iphone");

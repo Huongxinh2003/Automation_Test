@@ -43,11 +43,9 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By BoxAddress = By.xpath("//div[@class='area-list__item store-list__item store-select__item']");
     public By PhoneContact = By.xpath("//input[@placeholder='Tư vấn qua số điện thoại']");
     public By ButtonSumit = By.xpath("//button[@class='submit_call']");
-    public By ToastContact = By.xpath("//span[@class='close-jq-toast-single']");
     public By EvaluationInput = By.xpath("//textarea[@placeholder='Hãy để lại bình luận của bạn tại đây!']");
     public By EvaluationStar = By.xpath("//span[@class='star']");
     public By EvaluationSubmit = By.xpath("//button[@title='Gửi']");
-    public static By ToastEvaluation = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
     public By ButtonBuyNow = By.xpath("//div[@class='order-available']//p[@class='product-action__item add-to-cart']");
     public By VersionName = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//a");
     public By VersionPrice = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//span[contains(@class,'js-format-price')]");
@@ -112,15 +110,16 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     }
 
     public void selectVersionProduct(String version) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='512GB']")));
-        webElement.click();
+        WebElement element = driver.findElement(By.xpath("//a[@title='512GB']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
     }
 
     public void selectColorProduct(String color) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Natural']")));
-        webElement.click();
+        WebElement selectColor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Natural']")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectColor);
+        selectColor.click();
     }
 
     public String selectCity(String city) {
@@ -141,23 +140,28 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         for (WebElement item : storeItems) {
             if (!item.isDisplayed()) continue;
 
-            String phone = item.findElement(By.xpath(".//span[@class='phone-number']")).getText().trim();
-            String fullText = item.findElement(By.xpath(".//p")).getText().trim();
-            String address = fullText.replace(phone, "").trim();
+            try {
+                String phone = item.findElement(By.xpath(".//span[@class='phone-number']")).getText().trim();
+                List<WebElement> pTags = item.findElements(By.xpath(".//p"));
+                if (pTags.isEmpty()) continue;
 
-            if (address.toLowerCase().contains(selectedCity.toLowerCase())) {
-                LogUtils.info("Có địa chỉ tại " + selectedCity);
-                LogUtils.info("SĐT: " + phone);
-                LogUtils.info("Địa chỉ: " + address);
-            } else {
-                LogUtils.warn("Địa chỉ này không thuộc " + selectedCity + ": " + address);
+                String address = pTags.get(0).getText().replace(phone, "").trim();
+
+                if (address.toLowerCase().contains(selectedCity.toLowerCase())) {
+                    LogUtils.info("Có địa chỉ tại " + selectedCity + " - SĐT: " + phone + " - Địa chỉ: " + address);
+                } else {
+                    LogUtils.warn("Không thuộc " + selectedCity + ": " + address);
+                }
+            } catch (Exception e) {
+                LogUtils.warn("Lỗi khi xử lý item: " + e.getMessage());
             }
         }
     }
 
     public void verifyAllAddressesInCity(String expectedCity) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebElement allAddresses1 = driver.findElement(By.xpath("//div[contains(@class, 'area-list__item')]//p"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", allAddresses1);
         List<WebElement> allAddresses = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
                 By.xpath("//div[contains(@class, 'area-list__item')]//p")
         ));

@@ -3,15 +3,11 @@
     <test name="Checkout">
         <groups>
             <run>
-                <include name="UI_Test"/>
+                <include name="Function_UI"/>
             </run>
         </groups>
         <classes>
             <class name="com.CellphoneS.tests.Checkout_Test">
-<!--                <methods>-->
-<!--                    <include name="verifyDisplayTabInfo"/>-->
-<!--                    <include name="verifyPaymentInfo"/>-->
-<!--                </methods>-->
             </class>
         </classes>
     </test>

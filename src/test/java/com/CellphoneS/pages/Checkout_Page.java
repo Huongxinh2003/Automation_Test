@@ -24,7 +24,6 @@ public class Checkout_Page extends ValidateUIHelper {
     public By TabPayment = By.xpath("//div[@class='nav__item nav__item--active']");
     public By CheckoutCard = By.xpath("//div[@class='view-list']");
     public By ProductQuantityCard = By.xpath("//span[@class='text-danger']");
-    public By BasePrice = By.xpath("//p[@class='product__price--through']");
     public By PriceCard = By.xpath("//p[@class='product__price--show']");
     public By InputEmail = By.xpath("//input[@placeholder='Email']");
     public By NameCustomer = By.xpath("//p[contains(text(),'Phùng Hương')]");
@@ -65,9 +64,9 @@ public class Checkout_Page extends ValidateUIHelper {
     public By TickPaymentMethod = By.xpath("//div[@class='list-payment__item list-payment__item--active list-payment__item-shopee_pay']//div[@class='payment-item__tick']//*[name()='svg']");
     public By CustomerName = By.xpath("//p[contains(text(),'Phùng Hương')]");
     public By PhoneNumber = By.xpath("//p[normalize-space()='0332019523']");
-    public By Email = By.xpath("//p[normalize-space()='quynhhuong6319@gmail.com']");//p[normalize-space()='EMAIL']");
-    public By Address = By.xpath("//p[contains(text(),',')]");
-    public By Note = By.xpath("//p[contains(text(),',')]");
+    public By Email = By.xpath("//p[normalize-space()='quynhhuong6319@gmail.com']");
+    public By Address = By.xpath("//p[normalize-space(text())='Nhận hàng tại']/following-sibling::p[contains(@class, 'address-quote__value')]");
+    public By Note = By.xpath("//p[@class='address-quote__value' and contains(text(), 'Tới lấy ngày')]");
     public By CheckboxTerms = By.xpath("//input[@type='checkbox']");
     public By TotalPriceTemp = By.xpath("//span[@class='total']");
     public By ListProduct = By.xpath("//button[@id='viewListItemInQuote-btn']");
@@ -103,9 +102,6 @@ public class Checkout_Page extends ValidateUIHelper {
         return isElementDisplayed(CheckoutCard);
     }
 
-    public String getBasePrice() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(BasePrice)).getText();
-    }
 
     public void SendKeysEmail(String email) {
         WebElement clear = driver.findElement(InputEmail);
@@ -117,7 +113,9 @@ public class Checkout_Page extends ValidateUIHelper {
     public String getNameCustomer() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement nameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(NameCustomer));
-        return nameElement.getText();
+        String fullText = nameElement.getText();
+        String nameOnly = fullText.replace("S-NULL", "").trim();
+        return nameOnly;
     }
 
     public String getPhoneCustomer() {
@@ -201,7 +199,6 @@ public class Checkout_Page extends ValidateUIHelper {
 //        input.click();
         input.sendKeys(address);
 
-        // Chờ item hiện ra và click vào nó
         String xpath = "//div[contains(@class,'dropdown__item')]/span[normalize-space()='" + address + "']";
         WebElement cityOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         cityOption.click();
@@ -415,9 +412,16 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public String getCustomerName() {
+        WebElement blockElement = driver.findElement(By.cssSelector(".address-quote__block"));
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });",
+                blockElement
+        );
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(CustomerName));
-        (js).executeScript("arguments[0].scrollIntoView();", element);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(CustomerName)).getText();
+        String fullText = element.getText();
+        String nameOnly = fullText.replace("S-NULL", "").trim();
+        return nameOnly;
     }
 
     public String getPhoneNumber() {
@@ -429,11 +433,15 @@ public class Checkout_Page extends ValidateUIHelper {
     }
 
     public String getAddress() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(Address)).getText();
+        WebElement AddressElement = wait.until(ExpectedConditions.visibilityOfElementLocated(Address));
+        (js).executeScript("arguments[0].scrollIntoView();", AddressElement);
+        return AddressElement.getText();
     }
 
     public String getNote2() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(Note)).getText();
+        WebElement NoteElement = wait.until(ExpectedConditions.visibilityOfElementLocated(Note));
+        String noteText = NoteElement.getText().trim();
+        return noteText;
     }
 
     public boolean isCheckboxTermsSelected() {

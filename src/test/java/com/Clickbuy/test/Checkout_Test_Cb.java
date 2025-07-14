@@ -62,6 +62,7 @@ public class Checkout_Test_Cb extends BaseSetup {
     private String WarrantyActive;
     @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI"})
     public void SearchProduct1() throws InterruptedException {
+        driver.navigate().refresh();
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page_cb = search_page_cb.openProductDetail("iphone");
         product_detail_page_cb.selectProductOptions();

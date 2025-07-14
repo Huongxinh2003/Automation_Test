@@ -136,7 +136,7 @@ public class Product_Detail_Test_Cb extends BaseSetup {
     }
 
     @Test(groups = "Function", description = "Kiểm tra đồng bộ địa chỉ theo thành phố đã chọn")
-    public void verifyCityOption() {
+    public void verifyCityOption() throws Exception{
         LogUtils.info("Chọn thành phố");
         product_detail_page_cb.selectCity("Bắc Ninh");
         test.get().pass("Chọn thành phố thành công");
@@ -147,7 +147,7 @@ public class Product_Detail_Test_Cb extends BaseSetup {
 
         LogUtils.info("Kiểm tra tất cả địa chỉ có chứa 'Bắc Ninh'");
         product_detail_page_cb.verifyAllAddressesInCity("Bắc Ninh");
-        test.get().pass("Kiểm tra tất cả địa chỉ có chúa 'Bắc Ninh'");
+        test.get().pass("Tất cả địa chỉ có chứa chữ 'Bắc Ninh'");
     }
 
 //    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua điện thoại")

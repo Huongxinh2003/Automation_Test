@@ -3,7 +3,7 @@
     <test name="Cart">
         <groups>
             <run>
-                <include name="UI_Test"/>
+                <include name="Function"/>
             </run>
         </groups>
         <classes>

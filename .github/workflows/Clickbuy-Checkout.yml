@@ -21,7 +21,7 @@ jobs:
       - name: Build with Maven (skip tests)
         run: mvn clean install -DskipTests
 
-      - name: Run Clickbuy SignIn Suite
+      - name: Run Clickbuy Checkout Suite
         run: mvn test -Dsurefire.suiteXmlFiles=src/test/java/com/Clickbuy/run/runCheckoutCB.xml
         continue-on-error: true
 

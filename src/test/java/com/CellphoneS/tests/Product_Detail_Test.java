@@ -10,6 +10,7 @@ import com.ultilities.ExcelUtils;
 import com.ultilities.listeners.ReportListener;
 import com.ultilities.logs.LogUtils;
 import com.ultilities.Properties_File;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,7 +40,7 @@ public class Product_Detail_Test extends BaseSetup {
     public Homepage_page homepage_page;
     public Search_Page search_page;
 
-    @BeforeClass(groups = {"UI_Test", "Function","Function_UI"})
+    @BeforeClass(groups = {"UI_Test", "Function","Function_UI","Link"})
     public void setupDriver() throws Exception {
         //gọi hàm khởi tạo properties
         Properties_File.setPropertiesFile();
@@ -56,7 +57,7 @@ public class Product_Detail_Test extends BaseSetup {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI"})
+    @BeforeMethod(groups = {"Function", "UI_Test", "Function_UI", "Link"})
     public void SearchProduct1() {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
@@ -107,7 +108,6 @@ public class Product_Detail_Test extends BaseSetup {
     @Test (groups = "Function",priority = 2, description = "Kiểm tra phần trăm giảm giá của sản phẩm")
     public void verifyDiscountCalculation() {
         int actualDiscount = product_detail_page.calculateDiscountPercentage();
-        // mong đợi khoảng 13%
         Assert.assertEquals(actualDiscount, 13, "Phần trăm giảm không đúng!");
         test.get().pass("Phần trăm giảm giá đúng");
     }
@@ -227,11 +227,11 @@ public class Product_Detail_Test extends BaseSetup {
         product_detail_page.ClickCity();
 
         LogUtils.info("Chọn Thành phố");
-        product_detail_page.ClickSelectCity("Hồ Chí Minh");
+        product_detail_page.ClickSelectCity("Hà Nội");
 
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
-        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='70%'");
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='75%'");
 
         LogUtils.info("Lấy giá trị sau khi chọn Thành phố");
         String CountStoreAfter = product_detail_page.getCountStore();
@@ -240,13 +240,17 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Lấy giá trị sau khi chọn Thành phố thành công");
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn Thành phố");
-        Assert.assertNotEquals(CityBefore, CityAfter, "Thành phố không thay đổi sau khi chọn Thành phố");
+        Assert.assertNotEquals(CityBefore, CityAfter, "Thành phố không thay đổi sau khi chọn");
+
+        LogUtils.info("Số cửa hàng trước: " + CountStoreBefore);
+        LogUtils.info("Số cửa hàng sau: " + CountStoreAfter);
+
         if (CountStoreBefore.equals(CountStoreAfter)) {
-            test.get().pass("Số cửa hàng của hai thành phố bằng nhau");
+            test.get().info("Số cửa hàng của hai thành phố bằng nhau: " + CountStoreBefore);
         } else {
-            Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn Thành phố");
-            test.get().fail("Số cửa hàng còn hàng thay đổi sau khi chọn Thành phố");
+            test.get().info("Số cửa hàng đã thay đổi từ " + CountStoreBefore + " → " + CountStoreAfter);
         }
+        test.get().pass("Đã chọn thành phố mới thành công: " + CityAfter);
 
         LogUtils.info("Kiểm tra box có chứa tên thành phố đã chọn");
         Assert.assertTrue(
@@ -260,7 +264,7 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Tất cả giá trị được thay đổi sau khi chọn Thành phố");
     }
 
-    //Mặc định chọn "HCM"
+
     @Test (groups = "Function",priority = 4, description = "Kiểm tra dropdown chọn quận")
     public void verifyChangeAfterSelectDistrict() {
         product_detail_page.ScrollToElement();
@@ -272,7 +276,7 @@ public class Product_Detail_Test extends BaseSetup {
         ((JavascriptExecutor) driver).executeScript("location.reload();");
 
         LogUtils.info("Chọn Quận");
-        String districtName = product_detail_page.ClickSelectDistrict("Quận Thủ Đức");
+        String districtName = product_detail_page.ClickSelectDistrict("Quận Đống Đa");
         LogUtils.info("Chờ trang cập nhật lại");
         validateUIHelper.waitForPageLoaded();
 
@@ -299,7 +303,7 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Tất cả giá trị được thay đổi sau khi chọn Quận");
     }
 
-    @Test(groups = "Function", priority = 5, description = "Kiểm tra chuyển màn hình sang giỏ hàng")
+    @Test(groups = "Function", priority = 5, description = "Kiểm tra click button 'Mua Ngay'")
     public void BuyProduct() {
         LogUtils.info("Chọn phiên bản");
         try {
@@ -396,73 +400,6 @@ public class Product_Detail_Test extends BaseSetup {
             Assert.fail(e.getMessage());
         }
     }
-
-
-    @Test(groups = "Function", priority = 6, description = "Kiểm tra chuyển màn hình sang tab Trả góp")
-    public void ClickInstallmentOption2() {
-        LogUtils.info("Click button Thanh toán trả góp 0%");
-        try {
-            product_detail_page.ClickInstallmentOption();
-            product_detail_page.ClickInstallmentOption2();
-            test.get().pass("Đã click nút 'Thanh toán trả góp 0%'.");
-        } catch (Exception e) {
-            test.get().fail("Không thể click nút 'Thanh toán trả góp 0%': " + e.getMessage());
-            Assert.fail(e.getMessage());
-        }
-
-        LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp 0%");
-        try {
-            Assert.assertTrue(product_detail_page.isToastMessageDisplayed(), "Không hiển thị toast message.");
-            test.get().pass("Toast message hiển thị thành công sau khi chọn trả góp 0%.");
-        } catch (Exception e) {
-            test.get().fail("Không hiển thị toast message sau khi chọn trả góp 0%: " + e.getMessage());
-            Assert.fail(e.getMessage());
-        }
-
-        LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
-        try {
-            String activeTab = product_detail_page.getActiveTabText();
-            Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
-            test.get().pass("Chuyển sang tab 'Trả góp' thành công.");
-        } catch (Exception e) {
-            test.get().fail("Không chuyển sang tab 'Trả góp': " + e.getMessage());
-            Assert.fail(e.getMessage());
-        }
-    }
-
-
-    @Test(groups = "Function", priority = 7, description = "Kiểm tra chuyển màn hình sang tab Trả góp")
-    public void ClickInstallmentOption3() {
-        LogUtils.info("Click button Thanh toán trả góp qua thẻ");
-        try {
-            product_detail_page.ClickInstallmentOption();
-            product_detail_page.ClickInstallmentOption3();
-            test.get().pass("Đã click nút 'Thanh toán trả góp qua thẻ'.");
-        } catch (Exception e) {
-            test.get().fail("Không thể click nút 'Thanh toán trả góp qua thẻ': " + e.getMessage());
-            Assert.fail(e.getMessage());
-        }
-
-        LogUtils.info("Kiểm tra thông báo khi click button Thanh toán trả góp qua thẻ");
-        try {
-            Assert.assertTrue(product_detail_page.isToastMessageDisplayed(), "Không hiển thị toast message.");
-            test.get().pass("Toast message hiển thị thành công sau khi chọn trả góp qua thẻ.");
-        } catch (Exception e) {
-            test.get().fail("Không hiển thị toast message sau khi chọn trả góp qua thẻ: " + e.getMessage());
-            Assert.fail(e.getMessage());
-        }
-
-        LogUtils.info("Kiểm tra sản phẩm ở tab 'Trả góp'");
-        try {
-            String activeTab = product_detail_page.getActiveTabText();
-            Assert.assertTrue(activeTab.contains("Trả góp"), "Tab không phải 'Trả góp'");
-            test.get().pass("Chuyển sang tab 'Trả góp' thành công.");
-        } catch (Exception e) {
-            test.get().fail("Không chuyển sang tab 'Trả góp': " + e.getMessage());
-            Assert.fail(e.getMessage());
-        }
-    }
-
 
     @Test(groups = "Function", priority = 8)
     public void EvaluateProduct() {

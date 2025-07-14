@@ -401,5 +401,4 @@ public class Product_Detail_Page extends ValidateUIHelper {
         Assert.assertTrue(toast, "Không hiển thị thông báo khi click button Thanh toán trả góp");
         return isElementDisplayed(ToastMessage);
     }
-
 }

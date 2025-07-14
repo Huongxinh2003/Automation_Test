@@ -59,7 +59,7 @@ public class SignIn_Test extends BaseSetup{
     public void setUpMethod() {
         driver.get("https://cellphones.com.vn/");
         validateUIHelper.waitForPageLoaded();
-        signIn_page.closePopupIfVisible();
+//        signIn_page.closePopupIfVisible();
     }
 
     @Test(groups = {"SignIn_Success"}, priority = 1, description = "Kiểm tra đăng nhập thành công")
@@ -353,39 +353,39 @@ public class SignIn_Test extends BaseSetup{
     }
 
     @Test(groups = "Link", priority = 1, description = "Kiểm tra chuyển sang trang đăng nhập bằng Google")
-    public void login_cellphoneS_67() throws Exception {
+    public void login_cellphoneS_67() throws InterruptedException {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thành công _ Google");
         signIn_page.ClickButtonGoogle();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("https://accounts.google.com/v3/signin/"), "Không chuyển sang trang đăng nhập Google!");
+        String expectedUrl = "accounts.google.com/v3/signin/identifier";
+        Assert.assertTrue(currentUrl.contains(expectedUrl), "Không chuyển sang trang đăng nhập Google!");
         test.get().pass("Đã chuyển đúng sang trang đăng nhập Google OAuth");
 
     }
 
     @Test(groups = "Link", priority = 2, description = "Kiểm tra chuyển sang trang đăng nhập bằng zalo")
-    public void login_cellphoneS_68() throws Exception {
+    public void login_cellphoneS_68() throws InterruptedException {
         signIn_page.SignIn();
         LogUtils.info("Đăng nhập thành công _ Zalo");
         signIn_page.ClickButtonZalo();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
-        boolean isZaloLoginPage = currentUrl.contains("oauth.zaloapp.com")
-                || currentUrl.contains("id.zalo.me");
-        assertTrue(isZaloLoginPage, "Không chuyển sang trang đăng nhập Zalo!");
+        String expectedBaseUrl = "https://id.zalo.me/account/login";
+        Assert.assertTrue(currentUrl.startsWith(expectedBaseUrl), "Không chuyển sang trang đăng nhập Zalo!");
         test.get().pass("Đã chuyển đúng sang trang đăng nhập Zalo OAuth");
     }
 
     @Test(groups = "Link", priority = 3, description = "Kiểm tra chuyển sang trang quên mật khẩu")
-    public void login_cellphoneS_70() throws Exception {
-        driver.get("https://cellphones.com.vn/");
-        validateUIHelper.waitForPageLoaded();
-//        signIn_page.closePopupIfVisible();
-
+    public void login_cellphoneS_70() throws InterruptedException {
         signIn_page.SignIn();
         LogUtils.info("LinkQuen mat khau");
         signIn_page.ClickLinkForgotPassword();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("https://smember.com.vn/restore-password"), "Không chuyển sang trang quên mật khẩu!");
+        String expectedUrl = "https://smember.com.vn/restore-password";
+        Assert.assertEquals(currentUrl, expectedUrl, "Không chuyển sang trang Quên Mật Khẩu!");
         test.get().pass("Đã chuyển đúng sang trang Quen mat khau");
     }
 
@@ -394,8 +394,10 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.SignIn();
         LogUtils.info("Link Đăng ký");
         signIn_page.ClickLinkRegister();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("https://smember.com.vn/register"), "Không chuyển sang trang Đăng ký!");
+        String expectedUrl = "https://smember.com.vn/register";
+        Assert.assertTrue(currentUrl.startsWith(expectedUrl), "Không chuyển sang trang Đăng ký!");
         test.get().pass("Đã chuyển đúng sang trang Đăng ký");
     }
 
@@ -404,6 +406,7 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.SignIn();
         LogUtils.info("Link CellphoneS");
         signIn_page.ClickLinkCellphoneS();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://cellphones.com.vn/"),
                 "Không chuyển sang trang cellphoneS!");
@@ -416,6 +419,7 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.SignIn();
         LogUtils.info("Kiểm tra Link DienThoaiVui");
         signIn_page.ClickLinkDienThoaiVui();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://dienthoaivui.com.vn/"), "Không chuyển sang trang dienthoaivui!");
 
@@ -463,6 +467,7 @@ public class SignIn_Test extends BaseSetup{
         signIn_page.SignIn();
         LogUtils.info("Link Chính sách ưu đãi");
         signIn_page.ClickLinkChinhSachUuDai();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://cellphones.com.vn/uu-dai-smember"), "Không chuyển sang trang chính sách ưu đãi!");
 

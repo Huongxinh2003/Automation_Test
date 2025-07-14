@@ -9,7 +9,7 @@
         <classes>
             <class name="com.CellphoneS.tests.Product_Detail_Test">
 <!--                <methods>-->
-<!--                    <include name="verifyChangeAfterSelectVersionProduct"/>-->
+<!--                    <include name=""/>-->
 <!--                </methods>-->
             </class>
         </classes>

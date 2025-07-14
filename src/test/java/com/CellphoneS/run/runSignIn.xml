@@ -4,6 +4,7 @@
         <groups>
             <run>
                 <include name="Function"/>
+                <include name="Link"/>
             </run>
         </groups>
         <classes>

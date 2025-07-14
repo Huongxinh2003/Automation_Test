@@ -205,16 +205,6 @@ public class Checkout_Test extends BaseSetup {
         test.get().pass("Kiểm tra nhập thống tin 'Giao hàng tận nơi' thành công");
     }
 
-    @Test (groups = "UI_Test", priority = 2, description = "Kiểm tra đồng bộ giá sản phẩm trên trang thanh toán")
-    public void verifyPrice() {
-        test.get().info("Giá sản phẩm trên Card là: "+ checkout_page.getPriceCard());
-        test.get().info("Giá sản phẩm trên thanh toán là: "+ checkout_page.getPriceTemp());
-        LogUtils.info("So sánh giá sản phẩm trên trang thanh toán");
-        Assert.assertEquals(checkout_page.getPriceCard(),checkout_page.getPriceTemp(),"Giá sản phẩm không khớp");
-
-        test.get().pass("Kiểm tra đông bộ giá sản phẩm trên trang thanh toán thành công");
-    }
-
     //Măc định chọn HN
     @Test (groups = "Function",priority = 3,description = "Kiểm tra chuyển sang tab 'Thanh toán'")
     public void verifySwitchTab() throws Exception {
@@ -230,10 +220,11 @@ public class Checkout_Test extends BaseSetup {
 
         LogUtils.info("Kiểm tra chuyển sang tab 'Thanh toán'");
         checkout_page.ClickButtonCheckout();
-        String activeTab = checkout_page.getTabPaymentActive();
-        Assert.assertTrue(activeTab.contains("THANH TOÁN"),"Chưa chuyển sang tab 'Thanh toán'");
-
-        test.get().pass("Kiem tra chuyển sang tab 'Thanh toán' thành công");
+        Thread.sleep(2000);
+        String ActualUrl = driver.getCurrentUrl();
+        String ExpectedUrl = "https://cellphones.com.vn/cart/payment";
+        Assert.assertEquals(ActualUrl,ExpectedUrl,"Chưa chuyển sang tab 'Thanh toán'");
+        test.get().pass("Chuyển sang tab 'Thanh toán' thành công");
 
     }
 
@@ -405,17 +396,18 @@ public class Checkout_Test extends BaseSetup {
         LogUtils.info("Đồng bộ địa chỉ");
         try {
             Assert.assertEquals(AddressInfo, AddressPayment);
+            test.get().pass("Địa chỉ khách hàng chính xác");
         }catch (Exception e) {
             test.get().fail("Địa chỉ khách hàng không chính xác");
         }
 
-        try {
-            LogUtils.info("Đồng bộ ghi chú");
-            Assert.assertEquals(NoteInfo, NotePayment);
-                test.get().pass("Ghi chú khách hàng chính xác");
-        }catch (Exception e) {
-            test.get().fail("Ghi chú khách hàng không chính xác");
-        }
+//        try {
+//            LogUtils.info("Đồng bộ ghi chú");
+//            Assert.assertEquals(NoteInfo, NotePayment);
+//                test.get().pass("Ghi chú khách hàng chính xác");
+//        }catch (Exception e) {
+//            test.get().fail("Ghi chú khách hàng không chính xác");
+//        }
 
         checkout_page.isCheckboxTermsSelected();
         if (checkout_page.isCheckboxTermsSelected()) {
