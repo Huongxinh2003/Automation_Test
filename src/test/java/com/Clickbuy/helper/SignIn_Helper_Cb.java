@@ -44,7 +44,7 @@ public class SignIn_Helper_Cb extends BaseSetup {
     public Homepage_page_Cb SignIn(WebDriver driver) {
         driver.get("https://clickbuy.com.vn/");
         LogUtils.info("CLick button để mở popup đăng nhập");
-        signIn_page_cb.ClickButtonSignIn();
+        signIn_page_cb.ClickButtonSignIn1();
 
         LogUtils.info("Nhâp thông tin đăng nhập");
         homepage_page_cb = signIn_page_cb.InputSignIn(Properties_File.getPropValue("phonenumber2"), Properties_File.getPropValue("password2"));

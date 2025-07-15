@@ -12,9 +12,6 @@ import java.time.Duration;
 import java.util.List;
 
 public class Product_Detail_Page extends ValidateUIHelper {
-    private static WebDriver driver;
-    private static WebDriverWait wait;
-    private static JavascriptExecutor js;
     private static ValidateUIHelper validateUIHelper;
 
     public By TitleProduct = By.xpath("//div[@class='box-product-name']");
@@ -29,7 +26,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By TitleProductBar = By.xpath("//div[@class='cta-product-info']");
     public By ProductThumbnail = By.xpath("//div[@class='box-gallery']");
     public By MainThumbnail = By.xpath("//div[contains(@class, 'gallery-slide') and contains(@class, 'gallery-top')]//div[contains(@class,'swiper-slide-active')]//img");
-   public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
+    public By CityOption = By.xpath("//div[@class='box-on-stock-option button__change-province']");
     public By DistrictOption = By.xpath("//select[@id='districtOptions']");
     public By SelectCity = By.xpath("//ul[@class='menu-list']");
     public By BoxAddress = By.xpath("//div[@class='box-on-stock-address']");
@@ -53,7 +50,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
 
     public Product_Detail_Page(WebDriver driver) {
         super(driver);
-        Product_Detail_Page.driver = driver;
+        this.driver = driver;
         js = (JavascriptExecutor) driver;
         validateUIHelper = new ValidateUIHelper(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

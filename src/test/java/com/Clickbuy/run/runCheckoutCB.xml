@@ -3,8 +3,8 @@
     <test name="Checkout_CB">
         <groups>
             <run>
-                <include name="Function"/>
                 <include name="UI_Test"/>
+                <include name="Function"/>
             </run>
         </groups>
         <classes>

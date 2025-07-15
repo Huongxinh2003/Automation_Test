@@ -13,10 +13,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class Checkout_Page extends ValidateUIHelper {
-
-    private static WebDriver driver;
-    private static WebDriverWait wait;
-    private static JavascriptExecutor js;
+    private static ValidateUIHelper validateUIHelper;
 
     String city = "Hà Nội";
     //Trang thông tin
@@ -75,7 +72,7 @@ public class Checkout_Page extends ValidateUIHelper {
 
     public Checkout_Page(WebDriver driver) {
         super(driver);
-        Checkout_Page.driver = driver;
+        this.driver = driver;
         js = (JavascriptExecutor) driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

@@ -10,9 +10,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class SignIn_Page_Cb extends ValidateUIHelper {
-    private static WebDriver driver;
-    private WebDriverWait wait;
-    private JavascriptExecutor js;
     private ValidateUIHelper validateUIHelper;
 
     public By popupModal = By.xpath("//div[@id='popup-modal']");
@@ -32,7 +29,7 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
 
     public SignIn_Page_Cb(WebDriver driver) {
         super(driver);
-        SignIn_Page_Cb.driver = driver;
+        this.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         validateUIHelper = new ValidateUIHelper(driver);
@@ -51,10 +48,7 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
             System.out.println("Không có popup xuất hiện.");
         }
 
-        // Chờ cho trang ổn định
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(webDriver -> ((JavascriptExecutor) webDriver)
-                        .executeScript("return document.readyState").equals("complete"));
+        validateUIHelper.waitForPageLoaded();
 
         try {
             WebElement loginBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(ButtonSignIn));
@@ -79,8 +73,11 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     }
 
     public Homepage_page_Cb InputSignIn(String phoneNumber, String password) {
-        sendKeys(InputPhoneNumber, phoneNumber);
-        sendKeys(InputPassword, password);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement phonenumber = wait.until(ExpectedConditions.visibilityOfElementLocated(InputPhoneNumber));
+        sendKeys(phonenumber, phoneNumber);
+        WebElement password1 = wait.until(ExpectedConditions.visibilityOfElementLocated(InputPassword));
+        sendKeys(password1, password);
         clickElement(BtnSignIn);
         return new Homepage_page_Cb(driver);
     }
@@ -100,14 +97,18 @@ public class SignIn_Page_Cb extends ValidateUIHelper {
     }
     public String getFailToast() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.className("jq-toast-single")));
-        // Cách 1: Dùng JavaScript để lấy đúng phần text sau dấu "×" và "Lỗi"
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String errorMessage = (String) js.executeScript(
-                "return arguments[0].childNodes[3].nodeValue.trim();", toastElement);
-        return errorMessage;
+        WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.className("jq-toast-single")));
+        String fullText = toastElement.getText();
+
+        String cleanedText = fullText
+                .replace("×", "")
+                .replace("Lỗi", "")
+                .trim();
+
+        return cleanedText;
     }
+
 
     public void verifySuccessToast() {
         WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ToastMessage));

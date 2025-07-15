@@ -1,0 +1,210 @@
+2025-07-15 11:43:00 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 11:43:11 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 11:46:39 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 11:46:45 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-07-15 11:46:58 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 11:47:02 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo lỗi
+2025-07-15 11:47:02 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-07-15 11:47:06 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 11:47:28 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 11:47:40 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 11:47:44 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 11:47:46 INFO  LogUtils:10 - Kiểm tra title của trang chi tiết sản phẩm
+2025-07-15 11:47:47 INFO  LogUtils:10 - Tiêu đề sản phẩm: iPhone 16 Pro Max 256GB Chính Hãng VN/A
+2025-07-15 11:48:02 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 11:48:12 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 11:48:17 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 11:48:22 INFO  LogUtils:10 - Lưu trạng thái ban đầu
+2025-07-15 11:48:22 INFO  LogUtils:10 - Số lượng đánh giá: 69
+2025-07-15 11:48:22 INFO  LogUtils:10 - Tên phiên bản đang được chọn: 256GB
+2025-07-15 11:48:22 INFO  LogUtils:10 - Giá phiên bản đang được chọn (thô): 29.650.000 ₫
+2025-07-15 11:48:22 INFO  LogUtils:10 - Giá phiên bản đang được chọn (chuẩn hóa): 29650000
+2025-07-15 11:48:22 INFO  LogUtils:10 - Giá mua ngay: 29,650,000 ₫
+2025-07-15 11:48:22 INFO  LogUtils:10 - Số lượng đánh giá (block-rate): 134
+2025-07-15 11:48:23 INFO  LogUtils:10 - Thay đổi phiên bản
+2025-07-15 11:48:26 INFO  LogUtils:10 - Lấy trạng thái sau khi thay đổi
+2025-07-15 11:48:28 INFO  LogUtils:10 - Số lượng đánh giá: 49
+2025-07-15 11:48:28 INFO  LogUtils:10 - Tên phiên bản đang được chọn: 512GB
+2025-07-15 11:48:28 INFO  LogUtils:10 - Giá phiên bản đang được chọn (thô): 35.950.000 ₫
+2025-07-15 11:48:28 INFO  LogUtils:10 - Giá phiên bản đang được chọn (chuẩn hóa): 35950000
+2025-07-15 11:48:28 INFO  LogUtils:10 - Giá mua ngay: 35,950,000 ₫
+2025-07-15 11:48:28 INFO  LogUtils:10 - Số lượng đánh giá (block-rate): 52
+2025-07-15 11:55:34 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 11:55:44 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 11:58:22 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 11:58:33 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 11:58:38 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 11:58:41 INFO  LogUtils:10 - Lưu trạng thái ban đầu
+2025-07-15 11:58:41 INFO  LogUtils:10 - Số lượng đánh giá: 69
+2025-07-15 11:58:41 INFO  LogUtils:10 - Tên phiên bản đang được chọn: 256GB
+2025-07-15 11:58:41 INFO  LogUtils:10 - Giá phiên bản đang được chọn (thô): 29.650.000 ₫
+2025-07-15 11:58:41 INFO  LogUtils:10 - Giá phiên bản đang được chọn (chuẩn hóa): 29650000
+2025-07-15 11:58:41 INFO  LogUtils:10 - Giá mua ngay: 29,650,000 ₫
+2025-07-15 11:58:41 INFO  LogUtils:10 - Số lượng đánh giá (block-rate): 134
+2025-07-15 11:58:42 INFO  LogUtils:10 - Thay đổi phiên bản
+2025-07-15 11:58:43 INFO  LogUtils:10 - Lấy trạng thái sau khi thay đổi
+2025-07-15 11:58:45 INFO  LogUtils:10 - Số lượng đánh giá: 49
+2025-07-15 11:58:45 INFO  LogUtils:10 - Tên phiên bản đang được chọn: 512GB
+2025-07-15 11:58:45 INFO  LogUtils:10 - Giá phiên bản đang được chọn (thô): 35.950.000 ₫
+2025-07-15 11:58:45 INFO  LogUtils:10 - Giá phiên bản đang được chọn (chuẩn hóa): 35950000
+2025-07-15 11:58:45 INFO  LogUtils:10 - Giá mua ngay: 35,950,000 ₫
+2025-07-15 11:58:45 INFO  LogUtils:10 - Số lượng đánh giá (block-rate): 52
+2025-07-15 14:08:53 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:09:02 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:09:11 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:09:11 WARN  LogUtils:18 - verifyCheckoutForm test is skipped.
+2025-07-15 14:09:15 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:09:25 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:09:30 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:09:42 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:09:49 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 14:09:53 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-15 14:09:55 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-15 14:09:59 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-15 14:09:59 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:09:59 INFO  LogUtils:10 -  Bỏ trống các trường thông tin trong popup
+2025-07-15 14:10:00 INFO  LogUtils:10 - Kiểm tra nút đặt hàng
+2025-07-15 14:10:00 INFO  LogUtils:10 - Kiểm tra bị highlight đỏ
+2025-07-15 14:10:00 INFO  LogUtils:10 - Kiểm tra thống báo lỗi
+2025-07-15 14:10:00 ERROR LogUtils:14 - verifyCheckoutForm test is failed.
+2025-07-15 14:10:04 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:13:23 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:13:28 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:13:37 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:13:58 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:13:58 WARN  LogUtils:18 - verifyCheckoutForm test is skipped.
+2025-07-15 14:14:01 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:16:19 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:16:22 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:16:36 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:16:56 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:16:56 WARN  LogUtils:18 - verifyCheckoutForm test is skipped.
+2025-07-15 14:16:59 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:17:52 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:17:55 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:18:07 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:18:28 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:18:28 WARN  LogUtils:18 - verifyCheckoutForm test is skipped.
+2025-07-15 14:18:31 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:19:02 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:19:06 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:19:08 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:19:08 WARN  LogUtils:18 - verifyCheckoutForm test is skipped.
+2025-07-15 14:19:13 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:19:20 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 14:19:26 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:19:37 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:19:45 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 14:19:50 INFO  LogUtils:10 - Chọn phiên bản
+2025-07-15 14:19:53 INFO  LogUtils:10 - Chọn màu sắc
+2025-07-15 14:19:58 INFO  LogUtils:10 - Đã click được vào button 'Buy Now'
+2025-07-15 14:19:58 INFO  LogUtils:10 - verifyCheckoutForm test is starting...
+2025-07-15 14:19:58 INFO  LogUtils:10 -  Bỏ trống các trường thông tin trong popup
+2025-07-15 14:20:00 INFO  LogUtils:10 - Kiểm tra nút đặt hàng
+2025-07-15 14:20:00 INFO  LogUtils:10 - Kiểm tra bị highlight đỏ
+2025-07-15 14:20:00 INFO  LogUtils:10 - Kiểm tra thống báo lỗi
+2025-07-15 14:20:01 ERROR LogUtils:14 - verifyCheckoutForm test is failed.
+2025-07-15 14:20:04 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 14:29:15 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:31:01 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:31:11 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:31:16 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 14:31:20 INFO  LogUtils:10 - Chọn thành phố
+2025-07-15 14:31:25 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách địa chỉ
+2025-07-15 14:31:45 INFO  LogUtils:10 - Kiểm tra tất cả địa chỉ có chứa 'Bắc Ninh'
+2025-07-15 14:33:00 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:33:10 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:33:15 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 14:33:20 INFO  LogUtils:10 - Chọn thành phố
+2025-07-15 14:33:20 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách địa chỉ
+2025-07-15 14:33:21 INFO  LogUtils:10 - Có địa chỉ tại Bắc Ninh - SĐT: 0941.442.468 - Địa chỉ: Ngã 3 Đông Yên, Yên Phong, Bắc Ninh (Khu công nghiệp Yên Phong)
+2025-07-15 14:33:21 INFO  LogUtils:10 - Kiểm tra tất cả địa chỉ có chứa 'Bắc Ninh'
+2025-07-15 14:33:21 INFO  LogUtils:10 - Địa chỉ hiển thị: 0941.442.468 Ngã 3 Đông Yên, Yên Phong, Bắc Ninh (Khu công nghiệp Yên Phong)
+2025-07-15 14:33:21 INFO  LogUtils:10 - Tất cả địa chỉ đang hiển thị đều thuộc Bắc Ninh.
+2025-07-15 14:33:46 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 14:33:56 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 14:33:59 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 14:34:03 INFO  LogUtils:10 - Chọn thành phố
+2025-07-15 14:34:03 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách địa chỉ
+2025-07-15 14:34:04 INFO  LogUtils:10 - Có địa chỉ tại Bắc Ninh - SĐT: 0941.442.468 - Địa chỉ: Ngã 3 Đông Yên, Yên Phong, Bắc Ninh (Khu công nghiệp Yên Phong)
+2025-07-15 14:34:04 INFO  LogUtils:10 - Kiểm tra tất cả địa chỉ có chứa 'Bắc Ninh'
+2025-07-15 14:34:04 INFO  LogUtils:10 - Địa chỉ hiển thị: 0941.442.468 Ngã 3 Đông Yên, Yên Phong, Bắc Ninh (Khu công nghiệp Yên Phong)
+2025-07-15 14:34:04 INFO  LogUtils:10 - Tất cả địa chỉ đang hiển thị đều thuộc Bắc Ninh.
+2025-07-15 15:06:56 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:07:06 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:07:11 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:07:24 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:14:47 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:14:55 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:14:59 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:15:04 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:16:53 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:17:03 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:17:08 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:17:12 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:17:51 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:18:02 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:18:07 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:18:11 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:19:28 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:19:38 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:19:43 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:19:48 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:19:48 INFO  LogUtils:10 - Nhập nội dung bình luận
+2025-07-15 15:22:43 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:22:53 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:22:57 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:23:00 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:23:00 INFO  LogUtils:10 - Nhập nội dung bình luận
+2025-07-15 15:23:00 INFO  LogUtils:10 - Nhấn nút gửi đánh giá
+2025-07-15 15:23:01 INFO  LogUtils:10 - Kiểm tra thông báo gửi đánh giá thành công
+2025-07-15 15:29:49 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:29:59 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:30:03 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:30:06 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:30:06 INFO  LogUtils:10 - Nhập nội dung bình luận
+2025-07-15 15:30:07 INFO  LogUtils:10 - Nhấn nút gửi đánh giá
+2025-07-15 15:30:07 INFO  LogUtils:10 - Kiểm tra thông báo gửi đánh giá thành công
+2025-07-15 15:32:24 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:32:33 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:32:37 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:32:42 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:32:43 INFO  LogUtils:10 - Nhập nội dung bình luận
+2025-07-15 15:32:43 INFO  LogUtils:10 - Nhấn nút gửi đánh giá
+2025-07-15 15:32:44 INFO  LogUtils:10 - Kiểm tra thông báo gửi đánh giá thành công
+2025-07-15 15:35:02 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:35:17 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:35:24 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:35:29 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:35:29 INFO  LogUtils:10 - Nhập nội dung bình luận
+2025-07-15 15:35:29 INFO  LogUtils:10 - Nhấn nút gửi đánh giá
+2025-07-15 15:35:29 INFO  LogUtils:10 - Kiểm tra thông báo gửi đánh giá thành công
+2025-07-15 15:40:44 INFO  LogUtils:10 - CLick button để mở popup đăng nhập
+2025-07-15 15:40:55 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:41:00 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 15:41:05 INFO  LogUtils:10 - Chọn số sao đánh giá
+2025-07-15 15:41:05 INFO  LogUtils:10 - Nhập nội dung bình luận
+2025-07-15 15:41:06 INFO  LogUtils:10 - Nhấn nút gửi đánh giá
+2025-07-15 15:41:06 INFO  LogUtils:10 - Kiểm tra thông báo gửi đánh giá thành công
+2025-07-15 15:43:41 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 15:43:48 INFO  LogUtils:10 - enterNoPassword test is starting...
+2025-07-15 15:43:59 INFO  LogUtils:10 - Nhâp thông tin đăng nhập
+2025-07-15 15:44:04 INFO  LogUtils:10 - Kiểm tra hiển thị thông báo lỗi
+2025-07-15 15:44:04 ERROR LogUtils:14 - enterNoPassword test is failed.
+2025-07-15 15:44:08 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 17:09:00 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 17:09:24 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-15 17:09:28 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-15 17:09:33 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 17:10:20 INFO  LogUtils:10 - Search test is starting...
+2025-07-15 17:10:20 WARN  LogUtils:18 - Search test is skipped.
+2025-07-15 17:10:23 INFO  LogUtils:10 - End testing Automation_Test
+2025-07-15 17:10:42 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-15 17:10:54 INFO  LogUtils:10 - Bắt đầu test case
+2025-07-15 17:10:57 INFO  LogUtils:10 - Đăng nhập thành công
+2025-07-15 17:11:06 INFO  LogUtils:10 - Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết
+2025-07-15 17:11:17 INFO  LogUtils:10 - Search test is starting...
+2025-07-15 17:11:17 INFO  LogUtils:10 - Kiểm tra hiển thị tiêu đề trang
+2025-07-15 17:11:17 INFO  LogUtils:10 - Lấy tiêu đề trang
+2025-07-15 17:11:17 INFO  LogUtils:10 - Search test is passed.
+2025-07-15 17:11:21 INFO  LogUtils:10 - End testing Automation_Test

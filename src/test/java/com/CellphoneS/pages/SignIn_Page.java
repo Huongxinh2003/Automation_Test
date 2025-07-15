@@ -8,10 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class  SignIn_Page extends ValidateUIHelper {
-    private static WebDriver driver;
-    private WebDriverWait wait;
-    private JavascriptExecutor js;
-    // Định nghĩa các locator
+    private static ValidateUIHelper validateUIHelper;
+
     private final By popupCloseBtn = By.xpath("//button[@class='modal-close is-large']");
     private final By loginButton = By.xpath("//button[@class='cta-smember']");
     private final By loginButton2 = By.xpath("//a[@class='login-btn']");
@@ -37,7 +35,7 @@ public class  SignIn_Page extends ValidateUIHelper {
 
     public SignIn_Page(WebDriver driver) {
         super(driver);
-        SignIn_Page.driver = driver;
+        this.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

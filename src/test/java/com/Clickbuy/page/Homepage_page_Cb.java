@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Homepage_page_Cb extends ValidateUIHelper {
-    private WebDriver driver;
-    private WebDriverWait wait;
 
     private final By searchInput = By.xpath("//input[@id='inp-search']");
     private final By toast = By.cssSelector(".jq-toast-single");

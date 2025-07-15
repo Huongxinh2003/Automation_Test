@@ -23,13 +23,12 @@ public class Search_Page_Cb extends ValidateUIHelper {
     public static By ResultTitle = By.xpath("//div[@class='mgt15 mgb15 container']");
     public By TitleSearchFail = By.xpath("//h1[contains(text(),'Đường dẫn đã hết hạn truy cập hoặc không tồn tại!')]");
     public By SubTitleSearchFail = By.xpath("//h3[contains(text(),'Quý khách có thể tham khảo thêm các sản phẩm mới n')]");
-    public By ButtonGoHomePage = By.xpath("//span[@id='countdown']");
     public static By LogoClickbuy = By.xpath("//img[@title='Clickbuy.com.vn - Hệ thống bán lẻ điện thoại, máy tính bảng, laptop, phụ kiện chính hãng']");
     public By ProductCard = By.xpath("//a[@title='iPhone 16 Pro Max 256GB Chính Hãng VN/A']");
 
     public Search_Page_Cb(WebDriver driver) {
         super(driver);
-        Search_Page_Cb.driver = driver;
+        this.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         validateUIHelper = new ValidateUIHelper(driver);
@@ -91,11 +90,6 @@ public class Search_Page_Cb extends ValidateUIHelper {
 
     public boolean isSubTitleSearchFailDisplayed() {
         return isElementDisplayed(SubTitleSearchFail);
-    }
-    public void clickButtonGoHomePage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wait.until(ExpectedConditions.elementToBeClickable(ButtonGoHomePage));
-        clickElement(ButtonGoHomePage);
     }
 
 }

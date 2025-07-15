@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Homepage_page extends ValidateUIHelper {
-    private WebDriver driver;
-    private WebDriverWait wait;
 
     private final By searchInput = By.xpath("//input[@id='inp$earch']");
 

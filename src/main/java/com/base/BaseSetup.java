@@ -121,8 +121,6 @@ public class BaseSetup {
         return driver.get();
     }
 
-    // --- ExtentReports Lifecycle ---
-
     @BeforeSuite(alwaysRun = true)
     public void initExtentReports() {
         extent = ExtentManager.getExtentReports();

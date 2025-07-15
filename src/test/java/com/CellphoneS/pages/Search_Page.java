@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Search_Page extends ValidateUIHelper {
-    private static WebDriver driver;
-    private WebDriverWait wait;
-    private JavascriptExecutor js;
+    private static ValidateUIHelper validateUIHelper;
 
     private final By searchInput = By.xpath("//input[@id='inp$earch']");
     private final By IconSearch = By.xpath("//button[@type='submit']//*[name()='svg']");
@@ -36,7 +34,7 @@ public class Search_Page extends ValidateUIHelper {
 
     public Search_Page(WebDriver driver) {
         super(driver);
-        Search_Page.driver = driver;
+        this.driver = driver;
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

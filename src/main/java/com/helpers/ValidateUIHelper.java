@@ -10,9 +10,9 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 public class ValidateUIHelper {
-    private WebDriver driver;
-    private JavascriptExecutor js;
-    private WebDriverWait wait;
+    protected static WebDriver driver;
+    protected JavascriptExecutor js;
+    protected WebDriverWait wait;
 
     public ValidateUIHelper(WebDriver driver) {
         this.driver = driver;
@@ -26,12 +26,6 @@ public class ValidateUIHelper {
         js.executeScript("arguments[0].click();", element);
     }
 
-//    // Click element và scroll vào view
-//    public void clickElementByJs(By by) {
-//        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-//        js.executeScript("arguments[0].scrollIntoView(true);", element);
-//        js.executeScript("arguments[0].click();", element);
-//    }
 
     public void clickElement(WebElement element) {
         js.executeScript("arguments[0].click();", element);
@@ -41,6 +35,10 @@ public class ValidateUIHelper {
     // Gửi dữ liệu vào ô input
     public void sendKeys(By by, String text) {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+        element.clear();
+        element.sendKeys(text);
+    }
+    public void sendKeys(WebElement element, String text) {
         element.clear();
         element.sendKeys(text);
     }
@@ -90,10 +88,6 @@ public class ValidateUIHelper {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText();
     }
 
-    // Lấy giá trị thuộc tính của element
-    public String getElementAttribute(By by, String attribute) {
-        return driver.findElement(by).getAttribute(attribute);
-    }
 
     // Copy text vào clipboard
     public static void copyToClipboard(String text) {

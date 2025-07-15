@@ -194,7 +194,7 @@ public class Checkout_Test_Cb extends BaseSetup {
             LogUtils.info("Kiểm tra thống báo lỗi");
             String expectedError = "Vui lòng không bỏ trống thông tin!";
             String actualError = checkout_page_cb.getFailToast();
-            Assert.assertEquals(actualError, expectedError);
+            Assert.assertEquals(expectedError,actualError);
             test.get().pass("Thông báo lỗi hiển thị đúng");
         }catch (Exception e) {
             test.get().fail("Thông báo lỗi hiển thị không đúng");

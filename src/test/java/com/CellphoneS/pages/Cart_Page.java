@@ -15,10 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Cart_Page extends ValidateUIHelper {
-
-    private static WebDriver driver;
-    private static WebDriverWait wait;
-    private static JavascriptExecutor js;
+    private static ValidateUIHelper validateUIHelper;
 
     public By CheckboxSelect = By.xpath("//div[@class='d-flex align-items-center justify-content-center']");
     public By ButtonDelete = By.xpath("//button[@class='remove-item']");
@@ -37,7 +34,7 @@ public class Cart_Page extends ValidateUIHelper {
 
     public Cart_Page(WebDriver driver) {
         super(driver);
-        Cart_Page.driver = driver;
+        this.driver = driver;
         js = (JavascriptExecutor) driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

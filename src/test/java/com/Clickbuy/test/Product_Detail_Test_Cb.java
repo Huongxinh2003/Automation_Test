@@ -104,38 +104,92 @@ public class Product_Detail_Test_Cb extends BaseSetup {
         String titleSpecificationAfter = product_detail_page_cb.getTitleSpecification();
 
         test.get().pass("Kiểm tra đồng bộ các thông tin");
-        Assert.assertNotEquals(titleProductBefore, titleProductAfter, "Tiêu đề sản phẩm không thay đổi sau khi chọn phiên bản");
-        test.get().pass(" Tiêu đề sản phẩm thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(priceProductBefore, priceProductAfter, "Giá sản phẩm không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Giá sản phẩm thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(warrantyActiveBefore, warrantyActiveAfter, "Thông tin bảo hành không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Thống tin bảo hành thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(warrantyContentBefore, warrantyContentAfter, "Nội dung bảo hành không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Nội dung bảo hành thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(reviewCountBefore, reviewCountAfter, "Số lượng đánh giá không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Số lượng đánh giá thay đổi sau khi chọn phiên bản");
-        test.get().pass("Số lượng sao thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(versionNameBefore, versionNameAfter, "Tên phiên bản không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Ten phiên bản thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(versionPriceBefore, versionPriceAfter, "Giá phiên bản không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Giá phiên bản thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(buyNowPriceBefore, buyNowPriceAfter, "Giá mua ngay không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Giá mua ngay thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(ratingCountBefore, ratingCountAfter, "Số lượng đánh giá không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Số lượng đánh giá thay đổi sau khi chọn phiên bản");
-        Assert.assertEquals(versionPriceAfter,warrantyContentAfter,"Giá sản phẩm không khớp với giá bảo hành");
-        test.get().pass("Giá sản phẩm khớp với giá bảo hành");
-        Assert.assertNotEquals(CustomerServiceBefore, CustomerServiceAfter,"Thông tin dịch vụ khách hàng không thay đổi sau khi chọn phiên bản");
-        test.get().pass("Thống tin dịch vụ khách hàng thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(titleSpecificationAfter, titleSpecificationBefore,"Title specification khớp với title specification trong box specification");
-        test.get().pass("Title specification có thay đổi với title specification trong box specification");
-        Assert.assertEquals(ratingCountAfter, reviewCountAfter,"Số lượng đánh giá không khớp với số lượng đánh giá trong box đánh giá");
-        test.get().pass("Số lượng đánh giá khớp với số lượng đánh giá trong box đan giá");
+
+        if (!titleProductBefore.equals(titleProductAfter)) {
+            test.get().pass("Tiêu đề sản phẩm thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Tiêu đề sản phẩm không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!priceProductBefore.equals(priceProductAfter)) {
+            test.get().pass("Giá sản phẩm thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Giá sản phẩm không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!warrantyActiveBefore.equals(warrantyActiveAfter)) {
+            test.get().pass("Thông tin bảo hành thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Thông tin bảo hành không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!warrantyContentBefore.equals(warrantyContentAfter)) {
+            test.get().pass("Nội dung bảo hành thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Nội dung bảo hành không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (reviewCountBefore != reviewCountAfter) {
+            test.get().pass("Số lượng đánh giá thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Số lượng đánh giá không thay đổi sau khi chọn phiên bản");
+        }
+
+        test.get().pass("Số lượng sao thay đổi sau khi chọn phiên bản"); // Nếu bạn cần so sánh thêm, nên thêm biến và logic tương tự
+
+        if (!versionNameBefore.equals(versionNameAfter)) {
+            test.get().pass("Tên phiên bản thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Tên phiên bản không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!versionPriceBefore.equals(versionPriceAfter)) {
+            test.get().pass("Giá phiên bản thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Giá phiên bản không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!buyNowPriceBefore.equals(buyNowPriceAfter)) {
+            test.get().pass("Giá mua ngay thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Giá mua ngay không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (ratingCountBefore != ratingCountAfter) {
+            test.get().pass("Số lượng đánh giá thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Số lượng đánh giá không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (versionPriceAfter.equals(warrantyContentAfter)) {
+            test.get().pass("Giá sản phẩm khớp với giá bảo hành");
+        } else {
+            test.get().fail("Giá sản phẩm không khớp với giá bảo hành");
+        }
+
+        if (!CustomerServiceBefore.equals(CustomerServiceAfter)) {
+            test.get().pass("Thông tin dịch vụ khách hàng thay đổi sau khi chọn phiên bản");
+        } else {
+            test.get().fail("Thông tin dịch vụ khách hàng không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!titleSpecificationAfter.equals(titleSpecificationBefore)) {
+            test.get().pass("Title specification có thay đổi với title specification trong box specification");
+        } else {
+            test.get().fail("Title specification khớp với title specification trong box specification");
+        }
+
+        if (ratingCountAfter == reviewCountAfter) {
+            test.get().pass("Số lượng đánh giá khớp với số lượng đánh giá trong box đánh giá");
+        } else {
+            test.get().fail("Số lượng đánh giá không khớp với số lượng đánh giá trong box đánh giá. "
+                    + "Expected: " + ratingCountAfter + ", Actual: " + reviewCountAfter);
+        }
 
         test.get().pass("Kiểm tra đồng bộ các thông tin khi thay đổi phiên bản thành công");
     }
 
-    @Test(groups = "Function", description = "Kiểm tra đồng bộ địa chỉ theo thành phố đã chọn")
+    @Test(groups = "Function_UI", description = "Kiểm tra đồng bộ địa chỉ theo thành phố đã chọn")
     public void verifyCityOption() throws Exception{
         LogUtils.info("Chọn thành phố");
         product_detail_page_cb.selectCity("Bắc Ninh");
@@ -150,19 +204,26 @@ public class Product_Detail_Test_Cb extends BaseSetup {
         test.get().pass("Tất cả địa chỉ có chứa chữ 'Bắc Ninh'");
     }
 
-//    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua điện thoại")
-//    public void PhoneContact(){
-//
-//    }
-//
-//    @Test(groups = "Function",description = "Kiểm tra đánh giá sản phẩm")
-//    public void Evaluation(){
-//
-//
-//    }
-//
-//    @Test(groups = "Function",description = "Kiểm tra hiển thị thông tin khi nhập tư vấn qua email")
-//    public void verifyProductDetail(){
-//
-//    }
+    @Test(groups = "Function",description = "Kiểm tra đánh giá sản phẩm")
+    public void EvaluationandComment(){
+        LogUtils.info("Chọn số sao đánh giá");
+        product_detail_page_cb.selectStarRating(4);
+        test.get().pass("Chọn số sao đánh giá thành công");
+
+        LogUtils.info("Nhập nội dung bình luận");
+        product_detail_page_cb.SendKeyEvaluation("Sản phẩm có ngoại hình khá đẹp, nhân viên tư vấn nhiệt tình, " +
+                "website giao diện thân thiện với người dùng");
+        test.get().pass("Nhập nội dung đánh giá thành công");
+
+        LogUtils.info("Nhấn nút gửi đánh giá");
+        product_detail_page_cb.ClickEvaluationSubmit();
+        test.get().pass("Nhấn nút gửi đánh giá thành công");
+
+        LogUtils.info("Kiểm tra thông báo gửi đánh giá thành công");
+        String expectedMessage = "Bình luận thành công!.";
+        String actualMessage = product_detail_page_cb.getToast();
+        Assert.assertEquals(actualMessage, expectedMessage, "Thông báo gửi đánh giá không khớp");
+        test.get().pass("Thông báo gửi đánh giá khớp như mong muốn");
+    }
+
 }

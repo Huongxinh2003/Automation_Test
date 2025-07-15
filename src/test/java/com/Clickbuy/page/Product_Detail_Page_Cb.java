@@ -1,8 +1,6 @@
 package com.Clickbuy.page;
 
-import com.CellphoneS.pages.Cart_Page;
 import com.helpers.ValidateUIHelper;
-import com.ultilities.listeners.ReportListener;
 import com.ultilities.logs.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Product_Detail_Page_Cb extends ValidateUIHelper{
@@ -24,18 +21,8 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     private ValidateUIHelper validateUIHelper;
 
     public By ProductName = By.cssSelector(".product-name");
-    public By LeftBanner = By.xpath("//a[@class='leftside-banner']");
-    public By RightBanner = By.xpath("//a[@class='rightside-banner']");
-    public By Banner = By.xpath("//div[contains(@class,'product-slide-box')]//a[contains(@title,'iPhone 16 series')]");
     public By QuantityEvaluation = By.xpath("//div[contains(@class,'product-meta')]//p[contains(text(),'đánh giá')]");
-    public By ProductThumb = By.xpath("//div[@class='product-slide']");
-    public By BasePrice = By.xpath("//p[@class='price-old ']");
-    public By SalePrice = By.xpath("//p[@class='price']");
-    public By WarrantyContentBH = By.xpath("//th[@class='warranty-line basic ']");
     public By WarrantyContentBH_price = By.xpath("//strong[contains(text(),'₫')]");
-    public By WarrantyContent24M = By.xpath("//th[contains(@class,'warranty-line gold')]");
-    public By ButtonWarrantyBH = By.xpath("//p[contains(@data-name,'BH chính hãng')]");
-    public By ButtonWarranty24M = By.xpath("//div[@title='Gia hạn 24 tháng']");
     public By TitleSpecification = By.xpath("//div[contains(@class,'product-specification__title')]");
     public By BoxRating = By.xpath("//div[contains(@class,'block-rate__star')]//span[contains(text(),'đánh giá')]");
     public By GiftBox = By.xpath("//div[@class='gift-content']//p[1]");
@@ -44,7 +31,6 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By PhoneContact = By.xpath("//input[@placeholder='Tư vấn qua số điện thoại']");
     public By ButtonSumit = By.xpath("//button[@class='submit_call']");
     public By EvaluationInput = By.xpath("//textarea[@placeholder='Hãy để lại bình luận của bạn tại đây!']");
-    public By EvaluationStar = By.xpath("//span[@class='star']");
     public By EvaluationSubmit = By.xpath("//button[@title='Gửi']");
     public By ButtonBuyNow = By.xpath("//div[@class='order-available']//p[@class='product-action__item add-to-cart']");
     public By VersionName = By.xpath("//div[contains(@class,'related_versions')]//div[contains(@class,'list-item') and contains(@class,'active')]//a");
@@ -55,12 +41,11 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
     public By WarrantyActive = By.xpath("//p[@class='active']");
     public By CustomerPromotionPrice = By.xpath("//div[@class='event-price-product event-member-price-product']");
     public By ButtonBuyNowPrice = By.xpath("//span[@class='price']");
-
-
+    public By ToastMessage = By.xpath("//div[@class='jq-toast-single jq-has-icon jq-icon-success']");
 
     public Product_Detail_Page_Cb(WebDriver driver) {
         super(driver);
-        Product_Detail_Page_Cb.driver = driver;
+        this.driver = driver;
         js = (JavascriptExecutor) driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         validateUIHelper = new ValidateUIHelper(driver);
@@ -194,37 +179,23 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         }
     }
 
-    public void SendKeyPhoneContact(String phone){
-        wait.until(ExpectedConditions.elementToBeClickable(PhoneContact));
-        selectCity(phone);
-    }
-
-    public void ClickButtonSumit(){
-        WebElement clickElement = wait.until(ExpectedConditions.elementToBeClickable(ButtonSumit));
-        clickElement.click();
-    }
 
     public void SendKeyEvaluation(String evaluation){
         wait.until(ExpectedConditions.elementToBeClickable(EvaluationInput));
-        selectCity(evaluation);
+        sendKeys(EvaluationInput, evaluation);
     }
 
-    public void SendKeyStar(int star){
-        wait.until(ExpectedConditions.elementToBeClickable(EvaluationStar));
-        List<WebElement> stars = driver.findElements(EvaluationStar);
-        for (int i = 0; i < star; i++) {
-            stars.get(i).click();
-        }
+    public void selectStarRating(int numberOfStars) {
+        WebElement boxRating = driver.findElement(By.xpath("//div[@id='comments-actions']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", boxRating);
+        String xpath = "(//span[@class='star']/*[name()='svg'])[" + numberOfStars + "]";
+        WebElement star = driver.findElement(By.xpath(xpath));
+        star.click();
     }
 
     public void ClickEvaluationSubmit(){
         WebElement clickElement = wait.until(ExpectedConditions.elementToBeClickable(EvaluationSubmit));
         clickElement.click();
-    }
-
-    public void clickGiftBox() {
-        WebElement giftBox = wait.until(ExpectedConditions.elementToBeClickable(GiftBox));
-        giftBox.click();
     }
 
     public String getColorName() {
@@ -327,6 +298,17 @@ public class Product_Detail_Page_Cb extends ValidateUIHelper{
         return count;
     }
 
+    public String getToast() {
+        WebElement toastElement = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("jq-toast-single")));
+        String fullText = toastElement.getText();
 
+        // Loại bỏ dòng chứa "×" và "Thành công"
+        String cleanedText = fullText
+                .replace("×", "")
+                .replace("Thành công", "")
+                .trim();
 
+        return cleanedText;
+    }
 }
