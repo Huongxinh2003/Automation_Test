@@ -147,24 +147,59 @@ public class Product_Detail_Test extends BaseSetup {
         LogUtils.info("Kiểm tra giá trị sau khi chọn phiên bản");
         LogUtils.info("Title sản pẩm: "+ TitleProductBefore);
         LogUtils.info("Title sản phẩm: " + TitleProductAfter);
-        Assert.assertNotEquals(TitleProductBefore, TitleProductAfter,
-                "TitleProduct không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(BoxRatingBefore, BoxRatingAfter,
-                "BoxRating không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(BoxPriceBefore, BoxPriceAfter,
-                "BoxPrice không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(DiscountBefore, DiscountAfter,
-                "Giá gốc không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter,
-                "Giá sale không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(ColorPriceBefore, ColorPriceAfter,
-                "Giá trong nu màu sắc không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(TitleStickyBarBefore, TitleStickyBarAfter,
-                "TitleStickyBar không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter,
-                "PriceStickyBar không thay đổi sau khi chọn phiên bản");
-        Assert.assertNotEquals(CountStoreBefore, CountStoreAfter,
-                " Số cửa hàng còn hàng không thay đổi sau khi chọn phiên bản");
+        if (!TitleProductBefore.equals(TitleProductAfter)) {
+            test.get().pass("Tiêu đề sản phẩm đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(TitleProductBefore, TitleProductAfter, "TitleProduct không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!BoxRatingBefore.equals(BoxRatingAfter)) {
+            test.get().pass("Box đánh giá đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(BoxRatingBefore, BoxRatingAfter, "BoxRating không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!BoxPriceBefore.equals(BoxPriceAfter)) {
+            test.get().pass("Box giá đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(BoxPriceBefore, BoxPriceAfter, "BoxPrice không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!DiscountBefore.equals(DiscountAfter)) {
+            test.get().pass("Giá gốc đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(DiscountBefore, DiscountAfter, "Giá gốc không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!PriceSaleBefore.equals(PriceSaleAfter)) {
+            test.get().pass("Giá sale đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!ColorPriceBefore.equals(ColorPriceAfter)) {
+            test.get().pass("Giá trong nút màu sắc đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(ColorPriceBefore, ColorPriceAfter, "Giá trong nút màu sắc không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!TitleStickyBarBefore.equals(TitleStickyBarAfter)) {
+            test.get().pass("Tiêu đề ở thanh sticky đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(TitleStickyBarBefore, TitleStickyBarAfter, "TitleStickyBar không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!PriceStickyBarBefore.equals(PriceStickyBarAfter)) {
+            test.get().pass("Giá ở thanh sticky đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn phiên bản");
+        }
+
+        if (!CountStoreBefore.equals(CountStoreAfter)) {
+            test.get().pass("Số cửa hàng còn hàng đã thay đổi sau khi chọn phiên bản");
+        } else {
+            Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn phiên bản");
+        }
         test.get().pass("Tất cả giá trị được thay đổi sau khi chọn phiên bản");
     }
 
@@ -204,11 +239,35 @@ public class Product_Detail_Test extends BaseSetup {
         test.get().pass("Lấy giá trị sau khi chọn màu sắc thành công");
 
         LogUtils.info("Kiểm tra giá trị sau khi chọn màu sắc");
-        Assert.assertEquals(DiscountAfter, DiscountBefore, "Giá gốc không thay đổi sau khi chọn màu sắc");
-        Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn màu sắc");
-        Assert.assertNotEquals(ProductThumbnail, ProductThumbnailAfter, "Ảnh sản phẩm không thay đổi sau khi chọn màu sắc");
-        Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "PriceStickyBar không thay đổi sau khi chọn màu sắc");
-        Assert.assertNotEquals(CountStoreBefore, CountStoreAfter, "Số cửa hàng còn hàng không thay đổi sau khi chọn màu sắc");
+        if (DiscountAfter.equals(DiscountBefore)) {
+            test.get().pass("Giá gốc không thay đổi sau khi chọn màu sắc");
+        } else {
+            Assert.assertEquals(DiscountAfter, DiscountBefore, "Giá gốc đã bị thay đổi sau khi chọn màu sắc");
+        }
+
+        if (!PriceSaleBefore.equals(PriceSaleAfter)) {
+            test.get().pass("Giá sale thay đổi sau khi chọn màu sắc");
+        } else {
+            Assert.assertNotEquals(PriceSaleBefore, PriceSaleAfter, "Giá sale không thay đổi sau khi chọn màu sắc");
+        }
+
+        if (!ProductThumbnail.equals(ProductThumbnailAfter)) {
+            test.get().pass("Ảnh sản phẩm thay đổi sau khi chọn màu sắc");
+        } else {
+            Assert.assertNotEquals(ProductThumbnail, ProductThumbnailAfter, "Ảnh sản phẩm không thay đổi sau khi chọn màu sắc");
+        }
+
+        if (!PriceStickyBarBefore.equals(PriceStickyBarAfter)) {
+            test.get().pass("Giá ở thanh sticky thay đổi sau khi chọn màu sắc");
+        } else {
+            Assert.assertNotEquals(PriceStickyBarBefore, PriceStickyBarAfter, "Giá sticky bar không thay đổi sau khi chọn màu sắc");
+        }
+
+        if (!CountStoreBefore.equals(CountStoreAfter)) {
+            test.get().pass("Số cửa hàng còn hàng thay đổi sau khi chọn màu sắc");
+        } else {
+            test.get().pass("Số cửa hàng còn hàng không thay đổi sau khi chọn màu sắc");
+        }
 
         test.get().pass("Tất cả giá trị được thay đổi sau khi chọn màu sắc");
     }

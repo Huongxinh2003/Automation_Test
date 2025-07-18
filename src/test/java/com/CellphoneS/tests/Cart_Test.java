@@ -57,38 +57,35 @@ public class Cart_Test extends BaseSetup {
 
     private String detailImage;
     @BeforeMethod (groups = {"Function", "UI_Test"})
-    public void SearchProduct() {
+    public void SearchProduct() throws Exception {
         LogUtils.info("Thực hiện tìm kiếm sản phẩm 'iphone' và mở trang chi tiết");
         product_detail_page = search_page.openProductDetail("iphone");
-        detailImage = cart_page.extractFileName(product_detail_page.getMainImageSrc());
+        Thread.sleep(2000);
+        detailImage = cart_page.getNameImage();
         cart_page = product_detail_page.OpenCartPage();
     }
 
     @Test(groups = "UI_Test", description = "Kiểm tra tiêu đề trang giỏ hàng")
-    public void VerifyTitleCartPage() {
+    public void VerifyTitleCartPage() throws InterruptedException {
         LogUtils.info("Kiểm tra hiển thị tiêu đề trang");
-        cart_page.verifyCartPageTitle();
+        Thread.sleep(2000);
         String title = cart_page.getCartPageTitle();
-        LogUtils.info("Tiêu đề trang " + title);
+        test.get().info("Tiêu đề trang " + title);
+        cart_page.verifyCartPageTitle();
     }
 
-    //Loại bỏ chọn màu sắc
-    //Xem lại
     @Test(groups = "UI_Test", description = "Kiểm tra hiển thị thông tin sản phẩm trong giỏ hàng")
-    public void verifyAfterAddToCart() {
+    public void verifyAfterAddToCart() throws Exception{
         try {
-//            LogUtils.info("Kiểm tra checkbox sản phẩm đã được chọn");
-//            Assert.assertTrue(cart_page.isSelectedProduct(), "Checkbox sản phẩm chưa được chọn");
-//            test.get().pass("Checkbox sản phẩm đã được chọn.");
-//
-//            LogUtils.info("Kiểm tra cart sản phẩm hiển thị trong giỏ");
-//            Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Cart sản phẩm không hiển thị");
-//            test.get().pass("Cart sản phẩm hiển thị trong giỏ hàng.");
-//
-//            LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng");
-//            String cartImage = cart_page.extractFileName(cart_page.getCartImageSrc());
-//            Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
-//            test.get().pass("Hình ảnh sản phẩm khớp giữa chi tiết và giỏ hàng.");
+            Thread.sleep(2000);
+            LogUtils.info("Kiểm tra cart sản phẩm hiển thị trong giỏ");
+            Assert.assertTrue(cart_page.isBoxProductDisplayed(), "Cart sản phẩm không hiển thị");
+            test.get().pass("Cart sản phẩm hiển thị trong giỏ hàng.");
+
+            LogUtils.info("Kiểm tra hình ảnh sản phẩm hiển thị trong product detail và giỏ hàng");
+            String cartImage = cart_page.getNameImage();
+            Assert.assertEquals(detailImage, cartImage, "Hình ảnh sản phẩm không khớp");
+            test.get().pass("Hình ảnh sản phẩm khớp giữa chi tiết và giỏ hàng.");
 
             LogUtils.info("Kiểm tra giá sản phẩm và giá tạm tính");
             String price = cart_page.getPriceProduct();

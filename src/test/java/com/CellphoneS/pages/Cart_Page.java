@@ -37,6 +37,7 @@ public class Cart_Page extends ValidateUIHelper {
         this.driver = driver;
         js = (JavascriptExecutor) driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        validateUIHelper = new ValidateUIHelper(driver);
     }
 
     // Lấy tiêu đề trang
@@ -66,23 +67,14 @@ public class Cart_Page extends ValidateUIHelper {
         return productElements.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
-    public boolean isSelectedProduct() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(CheckboxSelect));
-        return isElementDisplayed(CheckboxProduct);
-    }
-
     public String getCartImageSrc() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(ImageProduct)).getAttribute("src");
     }
 
-    public String extractFileName(String url) {
-        if (url == null || url.trim().isEmpty()) {
-            return "giá trị là null";
-        }
-
-        String cleanUrl = url.split("\\?")[0];
-        return cleanUrl.substring(cleanUrl.lastIndexOf("/") + 1);
+    public String getNameImage(){
+        WebElement img = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[contains(@alt, 'Titan Đen') and contains(@src, 'insecure')]")));
+        String alt = img.getAttribute("alt");
+        return alt.substring(alt.lastIndexOf("-") + 1).trim();
     }
 
 

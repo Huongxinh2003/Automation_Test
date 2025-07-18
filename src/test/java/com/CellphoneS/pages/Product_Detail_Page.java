@@ -43,7 +43,7 @@ public class Product_Detail_Page extends ValidateUIHelper {
     public By EvaluateCamera = By.xpath("(//div[@icon='star'])[4]");
     public By EvaluateComment = By.xpath("//textarea[@placeholder='Xin mời chia sẻ một số cảm nhận về sản phẩm (nhập tối thiểu 15 kí tự)']");
     public By EvaluateImage = By.xpath("//input[@id='image']");
-    public By EvaluateButton = By.xpath("//button[contains(text(),'GỬI ĐÁNH GIÁ')]");
+    public By EvaluateButton = By.xpath("//div[@class='button-container']");
     public By EvaluateCount = By.xpath("//p[@class='boxReview-score__count']");
     public By StoreProduct = By.xpath("//div[@class='box-on-stock-stores']");
     public By ToastMessage = By.xpath("//div[@class='toasted toasted-primary success']");
@@ -172,6 +172,13 @@ public class Product_Detail_Page extends ValidateUIHelper {
     // Lấy src ảnh lớn
     public String getMainImageSrc() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MainThumbnail)).getAttribute("src");
+    }
+
+    //lấy tên ảnh lơn
+    public String getNameImage(){
+        WebElement img = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[contains(@alt, 'Titan Đen') and contains(@src, '358x')]")));
+        String alt = img.getAttribute("alt");
+        return alt.trim();
     }
 
 

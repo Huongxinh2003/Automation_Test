@@ -8,9 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Search_Page_Cb extends ValidateUIHelper {
-    private static WebDriver driver;
-    private WebDriverWait wait;
-    private JavascriptExecutor js;
     private ValidateUIHelper validateUIHelper;
 
     public By inputSearch = By.xpath("//input[@id='inp-search']");
