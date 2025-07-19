@@ -1549,3 +1549,11 @@ Tính năng nổi bật
 2025-07-19 05:35:34 INFO  LogUtils:10 - Chọn thành phố
 2025-07-19 05:35:35 INFO  LogUtils:10 - Kiểm tra hiển thị danh sách địa chỉ
 2025-07-19 05:35:55 INFO  LogUtils:10 - Kiểm tra tất cả địa chỉ có chứa 'Bắc Ninh'
+2025-07-19 09:40:17 INFO  LogUtils:10 - Start testing Automation_Test
+2025-07-19 09:40:37 INFO  LogUtils:10 - login_cellphoneS_19 test is starting...
+2025-07-19 09:40:37 INFO  LogUtils:10 - Bỏ trống SĐT và Mật khẩu
+2025-07-19 09:40:46 INFO  LogUtils:10 - Kiểm tra Alert lỗi
+2025-07-19 09:40:46 INFO  LogUtils:10 - Số điện thoại không được bỏ trống
+Vui lòng nhập số điện thoại
+2025-07-19 09:40:46 ERROR LogUtils:14 - login_cellphoneS_19 test is failed.
+2025-07-19 09:40:56 INFO  LogUtils:10 - End testing Automation_Test
